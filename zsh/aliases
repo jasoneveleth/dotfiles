@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+alias directoryPrompt="PS1=\"[%~]\"$'\n'\" $ \""
+alias oldPrompt="PS1='%{%K{0}%F{255}%}%m%{%f%k%} %~ $ '"
+alias clean="PS1='%{%F{075}%}%1d%{%f%} $ '"
+alias connect='ssh jeveleth@ssh.cs.brown.edu'
+alias cleanDS="find . -name '*.DS_Store' -type f -delete"
+alias nist="~/code/python/nistsurf"
+alias ctags="/usr/local/bin/ctags"
+alias py="python3 -B"
+alias \ls='ls -F -G'
+alias vimrc='vim ~/.config/vim/vimrc'

@@ -1,0 +1,52 @@
+#!/bin/zsh
+
+function printcolors() {
+    for i in {1..256}; do print -P "%F{$i}Color : $i"; done; 
+}
+
+
+function acp() {
+git add .;
+git commit -am "$@";
+git push;
+}
+
+function commit() {
+git commit -am "$@"
+git push;
+}
+
+function randomText() {
+text=''
+for ((i = 0; i < $1; i++));do
+    if [[ $(($RANDOM % 10)) < 2 ]];then
+        text+=' '
+        i+=1
+    fi
+    text+=$((number = $RANDOM % 10))
+done
+echo $text
+}
+
+BROWNCS_MOUNTPOINT=~/root/code/browncs
+BROWNCS_LOGIN=jeveleth
+
+myfuse() {
+
+printf "... attempting to mount brown filesystem for user ${BROWNCS_LOGIN} on local file ${BROWNCS_MOUNTPOINT}\n"
+
+mkdir -p ${BROWNCS_MOUNTPOINT}
+
+sshfs -o defer_permissions "${BROWNCS_LOGIN}@ssh.cs.brown.edu:/home/${BROWNCS_LOGIN}" "${BROWNCS_MOUNTPOINT}"
+
+}
+
+fixfuse() {
+
+printf "... attempting to unmount brown filesystem from local file ${BROWNCS_MOUNTPOINT}\n"
+
+diskutil unmount force "${BROWNCS_MOUNTPOINT}"
+
+rmdir "${BROWNCS_MOUNTPOINT}"
+
+}

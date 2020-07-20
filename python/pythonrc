@@ -1,0 +1,9 @@
+import readline
+readline.write_history_file = lambda *args: None
+
+# import readline
+# import time
+# 
+# readline.add_history("# " + time.asctime()) # prevent default use of ~/.python_history
+# readline.set_history_length(-1) # unlimited
+
