@@ -21,7 +21,7 @@ $exists
 
 # Command Line History (newest to oldest):
 :wq
-|2,0,1595362681,,"wq"
+|2,0,1595363564,,"wq"
 :w
 |2,0,1595362660,,"w"
 :colo onedark
@@ -268,34 +268,48 @@ $exists
 |3,0,36,0,1,0,1595360410,")"
 
 # File marks:
-'0  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py
-|4,48,1,0,1595363020,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py"
-'1  89  8  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py
-|4,49,89,8,1595362681,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py"
+'0  4  0  ~/.config/README.md
+|4,48,4,0,1595363564,"~/.config/README.md"
+'1  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py
+|4,49,1,0,1595363020,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py"
 '2  89  8  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py
 |4,50,89,8,1595362681,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py"
-'3  46  8  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
-|4,51,46,8,1595360580,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
+'3  89  8  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py
+|4,51,89,8,1595362681,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py"
 '4  46  8  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
 |4,52,46,8,1595360580,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
-'5  25  121  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
-|4,53,25,121,1595360477,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
+'5  46  8  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
+|4,53,46,8,1595360580,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
 '6  25  121  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
 |4,54,25,121,1595360477,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
 '7  25  121  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
 |4,55,25,121,1595360477,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
 '8  25  121  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
 |4,56,25,121,1595360477,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
-'9  1  0  ~/D
-|4,57,1,0,1595360383,"~/D"
+'9  25  121  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
+|4,57,25,121,1595360477,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
 
 # Jumplist (newest first):
+-'  4  0  ~/.config/README.md
+|4,39,4,0,1595363564,"~/.config/README.md"
+-'  1  0  ~/.config/README.md
+|4,39,1,0,1595363443,"~/.config/README.md"
+-'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py
+|4,39,1,0,1595363020,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py"
 -'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py
 |4,39,1,0,1595363020,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py"
 -'  89  8  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py
 |4,39,89,8,1595362681,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py"
 -'  89  8  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py
 |4,39,89,8,1595362681,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py"
+-'  89  8  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py
+|4,39,89,8,1595362681,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py"
+-'  89  8  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py
+|4,39,89,8,1595362681,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py"
+-'  131  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/BinTree.py
+|4,39,131,0,1595362476,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/BinTree.py"
+-'  131  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/BinTree.py
+|4,39,131,0,1595362476,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/BinTree.py"
 -'  131  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/BinTree.py
 |4,39,131,0,1595362476,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/BinTree.py"
 -'  131  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/BinTree.py
@@ -304,6 +318,12 @@ $exists
 |4,39,86,28,1595362471,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py"
 -'  86  28  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py
 |4,39,86,28,1595362471,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py"
+-'  86  28  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py
+|4,39,86,28,1595362471,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py"
+-'  86  28  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py
+|4,39,86,28,1595362471,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py"
+-'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py
+|4,39,1,0,1595362332,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py"
 -'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py
 |4,39,1,0,1595362332,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py"
 -'  46  8  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
@@ -314,6 +334,22 @@ $exists
 |4,39,46,8,1595360580,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
 -'  46  8  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
 |4,39,46,8,1595360580,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
+-'  46  8  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
+|4,39,46,8,1595360580,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
+-'  46  8  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
+|4,39,46,8,1595360580,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
+-'  46  8  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
+|4,39,46,8,1595360580,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
+-'  46  8  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
+|4,39,46,8,1595360580,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
+-'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
+|4,39,1,0,1595360509,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
+-'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
+|4,39,1,0,1595360509,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
+-'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
+|4,39,1,0,1595360509,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
+-'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
+|4,39,1,0,1595360509,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
 -'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
 |4,39,1,0,1595360509,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
 -'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
@@ -334,6 +370,22 @@ $exists
 |4,39,25,121,1595360477,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
 -'  25  121  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
 |4,39,25,121,1595360477,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
+-'  25  121  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
+|4,39,25,121,1595360477,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
+-'  25  121  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
+|4,39,25,121,1595360477,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
+-'  25  121  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
+|4,39,25,121,1595360477,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
+-'  25  121  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
+|4,39,25,121,1595360477,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
+-'  25  121  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
+|4,39,25,121,1595360477,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
+-'  25  121  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
+|4,39,25,121,1595360477,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
+-'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
+|4,39,1,0,1595360387,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
+-'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
+|4,39,1,0,1595360387,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
 -'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
 |4,39,1,0,1595360387,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
 -'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
@@ -358,6 +410,26 @@ $exists
 |4,39,1,0,1595360383,"~/D"
 -'  1  0  ~/D
 |4,39,1,0,1595360383,"~/D"
+-'  1  0  ~/D
+|4,39,1,0,1595360383,"~/D"
+-'  1  0  ~/D
+|4,39,1,0,1595360383,"~/D"
+-'  1  0  ~/D
+|4,39,1,0,1595360383,"~/D"
+-'  1  0  ~/D
+|4,39,1,0,1595360383,"~/D"
+-'  1  0  ~/D
+|4,39,1,0,1595360383,"~/D"
+-'  1  0  ~/D
+|4,39,1,0,1595360383,"~/D"
+-'  1  0  ~/D
+|4,39,1,0,1595360383,"~/D"
+-'  1  0  ~/D
+|4,39,1,0,1595360383,"~/D"
+-'  1  0  ~/D
+|4,39,1,0,1595360383,"~/D"
+-'  1  0  ~/D
+|4,39,1,0,1595360383,"~/D"
 -'  25  82  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
 |4,39,25,82,1595360346,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
 -'  25  82  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
@@ -366,6 +438,22 @@ $exists
 |4,39,25,82,1595360346,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
 -'  25  82  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
 |4,39,25,82,1595360346,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
+-'  25  82  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
+|4,39,25,82,1595360346,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
+-'  25  82  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
+|4,39,25,82,1595360346,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
+-'  25  82  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
+|4,39,25,82,1595360346,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
+-'  25  82  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
+|4,39,25,82,1595360346,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
+-'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
+|4,39,1,0,1595360318,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
+-'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
+|4,39,1,0,1595360318,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
+-'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
+|4,39,1,0,1595360318,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
+-'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
+|4,39,1,0,1595360318,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
 -'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
 |4,39,1,0,1595360318,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py"
 -'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
@@ -402,96 +490,16 @@ $exists
 |4,39,1,0,1595360312,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py"
 -'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py
 |4,39,1,0,1595360312,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py"
--'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py
-|4,39,1,0,1595360312,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py"
--'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py
-|4,39,1,0,1595360312,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
--'  73  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-|4,39,73,0,1595360295,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py"
 
 # History of marks within files (newest to oldest):
+
+> ~/.config/README.md
+	*	1595363559	0
+	"	4	0
+	^	4	36
+	.	3	71
+	+	4	35
+	+	3	71
 
 > ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py
 	*	1595362680	0
