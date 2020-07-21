@@ -4,15 +4,23 @@ function printcolors() {
     for i in {1..256}; do print -P "%F{$i}Color : $i"; done; 
 }
 
+# seach history
+fh() {
+    print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
+}
+
+# v - open files in ~/.viminfo
+v() {
+  local files
+  files=$(grep '^>' ~/.viminfo | cut -c3- |
+          while read line; do
+            [ -f "${line/\~/$HOME}" ] && echo "$line"
+          done | fzf-tmux -d -m -q "$*" -1) && vim ${files//\~/$HOME}
+}
 
 function acp() {
 git add .;
 git commit -am "$@";
-git push;
-}
-
-function commit() {
-git commit -am "$@"
 git push;
 }
 

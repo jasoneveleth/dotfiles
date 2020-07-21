@@ -1,46 +1,73 @@
 let mapleader =" "
 set nocompatible 
 set timeout timeoutlen=1000 ttimeoutlen=100
-set number relativenumber | syntax on
+set number relativenumber 
 set shiftwidth=4 | set tabstop=4 softtabstop=4 | set expandtab
 set confirm | set wildmenu | set incsearch | set smartindent 
+set ignorecase | set smartcase | set backspace=2
 set listchars=tab:>\ ,eol:$,space:_
 set fillchars+=vert:\| 
-filetype plugin indent on 
+filetype plugin indent on | syntax on
 set undofile | set nobackup
 set undodir=~/.config/vim/undo//
 set directory=~/.config/vim/swp//
 set viminfo+=n~/.config/vim/viminfo
 
-noremap <tab> <esc>
+onoremap <tab> <esc>
+vnoremap <tab> <esc>
 inoremap <tab> <esc>
 nnoremap Y y$
 vnoremap <S-j> :m '>+1<CR>gv=gv
 vnoremap <S-k> :m '<-2<CR>gv=gv
 nnoremap <expr> <Leader>h (&hls ? ':set nohls<CR>' : ':set hls<CR>')
-nnoremap <Leader>t :!ctags -R<CR><CR>
+nnoremap <Leader>r :!ctags -R<CR><CR>
 
-" Whacky stuff starts here
+" Mac specific stuff here
 set runtimepath=~/.config/vim,$VIMRUNTIME,~/.config/vim/after
 
 call plug#begin('~/.config/vim/plugged')
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mbbill/undotree'
-Plug 'Kazark/vim-SimpleSmoothScroll'
 Plug 'tpope/vim-commentary'
 Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'itchyny/lightline.vim'
+Plug 'ap/vim-css-color'
 call plug#end()
 
-nnoremap \ :Rg<CR>
-nnoremap <Leader>f :Files<CR>
+nnoremap <Leader>f :Rg<CR>
+nnoremap <Leader>t :Files<CR>
 nnoremap <Leader>b :Buffers<CR>
-nnoremap <Leader>u :UndotreeShow<CR>
+nnoremap <Leader>u :UndotreeToggle<CR>
 
 set laststatus=2
 set noshowmode
 let g:lightline = { 'colorscheme': 'onedark', }
-let g:onedark_termcolors=16
+
+if has('termguicolors')
+    set termguicolors
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+else
+    let g:onedark_termcolors=16
+    let g:onedark_color_overrides = {
+        \ "red": { "gui": "#E06C75", "cterm": "204", "cterm16": "9" },
+        \ "dark_red": { "gui": "#BE5046", "cterm": "196", "cterm16": "1" },
+        \ "yellow": { "gui": "#E5C07B", "cterm": "180", "cterm16": "11" },
+        \ "dark_yellow": { "gui": "#D19A66", "cterm": "173", "cterm16": "3" },
+        \ "visual_black": { "gui": "NONE", "cterm": "NONE", "cterm16": "0" },
+        \ "comment_grey": { "gui": "#5C6370", "cterm": "59", "cterm16": "8" },
+        \ "gutter_fg_grey": { "gui": "#4B5263", "cterm": "238", "cterm16": "0" },
+        \ "cursor_grey": { "gui": "#2C323C", "cterm": "236", "cterm16": "8" },
+        \ "visual_grey": { "gui": "#3E4452", "cterm": "237", "cterm16": "7" },
+        \ "menu_grey": { "gui": "#3E4452", "cterm": "237", "cterm16": "0" },
+        \ "special_grey": { "gui": "#3B4048", "cterm": "238", "cterm16": "8" },
+        \ "vertsplit": { "gui": "#181A1F", "cterm": "59", "cterm16": "15" },
+        \ }
+endif
 colorscheme onedark
+
+hi! Normal ctermbg=NONE guibg=NONE
+hi! NonText ctermbg=NONE guibg=NONE
+

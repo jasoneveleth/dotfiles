@@ -1,5 +1,6 @@
 #!/bin/zsh
 
+alias ovim="/usr/bin/vim"
 alias directoryPrompt="PS1=\"[%~]\"$'\n'\" $ \""
 alias oldPrompt="PS1='%{%K{0}%F{255}%}%m%{%f%k%} %~ $ '"
 alias clean="PS1='%{%F{075}%}%1d%{%f%} $ '"
@@ -8,5 +9,8 @@ alias cleanDS="find . -name '*.DS_Store' -type f -delete"
 alias nist="~/code/python/nistsurf"
 alias ctags="/usr/local/bin/ctags"
 alias py="python3 -B"
-alias \ls='ls -F -G'
+alias \ls='ls -FGA'
 alias vimrc='vim ~/.config/vim/vimrc'
+
+alias commit='git commit -m'
+alias add='git add -A'
