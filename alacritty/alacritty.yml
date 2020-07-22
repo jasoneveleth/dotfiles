@@ -69,3 +69,7 @@ colors:
 cursor:
   style: Block
   unfocused_hollow: true
+
+key_bindings:
+  - { key: A,         mods: Alt,       chars: "\x1ba"                     }
+  - { key: D,         mods: Alt,       chars: "\x1bd"                     }

@@ -1,16 +1,11 @@
 let mapleader =" "
-set nocompatible 
-set timeout timeoutlen=1000 ttimeoutlen=100
-set number relativenumber 
+set nocompatible | set timeout timeoutlen=1000 ttimeoutlen=100
+set number relativenumber | set ignorecase | set smartcase | set backspace=2
 set shiftwidth=4 | set tabstop=4 softtabstop=4 | set expandtab
 set confirm | set wildmenu | set incsearch | set smartindent 
-set ignorecase | set smartcase | set backspace=2
+filetype plugin indent on | syntax on | set undofile | set nobackup
+set undodir=~/.config/vim/undo// | set directory=~/.config/vim/swp//
 set listchars=tab:>\ ,eol:$,space:_
-set fillchars+=vert:\| 
-filetype plugin indent on | syntax on
-set undofile | set nobackup
-set undodir=~/.config/vim/undo//
-set directory=~/.config/vim/swp//
 set viminfo+=n~/.config/vim/viminfo
 
 onoremap <tab> <esc>
@@ -19,11 +14,18 @@ inoremap <tab> <esc>
 nnoremap Y y$
 vnoremap <S-j> :m '>+1<CR>gv=gv
 vnoremap <S-k> :m '<-2<CR>gv=gv
-nnoremap <expr> <Leader>h (&hls ? ':set nohls<CR>' : ':set hls<CR>')
+nnoremap <expr> <Leader>s (&hls ? ':set nohls<CR>' : ':set hls<CR>')
 nnoremap <Leader>r :!ctags -R<CR><CR>
+nnoremap <Leader>j <C-w>j
+nnoremap <Leader>k <C-w>k
+nnoremap <Leader>l <C-w>l
+nnoremap <Leader>h <C-w>h
+nnoremap <Leader>c :cclose<CR>
+nnoremap <Leader>o :copen<CR>
 
 " Mac specific stuff here
 set runtimepath=~/.config/vim,$VIMRUNTIME,~/.config/vim/after
+set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
 
 call plug#begin('~/.config/vim/plugged')
 Plug 'junegunn/fzf'
@@ -56,14 +58,13 @@ else
         \ "dark_red": { "gui": "#BE5046", "cterm": "196", "cterm16": "1" },
         \ "yellow": { "gui": "#E5C07B", "cterm": "180", "cterm16": "11" },
         \ "dark_yellow": { "gui": "#D19A66", "cterm": "173", "cterm16": "3" },
-        \ "visual_black": { "gui": "NONE", "cterm": "NONE", "cterm16": "0" },
+        \ "visual_black": { "gui": "NONE", "cterm": "NONE", "cterm16": "NONE" },
         \ "comment_grey": { "gui": "#5C6370", "cterm": "59", "cterm16": "8" },
         \ "gutter_fg_grey": { "gui": "#4B5263", "cterm": "238", "cterm16": "0" },
         \ "cursor_grey": { "gui": "#2C323C", "cterm": "236", "cterm16": "8" },
         \ "visual_grey": { "gui": "#3E4452", "cterm": "237", "cterm16": "7" },
         \ "menu_grey": { "gui": "#3E4452", "cterm": "237", "cterm16": "0" },
         \ "special_grey": { "gui": "#3B4048", "cterm": "238", "cterm16": "8" },
-        \ "vertsplit": { "gui": "#181A1F", "cterm": "59", "cterm16": "15" },
         \ }
 endif
 colorscheme onedark
