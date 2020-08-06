@@ -11,217 +11,227 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/print
+~MSle0~/point
 
 # Last Substitute Search Pattern:
-~MSle0&print
+~MSle0&key()
 
 # Last Substitute String:
 $
 
 # Command Line History (newest to oldest):
-:wq
-|2,0,1595387838,,"wq"
-:q
-|2,0,1595387810,,"q"
+:hi NonText guibg='#000000'
+|2,0,1596668516,,"hi NonText guibg='#000000'"
+:hi NonText guibg='#000'
+|2,0,1596668512,,"hi NonText guibg='#000'"
+:set background=dark
+|2,0,1596668470,,"set background=dark"
+:colo default
+|2,0,1596668464,,"colo default"
 :w
-|2,0,1595387682,,"w"
-:Rg
-|2,0,1595387212,,"Rg"
-:Lines bottom
-|2,0,1595386180,,"Lines bottom"
-:h ins-completion
-|2,0,1595386056,,"h ins-completion"
-:ins-completion
-|2,0,1595386049,,"ins-completion"
-:h i_^x
-|2,0,1595385978,,"h i_^x"
-:h ^x
-|2,0,1595385967,,"h ^x"
-:ls
-|2,0,1595385830,,"ls"
-:bd
-|2,0,1595385828,,"bd"
-:grep def
-|2,0,1595385810,,"grep def"
-:cdo s/print/# print/gc
-|2,0,1595385734,,"cdo s/print/# print/gc"
-:grep print
-|2,0,1595385713,,"grep print"
-:h :cdo
-|2,0,1595385688,,"h :cdo"
-:h [
-|2,0,1595385591,,"h ["
-:copen
-|2,0,1595385518,,"copen"
-:h grepprg
-|2,0,1595385328,,"h grepprg"
-:h :cc
-|2,0,1595384289,,"h :cc"
-:h g:qwindow
-|2,0,1595383994,,"h g:qwindow"
-:cw
-|2,0,1595383786,,"cw"
-:c
-|2,0,1595383783,,"c"
-:grep sub
-|2,0,1595383772,,"grep sub"
-:h copen
-|2,0,1595383425,,"h copen"
-:h ctoggle
-|2,0,1595383422,,"h ctoggle"
-:ctoggle
-|2,0,1595383418,,"ctoggle"
-:cn
-|2,0,1595383252,,"cn"
-:!
-|2,0,1595383172,,"!"
-:cope
-|2,0,1595382813,,"cope"
-:!rg --vimgrep 'print'
-|2,0,1595382807,,"!rg --vimgrep 'print'"
-:!rg 'print'
-|2,0,1595382770,,"!rg 'print'"
-:Rg print
-|2,0,1595382464,,"Rg print"
-:vimgrep print **
-|2,0,1595382263,,"vimgrep print **"
-:vimgrep print *
-|2,0,1595382243,,"vimgrep print *"
-:grep -r print *
-|2,0,1595382215,,"grep -r print *"
-:vimgrep print
-|2,0,1595382180,,"vimgrep print"
-:grep -r print
-|2,0,1595382168,,"grep -r print"
-:grep 'print'
-|2,0,1595382101,,"grep 'print'"
-:set notermguicolors
-|2,0,1595380206,,"set notermguicolors"
-:vs
-|2,0,1595375032,,"vs"
-:!vimrc
-|2,0,1595374591,,"!vimrc"
-:echo has('termguicolors')
-|2,0,1595373797,,"echo has('termguicolors')"
-:echo has(termguicolors)
-|2,0,1595373791,,"echo has(termguicolors)"
-:source %
-|2,0,1595373484,,"source %"
-:h hi
-|2,0,1595373417,,"h hi"
-:h hi!
-|2,0,1595373414,,"h hi!"
-:h guifg
-|2,0,1595373228,,"h guifg"
-:h cclose
-|2,0,1595372804,,"h cclose"
+|2,0,1596657587,,"w"
+:w !python -i
+|2,0,1596582132,,"w !python -i"
+:h ]}
+|2,0,1596573228,,"h ]}"
+:e .config/zsh/.zshrc
+|2,0,1596569002,,"e .config/zsh/.zshrc"
+:Ex
+|2,0,1596568903,,"Ex"
+:let @A=
+|2,0,1596568278,,"let @A="
+:let @++=
+|2,0,1596568258,,"let @++="
+:let @a=@+
+|2,0,1596568094,,"let @a=@+"
+:wq
+|2,0,1596553265,,"wq"
+:q
+|2,0,1596408197,,"q"
+:%s/key()/_key/gc
+|2,0,1596407249,,"%s/key()/_key/gc"
+:h U
+|2,0,1596404365,,"h U"
+:e
+|2,0,1596404110,,"e"
+:,+6s/index2/parentIndex
+|2,0,1596387584,,",+6s/index2/parentIndex"
+:Q
+|2,0,1596358266,,"Q"
+:%s/listofEdges/edges/gc
+|2,0,1596350614,,"%s/listofEdges/edges/gc"
 :reg
-|2,0,1595372295,,"reg"
-:source '<,'>
-|2,0,1595372247,,"source '<,'>"
+|2,0,1596275232,,"reg"
+:h :norm
+|2,0,1596271730,,"h :norm"
+:,+23g/print/norm! I# 
+|2,0,1596271675,,",+23g/print/norm! I# "
+:,+23g/print/i #|join!
+|2,0,1596271617,,",+23g/print/i #|join!"
+:match backgroundwhite /\v\s+$/
+|2,0,1596256896,,"match backgroundwhite /\\v\\s+$/"
+:hi backgroundwhite guibg=#ABB2BF
+|2,0,1596256867,,"hi backgroundwhite guibg=#ABB2BF"
+:hi
+|2,0,1596256785,,"hi"
+:set nolist
+|2,0,1596277950,,"set nolist"
+:set ts=8
+|2,0,1596277890,,"set ts=8"
+:set sts=10
+|2,0,1596277883,,"set sts=10"
+:set ts=10
+|2,0,1596277876,,"set ts=10"
+:set list
+|2,0,1596277812,,"set list"
+:set lsit
+|2,0,1596277808,,"set lsit"
+:retab!
+|2,0,1596277800,,"retab!"
+:set noexpandtab
+|2,0,1596277794,,"set noexpandtab"
+:retab
+|2,0,1596277736,,"retab"
+:set shiftwidth=8
+|2,0,1596277671,,"set shiftwidth=8"
+:set sts=8
+|2,0,1596277664,,"set sts=8"
+:bd
+|2,0,1596277279,,"bd"
+:h :n
+|2,0,1596274819,,"h :n"
+:h :i
+|2,0,1596271633,,"h :i"
+:h :a
+|2,0,1596271438,,"h :a"
+:shel
+|2,0,1596270636,,"shel"
+:shell
+|2,0,1596270646,,"shell"
+:h :shell
+|2,0,1596270654,,"h :shell"
+:terminal
+|2,0,1596266966,,"terminal"
+:%s/\v\s+$//gc
+|2,0,1596259884,,"%s/\\v\\s+$//gc"
+:%s/\v\s+//gc
+|2,0,1596259868,,"%s/\\v\\s+//gc"
+:q!
+|2,0,1596257948,,"q!"
+:!diff % Nonsense
+|2,0,1596255794,,"!diff % Nonsense"
 
 # Search String History (newest to oldest):
+??point
+|2,1,1596578732,63,"point"
+?/gradientDescentS
+|2,1,1596573967,47,"gradientDescentS"
+?/\v<i
+|2,1,1596573511,47,"\\v<i"
+?/i
+|2,1,1596573487,47,"i"
 ? @$
-|2,1,1595387821,,"@$"
+|2,1,1596568903,,"@$"
+? key()
+|2,1,1596407249,,"key()"
+?/downheap
+|2,1,1596405513,47,"downheap"
+?/swap
+|2,1,1596403541,47,"swap"
+? index2
+|2,1,1596387584,,"index2"
+?/ceil
+|2,1,1596387024,47,"ceil"
+?/maxChild
+|2,1,1596386886,47,"maxChild"
+?/hasLeft
+|2,1,1596386765,47,"hasLeft"
+?/parent
+|2,1,1596386371,47,"parent"
+?/right
+|2,1,1596385363,47,"right"
+?/left
+|2,1,1596385214,47,"left"
+?/key
+|2,1,1596384958,47,"key"
+?/addEdge
+|2,1,1596353877,47,"addEdge"
+?/prune
+|2,1,1596351465,47,"prune"
+?/edges
+|2,1,1596350921,47,"edges"
+?/.edges()
+|2,1,1596350912,47,".edges()"
+?/(ed
+|2,1,1596350844,47,"(ed"
+? listofEdges
+|2,1,1596350614,,"listofEdges"
+?/newlyAd
+|2,1,1596350206,47,"newlyAd"
+?/coord
+|2,1,1596350171,47,"coord"
+?/nextLeaf
+|2,1,1596349638,47,"nextLeaf"
+?/events
+|2,1,1596349439,47,"events"
+?/points
+|2,1,1596349048,47,"points"
+?/sel
+|2,1,1596348739,47,"sel"
+?/emp
+|2,1,1596348256,47,"emp"
+?/fortun
+|2,1,1596281322,47,"fortun"
+??monte
+|2,1,1596279415,63,"monte"
+?/wi
+|2,1,1596276094,47,"wi"
+?/wiggle
+|2,1,1596275210,47,"wiggle"
+?/getSite
+|2,1,1596275127,47,"getSite"
+?/collection
+|2,1,1596272261,47,"collection"
 ? print
-|2,1,1595385751,,"print"
-?/hi!
-|2,1,1595373438,47,"hi!"
-?/print
-|2,1,1595369913,47,"print"
-?/repl
-|2,1,1595367123,47,"repl"
-?/replace
-|2,1,1595365779,47,"replace"
-?/repla
-|2,1,1595366987,47,"repla"
-?/"
-|2,1,1595323303,47,"\""
-?/set
-|2,1,1595321858,47,"set"
-?/}
-|2,1,1595319831,47,"}"
-?/raise
-|2,1,1595316403,47,"raise"
-?/def handleC
-|2,1,1595282848,47,"def handleC"
-?/def cir
-|2,1,1595282839,47,"def cir"
-??get
-|2,1,1595315440,63,"get"
-?/ls
-|2,1,1595226273,47,"ls"
-?/root
-|2,1,1595212499,47,"root"
-??redu
-|2,1,1595158387,63,"redu"
-? exist
-|2,1,1595158270,,"exist"
-?/else
-|2,1,1595155942,47,"else"
-?/status
-|2,1,1595152498,47,"status"
-? y
-|2,1,1595151926,,"y"
-? x
-|2,1,1595151894,,"x"
-? map
-|2,1,1595150820,,"map"
-?/^\s*]
-|2,1,1595140884,47,"^\\s*]"
-? self._status
-|2,1,1595140663,,"self._status"
-?/def replace
-|2,1,1595140310,47,"def replace"
-??for
-|2,1,1595139330,63,"for"
-??toRemo
-|2,1,1595135318,63,"toRemo"
-? bp
-|2,1,1595131514,,"bp"
-? smaller
-|2,1,1595129847,,"smaller"
-? larger
-|2,1,1595129834,,"larger"
+|2,1,1596271675,,"print"
 ??def
-|2,1,1595129801,63,"def"
-?/site
-|2,1,1595112621,47,"site"
-?/iste
-|2,1,1595112618,47,"iste"
-? \(^\s*\)# 
-|2,1,1595052647,,"\\(^\\s*\\)# "
-? \(^\s*\)
-|2,1,1595052643,,"\\(^\\s*\\)"
-??if
-|2,1,1595049463,63,"if"
-??theyExist
-|2,1,1595049288,63,"theyExist"
-?/not
-|2,1,1595046958,47,"not"
-?/def f
-|2,1,1595021388,47,"def f"
-?/\(^\s*\)
-|2,1,1595021376,47,"\\(^\\s*\\)"
-?/def fi
-|2,1,1595020287,47,"def fi"
-? prev
-|2,1,1595019050,,"prev"
-? newHalf
-|2,1,1595019032,,"newHalf"
-?/finishDi
-|2,1,1595015337,47,"finishDi"
-?/\/root
-|2,1,1595013889,47,"\\/root"
-?/\/roo
-|2,1,1594977363,47,"\\/roo"
+|2,1,1596261001,63,"def"
+?/tupl
+|2,1,1596260321,47,"tupl"
+?/print
+|2,1,1596258221,47,"print"
+?/tem
+|2,1,1596258092,47,"tem"
+?/tak
+|2,1,1596256427,47,"tak"
+?/extend
+|2,1,1596278736,47,"extend"
+?/getUse
+|2,1,1596278449,47,"getUse"
+?/def max
+|2,1,1596277318,47,"def max"
+? \v\s+$
+|2,1,1596259884,,"\\v\\s+$"
+? \v\s+
+|2,1,1596259868,,"\\v\\s+"
+?/[
+|2,1,1596256066,47,"["
+??highli
+|2,1,1596255130,63,"highli"
+?/match
+|2,1,1596254483,47,"match"
+??exists
+|2,1,1596229180,63,"exists"
 
 # Expression History (newest to oldest):
+=[0.4,0.74,0.09,0.88,0.51,0.85,0.81,0.78,0.74,0.96,0.19,0.65]
+|2,2,1595474850,,"[0.4,0.74,0.09,0.88,0.51,0.85,0.81,0.78,0.74,0.96,0.19,0.65]"
+=0.4,0.74,0.09,0.88,0.51,0.85,0.81,0.78,0.74,0.96,0.19,0.65
+|2,2,1595474835,,"0.4,0.74,0.09,0.88,0.51,0.85,0.81,0.78,0.74,0.96,0.19,0.65"
 
 # Input Line History (newest to oldest):
 @y
-|2,3,1595323221,,"y"
+|2,3,1596011587,,"y"
 @u
 |2,3,1595323209,,"u"
 
@@ -229,98 +239,44 @@ $
 
 # Registers:
 "0	LINE	0
-	function SmoothScroll(up)
-	    if a:up
-	        let scrollaction=""
-	    else
-	        let scrollaction=""
-	    endif
-	    exec "normal " . scrollaction
-	    redraw
-	    let counter=1
-	    while counter<&scroll
-	        let counter+=1
-	        sleep 1m
-	        redraw
-	        exec "normal " . scrollaction
-	    endwhile
-	endfunction
-	
-	nnoremap <silent> <C-U> :call SmoothScroll(1)<Enter>
-	nnoremap <silent> <C-D> :call SmoothScroll(0)<Enter>
-	
-|3,0,0,1,20,0,1595387827,"function SmoothScroll(up)","    if a:up","        let scrollaction=\"\"","    else","        let scrollaction=\"\"","    endif","    exec \"normal \" . scrollaction","    redraw","    let counter=1","    while counter<&scroll","        let counter+=1","        sleep 1m","        redraw","        exec \"normal \" . scrollaction","    endwhile","endfunction","","nnoremap <silent> <C-U> :call SmoothScroll(1)<Enter>",>54
-|<"nnoremap <silent> <C-D> :call SmoothScroll(0)<Enter>",""
+	export PROMPT='%{%F{3}%}>%{%f%} '
+|3,0,0,1,1,0,1596655984,"export PROMPT='%{%F{3}%}>%{%f%} '"
 ""1	LINE	0
-	let statusdict = {
-	    \ 'n': 'NORMAL', 'i': 'INSERT', 'R': 'REPLACE', 'v': 'VISUAL', 'V': 'VISUAL LINE', "\<C-v>": 'V-BLOCK',
-	    \ 'c': 'COMMAND', 's': 'SELECT', 'S': 'S-LINE', "\<C-s>": 'S-BLOCK', 't': 'TERMINAL',
-	    \ }
-	let &l:statusline = ' %{statusdict[mode()]} ' . '%=%m %t '
-	
-	augroup commenting_blocks_of_code
-	    autocmd!
-	    autocmd FileType c,cpp,java,scala let b:comment_leader = '\/\/ '
-	    autocmd FileType sh,ruby,python   let b:comment_leader = '# '
-	    autocmd FileType haskell          let b:comment_leader = '-- '
-	    autocmd FileType tex              let b:comment_leader = '% '
-	    autocmd FileType vim              let b:comment_leader = '" '
-	augroup END
-	
-	noremap <Leader>cc :s/\(^\s*\)/\1<C-R>=b:comment_leader<CR>/<CR>:nohlsearch<CR>
-	noremap <Leader>cu :s/\(^\s*\)<C-R>=b:comment_leader<CR>/\1/<CR>:nohlsearch<CR>
-|3,1,1,1,17,0,1595387835,"let statusdict = {","    \\ 'n': 'NORMAL', 'i': 'INSERT', 'R': 'REPLACE', 'v': 'VISUAL', 'V': 'VISUAL LINE', \"\\<C-v>\": 'V-BLOCK',","    \\ 'c': 'COMMAND', 's': 'SELECT', 'S': 'S-LINE', \"\\<C-s>\": 'S-BLOCK', 't': 'TERMINAL',","    \\ }","let &l:statusline = ' %{statusdict[mode()]} ' . '%=%m %t '","","augroup commenting_blocks_of_code","    autocmd!","    autocmd FileType c,cpp,java,scala let b:comment_leader = '\\/\\/ '",>67
-|<"    autocmd FileType sh,ruby,python   let b:comment_leader = '# '","    autocmd FileType haskell          let b:comment_leader = '-- '","    autocmd FileType tex              let b:comment_leader = '% '","    autocmd FileType vim              let b:comment_leader = '\" '","augroup END","","noremap <Leader>cc :s/\\(^\\s*\\)/\\1<C-R>=b:comment_leader<CR>/<CR>:nohlsearch<CR>","noremap <Leader>cu :s/\\(^\\s*\\)<C-R>=b:comment_leader<CR>/\\1/<CR>:nohlsearch<CR>"
+	export PROMPT='%{%F{3}%}$%{%f%} '
+|3,1,1,1,1,0,1596657584,"export PROMPT='%{%F{3}%}$%{%f%} '"
 "2	LINE	0
-	function SmoothScroll(up)
-	    if a:up
-	        let scrollaction=""
-	    else
-	        let scrollaction=""
-	    endif
-	    exec "normal " . scrollaction
-	    redraw
-	    let counter=1
-	    while counter<&scroll
-	        let counter+=1
-	        sleep 1m
-	        redraw
-	        exec "normal " . scrollaction
-	    endwhile
-	endfunction
+	points = np.array([[0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2], [2, 0], [2, 1], [2, 2]])
+	from scipy.spatial import Voronoi, voronoi_plot_2d
+	vor = Voronoi(points)
 	
-	nnoremap <silent> <C-U> :call SmoothScroll(1)<Enter>
-	nnoremap <silent> <C-D> :call SmoothScroll(0)<Enter>
-	
-|3,0,2,1,20,0,1595387681,"function SmoothScroll(up)","    if a:up","        let scrollaction=\"\"","    else","        let scrollaction=\"\"","    endif","    exec \"normal \" . scrollaction","    redraw","    let counter=1","    while counter<&scroll","        let counter+=1","        sleep 1m","        redraw","        exec \"normal \" . scrollaction","    endwhile","endfunction","","nnoremap <silent> <C-U> :call SmoothScroll(1)<Enter>",>54
-|<"nnoremap <silent> <C-D> :call SmoothScroll(0)<Enter>",""
-"3	LINE	0
-	  # - { key: J,        mods: Alt,     chars: "\x1bj"                       }
-	  # - { key: K,        mods: Alt,     chars: "\x1bk"                       }
-	  # - { key: H,        mods: Alt,     chars: "\x1bh"                       }
-	  # - { key: L,        mods: Alt,     chars: "\x1bl"                       }
-|3,0,3,1,4,0,1595387578,"  # - { key: J,        mods: Alt,     chars: \"\\x1bj\"                       }","  # - { key: K,        mods: Alt,     chars: \"\\x1bk\"                       }","  # - { key: H,        mods: Alt,     chars: \"\\x1bh\"                       }","  # - { key: L,        mods: Alt,     chars: \"\\x1bl\"                       }"
+|3,0,2,1,4,0,1596582187,"points = np.array([[0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2], [2, 0], [2, 1], [2, 2]])","from scipy.spatial import Voronoi, voronoi_plot_2d","vor = Voronoi(points)",""
+"3	BLOCK	3
+	>>> 
+	... 
+	>>> 
+	>>> 
+|3,0,3,2,4,3,1596582117,">>> ","... ",">>> ",">>> "
 "4	LINE	0
-	nnoremap <Leader>g :grep | copen
-|3,0,4,1,1,0,1595383410,"nnoremap <Leader>g :grep | copen"
+	export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git'"
+|3,0,4,1,1,0,1596568892,"export FZF_DEFAULT_COMMAND=\"rg --files --hidden --glob '!.git'\""
 "5	LINE	0
-	    set notermguicolors
-|3,0,5,1,1,0,1595380251,"    set notermguicolors"
+	source ~/.config/zsh/profile
+|3,0,5,1,1,0,1596568835,"source ~/.config/zsh/profile"
 "6	LINE	0
-	set undodir=~/.config/vim/undo// | set directory=~/.config/vim/swp//
-|3,0,6,1,1,0,1595375230,"set undodir=~/.config/vim/undo// | set directory=~/.config/vim/swp//"
+	alias path='echo $PATH | tr -s ":" "\n"'
+|3,0,6,1,1,0,1596568285,"alias path='echo $PATH | tr -s \":\" \"\\n\"'"
 "7	LINE	0
-	filetype plugin indent on | syntax on | set undofile | set nobackup
-|3,0,7,1,1,0,1595375171,"filetype plugin indent on | syntax on | set undofile | set nobackup"
+	ICLOUD=$HOME/Library/Mobile\ Documents/com~apple~CloudDocs
+|3,0,7,1,1,0,1596495657,"ICLOUD=$HOME/Library/Mobile\\ Documents/com~apple~CloudDocs"
 "8	LINE	0
-	set ignorecase | set smartcase | set backspace=2
-|3,0,8,1,1,0,1595375122,"set ignorecase | set smartcase | set backspace=2"
+	ICLOUD=$HOME/Library/Mobile\ Documents/com~apple~CloudDocs
+|3,0,8,1,1,0,1596469023,"ICLOUD=$HOME/Library/Mobile\\ Documents/com~apple~CloudDocs"
 "9	LINE	0
-	" set fillchars+=vert:\| 
-|3,0,9,1,1,0,1595375038,"\" set fillchars+=vert:\\| "
+	ln -s "$ICLOUD"/root/code code
+|3,0,9,1,1,0,1596468910,"ln -s \"$ICLOUD\"/root/code code"
 "a	CHAR	0
-	dt{%lxj?get
-|3,0,10,0,1,0,1595315426,"dt{%lxj?get"
+	alias path='echo $PATH | tr -s ":" "\n"'
+|3,0,10,0,1,0,1596568094,"alias path='echo $PATH | tr -s \":\" \"\\n\"'"
 "c	LINE	0
 	        print('here')
 	        print(newHalf._origin, newHalf._point, newHalf._vector)
@@ -331,7 +287,15 @@ $
 	        print(nextBreakpoint._halfedge._twin._origin, nextBreakpoint._halfedge._twin._point, nextBreakpoint._halfedge._twin._vector)
 |3,0,12,1,7,0,1595131140,"        print('here')","        print(newHalf._origin, newHalf._point, newHalf._vector)","        print(newHalf._twin._origin, newHalf._twin._point, newHalf._twin._vector)","        print(prevBreakpoint._halfedge._origin, prevBreakpoint._halfedge._point, prevBreakpoint._halfedge._vector)","        print(prevBreakpoint._halfedge._twin._origin, prevBreakpoint._halfedge._twin._point, prevBreakpoint._halfedge._twin._vector)",>116
 |<"        print(nextBreakpoint._halfedge._origin, nextBreakpoint._halfedge._point, nextBreakpoint._halfedge._vector)","        print(nextBreakpoint._halfedge._twin._origin, nextBreakpoint._halfedge._twin._point, nextBreakpoint._halfedge._twin._vector)"
-"g@	LINE	0
+"d	CHAR	0
+	da[xx
+|3,0,13,0,1,0,1596257336,"da[xx"
+"e	LINE	0
+	class Error(Exception):
+	    """Base class for exceptions in this module."""
+	    pass
+|3,0,14,1,3,0,1595655084,"class Error(Exception):","    \"\"\"Base class for exceptions in this module.\"\"\"","    pass"
+"g	LINE	0
 	    let g:onedark_termcolors=16
 	    let g:onedark_color_overrides = {
 	        \ "red": { "gui": "#E06C75", "cterm": "204", "cterm16": "9" },
@@ -345,459 +309,1497 @@ $
 	        \ "visual_grey": { "gui": "#3E4452", "cterm": "237", "cterm16": "7" },
 	        \ "menu_grey": { "gui": "#3E4452", "cterm": "237", "cterm16": "0" },
 	        \ "special_grey": { "gui": "#3B4048", "cterm": "238", "cterm16": "8" },
-	        \ }
-|3,2,16,1,14,0,1595372283,"    let g:onedark_termcolors=16","    let g:onedark_color_overrides = {","        \\ \"red\": { \"gui\": \"#E06C75\", \"cterm\": \"204\", \"cterm16\": \"9\" },","        \\ \"dark_red\": { \"gui\": \"#BE5046\", \"cterm\": \"196\", \"cterm16\": \"1\" },","        \\ \"yellow\": { \"gui\": \"#E5C07B\", \"cterm\": \"180\", \"cterm16\": \"11\" },",>95
+	        \ }G
+|3,0,16,1,14,0,1595372283,"    let g:onedark_termcolors=16","    let g:onedark_color_overrides = {","        \\ \"red\": { \"gui\": \"#E06C75\", \"cterm\": \"204\", \"cterm16\": \"9\" },","        \\ \"dark_red\": { \"gui\": \"#BE5046\", \"cterm\": \"196\", \"cterm16\": \"1\" },","        \\ \"yellow\": { \"gui\": \"#E5C07B\", \"cterm\": \"180\", \"cterm16\": \"11\" },",>95
 |<"        \\ \"dark_yellow\": { \"gui\": \"#D19A66\", \"cterm\": \"173\", \"cterm16\": \"3\" },","        \\ \"visual_black\": { \"gui\": \"NONE\", \"cterm\": \"NONE\", \"cterm16\": \"0\" },","        \\ \"comment_grey\": { \"gui\": \"#5C6370\", \"cterm\": \"59\", \"cterm16\": \"8\" },","        \\ \"gutter_fg_grey\": { \"gui\": \"#4B5263\", \"cterm\": \"238\", \"cterm16\": \"0\" },","        \\ \"cursor_grey\": { \"gui\": \"#2C323C\", \"cterm\": \"236\", \"cterm16\": \"8\" },",>95
-|<"        \\ \"visual_grey\": { \"gui\": \"#3E4452\", \"cterm\": \"237\", \"cterm16\": \"7\" },","        \\ \"menu_grey\": { \"gui\": \"#3E4452\", \"cterm\": \"237\", \"cterm16\": \"0\" },","        \\ \"special_grey\": { \"gui\": \"#3B4048\", \"cterm\": \"238\", \"cterm16\": \"8\" },","        \\ }"
+|<"        \\ \"visual_grey\": { \"gui\": \"#3E4452\", \"cterm\": \"237\", \"cterm16\": \"7\" },","        \\ \"menu_grey\": { \"gui\": \"#3E4452\", \"cterm\": \"237\", \"cterm16\": \"0\" },","        \\ \"special_grey\": { \"gui\": \"#3B4048\", \"cterm\": \"238\", \"cterm16\": \"8\" },","        \\ }G"
+"j	CHAR	0
+	kj"+y9k/wiggle"+
+|3,0,19,0,1,0,1596275215,"kj\"+y9k/wiggle\"+"
+"q@	CHAR	0
+	i"	wwi"	jB
+|3,2,26,0,1,0,1596468576,"i\"	wwi\"	jB"
 "-	CHAR	0
-	 
-|3,0,36,0,1,0,1595387479," "
+	import Calc
+|3,0,36,0,1,0,1596578419,"import Calc"
 
 # File marks:
-'0  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/other/rebuild/oldVim/customStatusLine.txt
-|4,48,1,0,1595387838,"~/Library/Mobile Documents/com~apple~CloudDocs/root/other/rebuild/oldVim/customStatusLine.txt"
-'1  41  0  ~/.config/vim/vimrc
-|4,49,41,0,1595387810,"~/.config/vim/vimrc"
-'2  182  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py
-|4,50,182,0,1595387669,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py"
-'3  1  0  ~/.config/vim/vimrc
-|4,51,1,0,1595387584,"~/.config/vim/vimrc"
-'4  1  0  ~/.config/vim/vimrc
-|4,52,1,0,1595387584,"~/.config/vim/vimrc"
-'5  75  2  ~/.config/alacritty/alacritty.yml
-|4,53,75,2,1595387579,"~/.config/alacritty/alacritty.yml"
-'6  74  76  ~/.config/alacritty/alacritty.yml
-|4,54,74,76,1595387381,"~/.config/alacritty/alacritty.yml"
-'7  73  76  ~/.config/alacritty/alacritty.yml
-|4,55,73,76,1595387381,"~/.config/alacritty/alacritty.yml"
-'8  95  8  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py
-|4,56,95,8,1595387344,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py"
-'9  95  8  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py
-|4,57,95,8,1595387344,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py"
+'0  12  3  ~/.config/.gitignore
+|4,48,12,3,1596669387,"~/.config/.gitignore"
+'1  2  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py
+|4,49,2,0,1596669079,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py"
+'2  4  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py
+|4,50,4,0,1596668552,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py"
+'3  17  37  ~/.config/zsh/aliases
+|4,51,17,37,1596657660,"~/.config/zsh/aliases"
+'4  48  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py
+|4,52,48,0,1596656075,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py"
+'5  48  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py
+|4,53,48,0,1596656075,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py"
+'6  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py
+|4,54,1,0,1596656063,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py"
+'7  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py
+|4,55,1,0,1596656063,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py"
+'8  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py
+|4,56,1,0,1596656063,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py"
+'9  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py
+|4,57,1,0,1596656063,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py"
 
 # Jumplist (newest first):
--'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/other/rebuild/oldVim/customStatusLine.txt
-|4,39,1,0,1595387838,"~/Library/Mobile Documents/com~apple~CloudDocs/root/other/rebuild/oldVim/customStatusLine.txt"
--'  41  0  ~/.config/vim/vimrc
-|4,39,41,0,1595387810,"~/.config/vim/vimrc"
--'  41  0  ~/.config/vim/vimrc
-|4,39,41,0,1595387810,"~/.config/vim/vimrc"
--'  72  0  ~/.config/vim/vimrc
-|4,39,72,0,1595387677,"~/.config/vim/vimrc"
--'  72  0  ~/.config/vim/vimrc
-|4,39,72,0,1595387677,"~/.config/vim/vimrc"
--'  1  0  ~/.config/vim/vimrc
-|4,39,1,0,1595387671,"~/.config/vim/vimrc"
--'  1  0  ~/.config/vim/vimrc
-|4,39,1,0,1595387671,"~/.config/vim/vimrc"
--'  182  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py
-|4,39,182,0,1595387669,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py"
--'  182  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py
-|4,39,182,0,1595387669,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py"
--'  182  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py
-|4,39,182,0,1595387669,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py"
--'  182  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py
-|4,39,182,0,1595387669,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py"
--'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py
-|4,39,1,0,1595387586,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py"
--'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py
-|4,39,1,0,1595387586,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py"
--'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py
-|4,39,1,0,1595387586,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py"
--'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py
-|4,39,1,0,1595387586,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py"
--'  1  0  ~/.config/vim/vimrc
-|4,39,1,0,1595387584,"~/.config/vim/vimrc"
--'  1  0  ~/.config/vim/vimrc
-|4,39,1,0,1595387584,"~/.config/vim/vimrc"
--'  1  0  ~/.config/vim/vimrc
-|4,39,1,0,1595387584,"~/.config/vim/vimrc"
--'  1  0  ~/.config/vim/vimrc
-|4,39,1,0,1595387584,"~/.config/vim/vimrc"
--'  75  2  ~/.config/alacritty/alacritty.yml
-|4,39,75,2,1595387579,"~/.config/alacritty/alacritty.yml"
--'  75  2  ~/.config/alacritty/alacritty.yml
-|4,39,75,2,1595387579,"~/.config/alacritty/alacritty.yml"
--'  75  2  ~/.config/alacritty/alacritty.yml
-|4,39,75,2,1595387579,"~/.config/alacritty/alacritty.yml"
--'  75  2  ~/.config/alacritty/alacritty.yml
-|4,39,75,2,1595387579,"~/.config/alacritty/alacritty.yml"
--'  75  2  ~/.config/alacritty/alacritty.yml
-|4,39,75,2,1595387579,"~/.config/alacritty/alacritty.yml"
--'  75  2  ~/.config/alacritty/alacritty.yml
-|4,39,75,2,1595387579,"~/.config/alacritty/alacritty.yml"
--'  75  2  ~/.config/alacritty/alacritty.yml
-|4,39,75,2,1595387579,"~/.config/alacritty/alacritty.yml"
--'  75  2  ~/.config/alacritty/alacritty.yml
-|4,39,75,2,1595387579,"~/.config/alacritty/alacritty.yml"
--'  75  2  ~/.config/alacritty/alacritty.yml
-|4,39,75,2,1595387579,"~/.config/alacritty/alacritty.yml"
--'  75  2  ~/.config/alacritty/alacritty.yml
-|4,39,75,2,1595387579,"~/.config/alacritty/alacritty.yml"
--'  75  2  ~/.config/alacritty/alacritty.yml
-|4,39,75,2,1595387579,"~/.config/alacritty/alacritty.yml"
--'  75  2  ~/.config/alacritty/alacritty.yml
-|4,39,75,2,1595387579,"~/.config/alacritty/alacritty.yml"
--'  75  2  ~/.config/alacritty/alacritty.yml
-|4,39,75,2,1595387579,"~/.config/alacritty/alacritty.yml"
--'  75  2  ~/.config/alacritty/alacritty.yml
-|4,39,75,2,1595387579,"~/.config/alacritty/alacritty.yml"
--'  75  2  ~/.config/alacritty/alacritty.yml
-|4,39,75,2,1595387579,"~/.config/alacritty/alacritty.yml"
--'  75  2  ~/.config/alacritty/alacritty.yml
-|4,39,75,2,1595387579,"~/.config/alacritty/alacritty.yml"
--'  1  0  ~/.config/alacritty/alacritty.yml
-|4,39,1,0,1595387394,"~/.config/alacritty/alacritty.yml"
--'  1  0  ~/.config/alacritty/alacritty.yml
-|4,39,1,0,1595387394,"~/.config/alacritty/alacritty.yml"
--'  1  0  ~/.config/alacritty/alacritty.yml
-|4,39,1,0,1595387394,"~/.config/alacritty/alacritty.yml"
--'  1  0  ~/.config/alacritty/alacritty.yml
-|4,39,1,0,1595387394,"~/.config/alacritty/alacritty.yml"
--'  1  0  ~/.config/alacritty/alacritty.yml
-|4,39,1,0,1595387394,"~/.config/alacritty/alacritty.yml"
--'  1  0  ~/.config/alacritty/alacritty.yml
-|4,39,1,0,1595387394,"~/.config/alacritty/alacritty.yml"
--'  1  0  ~/.config/alacritty/alacritty.yml
-|4,39,1,0,1595387394,"~/.config/alacritty/alacritty.yml"
--'  1  0  ~/.config/alacritty/alacritty.yml
-|4,39,1,0,1595387394,"~/.config/alacritty/alacritty.yml"
--'  1  0  ~/.config/alacritty/alacritty.yml
-|4,39,1,0,1595387394,"~/.config/alacritty/alacritty.yml"
--'  1  0  ~/.config/alacritty/alacritty.yml
-|4,39,1,0,1595387394,"~/.config/alacritty/alacritty.yml"
--'  1  0  ~/.config/alacritty/alacritty.yml
-|4,39,1,0,1595387394,"~/.config/alacritty/alacritty.yml"
--'  1  0  ~/.config/alacritty/alacritty.yml
-|4,39,1,0,1595387394,"~/.config/alacritty/alacritty.yml"
--'  1  0  ~/.config/alacritty/alacritty.yml
-|4,39,1,0,1595387394,"~/.config/alacritty/alacritty.yml"
--'  1  0  ~/.config/alacritty/alacritty.yml
-|4,39,1,0,1595387394,"~/.config/alacritty/alacritty.yml"
--'  1  0  ~/.config/alacritty/alacritty.yml
-|4,39,1,0,1595387394,"~/.config/alacritty/alacritty.yml"
--'  1  0  ~/.config/alacritty/alacritty.yml
-|4,39,1,0,1595387394,"~/.config/alacritty/alacritty.yml"
--'  74  76  ~/.config/alacritty/alacritty.yml
-|4,39,74,76,1595387381,"~/.config/alacritty/alacritty.yml"
--'  73  76  ~/.config/alacritty/alacritty.yml
-|4,39,73,76,1595387381,"~/.config/alacritty/alacritty.yml"
--'  74  76  ~/.config/alacritty/alacritty.yml
-|4,39,74,76,1595387381,"~/.config/alacritty/alacritty.yml"
--'  73  76  ~/.config/alacritty/alacritty.yml
-|4,39,73,76,1595387381,"~/.config/alacritty/alacritty.yml"
--'  74  76  ~/.config/alacritty/alacritty.yml
-|4,39,74,76,1595387381,"~/.config/alacritty/alacritty.yml"
--'  73  76  ~/.config/alacritty/alacritty.yml
-|4,39,73,76,1595387381,"~/.config/alacritty/alacritty.yml"
--'  74  76  ~/.config/alacritty/alacritty.yml
-|4,39,74,76,1595387381,"~/.config/alacritty/alacritty.yml"
--'  73  76  ~/.config/alacritty/alacritty.yml
-|4,39,73,76,1595387381,"~/.config/alacritty/alacritty.yml"
--'  74  76  ~/.config/alacritty/alacritty.yml
-|4,39,74,76,1595387381,"~/.config/alacritty/alacritty.yml"
--'  73  76  ~/.config/alacritty/alacritty.yml
-|4,39,73,76,1595387381,"~/.config/alacritty/alacritty.yml"
--'  74  76  ~/.config/alacritty/alacritty.yml
-|4,39,74,76,1595387381,"~/.config/alacritty/alacritty.yml"
--'  73  76  ~/.config/alacritty/alacritty.yml
-|4,39,73,76,1595387381,"~/.config/alacritty/alacritty.yml"
--'  74  76  ~/.config/alacritty/alacritty.yml
-|4,39,74,76,1595387381,"~/.config/alacritty/alacritty.yml"
--'  73  76  ~/.config/alacritty/alacritty.yml
-|4,39,73,76,1595387381,"~/.config/alacritty/alacritty.yml"
--'  74  76  ~/.config/alacritty/alacritty.yml
-|4,39,74,76,1595387381,"~/.config/alacritty/alacritty.yml"
--'  73  76  ~/.config/alacritty/alacritty.yml
-|4,39,73,76,1595387381,"~/.config/alacritty/alacritty.yml"
--'  74  76  ~/.config/alacritty/alacritty.yml
-|4,39,74,76,1595387381,"~/.config/alacritty/alacritty.yml"
--'  73  76  ~/.config/alacritty/alacritty.yml
-|4,39,73,76,1595387381,"~/.config/alacritty/alacritty.yml"
--'  74  76  ~/.config/alacritty/alacritty.yml
-|4,39,74,76,1595387381,"~/.config/alacritty/alacritty.yml"
--'  73  76  ~/.config/alacritty/alacritty.yml
-|4,39,73,76,1595387381,"~/.config/alacritty/alacritty.yml"
--'  74  76  ~/.config/alacritty/alacritty.yml
-|4,39,74,76,1595387381,"~/.config/alacritty/alacritty.yml"
--'  73  76  ~/.config/alacritty/alacritty.yml
-|4,39,73,76,1595387381,"~/.config/alacritty/alacritty.yml"
--'  74  76  ~/.config/alacritty/alacritty.yml
-|4,39,74,76,1595387381,"~/.config/alacritty/alacritty.yml"
--'  73  76  ~/.config/alacritty/alacritty.yml
-|4,39,73,76,1595387381,"~/.config/alacritty/alacritty.yml"
--'  74  76  ~/.config/alacritty/alacritty.yml
-|4,39,74,76,1595387381,"~/.config/alacritty/alacritty.yml"
--'  73  76  ~/.config/alacritty/alacritty.yml
-|4,39,73,76,1595387381,"~/.config/alacritty/alacritty.yml"
--'  74  76  ~/.config/alacritty/alacritty.yml
-|4,39,74,76,1595387381,"~/.config/alacritty/alacritty.yml"
--'  73  76  ~/.config/alacritty/alacritty.yml
-|4,39,73,76,1595387381,"~/.config/alacritty/alacritty.yml"
--'  74  76  ~/.config/alacritty/alacritty.yml
-|4,39,74,76,1595387381,"~/.config/alacritty/alacritty.yml"
--'  73  76  ~/.config/alacritty/alacritty.yml
-|4,39,73,76,1595387381,"~/.config/alacritty/alacritty.yml"
--'  74  76  ~/.config/alacritty/alacritty.yml
-|4,39,74,76,1595387381,"~/.config/alacritty/alacritty.yml"
--'  73  76  ~/.config/alacritty/alacritty.yml
-|4,39,73,76,1595387381,"~/.config/alacritty/alacritty.yml"
--'  72  0  ~/.config/alacritty/alacritty.yml
-|4,39,72,0,1595387375,"~/.config/alacritty/alacritty.yml"
--'  72  0  ~/.config/alacritty/alacritty.yml
-|4,39,72,0,1595387375,"~/.config/alacritty/alacritty.yml"
--'  72  0  ~/.config/alacritty/alacritty.yml
-|4,39,72,0,1595387375,"~/.config/alacritty/alacritty.yml"
--'  72  0  ~/.config/alacritty/alacritty.yml
-|4,39,72,0,1595387375,"~/.config/alacritty/alacritty.yml"
--'  72  0  ~/.config/alacritty/alacritty.yml
-|4,39,72,0,1595387375,"~/.config/alacritty/alacritty.yml"
--'  72  0  ~/.config/alacritty/alacritty.yml
-|4,39,72,0,1595387375,"~/.config/alacritty/alacritty.yml"
--'  72  0  ~/.config/alacritty/alacritty.yml
-|4,39,72,0,1595387375,"~/.config/alacritty/alacritty.yml"
--'  72  0  ~/.config/alacritty/alacritty.yml
-|4,39,72,0,1595387375,"~/.config/alacritty/alacritty.yml"
--'  72  0  ~/.config/alacritty/alacritty.yml
-|4,39,72,0,1595387375,"~/.config/alacritty/alacritty.yml"
--'  72  0  ~/.config/alacritty/alacritty.yml
-|4,39,72,0,1595387375,"~/.config/alacritty/alacritty.yml"
--'  72  0  ~/.config/alacritty/alacritty.yml
-|4,39,72,0,1595387375,"~/.config/alacritty/alacritty.yml"
--'  72  0  ~/.config/alacritty/alacritty.yml
-|4,39,72,0,1595387375,"~/.config/alacritty/alacritty.yml"
--'  72  0  ~/.config/alacritty/alacritty.yml
-|4,39,72,0,1595387375,"~/.config/alacritty/alacritty.yml"
--'  72  0  ~/.config/alacritty/alacritty.yml
-|4,39,72,0,1595387375,"~/.config/alacritty/alacritty.yml"
--'  72  0  ~/.config/alacritty/alacritty.yml
-|4,39,72,0,1595387375,"~/.config/alacritty/alacritty.yml"
--'  72  0  ~/.config/alacritty/alacritty.yml
-|4,39,72,0,1595387375,"~/.config/alacritty/alacritty.yml"
+-'  12  3  ~/.config/.gitignore
+|4,39,12,3,1596669387,"~/.config/.gitignore"
+-'  1  0  ~/.config/.gitignore
+|4,39,1,0,1596669369,"~/.config/.gitignore"
+-'  2  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py
+|4,39,2,0,1596669079,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py"
+-'  2  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py
+|4,39,2,0,1596669079,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py"
+-'  4  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py
+|4,39,4,0,1596668552,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py"
+-'  4  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py
+|4,39,4,0,1596668552,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py"
+-'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py
+|4,39,1,0,1596668457,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py"
+-'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py
+|4,39,1,0,1596668457,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py"
+-'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py
+|4,39,1,0,1596668330,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py"
+-'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py
+|4,39,1,0,1596668330,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py"
+-'  17  37  ~/.config/zsh/aliases
+|4,39,17,37,1596657660,"~/.config/zsh/aliases"
+-'  17  37  ~/.config/zsh/aliases
+|4,39,17,37,1596657660,"~/.config/zsh/aliases"
+-'  17  37  ~/.config/zsh/aliases
+|4,39,17,37,1596657660,"~/.config/zsh/aliases"
+-'  17  37  ~/.config/zsh/aliases
+|4,39,17,37,1596657660,"~/.config/zsh/aliases"
+-'  17  37  ~/.config/zsh/aliases
+|4,39,17,37,1596657660,"~/.config/zsh/aliases"
+-'  17  37  ~/.config/zsh/aliases
+|4,39,17,37,1596657660,"~/.config/zsh/aliases"
+-'  2  0  ~/.config/zsh/aliases
+|4,39,2,0,1596657612,"~/.config/zsh/aliases"
+-'  2  0  ~/.config/zsh/aliases
+|4,39,2,0,1596657612,"~/.config/zsh/aliases"
+-'  2  0  ~/.config/zsh/aliases
+|4,39,2,0,1596657612,"~/.config/zsh/aliases"
+-'  2  0  ~/.config/zsh/aliases
+|4,39,2,0,1596657612,"~/.config/zsh/aliases"
+-'  2  0  ~/.config/zsh/aliases
+|4,39,2,0,1596657612,"~/.config/zsh/aliases"
+-'  2  0  ~/.config/zsh/aliases
+|4,39,2,0,1596657612,"~/.config/zsh/aliases"
+-'  1  0  ~/.config/zsh/aliases
+|4,39,1,0,1596657611,"~/.config/zsh/aliases"
+-'  1  0  ~/.config/zsh/aliases
+|4,39,1,0,1596657611,"~/.config/zsh/aliases"
+-'  1  0  ~/.config/zsh/aliases
+|4,39,1,0,1596657611,"~/.config/zsh/aliases"
+-'  1  0  ~/.config/zsh/aliases
+|4,39,1,0,1596657611,"~/.config/zsh/aliases"
+-'  1  0  ~/.config/zsh/aliases
+|4,39,1,0,1596657611,"~/.config/zsh/aliases"
+-'  1  0  ~/.config/zsh/aliases
+|4,39,1,0,1596657611,"~/.config/zsh/aliases"
+-'  1  7  ~/.config/zsh/.zshrc
+|4,39,1,7,1596657607,"~/.config/zsh/.zshrc"
+-'  1  7  ~/.config/zsh/.zshrc
+|4,39,1,7,1596657607,"~/.config/zsh/.zshrc"
+-'  1  7  ~/.config/zsh/.zshrc
+|4,39,1,7,1596657607,"~/.config/zsh/.zshrc"
+-'  1  7  ~/.config/zsh/.zshrc
+|4,39,1,7,1596657607,"~/.config/zsh/.zshrc"
+-'  1  7  ~/.config/zsh/.zshrc
+|4,39,1,7,1596657607,"~/.config/zsh/.zshrc"
+-'  1  7  ~/.config/zsh/.zshrc
+|4,39,1,7,1596657607,"~/.config/zsh/.zshrc"
+-'  2  0  ~/.config/zsh/functions
+|4,39,2,0,1596657606,"~/.config/zsh/functions"
+-'  2  0  ~/.config/zsh/functions
+|4,39,2,0,1596657606,"~/.config/zsh/functions"
+-'  2  0  ~/.config/zsh/functions
+|4,39,2,0,1596657606,"~/.config/zsh/functions"
+-'  2  0  ~/.config/zsh/functions
+|4,39,2,0,1596657606,"~/.config/zsh/functions"
+-'  2  0  ~/.config/zsh/functions
+|4,39,2,0,1596657606,"~/.config/zsh/functions"
+-'  2  0  ~/.config/zsh/functions
+|4,39,2,0,1596657606,"~/.config/zsh/functions"
+-'  2  7  ~/.config/zsh/.zshrc
+|4,39,2,7,1596657602,"~/.config/zsh/.zshrc"
+-'  2  7  ~/.config/zsh/.zshrc
+|4,39,2,7,1596657602,"~/.config/zsh/.zshrc"
+-'  2  7  ~/.config/zsh/.zshrc
+|4,39,2,7,1596657602,"~/.config/zsh/.zshrc"
+-'  2  7  ~/.config/zsh/.zshrc
+|4,39,2,7,1596657602,"~/.config/zsh/.zshrc"
+-'  2  7  ~/.config/zsh/.zshrc
+|4,39,2,7,1596657602,"~/.config/zsh/.zshrc"
+-'  2  7  ~/.config/zsh/.zshrc
+|4,39,2,7,1596657602,"~/.config/zsh/.zshrc"
+-'  48  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py
+|4,39,48,0,1596656075,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py"
+-'  48  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py
+|4,39,48,0,1596656075,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py"
+-'  48  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py
+|4,39,48,0,1596656075,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py"
+-'  48  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py
+|4,39,48,0,1596656075,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py"
+-'  48  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py
+|4,39,48,0,1596656075,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py"
+-'  48  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py
+|4,39,48,0,1596656075,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py"
+-'  48  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py
+|4,39,48,0,1596656075,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py"
+-'  48  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py
+|4,39,48,0,1596656075,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py"
+-'  48  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py
+|4,39,48,0,1596656075,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py"
+-'  48  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py
+|4,39,48,0,1596656075,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py"
+-'  48  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py
+|4,39,48,0,1596656075,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py"
+-'  48  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py
+|4,39,48,0,1596656075,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py"
+-'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py
+|4,39,1,0,1596656068,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py"
+-'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py
+|4,39,1,0,1596656068,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py"
+-'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py
+|4,39,1,0,1596656068,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py"
+-'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py
+|4,39,1,0,1596656068,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py"
+-'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py
+|4,39,1,0,1596656068,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py"
+-'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py
+|4,39,1,0,1596656068,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py"
+-'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py
+|4,39,1,0,1596656068,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py"
+-'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py
+|4,39,1,0,1596656068,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py"
+-'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py
+|4,39,1,0,1596656068,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py"
+-'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py
+|4,39,1,0,1596656068,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py"
+-'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py
+|4,39,1,0,1596656068,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py"
+-'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py
+|4,39,1,0,1596656068,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py"
+-'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py
+|4,39,1,0,1596656063,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py"
+-'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py
+|4,39,1,0,1596656063,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py"
+-'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py
+|4,39,1,0,1596656063,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py"
+-'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py
+|4,39,1,0,1596656063,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py"
+-'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py
+|4,39,1,0,1596656063,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py"
+-'  1  0  ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py
+|4,39,1,0,1596656063,"~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py"
+-'  5  24  ~/.config/zsh/.zshrc
+|4,39,5,24,1596656005,"~/.config/zsh/.zshrc"
+-'  6  24  ~/.config/zsh/.zshrc
+|4,39,6,24,1596656005,"~/.config/zsh/.zshrc"
+-'  6  24  ~/.config/zsh/.zshrc
+|4,39,6,24,1596656005,"~/.config/zsh/.zshrc"
+-'  6  24  ~/.config/zsh/.zshrc
+|4,39,6,24,1596656005,"~/.config/zsh/.zshrc"
+-'  6  24  ~/.config/zsh/.zshrc
+|4,39,6,24,1596656005,"~/.config/zsh/.zshrc"
+-'  5  24  ~/.config/zsh/.zshrc
+|4,39,5,24,1596656005,"~/.config/zsh/.zshrc"
+-'  6  24  ~/.config/zsh/.zshrc
+|4,39,6,24,1596656005,"~/.config/zsh/.zshrc"
+-'  6  24  ~/.config/zsh/.zshrc
+|4,39,6,24,1596656005,"~/.config/zsh/.zshrc"
+-'  6  24  ~/.config/zsh/.zshrc
+|4,39,6,24,1596656005,"~/.config/zsh/.zshrc"
+-'  6  24  ~/.config/zsh/.zshrc
+|4,39,6,24,1596656005,"~/.config/zsh/.zshrc"
+-'  5  24  ~/.config/zsh/.zshrc
+|4,39,5,24,1596656005,"~/.config/zsh/.zshrc"
+-'  6  24  ~/.config/zsh/.zshrc
+|4,39,6,24,1596656005,"~/.config/zsh/.zshrc"
+-'  6  24  ~/.config/zsh/.zshrc
+|4,39,6,24,1596656005,"~/.config/zsh/.zshrc"
+-'  6  24  ~/.config/zsh/.zshrc
+|4,39,6,24,1596656005,"~/.config/zsh/.zshrc"
+-'  6  24  ~/.config/zsh/.zshrc
+|4,39,6,24,1596656005,"~/.config/zsh/.zshrc"
+-'  5  24  ~/.config/zsh/.zshrc
+|4,39,5,24,1596656005,"~/.config/zsh/.zshrc"
+-'  6  24  ~/.config/zsh/.zshrc
+|4,39,6,24,1596656005,"~/.config/zsh/.zshrc"
+-'  6  24  ~/.config/zsh/.zshrc
+|4,39,6,24,1596656005,"~/.config/zsh/.zshrc"
+-'  6  24  ~/.config/zsh/.zshrc
+|4,39,6,24,1596656005,"~/.config/zsh/.zshrc"
+-'  6  24  ~/.config/zsh/.zshrc
+|4,39,6,24,1596656005,"~/.config/zsh/.zshrc"
+-'  5  24  ~/.config/zsh/.zshrc
+|4,39,5,24,1596656005,"~/.config/zsh/.zshrc"
+-'  6  24  ~/.config/zsh/.zshrc
+|4,39,6,24,1596656005,"~/.config/zsh/.zshrc"
+-'  6  24  ~/.config/zsh/.zshrc
+|4,39,6,24,1596656005,"~/.config/zsh/.zshrc"
+-'  6  24  ~/.config/zsh/.zshrc
+|4,39,6,24,1596656005,"~/.config/zsh/.zshrc"
 
 # History of marks within files (newest to oldest):
 
-> ~/Library/Mobile Documents/com~apple~CloudDocs/root/other/rebuild/oldVim/customStatusLine.txt
-	*	1595387835	0
+> ~/.config/.gitignore
+	*	1596669386	0
+	"	12	3
+	^	12	4
+	.	12	3
+	+	12	3
+
+> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram.py
+	*	1596668554	0
+	"	2	0
+	^	102	31
+	.	102	30
+	+	54	13
+	+	60	4
+	+	71	4
+	+	75	11
+	+	75	0
+	+	76	0
+	+	78	4
+	+	80	4
+	+	81	4
+	+	83	4
+	+	84	4
+	+	83	19
+	+	84	39
+	+	86	30
+	+	88	11
+	+	91	49
+	+	94	9
+	+	95	9
+	+	98	19
+	+	80	34
+	+	81	34
+	+	83	73
+	+	84	73
+	+	133	24
+	+	135	34
+	+	136	0
+	+	101	22
+	+	106	13
+	+	132	8
+	+	132	26
+	+	133	0
+	+	19	10
+	+	133	27
+	+	135	44
+	+	134	46
+	+	132	21
+	+	105	0
+	+	101	25
+	+	106	0
+	+	19	37
+	+	59	0
+	+	101	0
+	+	105	0
+	+	106	0
+	+	132	0
+	+	133	0
+	+	134	0
+	+	135	0
+	+	134	0
+	+	105	0
+	+	11	17
+	+	46	75
+	+	47	77
+	+	26	33
+	+	132	0
+	+	131	0
+	+	131	19
+	+	101	24
+	+	106	22
+	+	131	0
+	+	105	11
+	+	131	18
+	+	119	0
+	+	118	0
+	+	118	23
+	+	116	49
+	+	113	0
+	+	122	0
+	+	116	0
+	+	113	0
+	+	131	0
+	+	101	19
+	+	106	17
+	+	105	16
+	+	131	45
+	+	105	0
+	+	118	34
+	+	118	33
+	+	131	0
+	+	131	22
+	+	128	0
+	+	134	54
+	+	128	21
+	+	127	38
+	+	128	0
+	+	131	46
+	+	104	16
+	+	128	54
+	+	131	31
+	+	131	44
+	+	129	0
+	+	134	54
+	+	135	31
+	+	134	0
+	+	102	49
+	+	103	0
+	+	17	0
+	+	134	0
+	+	102	30
+	m	68	8
+
+> ~/.config/zsh/aliases
+	*	1596657657	0
+	"	17	37
+	^	17	38
+	.	17	37
+	+	19	13
+	+	18	0
+	+	20	21
+	+	12	17
+	+	4	0
+	+	3	23
+	+	18	0
+	+	11	25
+	+	18	0
+	+	12	0
+	+	15	0
+	+	12	11
+	+	13	10
+	+	21	0
+	+	16	0
+	+	17	37
+
+> ~/.config/zsh/.zshrc
+	*	1596657606	0
+	"	1	7
+	.	3	0
+	+	1	0
+	+	6	47
+	+	3	0
+	+	6	0
+	+	4	0
+	+	3	0
+	+	4	0
+	+	3	0
+
+> ~/.config/zsh/functions
+	*	1596657603	0
+	"	2	0
+	^	7	25
+	.	8	0
+	+	33	0
+	+	15	0
+	+	28	0
+	+	15	0
+	+	16	0
+	+	13	0
+	+	19	0
+	+	16	0
+	+	14	14
+	+	29	0
+	+	19	0
+	+	18	0
+	+	27	0
+	+	8	57
+	+	4	10
+	+	8	11
+	+	4	58
+	+	5	13
+	+	8	0
+	+	8	52
+	+	9	0
+	+	8	0
+	+	6	14
+	+	8	11
+	+	7	24
+	+	8	0
+
+> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Diagram 2.py
+	*	1596656074	0
+	"	48	0
+
+> ~/.config/zsh/.zprofile
+	*	1596581882	0
+	"	3	149
+	^	3	150
+	.	3	149
+	+	19	39
+	+	3	149
+
+> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py
+	*	1596578735	0
+	"	55	10
+	^	55	11
+	.	55	10
+	+	157	0
+	+	156	63
+	+	17	20
+	+	18	0
+	+	22	0
+	+	20	0
+	+	27	19
+	+	27	44
+	+	1	41
+	+	13	27
+	+	14	27
+	+	152	0
+	+	159	0
+	+	15	21
+	+	37	34
+	+	38	33
+	+	40	30
+	+	152	0
+	+	159	0
+	+	125	44
+	+	135	20
+	+	40	45
+	+	154	18
+	+	27	39
+	+	128	45
+	+	138	35
+	+	137	0
+	+	138	35
+	+	138	65
+	+	140	0
+	+	138	0
+	+	137	0
+	+	138	0
+	+	137	0
+	+	28	0
+	+	27	18
+	+	28	0
+	+	29	0
+	+	43	0
+	+	154	18
+	+	27	0
+	+	57	18
+	+	59	0
+	+	61	0
+	+	71	42
+	+	72	0
+	+	57	0
+	+	56	28
+	+	57	53
+	+	71	42
+	+	72	43
+	+	77	24
+	+	78	61
+	+	77	15
+	+	78	46
+	+	59	0
+	+	60	0
+	+	57	38
+	+	156	0
+	+	157	0
+	+	159	0
+	+	154	0
+	+	152	0
+	+	157	0
+	+	152	0
+	+	156	0
+	+	157	0
+	+	152	0
+	+	157	0
+	+	12	32
+	+	152	0
+	+	157	0
+	+	154	18
+	+	159	0
+	+	154	18
+	+	152	0
+	+	157	0
+	+	159	0
+	+	152	0
+	+	12	0
+	+	15	0
+	+	83	51
+	+	158	60
+	+	152	0
+	+	156	0
+	+	159	0
+	+	156	0
+	+	158	0
+	+	157	0
+	+	158	44
+	+	154	16
+	+	54	0
+	+	55	24
+	+	3	0
+	+	55	0
+	+	56	0
+	+	55	123
+	+	155	20
+	+	55	146
+	+	55	10
+	j	242	0
+
+> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/motion.txt
+	*	1596573239	0
+	"	1220	6
+
+> ~/.config/.ghcup/env
+	*	1596569589	0
+	"	1	0
+
+> ~/.ghcup/env
+	*	1596569550	0
+	"	1	0
+
+> ~/.config/zsh/.zlogin
+	*	1596568976	0
+	"	8	0
+	^	13	80
+	.	13	79
+	+	18	0
+	+	13	79
+
+> ~/.config/zsh/profile
+	*	1596553810	0
+	"	17	32
+	^	17	33
+	.	17	32
+	+	3	162
+	+	3	0
+	+	3	135
+	+	16	0
+	+	15	0
+	+	16	0
+	+	15	49
+	+	16	6
+	+	14	47
+	+	16	40
+	+	3	139
+	+	3	18
+	+	3	144
+	+	17	32
+
+> ~/.vimgolf/put/5ba020f91abf2d000951055c.output.Vimgolf2
+	*	1596496959	0
+	"	1	0
+
+> /private/var/folders/n3/jdgvy5k50n77xdpkzvrf9w2r0000gn/T/vimgolf20200803-31720-teoggy.Vimgolf1
+	*	1596496937	0
+	"	1	0
+
+> ~/Library/Mobile Documents/com~apple~CloudDocs/root/other/rebuild/install.sh
+	*	1596469025	0
+	"	5	0
+	^	4	12
+	.	5	0
+	+	8	82
+	+	8	83
+	+	10	84
+	+	10	83
+	+	4	11
+	+	8	13
+	+	8	12
+	+	10	12
+	+	8	17
+	+	10	17
+	+	8	14
+	+	10	14
+	+	8	35
+	+	10	31
+	+	12	23
+	+	10	0
+	+	11	0
+	+	8	0
+	+	9	0
+	+	4	0
+	+	5	0
+
+> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
+	*	1596466441	0
+	"	114	0
+	^	42	16
+	.	42	15
+	+	193	50
+	+	192	45
+	+	33	6
+	+	34	0
+	+	109	24
+	+	195	17
+	+	69	0
+	+	68	35
+	+	61	7
+	+	62	0
+	+	64	0
+	+	126	11
+	+	124	0
+	+	123	11
+	+	105	11
+	+	59	15
+	+	192	37
+	+	192	51
+	+	193	51
+	+	109	0
+	+	111	0
+	+	109	0
+	+	38	20
+	+	43	4
+	+	16	23
+	+	38	20
+	+	43	0
+	+	42	20
+	+	3	0
+	+	1	10
+	+	42	10
+	+	42	25
+	+	38	4
+	+	38	8
+	+	37	19
+	+	38	9
+	+	42	0
+	+	42	16
+	+	16	0
+	+	20	0
+	+	21	0
+	+	18	13
+	+	17	20
+	+	18	0
+	+	17	21
+	+	16	8
+	+	17	8
+	+	16	0
+	+	38	0
+	+	37	28
+	+	38	0
+	+	42	16
+	+	37	12
+	+	37	18
+	+	37	8
+	+	37	13
+	+	37	23
+	+	37	35
+	+	37	15
+	+	37	0
+	+	37	41
+	+	37	29
+	+	37	27
+	+	42	16
+	+	37	19
+	+	40	32
+	+	41	21
+	+	40	21
+	+	41	30
+	+	149	21
+	+	149	0
+	+	195	4
+	+	195	0
+	+	195	26
+	+	195	16
+	+	114	0
+	+	148	18
+	+	195	0
+	+	19	15
+	+	120	24
+	+	119	10
+	+	136	37
+	+	137	17
+	+	140	15
+	+	136	38
+	+	137	14
+	+	140	12
+	+	120	0
+	+	119	0
+	+	120	65
+	+	191	0
+	+	192	0
+	+	175	0
+	+	177	0
+	+	161	0
+	+	162	0
+	+	98	31
+	+	40	18
+	+	41	7
+	+	42	15
+
+> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Heap.py
+	*	1596407263	0
+	"	90	0
+	^	65	44
+	.	90	0
+	+	62	47
+	+	62	0
+	+	88	0
+	+	62	27
+	+	69	38
+	+	69	57
+	+	69	0
+	+	62	42
+	+	64	15
+	+	65	0
+	+	64	29
+	+	64	0
+	+	63	21
+	+	64	37
+	+	65	41
+	+	67	20
+	+	62	39
+	+	63	43
+	+	69	0
+	+	79	23
+	+	80	26
+	+	82	24
+	+	83	21
+	+	91	54
+	+	90	26
+	+	91	30
+	+	92	31
+	+	86	46
+	+	85	25
+	+	86	34
+	+	71	64
+	+	70	86
+	+	86	16
+	+	86	0
+	+	88	27
+	+	89	0
+	+	90	76
+	+	91	45
+	+	92	0
+	+	63	48
+	+	1	0
+	+	28	0
+	+	26	0
+	+	27	0
+	+	28	0
+	+	60	31
+	+	60	24
+	+	60	0
+	+	48	0
+	+	55	47
+	+	56	47
+	+	55	32
+	+	56	33
+	+	54	0
+	+	59	25
+	+	59	31
+	+	59	52
+	+	59	46
+	+	59	37
+	+	60	0
+	+	71	61
+	+	65	37
+	+	59	33
+	+	31	22
+	+	42	37
+	+	55	11
+	+	56	38
+	+	64	53
+	+	65	52
+	+	92	15
+	+	91	19
+	+	65	54
+	+	64	29
+	+	55	22
+	+	55	16
+	+	59	0
+	+	58	0
+	+	55	0
+	+	28	0
+	+	91	19
+	+	92	15
+	+	63	23
+	+	64	49
+	+	65	53
+	+	9	36
+	+	13	37
+	+	17	23
+	+	61	27
+	+	62	31
+	+	63	41
+	+	33	22
+	+	45	36
+	+	51	33
+	+	64	33
+	+	61	0
+	+	17	0
+	+	64	0
+	+	70	0
+	+	90	0
+	a	65	33
+
+> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/undo.txt
+	*	1596404384	0
+	"	58	56
+
+> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/shuffling.py
+	*	1596386307	0
+	"	20	0
+
+> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/primeChecker.py
+	*	1596386296	0
+	"	7	0
+
+> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/undotree_2
+	*	1596384084	0
+	"	2	0
+	.	3	0
+	+	3953	0
+	+	3819	0
+	+	3831	0
+	+	3829	0
+	+	3819	0
+	+	3621	0
+	+	3372	0
+	+	2399	0
+	+	1410	0
+	+	1407	0
+	+	1015	0
+	+	1018	0
+	+	1015	0
+	+	989	0
+	+	994	0
+	+	295	0
+	+	315	0
+	+	295	0
+	+	5	0
+	+	159	0
+	+	188	0
+	+	5	0
+	+	188	0
+	+	3	0
+
+> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/diffpanel_3
+	*	1596384079	0
+	"	1	0
+	.	2	0
+	+	6	0
+	+	2	0
+
+> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/pythonfunctionlog2.txt
+	*	1596379157	0
+	"	1	9
+	.	1	0
+	+	1	0
+
+> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/pythonfunctionlog.txt
+	*	1596379153	0
+	"	18	9
+	.	1	0
+	+	1	0
+	+	2	0
+	+	1	0
+
+> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/BinTree.py
+	*	1596374706	0
+	"	88	12
+	^	154	68
+	.	151	0
+	+	18	42
+	+	24	37
+	+	15	19
+	+	24	38
+	+	15	19
+	+	13	36
+	+	27	26
+	+	28	36
+	+	23	27
+	+	32	29
+	+	33	99
+	+	35	89
+	+	84	32
+	+	152	56
+	+	152	62
+	+	153	64
+	+	154	66
+	+	150	24
+	+	152	43
+	+	152	67
+	+	154	71
+	+	155	24
+	+	150	19
+	+	141	18
+	+	155	0
+	+	156	20
+	+	4	32
+	+	5	29
+	+	145	0
+	+	145	22
+	+	202	28
+	+	201	35
+	+	209	34
+	+	210	36
+	+	72	26
+	+	74	40
+	+	64	33
+	+	69	33
+	+	217	0
+	+	69	0
+	+	84	40
+	+	16	0
+	+	19	0
+	+	15	0
+	+	32	0
+	+	33	0
+	+	35	0
+	+	84	0
+	+	13	34
+	+	15	23
+	+	23	26
+	+	24	36
+	+	27	25
+	+	28	35
+	+	20	30
+	+	21	19
+	+	20	31
+	+	21	20
+	+	210	23
+	+	209	33
+	+	210	26
+	+	202	27
+	+	201	34
+	+	85	56
+	+	138	24
+	+	19	23
+	+	22	23
+	+	20	37
+	+	32	35
+	+	33	91
+	+	137	0
+	+	151	60
+	+	138	0
+	+	19	0
+	+	22	0
+	+	137	0
+	+	151	43
+	+	154	45
+	+	152	44
+	+	153	45
+	+	152	49
+	+	137	0
+	+	36	0
+	+	127	0
+	+	22	23
+	+	33	32
+	+	33	0
+	+	32	31
+	+	22	0
+	+	154	0
+	+	155	0
+	+	155	39
+	+	155	42
+	+	151	57
+	+	152	63
+	+	153	65
+	+	154	67
+	+	151	0
+
+> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
+	*	1596353852	0
+	"	109	12
+	^	31	30
+	.	31	29
+	+	1	0
+	+	1	47
+	+	1	0
+	+	1	26
+	+	1	0
+	+	1	22
+	+	1	0
+	+	1	210
+	+	1	38
+	+	1	24
+	+	1	0
+	+	1	34
+	+	1	25
+	+	1	26
+	+	1	25
+	+	1	26
+	+	1	25
+	+	1	26
+	+	1	29
+	+	1	0
+	+	80	22
+	+	81	22
+	+	88	0
+	+	30	26
+	+	31	29
+
+> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/V
+	*	1596331253	0
+	"	1	0
+
+> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/.git/COMMIT_EDITMSG
+	*	1596312248	0
+	"	1	25
+	^	1	26
+	.	1	25
+	+	1	46
+	+	1	25
+
+> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/editing.txt
+	*	1596274823	0
+	"	694	27
+
+> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/various.txt
+	*	1596271758	0
+	"	190	35
+
+> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/insert.txt
+	*	1596271646	0
+	"	1913	56
+
+> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/web/misc/quickstart.sh
+	*	1596270259	0
+	"	3	0
+
+> ~/Library/Mobile
+	*	1596270155	0
+	"	1	0
+
+> ~/.config/vim/defaults.vim
+	*	1596259910	0
+	"	87	0
+	.	40	0
+	+	22	0
+	+	21	0
+	+	20	54
+	+	24	75
+	+	25	11
+	+	28	23
+	+	35	33
+	+	38	0
+	+	4	0
+	+	2	16
+	+	48	29
+	+	37	8
+	+	35	66
+	+	39	74
+	+	43	8
+	+	47	43
+	+	49	0
+	+	50	28
+	+	53	21
+	+	55	0
+	+	57	0
+	+	17	0
+	+	13	16
+	+	12	58
+	+	13	69
+	+	56	44
+	+	59	21
+	+	63	0
+	+	65	27
+	+	67	23
+	+	75	0
+	+	77	0
+	+	75	27
+	+	1	76
+	+	87	0
+	+	89	0
+	+	75	76
+	+	76	38
+	+	88	34
+	+	75	0
+	+	29	0
+	+	28	70
+	+	29	0
+	+	30	0
+	+	33	4
+	+	67	0
+	+	65	28
+	+	66	0
+	+	65	28
+	+	68	0
+	+	68	30
+	+	68	0
+	+	70	11
+	+	74	0
+	+	8	24
+	+	6	55
+	+	74	0
+	+	75	0
+	+	73	41
+	+	74	0
+	+	68	0
+	+	72	35
+	+	86	14
+	+	86	0
+	+	83	35
+	+	85	0
+	+	82	30
+	+	82	19
+	+	82	0
+	+	85	10
+	+	82	11
+	+	82	0
+	+	83	18
+	+	82	45
+	+	83	1
+	+	80	18
+	+	84	10
+	+	83	0
+	+	82	56
+	+	81	12
+	+	79	56
+	+	82	52
+	+	83	48
+	+	84	0
+	+	70	30
+	+	66	12
+	+	63	9
+	+	60	25
+	+	44	14
+	+	45	13
+	+	51	12
+	+	54	13
+	+	14	0
+	+	15	0
+	+	17	0
+	+	21	0
+	+	22	0
+	+	26	0
+	+	30	0
+	+	40	0
+
+> ~/.config/vim/vimrc
+	*	1596259817	0
+	"	2	7
+	^	33	38
+	.	33	0
+	+	20	16
+	+	16	17
+	+	20	89
+	+	16	18
+	+	20	18
+	+	1	0
+	+	4	0
+	+	1	32
+	+	12	0
+	+	16	0
+	+	20	0
+	+	16	18
+	+	4	33
+	+	16	39
+	+	16	34
+	+	51	0
+	+	9	0
+	+	51	22
+	+	54	0
+	+	54	76
+	+	4	0
+	+	3	8
+	+	1	0
+	+	54	0
+	+	54	24
+	+	54	0
+	+	1	0
+	+	16	0
+	+	54	0
+	+	16	48
+	+	2	0
+	+	8	4
+	+	8	0
+	+	20	0
+	+	16	21
+	+	9	13
+	+	10	13
+	+	16	21
+	+	4	0
+	+	14	17
+	+	16	35
+	+	42	23
+	+	42	26
+	+	40	29
+	+	41	28
+	+	43	0
+	+	42	42
+	+	41	70
+	+	40	42
+	+	42	29
+	+	36	12
+	+	35	0
+	+	36	1
+	+	42	0
+	+	29	0
+	+	33	0
+	+	42	0
+	+	33	0
+	+	37	0
+	+	39	28
+	+	38	75
+	+	20	0
+	+	17	44
+	+	33	0
+	+	19	21
+	+	16	0
+	+	8	0
+	+	51	0
+	+	38	1
+	+	29	0
+	+	38	0
+	+	27	0
+	+	7	14
+	+	51	0
+	+	16	18
+	+	3	0
+	+	18	9
+	+	19	9
+	+	1	0
+	+	34	28
+	+	34	19
+	+	34	17
+	+	34	19
+	+	35	0
+	+	34	27
+	+	14	40
+	+	14	0
+	+	11	20
+	+	16	0
+	+	14	0
+	+	16	74
+	+	14	38
+	+	13	0
+	+	16	0
+	+	1	0
+	+	15	61
+	+	14	0
+	+	15	17
+	+	42	0
+	+	33	0
+
+> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/skrt.txt
+	*	1596257945	0
+	"	603	0
+	^	1403	0
+	.	1402	88
+	+	1	0
+	+	1	1
+	+	1	73
+	+	1	0
+	+	1	73
+	+	2	69
+	+	102	68
+	+	202	89
+	+	302	70
+	+	402	68
+	+	1402	88
+
+> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/yeet.txt
+	*	1596256210	0
+	"	208	0
+	^	251	0
+	.	250	23
+	+	103	39
+	+	153	42
+	+	203	39
+	+	250	23
+
+> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Nonsense2
+	*	1596255911	0
+	"	252	0
+	^	252	0
+	.	252	0
+	+	251	42
+	+	252	0
+
+> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/eval.txt
+	*	1596247171	0
+	"	7114	4
+
+> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/spell.txt
+	*	1596240620	0
+	"	94	7
+
+> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/index.txt
+	*	1596237546	0
+	"	811	36
+
+> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/starting.txt
+	*	1596167912	0
+	"	1489	6
+
+> ~/vimrc.profile
+	*	1596167793	0
+	"	10	4
+
+> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/web/BarakBinyamin.github.io/touchtype/touchtype.html
+	*	1596162781	0
+	"	1	0
+
+> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/web/BarakBinyamin.github.io/touchtype/darktheme.css
+	*	1596162676	0
+	"	3	0
+	.	3	0
+	+	4	26
+	+	5	0
+	+	3	0
+
+> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/web/BarakBinyamin.github.io/touchtype/touchtype.js
+	*	1596162616	0
+	"	75	62
+	.	7	0
+	+	1	0
+	+	7	0
+
+> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/BUMP.py
+	*	1596155863	0
+	"	4	4
+
+> ~/Desktop/timer-2.html
+	*	1596153678	0
+	"	59	0
+	.	13	0
+	+	1	0
+	+	1	43
+	+	1	0
+	+	1	30
+	+	1	29
+	+	1	0
+	+	1	62
+	+	1	0
+	+	3	0
+	+	13	0
+
+> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/.gitignore
+	*	1596109981	0
+	"	8	4
+	^	8	5
+	.	8	4
+	+	7	4
+	+	6	11
+	+	8	4
+
+> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/OldCode
+	*	1596106948	0
+	"	216	20
+	^	216	21
+	.	216	20
+	+	97	0
+	+	134	34
+	+	133	10
+	+	134	0
+	+	148	0
+	+	134	0
+	+	140	31
+	+	148	0
+	+	146	8
+	+	128	28
+	+	140	31
+	+	128	29
+	+	146	0
+	+	145	22
+	+	131	23
+	+	147	0
+	+	134	32
+	+	134	0
+	+	145	33
+	+	145	32
+	+	145	30
+	+	145	0
+	+	144	35
+	+	144	0
+	+	131	0
+	+	130	0
+	+	130	37
+	+	130	0
+	+	130	16
+	+	130	0
+	+	57	0
+	+	130	0
+	+	187	61
+	+	202	0
+	+	203	0
+	+	202	33
+	+	217	0
+	+	216	20
+
+> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/version7.txt
+	*	1596095848	0
+	"	284	1
+
+> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/usr_41.txt
+	*	1596095815	0
+	"	712	0
+
+> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/options.txt
+	*	1596095792	0
+	"	5488	6
+
+> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/quickfix.txt
+	*	1596090135	0
+	"	247	7
+
+> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/autocmd.txt
+	*	1596088856	0
+	"	1719	20
+
+> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/new.txt
+	*	1596077147	0
+	"	1	33
+
+> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/new.tzt
+	*	1596077122	0
+	"	1	0
+
+> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/change.txt
+	*	1596074688	0
+	"	1106	0
+
+> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/testfornist.py
+	*	1595983585	0
+	"	2	0
+	.	1	0
+	+	2	0
+	+	2	17
+	+	2	0
+	+	2	10
+	+	2	0
+	+	1	0
+
+> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/V
+	*	1595983306	0
+	"	1	0
+
+> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/decimal.py
+	*	1595976554	0
+	"	38	0
+	^	4	27
+	.	46	0
+	+	44	39
+	+	3	0
+	+	2	28
+	+	4	26
+	+	18	0
+	+	19	0
+	+	46	0
+
+> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Python 3.8.4 (default, Jul 14 2020, 02
+	*	1595713232	0
+	"	1	0
+
+> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Errors.py
+	*	1595656480	0
 	"	1	0
 	.	1	0
 	+	1	0
 
-> ~/.config/vim/vimrc
-	*	1595387808	0
-	"	41	0
-	^	24	29
-	.	72	0
-	+	66	73
-	+	67	71
-	+	68	74
-	+	68	71
-	+	72	0
-	+	11	0
-	+	12	19
-	+	8	29
-	+	38	22
-	+	42	17
-	+	41	17
-	+	74	0
-	+	70	0
-	+	57	0
-	+	74	0
-	+	56	0
-	+	55	0
-	+	44	0
-	+	55	2
-	+	34	0
-	+	55	0
-	+	68	0
-	+	55	0
-	+	55	6
-	+	55	0
-	+	34	0
-	+	68	0
-	+	54	0
-	+	50	22
-	+	51	0
-	+	54	3
-	+	68	0
-	+	55	0
-	+	69	4
-	+	54	0
-	+	2	17
-	+	8	47
-	+	1	0
-	+	53	0
-	+	66	0
-	+	69	0
-	+	65	74
-	+	64	0
-	+	65	73
-	+	18	17
-	+	72	0
-	+	71	0
-	+	72	0
-	+	72	26
-	+	72	14
-	+	19	24
-	+	20	0
-	+	21	0
-	+	22	0
-	+	20	24
-	+	21	24
-	+	22	24
-	+	68	0
-	+	61	0
-	+	68	0
-	+	61	0
-	+	17	0
-	+	39	0
-	+	23	25
-	+	54	0
-	+	74	0
-	+	69	0
-	+	50	0
-	+	69	0
-	+	72	0
-	+	72	17
-	+	73	0
-	+	9	0
-	+	8	0
-	+	3	26
-	+	4	0
-	+	3	27
-	+	9	0
-	+	6	0
-	+	3	0
-	+	2	18
-	+	9	0
-	+	7	0
-	+	55	0
-	+	25	0
-	+	55	0
-	+	28	0
-	+	30	0
-	+	28	0
-	+	29	0
-	+	25	0
-	+	24	24
-	+	23	29
-	+	24	28
-	+	24	29
-	+	25	0
-	+	72	0
-
-> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Voronoi.py
-	*	1595387666	0
-	"	182	0
-	^	62	0
-	.	62	0
-	+	185	0
-	+	73	56
-	+	80	0
-	+	76	0
-	+	73	0
-	+	172	0
-	+	179	28
-	+	172	82
-	+	172	0
-	+	172	12
-	+	179	0
-	+	172	0
-	+	172	98
-	+	172	0
-	+	179	0
-	+	172	0
-	+	21	0
-	+	23	0
-	+	26	0
-	+	28	0
-	+	29	0
-	+	179	0
-	+	172	92
-	+	173	86
-	+	179	28
-	+	174	114
-	+	175	126
-	+	179	28
-	+	179	29
-	+	177	261
-	+	179	0
-	+	177	0
-	+	176	0
-	+	153	52
-	+	154	0
-	+	153	78
-	+	184	29
-	+	179	28
-	+	31	0
-	+	184	23
-	+	184	0
-	+	182	0
-	+	184	0
-	+	183	0
-	+	31	0
-	+	29	0
-	+	179	0
-	+	63	0
-	+	152	20
-	+	153	35
-	+	152	21
-	+	179	0
-	+	71	12
-	+	1	21
-	+	71	0
-	+	88	0
-	+	179	26
-	+	92	0
-	+	173	0
-	+	172	0
-	+	179	0
-	+	178	81
-	+	179	0
-	+	178	0
-	+	173	0
-	+	177	0
-	+	178	0
-	+	85	38
-	+	89	34
-	+	68	28
-	+	84	32
-	+	84	42
-	+	81	18
-	+	179	32
-	+	180	67
-	+	150	0
-	+	21	13
-	+	23	17
-	+	26	17
-	+	28	13
-	+	29	13
-	+	68	0
-	+	71	9
-	+	81	9
-	+	84	13
-	+	181	0
-	+	185	29
-	+	83	0
-	+	62	0
-	+	21	0
-	+	23	0
-	+	26	0
-	+	28	0
-	+	29	0
-	+	68	0
-	+	71	0
-	+	83	0
-	+	84	0
-	+	181	0
-	+	62	0
-	j	179	0
+> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/helphelp.txt
+	*	1595573050	0
+	"	153	7
 
 > ~/.config/alacritty/alacritty.yml
-	*	1595387578	0
-	"	75	2
-	^	73	13
-	.	76	0
+	*	1595572703	0
+	"	13	0
+	^	13	0
+	.	13	0
 	+	63	11
 	+	63	15
 	+	63	11
@@ -832,12 +1834,12 @@ $
 	+	2	0
 	+	61	20
 	+	63	20
-	+	13	20
+	+	12	35
 	+	5	12
 	+	1	0
 	+	42	0
 	+	41	0
-	+	13	0
+	+	12	15
 	+	72	80
 	+	72	0
 	+	74	0
@@ -847,787 +1849,165 @@ $
 	+	73	12
 	+	75	51
 	+	76	0
+	+	12	15
+	+	76	0
+	+	76	1
+	+	76	0
+	+	12	15
+	+	13	0
 
-> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/insert.txt
-	*	1595386141	0
-	"	800	39
-
-> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/change.txt
-	*	1595385970	0
-	"	397	7
-
-> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Errors.py
-	*	1595385824	0
-	"	6	4
-
-> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/undotree_2
-	*	1595385772	0
-	"	14	1
-	.	3	0
-	+	1792	0
-	+	1810	0
-	+	1812	0
-	+	1792	0
-	+	1676	0
-	+	1674	0
-	+	1557	0
-	+	1423	0
-	+	1435	0
-	+	1433	0
-	+	1423	0
-	+	1225	0
-	+	976	0
-	+	3	0
-
-> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/diffpanel_3
-	*	1595385762	0
+> ~/.zsh_history
+	*	1595571659	0
 	"	1	0
-	.	6	0
-	+	8	0
-	+	7	0
-	+	6	0
 
-> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/quickfix.txt
-	*	1595385696	0
-	"	509	35
+> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/pattern.txt
+	*	1595568638	0
+	"	763	49
 
-> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/index.txt
-	*	1595385658	0
-	"	656	36
+> ~/.vimgolf/put/5d7f565deac0df000cfc2154.output.txt
+	*	1595495281	0
+	"	1	0
 
-> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/options.txt
-	*	1595385362	0
-	"	3585	41
+> /private/var/folders/n3/jdgvy5k50n77xdpkzvrf9w2r0000gn/T/vimgolf20200723-71027-2midz1.txt
+	*	1595495274	0
+	"	1	0
 
-> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Calc.py
-	*	1595383994	0
-	"	114	0
-	.	27	0
-	+	141	0
-	+	126	0
-	+	187	0
-	+	137	0
-	+	3	27
-	+	137	54
-	+	137	0
-	+	53	0
-	+	38	0
-	+	28	21
-	+	28	0
-	+	53	24
-	+	28	0
-	+	53	0
-	+	53	17
-	+	22	0
-	+	48	0
-	+	49	0
-	+	53	0
-	+	22	4
-	+	60	0
-	+	59	0
-	+	60	0
-	+	106	0
-	+	107	0
-	+	106	49
-	+	107	0
-	+	109	46
-	+	110	0
-	+	71	10
-	+	69	14
-	+	71	22
-	+	70	10
-	+	67	31
-	+	72	0
-	+	70	12
-	+	73	16
-	+	27	16
-	+	27	11
-	+	27	5
-	+	27	0
+> /usr/local/lib/ruby/gems/2.7.0/bin/V
+	*	1595494873	0
+	"	1	0
 
-> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/convert.py
-	*	1595382302	0
+> ~/.vimgolf/put/5c742a5a50bdf70006d43280.output.file
+	*	1595485148	0
+	"	1	0
+
+> /private/var/folders/n3/jdgvy5k50n77xdpkzvrf9w2r0000gn/T/vimgolf20200723-70496-arnbn1.file
+	*	1595485129	0
+	"	1	0
+
+> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/if_cscop.txt
+	*	1595472247	0
+	"	92	12
+
+> ~/.config/vim/plugged/vim-unimpaired/doc/unimpaired.txt
+	*	1595469737	0
+	"	16	0
+
+> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/repeat.txt
+	*	1595467079	0
+	"	51	27
+
+> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/channel.txt
+	*	1595459843	0
+	"	1128	0
+
+> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/diff.txt
+	*	1595459814	0
+	"	242	43
+
+> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/pi_netrw.txt
+	*	1595458580	0
+	"	1114	38
+
+> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/help.txt
+	*	1595458450	0
+	"	1	0
+
+> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/version6.txt
+	*	1595456108	0
+	"	4823	24
+
+> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/version5.txt
+	*	1595456100	0
+	"	5299	26
+
+> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/usr_24.txt
+	*	1595456099	0
+	"	507	38
+
+> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/gui_w32.txt
+	*	1595455978	0
+	"	261	66
+
+> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/cmdline.txt
+	*	1595455969	0
+	"	84	0
+
+> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/tagsrch.txt
+	*	1595455702	0
+	"	836	7
+
+> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/windows.txt
+	*	1595453407	0
+	"	1158	26
+
+> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/intro.txt
+	*	1595452557	0
+	"	690	32
+
+> ~/.config/vim/functions.vim
+	*	1595451767	0
+	"	1	0
+	.	1	0
+	+	1	0
+	+	1	6
+	+	1	11
+	+	1	0
+	+	1	10
+	+	1	0
+	+	1	14
+	+	1	0
+	+	1	2
+	+	1	0
+	+	1	18
+	+	1	10
+	+	1	39
+	+	1	0
+	+	1	39
+	+	1	0
+
+> ~/.config/vim/b1
+	*	1595451174	0
+	"	1	0
+
+> /private/tmp/tempFile
+	*	1595447408	0
+	"	1	0
+
+> ~/.vimgolf/put/4d1a34ccfa85f32065000004.output.txt
+	*	1595423810	0
+	"	1	0
+
+> /private/var/folders/n3/jdgvy5k50n77xdpkzvrf9w2r0000gn/T/vimgolf20200722-64192-13k7fjq.txt
+	*	1595423784	0
+	"	1	0
+
+> ~/.vimgolf/put/5ed4f6a27d1dd8000c27e2f6.output.txt
+	*	1595422120	0
 	"	2	0
 
-> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/V
-	*	1595375289	0
+> /private/var/folders/n3/jdgvy5k50n77xdpkzvrf9w2r0000gn/T/vimgolf20200722-63886-167ps9y.txt
+	*	1595422116	0
+	"	2	0
+	^	2	0
+	.	2	0
+	+	2	0
+
+> ~/.vimgolf/put/55b18bbea9c2c30d04000001.output.txt
+	*	1595420452	0
 	"	1	0
+
+> /private/var/folders/n3/jdgvy5k50n77xdpkzvrf9w2r0000gn/T/vimgolf20200722-63604-1wpmte.txt
+	*	1595420438	0
+	"	1	0
+
+> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/defaults.vim
+	*	1595414109	0
+	"	1	0
+
+> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/usr_05.txt
+	*	1595413160	0
+	"	281	0
 
 > /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/syntax.txt
-	*	1595373440	0
-	"	4848	53
-
-> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Heap.py
-	*	1595372686	0
-	"	23	0
-	^	3	9
-	.	3	8
-	+	1	0
-	+	3	8
-
-> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/various.txt
-	*	1595372097	0
-	"	713	46
-
-> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/BinTree.py
-	*	1595371793	0
-	"	134	8
-	.	134	0
-	+	97	0
-	+	134	34
-	+	133	10
-	+	134	0
-	+	144	0
-	+	134	0
-	+	140	31
-	+	144	0
-	+	142	8
-	+	128	28
-	+	140	31
-	+	128	29
-	+	142	0
-	+	141	22
-	+	131	23
-	+	143	0
-	+	134	32
-	+	134	0
-
-> ~/.config/README.md
-	*	1595363559	0
-	"	4	0
-	^	4	36
-	.	3	71
-	+	4	35
-	+	3	71
-
-> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/DCEL.py
-	*	1595360577	0
-	"	46	8
-	^	25	211
-	.	25	210
-	+	89	0
-	+	88	47
-	+	96	0
-	+	94	0
-	+	92	0
-	+	93	0
-	+	93	26
-	+	93	0
-	+	92	0
-	+	93	22
-	+	92	0
-	+	93	0
-	+	92	0
-	+	25	210
-
-> ~/D
-	*	1595360381	0
-	"	1	0
-
-> ~/.config/tmux/tmux.conf
-	*	1595332106	0
-	"	46	30
-	^	44	31
-	.	44	30
-	+	47	0
-	+	47	29
-	+	47	12
-	+	47	7
-	+	39	0
-	+	46	0
-	+	47	12
-	+	47	7
-	+	47	3
-	+	46	28
-	+	12	0
-	+	14	12
-	+	47	0
-	+	46	28
-	+	46	30
-	+	46	0
-	+	45	0
-	+	46	0
-	+	47	0
-	+	45	29
-	+	46	0
-	+	47	0
-	+	42	58
-	+	41	0
-	+	40	32
-	+	43	0
-	+	44	30
-
-> /usr/local/Cellar/vim/8.2.1250/share/vim/vim82/doc/term.txt
-	*	1595326991	0
-	"	535	0
-
-> ~/.zshenv
-	*	1595326619	0
-	"	1	8
-	.	2	0
-	+	1	0
-	+	2	0
-
-> ~/.config/zsh/aliases
-	*	1595326596	0
-	"	3	23
-	^	3	24
-	.	3	23
-	+	15	13
-	+	14	0
-	+	16	21
-	+	12	17
-	+	4	0
-	+	3	23
-
-> ~/.config/zsh/functions
-	*	1595325054	0
-	"	1	0
-	^	20	0
-	.	20	0
-	+	26	0
-	+	8	0
-	+	21	0
-	+	8	0
-	+	9	0
-	+	6	0
-	+	12	0
-	+	9	0
-	+	7	14
-	+	22	0
-	+	12	0
-	+	11	0
-	+	20	0
-
-> /usr/share/vim/vim81/doc/options.txt
-	*	1595323945	0
-	"	7715	0
-
-> /usr/share/vim/vim81/doc/various.txt
-	*	1595314907	0
-	"	458	3
-
-> ~/.config/vim/plugged/onedark.vim/autoload/onedark.vim
-	*	1595314713	0
-	"	23	0
-
-> ~/.config/vim/plugged/onedark.vim/colors/onedark.vim
-	*	1595314661	0
-	"	49	0
-
-> ~/.config/vim/plugged/onedark.vim/term/One Dark.itermcolors
-	*	1595312262	0
-	"	33	0
-
-> ~/.config/vim/plugged/onedark.vim/term/One Dark.kitty
-	*	1595312229	0
-	"	17	0
-
-> ~/.config/vim/plugged/onedark.vim/term/One Dark.terminal
-	*	1595312195	0
-	"	193	0
-
-> ~/.config/vim/plugged/onedark.vim/term/One Dark.alacritty
-	*	1595312167	0
-	"	15	16
-
-> ~/.config/vim/vimr
-	*	1595292946	0
-	"	1	0
-
-> ~/.config/vim/plugged/onedark.vim/term/One Dark.Xresources
-	*	1595286627	0
-	"	37	0
-
-> ~/Library/Mobile Documents/com~apple~CloudDocs/root/other/rebuild/install.sh
-	*	1595228715	0
-	"	8	28
-	^	11	11
-	.	8	28
-	+	4	7
-	+	8	6
-	+	4	75
-	+	8	12
-	+	9	12
-	+	8	13
-	+	9	13
-	+	10	0
-	+	4	12
-	+	8	12
-	+	4	42
-	+	8	0
-	+	20	0
-	+	4	42
-	+	16	0
-	+	5	3
-	+	16	0
-	+	4	42
-	+	11	0
-	+	8	0
-	+	4	42
-	+	11	0
-	+	8	6
-	+	8	21
-	+	8	0
-	+	9	83
-	+	11	90
-	+	15	74
-	+	12	0
-	+	13	19
-	+	14	19
-	+	18	64
-	+	27	0
-	+	19	0
-	+	17	18
-	+	9	82
-	+	15	0
-	+	18	0
-	+	8	0
-	+	8	16
-	+	8	10
-	+	9	10
-	+	10	10
-	+	6	0
-	+	8	28
-
-> ~/.config/zsh/.zshrc
-	*	1595227489	0
-	"	7	46
-	^	7	47
-	.	7	47
-	+	1	0
-	+	7	47
-
-> ~/.config/.gitignore
-	*	1595224087	0
-	"	11	0
-	^	11	0
-	.	11	0
-	+	1	4
-	+	9	0
-	+	8	10
-	+	9	0
-	+	9	10
-	+	1	0
-	+	10	0
-	+	9	8
-	+	10	13
-	+	9	0
-	+	2	0
-	+	3	0
-	+	9	0
-	+	14	0
-	+	13	0
-	+	9	0
-	+	18	0
-	+	12	8
-	+	17	12
-	+	18	0
-	+	12	13
-	+	11	0
-
-> ~/.config/vim/.netrwhist
-	*	1595222968	0
-	"	1	0
-
-> ~/.config/git/config
-	*	1595222824	0
-	"	6	0
-
-> ~/.config/git/.gitignore
-	*	1595222398	0
-	"	1	0
-
-> ~/.config/git/gitignore_global
-	*	1595222276	0
-	"	1	8
-	^	1	9
-	.	1	8
-	+	1	8
-
-> ~/Library/Mobile Documents/com~apple~CloudDocs/root/other/rebuild/config/vim/vimrc
-	*	1595211584	0
-	"	17	0
-	.	17	0
-	+	14	0
-	+	14	44
-	+	11	0
-	+	14	0
-	+	11	38
-	+	11	1
-	+	11	52
-	+	11	18
-	+	11	30
-	+	11	62
-	+	11	13
-	+	11	18
-	+	11	50
-	+	11	67
-	+	11	0
-	+	11	108
-	+	11	13
-	+	11	0
-	+	11	9
-	+	11	0
-	+	11	83
-	+	11	43
-	+	11	88
-	+	11	5
-	+	11	13
-	+	11	0
-	+	34	28
-	+	11	0
-	+	42	0
-	+	44	48
-	+	44	49
-	+	18	0
-	+	17	14
-	+	16	0
-	+	16	7
-	+	14	0
-	+	11	19
-	+	35	7
-	+	35	8
-	+	35	0
-	+	45	0
-	+	11	0
-	+	14	0
-	+	7	0
-	+	45	0
-	+	13	0
-	+	7	0
-	+	11	0
-	+	11	13
-	+	13	0
-	+	11	0
-	+	14	0
-	+	11	0
-	+	14	0
-	+	12	0
-	+	11	0
-	+	13	0
-	+	16	8
-	+	35	26
-	+	22	0
-	+	14	0
-	+	16	0
-	+	17	0
-	+	16	0
-	+	34	0
-	+	32	0
-	+	35	0
-	+	32	0
-	+	33	0
-	+	6	27
-	+	6	26
-	+	6	43
-	+	7	0
-	+	6	0
-	+	45	0
-	+	10	0
-	+	27	0
-	+	11	0
-	+	10	13
-	+	17	0
-	+	28	0
-	+	38	22
-	+	39	0
-	+	38	19
-	+	39	49
-	+	28	0
-	+	38	24
-	+	39	30
-	+	38	0
-	+	39	0
-	+	37	0
-	+	21	0
-	+	44	45
-	+	45	0
-	+	44	45
-	+	10	0
-	+	7	25
-	+	7	0
-	+	4	0
-	+	17	0
-
-> ~/Library/Mobile Documents/com~apple~CloudDocs/root/other/rebuild/config/tmux/tmux.conf
-	*	1595207458	0
-	"	4	15
-	^	4	16
-	.	4	15
-	+	3	27
-	+	44	0
-	+	1	0
-	+	44	51
-	+	45	0
-	+	44	58
-	+	4	15
-
-> ~/Library/Mobile Documents/com~apple~CloudDocs/root/other/rebuild/config/zsh/.zshrc
-	*	1595207169	0
-	"	8	0
-	^	4	0
-
-> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/zshrc
-	*	1595207154	0
-	"	1	0
-
-> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/OldCode
-	*	1595193878	0
-	"	1	0
-
-> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/!$(fzf)
-	*	1595193685	0
-	"	1	0
-
-> ~/Library/Mobile Documents/com~apple~CloudDocs/root/other/rebuild/config/alacritty/alacritty.yml
-	*	1595185641	0
-	"	1	0
-
-> ~/Library/Mobile Documents/com~apple~CloudDocs/root/other/rebuild/config/zsh/zshrc
-	*	1595184761	0
-	"	1	0
-	^	17	117
-	.	8	0
-	+	17	0
-	+	8	0
-
-> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Test.py
-	*	1595158738	0
-	"	66	0
-	.	68	0
-	+	25	0
-	+	40	0
-	+	54	0
-	+	59	0
-	+	68	0
-
-> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/.git/COMMIT_EDITMSG
-	*	1595153247	0
-	"	1	34
-	^	1	35
-	.	1	34
-	+	1	46
-	+	1	34
-
-> /usr/share/vim/vim81/doc/map.txt
-	*	1595150849	0
-	"	66	47
-
-> /usr/share/vim/vim81/doc/eval.txt
-	*	1595150829	0
-	"	6641	26
-
-> /usr/share/vim/vim81/doc/ft_rust.txt
-	*	1595149537	0
-	"	223	0
-
-> /usr/share/vim/vim81/doc/sponsor.txt
-	*	1595148609	0
-	"	40	64
-
-> /usr/share/vim/vim81/doc/repeat.txt
-	*	1595148537	0
-	"	89	0
-
-> /usr/share/vim/vim81/doc/editing.txt
-	*	1595148072	0
-	"	322	27
-
-> /usr/share/vim/vim81/doc/change.txt
-	*	1595140485	0
-	"	1367	44
-
-> /usr/share/vim/vim81/doc/intro.txt
-	*	1595134460	0
-	"	422	27
-
-> /usr/share/vim/vim81/doc/tagsrch.txt
-	*	1595134398	0
-	"	39	6
-
-> .config/tmux/tmux.conf
-	*	1595115113	0
-	"	1	0
-
-> ~/Library/Mobile Documents/com~apple~CloudDocs/root/other/rebuild/config/zsh/aliases
-	*	1595113243	0
-	"	12	36
-	^	12	37
-	.	12	36
-	+	4	0
-	+	2	0
-	+	1	9
-	+	12	36
-
-> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/.gitignore
-	*	1595065352	0
-	"	3	0
-	^	6	5
-	.	6	4
-	+	6	4
-
-> ~/.conf/vim/vimrc
-	*	1595048222	0
-	"	1	0
-
-> .conf/vim/vimrc
-	*	1595048213	0
-	"	1	0
-
-> /usr/share/vim/vim81/doc/motion.txt
-	*	1595046880	0
-	"	956	35
-
-> ~/Library/Mobile
-	*	1595041453	0
-	"	1	0
-
-> ~/Library/Mobile Documents/com~apple~CloudDocs/root/code/python/nistsurf/Heap
-	*	1595041234	0
-	"	1	0
-
-> /usr/share/vim/vim81/doc/syntax.txt
-	*	1595035606	0
-	"	5134	8
-
-> ~/undotree_2
-	*	1595035355	0
-	"	3	1
-	.	3	0
-	+	3	0
-	+	12	0
-	+	10	0
-	+	3	0
-
-> ~/diffpanel_3
-	*	1595035320	0
-	"	1	0
-	.	4	0
-	+	4	0
-
-> ~/Library/Mobile Documents/com~apple~CloudDocs/root/other/rebuild/config/vim/vim
-	*	1595033003	0
-	"	1	0
-
-> /usr/share/vim/vim81/doc/windows.txt
-	*	1595032903	0
-	"	101	0
-
-> ~/Library/Mobile Documents/com~apple~CloudDocs/root/other/rebuild/config/vim/plugged/lightline.vim/doc/lightline.txt
-	*	1595032605	0
-	"	234	26
-
-> /usr/share/vim/vim81/doc/term.txt
-	*	1595031272	0
-	"	655	6
-
-> ~/Library/Mobile Documents/com~apple~CloudDocs/root/other/rebuild/config/zsh/profile
-	*	1595014384	0
-	"	5	0
-	^	13	7
-	.	13	6
-	+	14	23
-	+	3	0
-	+	5	0
-	+	1	9
-	+	14	20
-	+	4	27
-	+	8	0
-	+	15	82
-	+	15	0
-	+	14	0
-	+	13	6
-
-> ~/Library/Mobile\ Documents/com\~apple\~CloudDocs
-	*	1595013496	0
-	"	1	0
-
-> ~/Downloads/voidrice-master/README.md
-	*	1594976385	0
-	"	18	0
-
-> ~/.zshrc
-	*	1594974294	0
-	"	8	0
-	^	4	28
-	.	8	0
-	+	16	0
-	+	8	6
-	+	8	0
-	+	8	38
-	+	8	0
-	+	8	32
-	+	8	42
-	+	8	35
-	+	8	0
-	+	8	41
-	+	5	7
-	+	8	32
-	+	8	0
-	+	8	22
-	+	8	27
-	+	8	44
-	+	8	51
-	+	8	45
-	+	8	33
-	+	8	48
-	+	8	40
-	+	8	47
-	+	8	38
-	+	8	0
-	+	2	28
-	+	4	27
-	+	6	0
-	+	8	0
-	+	1	0
-	+	8	0
-
-> ~/.vimrc
-	*	1594974185	0
-	"	1	0
-	^	13	20
-	.	13	0
-	+	28	11
-	+	13	20
-	+	12	15
-	+	10	0
-	+	13	0
-
-> ~/Library/Mobile Documents/com~apple~CloudDocs/root/other/rebuild/config/zsh/functions
-	*	1594973423	0
-	"	1	9
-	^	1	10
-	.	1	9
-	+	2	0
-	+	1	9
-
-> ~/.zshr
-	*	1594969747	0
-	"	1	0
-
-> ~/Library/Mobile Documents/com~apple~CloudDocs/root/other/rebuild/config/python/pythonrc
-	*	1594963184	0
-	"	8	1
-	^	8	2
-	.	8	0
-	+	10	15
-	+	1	0
-	+	10	0
-	+	4	0
-	+	5	0
-	+	3	0
-	+	8	0
-
-> ~/Library/Mobile Documents/com~apple~CloudDocs/root/other/rebuild/config/python/undotree_2
-	*	1594963147	0
-	"	3	1
-	.	3	0
-	+	11	0
-	+	3	0
-
-> ~/Library/Mobile Documents/com~apple~CloudDocs/root/other/rebuild/config/python/diffpanel_3
-	*	1594963094	0
-	"	1	0
-	.	2	0
-	+	2	0
+	*	1595413009	0
+	"	2593	21

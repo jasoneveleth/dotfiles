@@ -1,27 +1,20 @@
 let mapleader =" "
-set nocompatible | set timeout timeoutlen=1000 ttimeoutlen=100
-set number relativenumber | set ignorecase | set smartcase | set backspace=2
-set shiftwidth=4 | set tabstop=4 softtabstop=4 | set expandtab
-set confirm | set wildmenu | set incsearch | set smartindent 
-filetype plugin indent on | syntax on | set undofile | set nobackup
+source ~/.config/vim/defaults.vim
+set timeout
 set undodir=~/.config/vim/undo// | set directory=~/.config/vim/swp//
 set listchars=tab:>\ ,eol:$,space:_
 set viminfo+=n~/.config/vim/viminfo
+packadd cfilter
 
 onoremap <tab> <esc>
 vnoremap <tab> <esc>
 inoremap <tab> <esc>
-nnoremap Y y$
-vnoremap <S-j> :m '>+1<CR>gv=gv
-vnoremap <S-k> :m '<-2<CR>gv=gv
 nnoremap <expr> <Leader>s (&hls ? ':set nohls<CR>' : ':set hls<CR>')
-nnoremap <Leader>r :!ctags -R<CR><CR>
-nnoremap <Leader>j <C-w>j
-nnoremap <Leader>k <C-w>k
-nnoremap <Leader>l <C-w>l
-nnoremap <Leader>h <C-w>h
-nnoremap <Leader>c :cclose<CR>
-nnoremap <Leader>o :copen<CR>
+nnoremap <silent> <Leader>r :call system('/usr/local/bin/ctags -R')<CR>
+nnoremap <Leader>d :call myfunctions#DiffSaved()<CR>
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+nnoremap ]q :cnext<CR>
+nnoremap [q :cprev<CR>
 
 " Mac specific stuff here
 set runtimepath=~/.config/vim,$VIMRUNTIME,~/.config/vim/after
@@ -31,11 +24,19 @@ call plug#begin('~/.config/vim/plugged')
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mbbill/undotree'
-Plug 'tpope/vim-commentary'
 Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'itchyny/lightline.vim'
 Plug 'ap/vim-css-color'
+Plug 'tpope/vim-repeat'
+" Plug 'vim-latex/vim-latex'
+
+" Text objects
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround' " {verb}s{char}[replacement] ys{text object}{char}
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-indent' "ii ai iI aI
+Plug 'kana/vim-textobj-entire' "ae and ie, ie excludes extra whitespace
 call plug#end()
 
 nnoremap <Leader>f :Rg<CR>
@@ -43,32 +44,8 @@ nnoremap <Leader>t :Files<CR>
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>u :UndotreeToggle<CR>
 
-set laststatus=2
 set noshowmode
 let g:lightline = { 'colorscheme': 'onedark', }
-
-if has('termguicolors')
-    set termguicolors
-    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-else
-    let g:onedark_termcolors=16
-    let g:onedark_color_overrides = {
-        \ "red": { "gui": "#E06C75", "cterm": "204", "cterm16": "9" },
-        \ "dark_red": { "gui": "#BE5046", "cterm": "196", "cterm16": "1" },
-        \ "yellow": { "gui": "#E5C07B", "cterm": "180", "cterm16": "11" },
-        \ "dark_yellow": { "gui": "#D19A66", "cterm": "173", "cterm16": "3" },
-        \ "visual_black": { "gui": "NONE", "cterm": "NONE", "cterm16": "NONE" },
-        \ "comment_grey": { "gui": "#5C6370", "cterm": "59", "cterm16": "8" },
-        \ "gutter_fg_grey": { "gui": "#4B5263", "cterm": "238", "cterm16": "0" },
-        \ "cursor_grey": { "gui": "#2C323C", "cterm": "236", "cterm16": "8" },
-        \ "visual_grey": { "gui": "#3E4452", "cterm": "237", "cterm16": "7" },
-        \ "menu_grey": { "gui": "#3E4452", "cterm": "237", "cterm16": "0" },
-        \ "special_grey": { "gui": "#3B4048", "cterm": "238", "cterm16": "8" },
-        \ }
-endif
 colorscheme onedark
-
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE
-

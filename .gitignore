@@ -8,6 +8,8 @@ gtk-2.0/
 darktable/
 python/pylint.d/
 python/idlerc/
+.ghcup/
+gem/
 
 vim/.netrwhist
 

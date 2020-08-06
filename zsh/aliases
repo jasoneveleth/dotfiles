@@ -8,9 +8,13 @@ alias connect='ssh jeveleth@ssh.cs.brown.edu'
 alias cleanDS="find . -name '*.DS_Store' -type f -delete"
 alias nist="~/code/python/nistsurf"
 alias ctags="/usr/local/bin/ctags"
-alias py="python3 -B"
-alias \ls='ls -FGA'
+alias py="/usr/bin/python3 -B"
+alias ls='\ls -FGA'
+alias ll='\ls -FGAl'
 alias vimrc='vim ~/.config/vim/vimrc'
+alias grep='grep --color=auto'
+alias path='echo $PATH | tr -s ":" "\n"'
+alias zshrc='vim ~/.config/zsh/.zshrc'
 
 alias commit='git commit -m'
 alias add='git add -A'
