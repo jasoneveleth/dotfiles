@@ -10,6 +10,10 @@ python/pylint.d/
 python/idlerc/
 .ghcup/
 gem/
+jupyter/custom/
+jupyter/migrated
+ipython/profile_default/startup/README
+ipython/profile_default/history.sqlite
 
 vim/.netrwhist
 

@@ -1,5 +1,6 @@
 import readline
 readline.write_history_file = lambda *args: None
+# readline.write_history_file('~/.config/python/hist')
 
 # import readline
 # import time

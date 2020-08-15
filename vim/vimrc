@@ -4,7 +4,6 @@ set timeout
 set undodir=~/.config/vim/undo// | set directory=~/.config/vim/swp//
 set listchars=tab:>\ ,eol:$,space:_
 set viminfo+=n~/.config/vim/viminfo
-packadd cfilter
 
 onoremap <tab> <esc>
 vnoremap <tab> <esc>

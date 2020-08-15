@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export PATH="$PATH:/Users/jasoneveleth/.local/bin/usr/local/sbin:/Users/jasoneveleth/Library/Python/3.7/bin:/Users/jasoneveleth/Library/Python/3.8/bin:/usr/local/lib/ruby/gems/2.7.0/bin:."
+export PATH="$PATH:/usr/local/sbin:/Users/jasoneveleth/.local/bin/usr/local/sbin:/Users/jasoneveleth/Library/Python/3.7/bin:/Users/jasoneveleth/Library/Python/3.8/bin:/usr/local/lib/ruby/gems/2.7.0/bin:."
 export VIMINIT="source $HOME/.config/vim/vimrc"
 export HISTFILE="$HOME/.config/zsh/.zhistory"
 export PYTHONSTARTUP="$HOME/.config/python/pythonrc"

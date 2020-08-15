@@ -66,9 +66,8 @@ syntax on
 set undofile
 set nobackup
 
-" autocomplete menu now opens for one result too doesn't autofill the word
-" rather, it fills the longest
-set completeopt=menuone,preview
+" autocomplete menu now opens for one result, no popup
+set completeopt=menuone
 
 " search through subdirectories
 set path+=**
@@ -76,11 +75,17 @@ set path+=**
 " cursor won't get too close to the bottom
 set scrolloff=3
 
-" make the 81st column stand out, and trailing whitespace
+" make the 81st column stand out
 augroup highlighting
     autocmd!
     autocmd Colorscheme * highlight BackgroundWarning ctermbg=9 guibg=#be5046
     autocmd Colorscheme * match BackgroundWarning /\%81v/
+augroup END
+
+" delete trailing whitespace on save
+augroup trailing
+    autocmd!
+    autocmd BuffWrite * :%s/\s\+$//e
 augroup END
 
 "======================== remaps ============================================
