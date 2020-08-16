@@ -4,6 +4,11 @@ set timeout
 if has('nvim')
     set inccommand=split
 else
+    augroup vimcursor
+        autocmd!
+        autocmd VimEnter * silent exec "! echo -ne '\e[1 q'"
+        autocmd VimLeave * silent exec "! echo -ne '\e[5 q'"
+    augroup END
     set viminfo+=n~/.local/share/vim/viminfo
     set undodir=~/.config/vim/undo//
     set directory=~/.config/vim/swp//
