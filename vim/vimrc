@@ -1,21 +1,17 @@
 let mapleader =" "
-source ~/.config/vim/defaults.vim
+source ~/.config/vim/lightweight.vim
 set timeout
-set undodir=~/.config/vim/undo// | set directory=~/.config/vim/swp//
-set listchars=tab:>\ ,eol:$,space:_
-set viminfo+=n~/.config/vim/viminfo
+if has('nvim')
+    set inccommand=split
+else
+    set viminfo+=n~/.local/share/vim/viminfo
+    set undodir=~/.config/vim/undo//
+    set directory=~/.config/vim/swp//
+endif
 
-onoremap <tab> <esc>
-vnoremap <tab> <esc>
-inoremap <tab> <esc>
-nnoremap <expr> <Leader>s (&hls ? ':set nohls<CR>' : ':set hls<CR>')
 nnoremap <silent> <Leader>r :call system('/usr/local/bin/ctags -R')<CR>
 nnoremap <Leader>d :call myfunctions#DiffSaved()<CR>
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-nnoremap ]q :cnext<CR>
-nnoremap [q :cprev<CR>
 
-" Mac specific stuff here
 set runtimepath=~/.config/vim,$VIMRUNTIME,~/.config/vim/after
 set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
 
@@ -27,6 +23,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'itchyny/lightline.vim'
 Plug 'ap/vim-css-color'
+Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-repeat'
 " Plug 'vim-latex/vim-latex'
 

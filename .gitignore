@@ -20,5 +20,6 @@ vim/.netrwhist
 vim/plugged/*
 vim/undo/*
 vim/swp/*
-vim/autoload/
+vim/autoload/plug.vim
+vim/autoload/plug.vim.old
 

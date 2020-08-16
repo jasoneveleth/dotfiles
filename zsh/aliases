@@ -1,16 +1,17 @@
 #!/bin/zsh
 
 alias ovim="/usr/bin/vim"
+alias vim="nvim"
+alias ta="tmux a -t"
 alias directoryPrompt="PS1=\"[%~]\"$'\n'\" $ \""
 alias oldPrompt="PS1='%{%K{0}%F{255}%}%m%{%f%k%} %~ $ '"
 alias vsPrompt="PS1='%{%F{075}%}%1d%{%f%} $ '"
-alias connect='ssh jeveleth@ssh.cs.brown.edu'
 alias cleanDS="find . -name '*.DS_Store' -type f -delete"
 alias ctags="/usr/local/bin/ctags"
 alias py="/usr/local/bin/python3.8"
 alias ls='\ls -FGA'
 alias ll='\ls -FGAl'
-alias vimrc='vim ~/.config/vim/vimrc'
+alias vimrc='nvim ~/.config/nvim/init.vim'
 alias grep='grep --color=auto'
 alias path='echo $PATH | tr -s ":" "\n"'
 alias zshrc='vim ~/.config/zsh/.zshrc'
