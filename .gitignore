@@ -15,8 +15,9 @@ jupyter/migrated
 ipython/profile_default/startup/README
 ipython/profile_default/history.sqlite
 
-vim/.netrwhist
+*.netrwhist
 
+vim/viminfo*
 vim/plugged/*
 vim/undo/*
 vim/swp/*

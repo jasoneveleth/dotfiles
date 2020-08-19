@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-alias ovim="/usr/bin/vim"
+alias ovim="/usr/bin/vim -u ~/.config/vim/vimrc"
 alias vim="nvim"
 alias ta="tmux a -t"
 alias directoryPrompt="PS1=\"[%~]\"$'\n'\" $ \""
@@ -10,7 +10,7 @@ alias cleanDS="find . -name '*.DS_Store' -type f -delete"
 alias ctags="/usr/local/bin/ctags"
 alias py="/usr/local/bin/python3.8"
 alias ls='\ls -FGA'
-alias ll='\ls -FGAl'
+alias l='ls -l'
 alias vimrc='nvim ~/.config/nvim/init.vim'
 alias grep='grep --color=auto'
 alias path='echo $PATH | tr -s ":" "\n"'
