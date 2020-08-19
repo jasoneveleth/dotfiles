@@ -1,5 +1,5 @@
 [core]
-	editor = vim
+	editor = nvim
 	excludesfile = /Users/jasoneveleth/.config/git/gitignore_global
 [user]
 	name = Jason Eveleth
