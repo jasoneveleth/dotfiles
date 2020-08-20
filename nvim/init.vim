@@ -2,7 +2,7 @@ set inccommand=split
 set autowrite
 set number relativenumber
 set undofile
-set undodir=~/.config/vim/undo//
+set undodir=~/.local/share/nvim/undo//
 set completeopt=menuone
 set path=.,,/Users/jasoneveleth/code/python/nistsurf/**,
 set scrolloff=3
@@ -29,13 +29,7 @@ vnoremap <S-k> :m '<-2<CR>gv=gv
 nnoremap s <C-w>
 nnoremap ]q :cnext<CR>
 nnoremap [q :cprev<CR>
-nnoremap ]f :cnfile<CR>
-nnoremap [f :cpfile<CR>
-nnoremap ]b :bnext<CR>
-nnoremap [b :bprev<CR>
 nnoremap <silent> <C-L> :nohlsearch<CR>
-onoremap <silent> i, :<C-u>normal! T,vt,<CR>
-onoremap <silent> a, :<C-u>normal! T,vf,<CR>
 nnoremap \ :grep<space>
 nnoremap <Leader>u <C-^>
 nnoremap <Leader>d :call<space>myfunctions#DiffSaved()<CR>

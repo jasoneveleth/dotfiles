@@ -18,7 +18,7 @@ set smartcase
 set confirm
 set autowrite
 set undofile
-set undodir=~/.local/share/vim/undo//
+set undodir=~/.local/share/nvim/undo//
 set viminfo+=n~/.local/share/vim/viminfo
 set directory=~/.local/share/vim/swp//
 set completeopt=menuone
@@ -27,30 +27,33 @@ set shiftwidth=4
 set tabstop=4 softtabstop=4
 set expandtab
 set t_Co=16
+set path=.,,/Users/jasoneveleth/code/python/nistsurf/**,
+set wildignore=*/.git/*,*/__pycache__/*,*.png,*.jpg,*.jpeg,*.gif,*.swp*,
 
-" make the 81st column stand out, and delete trailing whitespace on save
-augroup highlighting
+augroup useful
     autocmd!
     autocmd Colorscheme * highlight BackgroundWarning ctermbg=9 guibg=#be5046
     autocmd Colorscheme * match BackgroundWarning /\%81v/
-    autocmd BufWrite * %s/\s\+$//e
+    autocmd BufWrite * %s/\s\+$//e " deletes trailing whitespace
+    autocmd QuickFixCmdPost [^l]* cwindow " opens quickfix window
+    autocmd QuickFixCmdPost l* lwindow
 augroup END
 
-"======================== remaps ============================================
 let mapleader =" "
+vnoremap <S-j> :m '>+1<CR>gv=gv
+vnoremap <S-k> :m '<-2<CR>gv=gv
 nnoremap s <C-w>
-nnoremap <expr> <C-l> :nohlsearch
 nnoremap ]q :cnext<CR>
 nnoremap [q :cprev<CR>
-nnoremap ]b :bnext<CR>
-nnoremap [b :bprev<CR>
-nnoremap ]f :cnfile<CR>
-nnoremap [f :cpfile<CR>
-nnoremap <silent> <Leader>r :call system('/usr/local/bin/ctags -R')<CR>
-nnoremap <Leader>b :ls<CR>:b<Left>
+nnoremap <silent> <C-L> :nohlsearch<CR>
 nnoremap \ :grep<space>
-nnoremap <Leader>f :find<space>*
+nnoremap <Leader>u <C-^>
+nnoremap <Leader>d :call<space>myfunctions#DiffSaved()<CR>
+nnoremap <Leader>b :ls<CR>:b<Left>
+nnoremap <Leader>r :call system('/usr/local/bin/ctags -R')
+nnoremap <Leader>f :find<space>
 
+set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
 
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE
