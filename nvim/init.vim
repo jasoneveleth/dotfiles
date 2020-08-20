@@ -1,21 +1,18 @@
-set confirm
 set inccommand=split
 set autowrite
 set number relativenumber
 set undofile
 set undodir=~/.config/vim/undo//
 set completeopt=menuone
-set path=.,~/code/python/nistsurf/**,~/.config/**,
+set path=.,,/Users/jasoneveleth/code/python/nistsurf/**,
 set scrolloff=3
 set termguicolors
-set wildcharm=<tab> " allows for completion trigger in mappings
-set wildignore=*/.git/*,*/__pycache__/*,~/.config/vim/undo/*,
-set wildignore+=*.png,*.jpg,*.jpeg,*.gif,*.swp*,
-
+set wildignore=*/.git/*,*/__pycache__/*,*.png,*.jpg,*.jpeg,*.gif,*.swp*,
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 set expandtab
+let g:python3_host_prog = '/usr/bin/local/python3.8'
 
 augroup useful
     autocmd!
@@ -30,7 +27,6 @@ let mapleader =" "
 vnoremap <S-j> :m '>+1<CR>gv=gv
 vnoremap <S-k> :m '<-2<CR>gv=gv
 nnoremap s <C-w>
-nnoremap g= g+
 nnoremap ]q :cnext<CR>
 nnoremap [q :cprev<CR>
 nnoremap ]f :cnfile<CR>
@@ -38,15 +34,18 @@ nnoremap [f :cpfile<CR>
 nnoremap ]b :bnext<CR>
 nnoremap [b :bprev<CR>
 nnoremap <silent> <C-L> :nohlsearch<CR>
+onoremap <silent> i, :<C-u>normal! T,vt,<CR>
+onoremap <silent> a, :<C-u>normal! T,vf,<CR>
+nnoremap \ :grep<space>
+nnoremap <Leader>u <C-^>
 nnoremap <Leader>d :call<space>myfunctions#DiffSaved()<CR>
 nnoremap <Leader>b :ls<CR>:b<Left>
 nnoremap <Leader>r :call system('/usr/local/bin/ctags -R')
-nnoremap \ :grep<space>
-nnoremap <C-p> :find<space>*
+nnoremap <Leader>f :find<space>
 
 set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
 
-call plug#begin('~/.config/vim/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
 Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'itchyny/lightline.vim'

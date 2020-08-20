@@ -1,7 +1,6 @@
 #!/bin/zsh
 
-alias ovim="/usr/bin/vim -u ~/.config/vim/vimrc"
-alias vim="nvim"
+alias v="nvim"
 alias ta="tmux a -t"
 alias directoryPrompt="PS1=\"[%~]\"$'\n'\" $ \""
 alias oldPrompt="PS1='%{%K{0}%F{255}%}%m%{%f%k%} %~ $ '"
@@ -11,11 +10,12 @@ alias ctags="/usr/local/bin/ctags"
 alias py="/usr/local/bin/python3.8"
 alias ls='\ls -FGA'
 alias l='ls -l'
-alias vimrc='nvim ~/.config/nvim/init.vim'
+alias vimrc='v ~/.config/nvim/init.vim'
 alias grep='grep --color=auto'
 alias path='echo $PATH | tr -s ":" "\n"'
-alias zshrc='vim ~/.config/zsh/.zshrc'
+alias zshrc='v ~/.config/zsh/.zshrc'
 alias ql='qlmanage -p'
+alias empty='echo '' >'
 
 alias commit='git commit -m'
 alias add='git add -A'

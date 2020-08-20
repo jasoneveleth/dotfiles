@@ -1,11 +1,9 @@
 #!/bin/sh
 
 export PATH="$PATH:/usr/local/sbin:/Users/jasoneveleth/.local/bin/usr/local/sbin:/Users/jasoneveleth/Library/Python/3.7/bin:/Users/jasoneveleth/Library/Python/3.8/bin:/usr/local/lib/ruby/gems/2.7.0/bin:."
-# export VIMINIT="source $HOME/.config/vim/vimrc"
 export HISTFILE="$HOME/.cache/zsh/.zhistory"
 export PYTHONSTARTUP="$HOME/.config/python/pythonrc"
 export MPLCONFIGDIR="$HOME/.config/matplotlib"
-# export ZDOTDIR="$HOME/.config/zsh"
 export PYLINTHOME="$HOME/.config/python/pylint.d"
 export CABAL_CONFIG="$HOME/.config/cabal"
 export IDLESTARTUP="$HOME/.config/python/idlerc"
@@ -19,4 +17,4 @@ export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git'"
 export GHCUP_INSTALL_BASE_PREFIX="$HOME/.config"
 
 export VISUAL="nvim"
-export EDITOR="nvim"
+export EDITOR="vim"
