@@ -3,6 +3,9 @@ All of my configs. These work on my mac, so some of them may be mac specific.
 Please let me know if that is the case because I want to have a minimal
 platform independent set of configs.
 
+To install:
+git clone https://github.com/jasoneveleth/dotfiles.git ~/.config
+
 ```
 dotfiles
 ├── README.md
