@@ -1,6 +1,3 @@
-.git/
-.DS_Store
-
 cabal/
 gtk-3.0/
 matplotlib/

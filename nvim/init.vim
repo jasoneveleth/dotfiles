@@ -8,9 +8,7 @@ set path=.,,/Users/jasoneveleth/code/python/nistsurf/**,
 set scrolloff=3
 set termguicolors
 set wildignore=*/.git/*,*/__pycache__/*,*.png,*.jpg,*.jpeg,*.gif,*.swp*,
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
+set shiftwidth=4 tabstop=4 softtabstop=4
 set expandtab
 let g:python3_host_prog = '/usr/bin/local/python3.8'
 
@@ -19,8 +17,7 @@ augroup useful
     autocmd Colorscheme * highlight BackgroundWarning ctermbg=9 guibg=#be5046
     autocmd Colorscheme * match BackgroundWarning /\%81v/
     autocmd BufWrite * %s/\s\+$//e " deletes trailing whitespace
-    autocmd QuickFixCmdPost [^l]* cwindow " opens quickfix window
-    autocmd QuickFixCmdPost l* lwindow
+    autocmd QuickFixCmdPost [^l]* copen " opens quickfix window
 augroup END
 
 let mapleader =" "
@@ -31,7 +28,6 @@ nnoremap ]q :cnext<CR>
 nnoremap [q :cprev<CR>
 nnoremap <silent> <C-L> :nohlsearch<CR>
 nnoremap \ :grep<space>
-nnoremap <Leader>u <C-^>
 nnoremap <Leader>d :call<space>myfunctions#DiffSaved()<CR>
 nnoremap <Leader>b :ls<CR>:b<Left>
 nnoremap <Leader>r :call system('/usr/local/bin/ctags -R')

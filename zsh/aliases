@@ -10,15 +10,15 @@ alias cleanDS="find . -name '*.DS_Store' -type f -delete"
 alias ctags="/usr/local/bin/ctags"
 alias py="/usr/local/bin/python3.8"
 alias ls='\ls -FGA'
-alias l='ls -l'
+alias l='ls -lh'
 alias vimrc='v ~/.config/nvim/init.vim'
 alias grep='grep --color=auto'
 alias path='echo $PATH | tr -s ":" "\n"'
 alias zshrc='v ~/.config/zsh/.zshrc'
 alias ql='qlmanage -p'
-alias empty='echo '' >'
+alias empty="echo '' >"
 
-alias commit='git commit -m'
+alias commit='git commit'
 alias add='git add -A'
 
 alias nist="cd ~/code/python/nistsurf"
