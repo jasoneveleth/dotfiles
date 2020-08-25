@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 alias v="nvim"
-alias vim="vim -u ~/.config/vim/vimrc"
+alias vim="vim -u $XDG_CONFIG_HOME/vim/vimrc"
 alias ta="tmux a -t"
 alias directoryPrompt="PS1=\"[%~]\"$'\n'\" $ \""
 alias oldPrompt="PS1='%{%K{0}%F{255}%}%m%{%f%k%} %~ $ '"
@@ -9,19 +9,19 @@ alias vsPrompt="PS1='%{%F{075}%}%1d%{%f%} $ '"
 alias cleanDS="find . -name '*.DS_Store' -type f -delete"
 alias ctags="/usr/local/bin/ctags"
 alias py="/usr/local/bin/python3.8"
-alias ls='\ls -FGA'
-alias l='ls -lh'
-alias vimrc='v ~/.config/nvim/init.vim'
-alias grep='grep --color=auto'
+alias ls="\ls -FGA"
+alias l="ls -lh"
+alias vimrc="v $XDG_CONFIG_HOME/nvim/init.vim"
+alias grep="grep --color=auto"
 alias path='echo $PATH | tr -s ":" "\n"'
-alias zshrc='v ~/.config/zsh/.zshrc'
-alias ql='qlmanage -p'
+alias zshrc="v $XDG_CONFIG_HOME/zsh/.zshrc"
+alias ql="qlmanage -p"
 alias empty="echo '' >"
 
-alias commit='git commit'
-alias add='git add -A'
+alias commit="git commit"
+alias add="git add -A"
 
 alias nist="cd ~/code/python/nistsurf"
-alias bump='cd ~/Dropbox/bump/'
+alias bump="cd ~/Dropbox/bump/"
 alias tnist="tmux a -t nist"
 alias tbump="tmux a -t bump"

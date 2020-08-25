@@ -1,5 +1,5 @@
-source ~/.config/zsh/aliases
-source ~/.config/zsh/functions
+source $XDG_CONFIG_HOME/zsh/aliases
+source $XDG_CONFIG_HOME/zsh/functions
 export PROMPT='%{%F{3}%}>%{%f%} '
 export RPROMPT='%{%F{8}%}%~%{%f%}'
 export HOMEBREW_NO_AUTO_UPDATE=1

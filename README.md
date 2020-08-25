@@ -8,6 +8,8 @@ git clone https://github.com/jasoneveleth/dotfiles.git ~/.config
 
 ```
 dotfiles
+├── .gitignore
+├── CustomShell.terminal
 ├── README.md
 ├── alacritty
 │   └── alacritty.yml
@@ -16,31 +18,37 @@ dotfiles
 │   └── gitignore_global
 ├── htop
 │   └── htoprc
-├── ipython
-│   └── profile_default
-│       ├── history.sqlite
-│       └── startup
-│           └── README
+├── install.sh
 ├── jupyter
-│   ├── migrated
 │   └── nbconfig
 │       └── notebook.json
 ├── neofetch
 │   └── config.conf
 ├── nvim
-│   └── init.vim -> /Users/jasoneveleth/.config/vim/vimrc
+│   └── init.vim
 ├── python
 │   └── pythonrc
 ├── tmux
 │   └── tmux.conf
 ├── vim
 │   ├── autoload
-│   │   └── myfunctions.vim
+│   │   ├── myfunctions.vim
+│   │   ├── plug.vim
+│   │   └── plug.vim.old
 │   ├── lightweight.vim
+│   ├── oldVim
+│   │   ├── after
+│   │   │   └── syntax
+│   │   │       └── python.vim
+│   │   ├── colors
+│   │   │   └── terminalcolors.vim
+│   │   └── onedarkcolors.vim
 │   └── vimrc
 └── zsh
+    ├── .zlogin
+    ├── .zprofile
+    ├── .zshrc
     ├── aliases
     └── functions
-
-15 directories, 18 files
+25 files, 13 directories
 ```

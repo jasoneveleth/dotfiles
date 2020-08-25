@@ -4,7 +4,7 @@ function vis() {
     string='s/background_opacity:.*$/background_opacity: '
     string+=$1
     string+='/'
-    sed -i '' -e $string ~/.config/alacritty/alacritty.yml
+    sed -i '' -e $string $XDG_CONFIG_HOME/alacritty/alacritty.yml
 }
 
 function printcolors() {
