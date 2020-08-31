@@ -7,6 +7,13 @@ function vis() {
     sed -i '' -e $string $XDG_CONFIG_HOME/alacritty/alacritty.yml
 }
 
+function maketex() {
+    echo "Press ^D if it hangs, and run: \n\n% pdflatex <file> \n"
+    mkdir -p ./tex-stuff
+    pdflatex -output-directory=./tex-stuff ${1:-main.tex} >/dev/null
+    cp -f ./tex-stuff/*.pdf ./output.pdf
+}
+
 function printcolors() {
     for i in {1..256}; do print -P "%F{$i}Color : $i"; done;
 }

@@ -2,7 +2,7 @@
 window:
   dimensions:
     columns: 160
-    lines: 45 
+    lines: 45
   padding:
     x: 6
     y: 3
@@ -10,7 +10,7 @@ window:
 scrolling:
   history: 10000
   multiplier: 1
-background_opacity: 1.0
+background_opacity: 1
 
 font:
   normal:
@@ -46,10 +46,10 @@ colors:
   normal:
     # NOTE: Use '#131613' for the `black` color if you'd like to see
     # black text on the background.
-    black:   '#465263'
-    red:     '#be5046'
+    black:   '#3E4452'
+    red:     '#e06c75'
     green:   '#98c379'
-    yellow:  '#d19a66'
+    yellow:  '#e5c07b'
     blue:    '#61afef'
     magenta: '#c678dd'
     cyan:    '#56b6c2'
@@ -58,9 +58,9 @@ colors:
   # Bright colors
   bright:
     black:   '#5c6370'
-    red:     '#e06c75'
+    red:     '#be5046'
     green:   '#98c379'
-    yellow:  '#e5c07b'
+    yellow:  '#d19a66'
     blue:    '#61afef'
     magenta: '#c678dd'
     cyan:    '#56b6c2'

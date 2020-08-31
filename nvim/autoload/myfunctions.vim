@@ -1,4 +1,4 @@
-function! s:DiffWithSaved()
+function! myfunctions#DiffWithSaved()
   let filetype=&ft
   diffthis
   vnew | r # | normal! 1Gdd
@@ -6,14 +6,14 @@ function! s:DiffWithSaved()
   exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
 
-function! s:SynStack()
+function! myfunctions#SynStack()
   if !exists("*synstack")
     return
   endif
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
-function s:SmoothScroll(up)
+function myfunctions#SmoothScroll(up)
     if a:up
         let scrollaction=""
     else
