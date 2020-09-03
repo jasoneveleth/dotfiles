@@ -1,0 +1,4 @@
+host brown
+    User jeveleth
+    Hostname ssh.cs.brown.edu
+

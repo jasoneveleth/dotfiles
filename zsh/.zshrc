@@ -1,8 +1,4 @@
 #!/bin/sh
-# shellcheck source=/Users/jasoneveleth/.config/zsh/aliases
-. "$XDG_CONFIG_HOME"/zsh/aliases
-# shellcheck source=/Users/jasoneveleth/.config/zsh/functions
-. "$XDG_CONFIG_HOME"/zsh/functions
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:="$HOME"}/.ghcup/env" ] && . "${GHCUP_INSTALL_BASE_PREFIX:="$HOME"}/.ghcup/env"
 export PS1="%{$(tput rev)%}%m%{$(tput sgr0)%} %# "
 export RPROMPT='%{%F{8}%}%~%{%f%}'
@@ -15,9 +11,9 @@ setopt share_history
 setopt correct
 setopt autocd
 
-# nice autocompletion
+# use autocompletion
 autoload -Uz compinit
-compinit -d ~/.local/share/zsh/.zcompdump
+compinit -d ~/.config/zsh/.zcompcache/.zcompdump
 # include hidden files
 _comp_options+=(globdots)
 

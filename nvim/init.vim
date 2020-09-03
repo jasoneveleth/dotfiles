@@ -6,12 +6,12 @@ set scrolloff=3
 set undofile
 set undodir=~/.local/share/nvim/undo//
 set completeopt=menuone
-set path=.,/usr/include/,,/Users/jasoneveleth/code/python/nistsurf/**,
-set wildignore=*/.git/*,*/__pycache__/*,
-set wildignore+=*.png,*.jpg,*.jpeg,*.gif,*.swp,
 set shiftwidth=4 tabstop=4 softtabstop=4
 set expandtab
 set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
+set path=.,/usr/include/,,/Users/jasoneveleth/code/python/nistsurf/**,
+set wildignore=*/.git/*,*/__pycache__/*,
+set wildignore+=*.png,*.jpg,*.jpeg,*.gif,*.swp,
 let g:python3_host_prog = '/usr/bin/local/python3.8'
 
 augroup useful
@@ -38,9 +38,9 @@ nnoremap <Leader>b :ls<CR>:b<Left>
 nnoremap <Leader>r :call system('/usr/local/bin/ctags -R')
 nnoremap <Leader>d :call myfunctions#DiffWithSaved()<CR>
 
-packadd cfilter
-packadd vim-commentary
-packadd vim-surround
-packadd vim-dim
+packadd! cfilter
+packadd! vim-commentary
+packadd! vim-surround
+packadd! vim-dim
 
-colorscheme dim
+silent! colorscheme dim
