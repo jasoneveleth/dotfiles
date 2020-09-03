@@ -2,11 +2,10 @@
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:="$HOME"}/.ghcup/env" ] && . "${GHCUP_INSTALL_BASE_PREFIX:="$HOME"}/.ghcup/env"
 export PS1="%{$(tput rev)%}%m%{$(tput sgr0)%} %# "
 export RPROMPT='%{%F{8}%}%~%{%f%}'
-export HOMEBREW_NO_AUTO_UPDATE=1
 
-setopt interactive_comments
-# case insensitive and underscores ignored
+setopt hist_ignore_space
 setopt hist_ignore_dups
+setopt interactive_comments
 setopt share_history
 setopt correct
 setopt autocd
@@ -14,8 +13,7 @@ setopt autocd
 # use autocompletion
 autoload -Uz compinit
 compinit -d ~/.config/zsh/.zcompcache/.zcompdump
-# include hidden files
-_comp_options+=(globdots)
+_comp_options+=(globdots) # include hidden files
 
 # directory history. ex % dirs -v % cd -<num>
 export DIRSTACKSIZE=8
@@ -26,8 +24,8 @@ bindkey -v
 bindkey -v '^?' backward-delete-char
 export KEYTIMEOUT=1
 # completion of command using most recent match in history with vim completion
-autoload -U up-line-or-beginning-search
-autoload -U down-line-or-beginning-search
+autoload -Uz up-line-or-beginning-search
+autoload -Uz down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 bindkey -M viins "^p" up-line-or-beginning-search

@@ -20,6 +20,7 @@ export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
 export GEM_HOME="$XDG_CONFIG_HOME/gem/ruby/2.7.0"
 export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git'"
 export EDITOR="nvim"
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 
 
