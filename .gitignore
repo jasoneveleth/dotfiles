@@ -14,7 +14,7 @@ ipython/profile_default/history.sqlite
 
 *.netrwhist
 
-zsh/.zcompcache/.zcompdump
+zsh/.zcompcache/
 zsh/.zsh_history
 
 vim/viminfo*
