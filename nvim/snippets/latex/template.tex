@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{titlesec}
+\usepackage{titling}
+
+% title formatting
+\renewcommand{\maketitle}{
+\begin{center}
+{\huge\bfseries
+\thetitle}
+\vspace{0.25em}\\
+{\theauthor}
+---
+{\thedate}
+\end{center}
+}
+
+% mypicture macro
+\newcommand{\mypicture}[2][height=3cm]{
+\begin{figure}[h]
+\centering
+\includegraphics[#1]{#2}
+\end{figure}
+}
+
+% heading formatting
+\titleformat{\section}{\bfseries\large}{}{0em}{}[\titlerule]
+\titleformat{\subsection}{\bfseries\large}{\hspace{1em}}{0em}{}
+
+%title content
+\title{Section Assignment}
+\author{Jason Eveleth}
+\date{Feb 10, 2020}
+
+\begin{document}
+\maketitle
+\setlength{\parindent}{0cm}
+

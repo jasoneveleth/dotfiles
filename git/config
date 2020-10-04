@@ -4,3 +4,5 @@
 [user]
 	name = Jason Eveleth
 	email = jj11@eveleth.com
+[color]
+	ui = auto

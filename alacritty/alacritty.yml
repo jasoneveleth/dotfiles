@@ -6,7 +6,8 @@ window:
   padding:
     x: 6
     y: 3
-  decorations: none
+  # decorations: none
+  decorations: buttonless
 scrolling:
   history: 10000
   multiplier: 1
@@ -73,3 +74,5 @@ cursor:
 key_bindings:
   - { key: A,         mods: Alt,       chars: "\x1ba"                     }
   - { key: D,         mods: Alt,       chars: "\x1bd"                     }
+  - { key: Return,   mods: Shift,   chars: "\x1b[13;2u" }
+  - { key: Return,   mods: Control, chars: "\x1b[13;5u" }
