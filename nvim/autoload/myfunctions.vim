@@ -6,6 +6,16 @@ function! myfunctions#DiffWithSaved()
     exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
 
+function myfunctions#Latex()
+    setlocal noautoindent nocindent nosmartindent indentexpr=
+    " inoremap ( ()<++><left><left><left><left><left>
+    inoremap $ $$<++><left><left><left><left><left>
+    xnoremap i$ :<C-u> normal! T$vt$<CR>
+    onoremap i$ :normal vi$<CR>
+    xnoremap a$ :<C-u> normal!F$vf$<CR>
+    onoremap a$ :normal va$<CR>
+endfunction
+
 function! myfunctions#HardMode()
     set backspace=0
     inoremap <CR> <nop>
@@ -16,10 +26,9 @@ function! myfunctions#HardMode()
 endfunction
 
 function! myfunctions#StripTrailing()
-    call CurPos("save")
+    let save_pos = getpos(".")
     %s/\s\+$//e
-    exe "norm " . linenum . "G" . colnum . "l"
-    call CurPos("restore")
+    call setpos('.', save_pos)
 endfunction
 
 function! myfunctions#SynStack()

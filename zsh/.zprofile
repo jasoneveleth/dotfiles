@@ -35,7 +35,6 @@ alias dh='dirs -v'
 alias findhardlinks='find -x . -links +1 ! -type d -exec ls -li {} \; | rg --invert-match "Caches|(Group Containers)|(Application Support)" | sort -n'
 alias battery='pmset -g batt | sed -n "s/.*[[:space:]]\([[:digit:]]*%\);.*/\1/p"'
 
-alias ctags="/usr/local/bin/ctags"
 alias py="/usr/local/bin/python3.8"
 alias v="nvim"
 alias vim="nvim"
@@ -47,16 +46,15 @@ alias note="cd $HOME/notes"
 alias com="git commit"
 alias add="git add -A"
 
-alias n="cd $HOME/notes; v \`fzf\`"
+alias n="cd $HOME/notes; vim \`fzf\`; cd;"
 alias vimrc="v $XDG_CONFIG_HOME/nvim/init.vim"
 alias zprofile="v $XDG_CONFIG_HOME/zsh/.zprofile"
 alias zshrc="v $XDG_CONFIG_HOME/zsh/.zshrc"
 alias book="v $HOME/code/web/bookmarks/input.md"
 
 alias ta="tmux a -t"
-alias tnist="tmux a -t nist"
-alias tbump="tmux a -t bump"
-alias tbrown="ssh -t b 'tmux a'"
+alias stbrown="ssh -t b 'tmux a'"
+alias tbrown="mosh --no-init --experimental-remote-ip=remote b tmux a"
 
 # FUNCTIONS
 function vis() {
@@ -76,10 +74,18 @@ function text() {
 }
 
 function maketex() {
-    echo "Press ^D if it hangs, and run: \n\n% pdflatex <file> \n"
     mkdir -p ./tex-stuff
-    pdflatex -output-directory=./tex-stuff ${1:-main.tex}
-    cp -f ./tex-stuff/*.pdf .
+    echo "compiling..."
+    if pdflatex -output-directory=./tex-stuff -halt-on-error ${1:-main.tex} 1> /dev/null; then
+        echo "moving pdfs..."
+        cp -f ./tex-stuff/*.pdf .
+        echo "done!"
+
+    else 
+        echo "FUCK"
+        pdflatex -output-directory=./tex-stuff -halt-on-error ${1:-main.tex}
+
+    fi
 }
 
 function printcolors() {
