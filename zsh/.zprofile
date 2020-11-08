@@ -54,7 +54,7 @@ alias book="v $HOME/code/web/bookmarks/input.md"
 
 alias ta="tmux a -t"
 alias stbrown="ssh -t b 'tmux a'"
-alias tbrown="mosh --no-init --experimental-remote-ip=remote b tmux a"
+alias tbrown="mosh --no-init --experimental-remote-ip=remote b tmux a || echo '\n\nMUST USE Tunnelblick and activate browns vpn'"
 
 # FUNCTIONS
 function vis() {
