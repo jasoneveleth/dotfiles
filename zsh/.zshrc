@@ -1,5 +1,7 @@
-#!/bin/sh
+#!/bin/zsh
+
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:="$HOME"}/.ghcup/env" ] && . "${GHCUP_INSTALL_BASE_PREFIX:="$HOME"}/.ghcup/env"
+
 # not exported because it is bad practice to export zsh variables, only other
 # program's. When a zsh variable is exported it makes it availible system-wide,
 # rather than just for that session
@@ -36,6 +38,12 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 bindkey "^p" up-line-or-beginning-search
 bindkey "^n" down-line-or-beginning-search
+
+# get direnv, and pyenv working
+eval "$(direnv hook zsh)"
+if command -v pyenv 1>/dev/null 2>&1; then
+    eval "$(pyenv init -)"
+fi
 
 # attach to "general" tmux session or makes one
 if command -v tmux 1> /dev/null 2>&1 && [ -z "$TMUX" ]; then

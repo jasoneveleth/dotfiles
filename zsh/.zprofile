@@ -1,28 +1,5 @@
 #!/bin/sh
 
-# this keeps tmux from messing with path variable
-if [ -f /etc/profile ]; then
-    PATH=""
-    . /etc/profile
-fi
-
-export PATH="$HOME/bin:/usr/local/sbin:$HOME/Library/Python/3.8/bin:/usr/local/lib/ruby/gems/2.7.0/bin:$PATH:."
-export XDG_CONFIG_HOME="$HOME/.config"
-export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
-export MPLCONFIGDIR="$XDG_CONFIG_HOME/matplotlib"
-export PYLINTHOME="$XDG_CONFIG_HOME/python/pylint.d"
-export CABAL_CONFIG="$XDG_CONFIG_HOME/cabal"
-export IDLESTARTUP="$XDG_CONFIG_HOME/python/idlerc"
-export ICLOUD="/Users/jasoneveleth/Library/Mobile Documents/com~apple~CloudDocs"
-export LESSHISTFILE="$HOME/.cache/less/histfile"
-export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME/jupyter"
-export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
-export GEM_HOME="$XDG_CONFIG_HOME/gem/ruby/2.7.0"
-export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git'"
-export VISUAL="nvim"
-export EDITOR="nvim"
-export HOMEBREW_NO_AUTO_UPDATE=1
-
 # ALIASES
 alias directoryPrompt="PS1=\"[%~]\"$'\n'\" $ \""
 alias oldPrompt="PS1='%{%K{0}%F{255}%}%m%{%f%k%} %~ $ '"
@@ -35,7 +12,6 @@ alias dh='dirs -v'
 alias findhardlinks='find -x . -links +1 ! -type d -exec ls -li {} \; | rg --invert-match "Caches|(Group Containers)|(Application Support)" | sort -n'
 alias battery='pmset -g batt | sed -n "s/.*[[:space:]]\([[:digit:]]*%\);.*/\1/p"'
 
-alias py="/usr/local/bin/python3.8"
 alias v="nvim"
 alias vim="nvim"
 
@@ -45,6 +21,7 @@ alias note="cd $HOME/notes"
 
 alias com="git commit"
 alias add="git add -A"
+alias s="git status"
 
 alias n="cd $HOME/notes; vim \`fzf\`; cd;"
 alias vimrc="v $XDG_CONFIG_HOME/nvim/init.vim"
@@ -54,7 +31,7 @@ alias book="v $HOME/code/web/bookmarks/input.md"
 
 alias ta="tmux a -t"
 alias stbrown="ssh -t b 'tmux a'"
-alias tbrown="mosh --no-init --experimental-remote-ip=remote b tmux a || echo '\n\nMUST USE Tunnelblick and activate browns vpn'"
+alias tbrown="mosh --no-init --experimental-remote-ip=remote b tmux a || echo '\n\nMUST Use Tunnelblick and activate browns vpn'"
 
 # FUNCTIONS
 function vis() {
@@ -104,14 +81,14 @@ git push
 }
 
 function randomText() {
-text=''
+_temp=''
 for ((i = 0; i < $1; i++));do
     if [[ $(($RANDOM % 10)) < 2 ]];then
-        text+=' '
+        _temp+=' '
         i+=1
     fi
-    text+=$((number = $RANDOM % 10))
+    _temp+=$(($RANDOM % 10))
 done
-echo $text
+echo $_temp
 }
 

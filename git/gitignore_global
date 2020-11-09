@@ -1,5 +1,9 @@
+.envrc
+.direnv
+
 .DS_Store
 tags
+.tags
 
 .git/
 __pycache__/

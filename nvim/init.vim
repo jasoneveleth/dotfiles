@@ -8,7 +8,8 @@ set completeopt=menu,longest
 set undofile undodir=~/.local/share/nvim/undo//
 set shiftwidth=4 tabstop=4 softtabstop=4 expandtab
 set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
-set path=.,/usr/include/,,
+set path=.,/usr/include/,,~/.config/zsh/,
+set tags=./tags;,./.tags;,
 set wildignore=*/.git/*,*/__pycache__/*,*.swp,.DS_Store,
 set omnifunc=syntaxcomplete#Complete
 set listchars=tab:»·,trail:·
@@ -39,7 +40,7 @@ nnoremap <leader>f :find<space>
 vnoremap <leader>p "_dP
 nnoremap <leader>c "_c
 nnoremap <leader>\ :set formatoptions+=a<CR>
-nnoremap <leader>r :call system('/usr/local/bin/ctags -R')<CR>
+nnoremap <leader>r :call system('ctags -R -o .tags')<CR>
 nnoremap <leader>d :call myfunctions#DiffWithSaved()<CR><CR>
 nnoremap <leader>b :call myfunctions#Buffers()<CR>
 nnoremap <leader>w :call myfunctions#StripTrailing()<CR>
