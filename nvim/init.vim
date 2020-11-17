@@ -32,6 +32,8 @@ nnoremap ]q :cnext<CR>
 nnoremap [q :cprev<CR>
 nnoremap ]b :bnext<CR>
 nnoremap [b :bprev<CR>
+" this will show full path
+nnoremap <C-g> 1<C-g>
 nnoremap <Up> <C-y>
 nnoremap <Down> <C-e>
 nnoremap <C-L> :nohlsearch<CR>
