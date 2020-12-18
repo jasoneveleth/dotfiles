@@ -53,6 +53,7 @@ alias directoryPrompt="PS1=\"[%~]\"$'\n'\" $ \""
 alias oldPrompt="PS1='%{%K{0}%F{255}%}%m%{%f%k%} %~ $ '"
 alias cleanDS="find . -name '*.DS_Store' -type f -delete"
 alias ls="\ls -FG"
+alias rm="rm -i"
 alias l="ls -lAh"
 alias path='echo $PATH | tr -s ":" "\n"'
 alias empty="echo '' >"
@@ -62,8 +63,10 @@ alias battery='pmset -g batt | sed -n "s/.*[[:space:]]\([[:digit:]]*%\);.*/\1/p"
 
 alias v="nvim"
 alias vim="nvim"
+# make brew and pyenv play nice
+alias brew="/usr/bin/env PATH=${PATH/\/Users\/tasukujp\/\.pyenv\/shims:/} /usr/local/bin/brew"
 
-alias nist="runpythonenv; cd $HOME/code/python/nistsurf"
+alias nist="cd $HOME/code/python/nistsurf"
 alias bump="cd $HOME/Dropbox/bump"
 alias note="cd $HOME/notes"
 
@@ -71,7 +74,7 @@ alias com="git commit"
 alias add="git add -A"
 alias s="git status"
 
-alias n="cd $HOME/notes; vim \`fzf\`; cd;"
+alias n="cd $HOME/notes; vim \`fzf\`; cd -1;"
 alias vimrc="v $XDG_CONFIG_HOME/nvim/init.vim"
 alias zshrc="v $XDG_CONFIG_HOME/zsh/.zshrc"
 alias book="v $HOME/code/web/bookmarks/input.md"
@@ -134,6 +137,9 @@ git add -A
 git commit -m "$@"
 git push
 }
+
+# get direnv, and pyenv working, takes 0.06 seconds
+runpythonenv
 
 # function randomText() {
 # _temp=''

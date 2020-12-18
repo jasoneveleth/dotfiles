@@ -5,9 +5,11 @@ cd ~ || exit
 echo "ZDOTDIR=$HOME/.config/zsh" > ~/.zshenv
 
 ICLOUD=$HOME/Library/Mobile\ Documents/com~apple~CloudDocs
-list="archive code media other uni notes"
+ln -s "$ICLOUD" .icloud
+
+list="archive code media notes personal uni"
 echo "$list" | tr ' ' '\n' | while read item; do
-  ln -s "$ICLOUD"/root/$item $item
+  ln -s ./.icloud/root/$item $item
 done
 
 # neovim plugins
@@ -17,3 +19,4 @@ git clone https://github.com/jasoneveleth/vim-dim
 git clone https://github.com/tpope/vim-surround
 git clone https://github.com/tpope/vim-commentary
 
+# make brew play nice with pyenv

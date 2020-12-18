@@ -67,6 +67,11 @@ colors:
     cyan:    '#56b6c2'
     white:   '#ffffff'
 
+# this doesn't work idk why
+# selection:
+#   text: '#abb2bf'
+#   background: '#3E4452'
+
 cursor:
   style: Block
   unfocused_hollow: true
