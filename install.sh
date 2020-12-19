@@ -19,4 +19,12 @@ git clone https://github.com/jasoneveleth/vim-dim
 git clone https://github.com/tpope/vim-surround
 git clone https://github.com/tpope/vim-commentary
 
-# make brew play nice with pyenv
+brew install cask fzf htop imagemagick mosh neofetch neovim nnn pyenv ripgrep shellcheck speedtest-cli tmux tree tree-sitter wget ctags direnv
+brew cask install alacritty alfred appcleaner basictex discord fantastical gimp keycastr mailplane minecraft qlmarkdown qlstephen spotify tunnelblick zoomus
+
+# set defaults
+defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
+defaults write com.apple.Dock showhidden -bool TRUE; killall Dock
+defaults write com.apple.dock autohide-time-modifier -float 0; killall Dock
+defaults write -g PMPrintingExpandedStateForPrint -bool TRUE
+defaults write com.apple.desktopservices DSDontWriteNetworkStores true

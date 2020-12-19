@@ -8,48 +8,55 @@ To install:
     git clone https://github.com/jasoneveleth/dotfiles.git ~/.config
     ~/.config/install.sh
 
-
     dotfiles
     ├── .gitignore
-    ├── CustomShell.terminal
     ├── README.md
     ├── alacritty
     │   └── alacritty.yml
+    ├── darktable
+    ├── gem
     ├── git
-    │   ├── config
-    │   └── gitignore_global
     ├── htop
-    │   └── htoprc
     ├── install.sh
+    ├── ipython
     ├── jupyter
-    │   └── nbconfig
-    │       └── notebook.json
+    ├── matplotlib
+    ├── mc
     ├── neofetch
-    │   └── config.conf
+    ├── nnn
     ├── nvim
-    │   └── init.vim
+    │   ├── after
+    │   │   ├── ftplugin
+    │   │   │   ├── c.vim
+    │   │   │   ├── html.vim
+    │   │   │   ├── make.vim
+    │   │   │   ├── tex.vim
+    │   │   │   └── vim.vim
+    │   │   └── indent
+    │   │       └── tex.vim
+    │   ├── autoload
+    │   │   └── myfunctions.vim
+    │   ├── init.vim
+    │   └── snippets
+    │       ├── c
+    │       │   └── comment.c
+    │       └── latex
+    │           └── template.tex
+    ├── pyenv
     ├── python
-    │   └── pythonrc
+    ├── terminal
     ├── tmux
     │   └── tmux.conf
     ├── vim
-    │   ├── autoload
-    │   │   ├── myfunctions.vim
-    │   │   ├── plug.vim
-    │   │   └── plug.vim.old
     │   ├── lightweight.vim
-    │   ├── oldVim
-    │   │   ├── after
-    │   │   │   └── syntax
-    │   │   │       └── python.vim
-    │   │   ├── colors
-    │   │   │   └── terminalcolors.vim
-    │   │   └── onedarkcolors.vim
     │   └── vimrc
     └── zsh
-        ├── .zlogin
+        ├── .zcompcache
+        │   └── .zcompdump
+        ├── .zcompdump
         ├── .zprofile
-        ├── .zshrc
-        ├── aliases
-        └── functions
-    25 files, 13 directories
+        ├── .zsh_history
+        ├── .zsh_sessions
+        └── .zshrc
+
+    1258 directories, 22336 files
