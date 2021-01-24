@@ -1,59 +1,44 @@
-set nocompatible
-set ttimeout timeoutlen=3000 ttimeoutlen=50
-set timeout
-set autoread
-set laststatus=2
-set ruler
-set backspace=indent,eol,start
-set nobackup
-set wildmenu
-set incsearch
-set smartindent
-set showcmd
-filetype plugin indent on
-syntax on
+syn on
+set nohlsearch
+set exrc
+set incsearch inccommand=split
+set hidden autoread
 set number relativenumber
-set ignorecase
-set smartcase
-set confirm
-set autowrite
-set undofile
-set undodir=~/.local/share/nvim/undo//
+set nojoinspaces
+set gdefault
+set noerrorbells
+set undofile undodir=~/.local/share/nvim/undo//
+set shiftwidth=4 shiftround 
+set softtabstop=4 tabstop=4 expandtab
+set ttimeout timeoutlen=3000 ttimeoutlen=50
+set clipboard+=unnamed
+set shortmess=xtToOFc
+set grepprg=rg\ --vimgrep
+set completeopt=menuone,noinsert,noselect
+set path=.,,~/.config/zsh/,~/.config/nvim/,
+set rtp+=/usr/local/opt/fzf
+set tags=./tags;,./.tags;,
+set conceallevel=1
 set viminfo+=n~/.local/share/vim/viminfo
 set directory=~/.local/share/vim/swp//
-set completeopt=menuone
-set scrolloff=3
-set shiftwidth=4
-set tabstop=4 softtabstop=4
-set expandtab
-set t_Co=16
-set path=.,,/Users/jasoneveleth/code/python/nistsurf/**,
-set wildignore=*/.git/*,*/__pycache__/*,*.png,*.jpg,*.jpeg,*.gif,*.swp*,
+set backspace=indent,eol,start
+set ruler
+set nobackup
+set timeout
+set laststatus=2
+set showcmd
+set wildmenu
+set smartindent
+filetype indent plugin on
 
-augroup useful
-    autocmd!
-    autocmd Colorscheme * highlight BackgroundWarning ctermbg=9 guibg=#be5046
-    autocmd Colorscheme * match BackgroundWarning /\%81v/
-    autocmd BufWrite * %s/\s\+$//e " deletes trailing whitespace
-    autocmd QuickFixCmdPost [^l]* cwindow " opens quickfix window
-    autocmd QuickFixCmdPost l* lwindow
-augroup END
-
-let mapleader =" "
-vnoremap <S-j> :m '>+1<CR>gv=gv
-vnoremap <S-k> :m '<-2<CR>gv=gv
-nnoremap s <C-w>
-nnoremap ]q :cnext<CR>
-nnoremap [q :cprev<CR>
-nnoremap <silent> <C-L> :nohlsearch<CR>
-nnoremap \ :grep<space>
-nnoremap <Leader>u <C-^>
-nnoremap <Leader>d :call<space>myfunctions#DiffSaved()<CR>
-nnoremap <Leader>b :ls<CR>:b<Left>
-nnoremap <Leader>r :call system('/usr/local/bin/ctags -R')
-nnoremap <Leader>f :find<space>
-
-set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
+let mapleader = " "
+nnoremap <Up> <c-y>
+nnoremap <Down> <c-e>
+nnoremap <leader>f :FZF<cr>
+vnoremap <leader>p "_dP
+nnoremap <leader>r :call system('ctags -R -o .tags')<cr>
+nnoremap <leader>b :call myfunctions#Buffers()<cr>
+nnoremap <expr> <leader>o filter(range(1, winnr('$')), 'getwinvar(v:val, "&ft") == "qf"')==[] ? ':cope<cr>' : ':ccl<cr>' 
 
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE

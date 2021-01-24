@@ -1,0 +1,36 @@
+# setopt incappendhistory
+# bindkey '^[v' edit-command-line
+
+alias printcolors="for i in {1..256}; do print -P \"%F{\$i}Color : \$i\"; done;"
+# alias n="cd $HOME/notes; vim \`fzf\`; cd -1;"
+
+# n() {
+#     cd $HOME/notes
+#     _note=""
+#     _note=`fzf`
+#     if [ -n "$_note" ]; then
+#         nvim $_note
+#     fi
+#     cd $OLDPWD;
+# }
+
+# seach history
+fh() {
+    print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
+}
+
+randomText() {
+    if ! ( (( "$1" > 0 )) && (( "$1" < 938 )) ); then
+        printf 'usage: randomText <num>\n'
+        return
+    fi
+_temp=''
+for ((i = 0; i < $1; i++)); do
+    if [[ $(($RANDOM % 10)) < 2 ]]; then
+        _temp+=' '
+        i+=1
+    fi
+    _temp+=$(($RANDOM % 10))
+done
+echo $_temp
+}

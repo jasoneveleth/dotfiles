@@ -103,3 +103,67 @@ function! myfunctions#NotesFind(split)
         execute 'edit **/' . filepath . '*'
     endif
 endfunction
+
+function! myfunctions#Enter()
+    let before=getline('.')[col('.')-2] 
+    echo before
+    if (before == "{") || (before == "(")
+        return "O"
+    else
+        return ""
+    endif
+endfunction
+
+function! myfunctions#InsertBrace()
+    let cursor=getline('.')[col('.')-1]
+    if (!(cursor =~ '\S')) || (cursor == "}") || (cursor == ";")
+        return "{}\<left>"
+    else
+        return "{"
+    endif
+endfunction
+
+function! myfunctions#IgnoreBrace()
+    let next=getline('.')[col('.')-1]
+    if next == "}"
+        return "\<right>"
+    else
+        return "}"
+    endif
+endfunction
+
+function! myfunctions#InsertParen()
+    let cursor=getline('.')[col('.')-1]
+    if (!(cursor =~ '\S')) || (cursor == ")") || (cursor == ";")
+        return "()\<left>"
+    else
+        return "("
+    endif
+endfunction
+
+function! myfunctions#IgnoreParen()
+    let next=getline('.')[col('.')-1]
+    if next == ")"
+        return "\<right>"
+    else
+        return ")"
+    endif
+endfunction
+
+function! myfunctions#Tab()
+  if search('<++>')
+    stopinsert
+    call feedkeys('c4l', 'n')
+  else
+    call feedkeys("\t", 'n')
+  endif
+endfunction
+
+function! myfunctions#BS()
+    let lasttwo = getline('.')[col('.')-2:col('.')-1]
+    if (lasttwo == "()") || (lasttwo == "{}")
+        return "\<right>"
+    else
+        return ""
+    endif
+endfunction

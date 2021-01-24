@@ -25,3 +25,4 @@ vim/swp/*
 vim/autoload/plug.vim
 vim/autoload/plug.vim.old
 
+nvim/pack/
