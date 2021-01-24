@@ -11,7 +11,7 @@ jupyter/custom/
 jupyter/migrated
 ipython/profile_default/startup/README
 ipython/profile_default/history.sqlite
-pyenv/*
+pyenv/versions/
 
 *.netrwhist
 
