@@ -33,6 +33,10 @@ setopt hist_ignore_dups appendhistory share_history
 # immediately append history, rather than after terminal dies
 # setopt incappendhistory
 
+# undo ^S and ^Q functionality
+stty start undef
+stty stop undef
+
 autoload -Uz compinit
 compdump="$HOME/.config/zsh/.zcompcache/.zcompdump"
 # {unix time} - {compdump modified date} > {seconds in a day}
@@ -82,6 +86,7 @@ alias book="vi $HOME/code/web/bookmarks/input.md"
 
 alias vim='printf "use vi\n"'
 alias vi="nvim"
+alias jl="julia"
 alias ql="qlmanage -p 2>/dev/null"
 alias brew="/usr/bin/env PATH=${PATH/$PYENV_ROOT\/shims:/} /usr/local/bin/brew" # make brew and pyenv play nice
 
@@ -102,15 +107,9 @@ n() {
     fi
 
     # The default behaviour is to cd on quit (nnn checks if NNN_TMPFILE is set)
-    # To cd on quit only on ^G, remove the "export" as in:
-    #     NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+    # To cd on quit only on ^G, remove the "export" (as in don't export is,
+    # this is current functionality
     NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
-
-    # Unmask ^Q (, ^V etc.) (if required, see `stty -a`) to Quit nnn
-    stty start undef
-    stty stop undef
-    # stty lwrap undef
-    # stty lnext undef
 
     nnn "$@"
 
@@ -136,6 +135,10 @@ acp() {
     git add -A
     git commit -m "$@"
     git push
+}
+
+run-julia() {
+    julia --load "$1" -e "main($2)"
 }
 
 # https://mrigank11.github.io/2018/03/zsh-auto-completion/

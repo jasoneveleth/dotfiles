@@ -20,14 +20,18 @@ export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME/jupyter"
 export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
 export GEM_HOME="$XDG_CONFIG_HOME/gem/ruby/2.7.0"
 
+export JULIA_NUM_THREADS=4
 export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git'"
 export PYTHONDONTWRITEBYTECODE=1
 export HOMEBREW_NO_AUTO_UPDATE=1
 export NNN_BMS='n:~/notes;i:~/code/python/nistsurf;z:~/.config/zsh;v:~/.config/nvim;c:~/code/c;d:~/.config'
-export NNN_OPTS="deE"
+export NNN_PLUG='e:ewrap;n:fzfnotes'
+export NNN_OPTS="e"
 export NNN_COLORS="4512"
+export PAGER="less"
 export EDITOR="nvim"
-export VISUAL="ewrap"
+export VISUAL="nvim"
+# export VISUAL="ewrap"
 
 export CPATH="$HOME/code/c/include"
 export LD_LIBRARY_PATH="$HOME/code/c/lib"

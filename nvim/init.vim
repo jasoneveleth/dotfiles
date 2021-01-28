@@ -1,47 +1,71 @@
-set nohlsearch
-set exrc
 set incsearch inccommand=split
-set hidden autoread
-set number relativenumber
-set nojoinspaces
-set gdefault
 set noerrorbells
-set undofile undodir=~/.local/share/nvim/undo//
+set shortmess=xtToOFc
+set nohlsearch
+set nojoinspaces
+set ignorecase smartcase
+set cursorline
+set hidden autoread
+set gdefault
 set shiftwidth=4 shiftround 
 set softtabstop=4 tabstop=4 expandtab
+set tags=./tags;,./.tags;,
 set clipboard+=unnamed
-set shortmess=xtToOFc
+set number relativenumber
 set grepprg=rg\ --vimgrep
+set exrc
+set undofile undodir=~/.local/share/nvim/undo//
+set conceallevel=1
 set completeopt=menuone,noinsert,noselect
 set path=.,,~/.config/zsh/,~/.config/nvim/,
 set rtp+=/usr/local/opt/fzf
-set tags=./tags;,./.tags;,
-set conceallevel=1
+
+augroup yanking
+    autocmd! 
+    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
+    autocmd BufEnter *.jl setlocal filetype=julia
+    autocmd Filetype tex setlocal makeprg=maketex\ %
+augroup END
+
+let mapleader=" "
+nnoremap <leader>r :call system('ctags -R -o .tags')<cr>
+xnoremap <leader>p "_dP
+nnoremap <Up> <c-y>
+nnoremap <Down> <c-e>
+
+packadd! vim-surround
+
+if exists('g:vscode')
+    xmap gc  <Plug>VSCodeCommentary
+    nmap gc  <Plug>VSCodeCommentary
+    omap gc  <Plug>VSCodeCommentary
+    nmap gcc <Plug>VSCodeCommentaryLine
+    augroup makingCommands
+        autocmd!
+        autocmd Filetype julia command! Make call VSCodeNotify('language-julia.executeFile')
+        autocmd Filetype python command! Make call VSCodeNotify('python.execInTerminal')
+    augroup END
+    cabbrev <expr> make getcmdtype() == ":" && getcmdline() == 'make' ? 'Make' : 'make'
+    finish
+endif
+
 filetype indent plugin on
 let g:python_host_prog = '/usr/bin/python'
 let g:python3_host_prog = '/Users/jasoneveleth/.config/pyenv/shims/python'
+let g:tex_flavor = "latex"
 
-augroup yanking
-    autocmd! TextYankPost * silent! lua require'vim.highlight'.on_yank()
-augroup END
-
-let mapleader = " "
-nnoremap <Up> <c-y>
-nnoremap <Down> <c-e>
 nnoremap <leader>f :FZF<cr>
-xnoremap <leader>p "_dP
-nnoremap <leader>r :call system('ctags -R -o .tags')<cr>
 nnoremap <leader>b :call myfunctions#Buffers()<cr>
+nnoremap <leader>d :call myfunctions#DiffWithSaved()<cr>
 nnoremap <expr> <leader>o filter(range(1, winnr('$')), 'getwinvar(v:val, "&ft") == "qf"')==[] ? ':cope<cr>' : ':ccl<cr>' 
 
 packadd! cfilter
 packadd! vim-commentary
-packadd! vim-surround
 packadd! vim-tmux-navigator
-packadd! neosnippet
 packadd! nvim-treesitter
 packadd! completion-treesitter
 packadd! completion-nvim
+packadd! neosnippet
 
 silent! colorscheme dim
 
@@ -55,13 +79,13 @@ let g:neosnippet#snippets_directory = "~/dotfiles/nvim/mysnippets"
 " Treesitter:
 lua<<EOF
 require'nvim-treesitter.configs'.setup {
-    highlight = { enable = true },
-    incremental_selection = { enable = true },
-    textobjects = { enable = true },
-    indent = { 
-        enable = true,
-        disable = { "python", "tex" },
-    },
+highlight = { enable = true },
+incremental_selection = { enable = true },
+textobjects = { enable = true },
+indent = { 
+enable = true,
+disable = { "python", "tex" },
+},
 }
 EOF
 highlight link TSPunctDelimiter Normal

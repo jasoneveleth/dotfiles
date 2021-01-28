@@ -5,8 +5,9 @@ cd ~ || exit
 echo "ZDOTDIR=$HOME/.config/zsh" > ~/.zshenv
 
 # set up soft links
-ICLOUD=$HOME/Library/Mobile\ Documents/com~apple~CloudDocs
-ln -s "$ICLOUD" .icloud
+ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
+ln -s ~/Documents .icloud
+# ln -s "$ICLOUD" .icloud
 
 list="archive code media notes personal uni"
 echo "$list" | tr ' ' '\n' | while read item; do
@@ -14,18 +15,19 @@ echo "$list" | tr ' ' '\n' | while read item; do
 done
 
 # neovim plugins, quoting ruins the directory name
-_dir=~/.local/share/nvim/site/pack/jason/opt
+_dir=~/.config/nvim/pack/jason/opt
 mkdir -p $_dir
 if [ -z "`ls $_dir`" ]; then
-    cd ~/.local/share/nvim/site/pack/jason/opt
-    git clone https://github.com/jasoneveleth/vim-dim
-    git clone https://github.com/tpope/vim-surround
-    git clone https://github.com/tpope/vim-commentary
+    cd $_dir
+    plugins="jasoneveleth/vim-dim tpope/vim-surround tpope/vim-commentary"
+    echo "$plugins" | tr ' ' '\n' | while read item; do
+        git clone https://github.com/$item
+    done
     cd ~
 fi
 
-brew install cask fzf htop mosh neofetch neovim nnn pyenv ripgrep shellcheck speedtest-cli tmux tree tree-sitter wget ctags direnv
-brew cask install alacritty alfred appcleaner basictex discord fantastical gimp keycastr mailplane minecraft qlmarkdown qlstephen spotify tunnelblick zoomus
+brew install cask fzf htop mosh neofetch neovim nnn pyenv pypy3 ripgrep shellcheck speedtest-cli tldr tmux tree tree-sitter wget ctags direnv
+brew cask install alacritty alfred appcleaner basictex discord fantastical gimp google-chrome julia keycastr mailplane minecraft osxfuse qlmarkdown qlstephen spotify tunnelblick zoom
 
 # set defaults
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1

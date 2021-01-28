@@ -11,12 +11,13 @@ jupyter/custom/
 jupyter/migrated
 ipython/profile_default/startup/README
 ipython/profile_default/history.sqlite
-pyenv/versions/
+pyenv/*
 
 *.netrwhist
 
 zsh/.zcompcache/
 zsh/.zsh_history
+zsh/.zsh_sessions/
 
 vim/viminfo*
 vim/plugged/*
@@ -25,4 +26,4 @@ vim/swp/*
 vim/autoload/plug.vim
 vim/autoload/plug.vim.old
 
-nvim/pack/
+nvim/pack/*
