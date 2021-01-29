@@ -10,6 +10,10 @@ xnoremap i$ :<C-u>silent normal! lT$vt$<CR>
 onoremap i$ :silent normal vi$<CR>
 xnoremap a$ :<C-u>silent normal! lF$vf$<CR>
 onoremap a$ :silent normal va$<CR>
+xnoremap i& :<C-u>silent normal! lF&vf&<CR>
+onoremap i& :silent normal va&<CR>
+xnoremap a& :<C-u>silent normal! lF&vf&<CR>
+onoremap a& :silent normal va&<CR>
 
 " Filesystem: edit /usr/local/Cellar/neovim/0.4.4/share/nvim/runtime/syntax/tex.vim
 " so that call `TexNewMathZone("E","align",1)` is in the right place

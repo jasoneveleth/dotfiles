@@ -1,0 +1,12 @@
+set nocompatible
+set number
+set readonly
+set incsearch
+highlight LineNR ctermfg=None
+
+nnoremap j <c-e>
+nnoremap k <c-y>
+nnoremap g gg
+nnoremap <down> <c-e>
+nnoremap <up> <c-y>
+nnoremap q ZQ

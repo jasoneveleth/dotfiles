@@ -51,8 +51,9 @@ fi
 _comp_options+=(globdots) # include hidden files
 
 # directory history. ex % dirs -v or % cd -<num>
-export DIRSTACKSIZE=8
-setopt autopushd pushdminus pushdsilent pushdtohome
+export DIRSTACKSIZE=100
+# pushdtohome:pushd with no argument adds home rather than swaping top two directories
+setopt autopushd pushdminus pushdsilent
 
 # enter vi mode
 KEYTIMEOUT=1
@@ -132,7 +133,8 @@ text() {
 }
 
 acp() {
-    git add -A
+    git add --update
+    git add --interactive
     git commit -m "$@"
     git push
 }
