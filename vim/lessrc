@@ -2,7 +2,9 @@ set nocompatible
 set number
 set readonly
 set incsearch
+set ttimeoutlen=50
 highlight LineNR ctermfg=None
+set viminfo='50,<1000,s100,:0,n~/.config/vim/viminfo
 
 nnoremap j <c-e>
 nnoremap k <c-y>
@@ -10,3 +12,6 @@ nnoremap g gg
 nnoremap <down> <c-e>
 nnoremap <up> <c-y>
 nnoremap q ZQ
+nnoremap u <c-u>
+nnoremap d <c-d>
+

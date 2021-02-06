@@ -19,7 +19,7 @@ set path=.,,~/.config/zsh/,~/.config/nvim/,
 set rtp+=/usr/local/opt/fzf
 set tags=./tags;,./.tags;,
 set conceallevel=1
-set viminfo+=n~/.local/share/vim/viminfo
+set viminfo='50,<1000,s100,:0,n~/.config/vim/viminfo
 set directory=~/.local/share/vim/swp//
 set backspace=indent,eol,start
 set ruler

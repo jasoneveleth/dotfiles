@@ -26,8 +26,12 @@ if [ -z "`ls $_dir`" ]; then
     cd ~
 fi
 
-brew install cask fzf htop mosh neofetch neovim nnn pyenv pypy3 ripgrep shellcheck speedtest-cli tldr tmux tree tree-sitter wget ctags direnv
+brew install cask ctags direnv fd fzf graphviz htop jump mosh neofetch neovim nnn pyenv pypy3 ripgrep shellcheck speedtest-cli tldr tmux tree tree-sitter wget
 brew cask install alacritty alfred appcleaner basictex discord fantastical gimp google-chrome julia keycastr mailplane minecraft osxfuse qlmarkdown qlstephen spotify tunnelblick zoom
+
+# brew tap zegervdv/zathura
+# brew install zathura-pdf-mupdf
+# might need to install mupdf
 
 # set defaults
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
@@ -37,3 +41,4 @@ defaults write -g PMPrintingExpandedStateForPrint -bool TRUE
 defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 defaults write -g ApplePressAndHoldEnabled -bool false
 defaults write -g KeyRepeat -int 1
+

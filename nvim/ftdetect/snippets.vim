@@ -1,0 +1,1 @@
+/Users/jasoneveleth/.config/nvim/pack/jason/opt/ultisnips/ftdetect/snippets.vim

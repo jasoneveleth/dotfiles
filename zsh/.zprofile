@@ -6,7 +6,7 @@ if [ -f /etc/profile ]; then
     . /etc/profile
 fi
 
-export PATH="$HOME/bin:~/.pyenv/bin:/usr/local/sbin:$HOME/Library/Python/3.8/bin:/usr/local/lib/ruby/gems/2.7.0/bin:$PATH:."
+export PATH="$HOME/bin:~/.pyenv/bin:/usr/local/sbin:/usr/local/opt/openjdk/bin:$HOME/Library/Python/3.8/bin:/usr/local/lib/ruby/gems/2.7.0/bin:$PATH:."
 export ICLOUD="/Users/jasoneveleth/Library/Mobile Documents/com~apple~CloudDocs"
 export XDG_CONFIG_HOME="$HOME/.config"
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
@@ -20,17 +20,19 @@ export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME/jupyter"
 export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
 export GEM_HOME="$XDG_CONFIG_HOME/gem/ruby/2.7.0"
 
+export KEYTIMEOUT=1
 export JULIA_NUM_THREADS=4
 export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git'"
 export PYTHONDONTWRITEBYTECODE=1
 export HOMEBREW_NO_AUTO_UPDATE=1
 export NNN_BMS='n:~/notes;i:~/code/python/nistsurf;z:~/.config/zsh;v:~/.config/nvim;c:~/code/c;d:~/.config'
-export NNN_PLUG='e:ewrap;n:fzfnotes'
-export NNN_OPTS="e"
+export NNN_PLUG='e:-_ewrap $nnn*;n:-_fzfnotes*;v:-_nvim*'
+export NNN_OPTS="en"
 export NNN_COLORS="4512"
 export PAGER="less"
 export EDITOR="nvim"
 export VISUAL="nvim"
+export JOURNAL="$HOME/personal/journal.md"
 # export VISUAL="ewrap"
 
 export CPATH="$HOME/code/c/include"

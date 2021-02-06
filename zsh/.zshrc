@@ -8,23 +8,31 @@
 if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
   export PATH="${PATH:+${PATH}:}/usr/local/opt/fzf/bin"
 fi
-
 # Auto-completion
 # ---------------
 [[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
-
 # Key bindings
 # ------------
 source "/usr/local/opt/fzf/shell/key-bindings.zsh"
-
 # ------------- MAY NEED UPDATING
 
 # not exported because it is bad practice to export zsh variables, only other
 # program's. When a zsh variable is exported it makes it availible system-wide,
 # rather than just for that session
 # PS1="%{$(tput rev)%}%m%{$(tput sgr0)%} %# "
-PS1=$'%{\e[7m%}%m%{\e[0m%} %# '
-RPROMPT='%{%F{8}%}%~%{%f%}'
+# PS1=$'%{\e[7m%}%m%{\e[0m%} %# '
+PS1="%B[%m:%1~]%#%b "
+EPS1='%{%F{8}%}%~%{%f%}'
+RPROMPT=$EPS1
+# https://dougblack.io/words/zsh-vi-mode.html {{{
+function zle-line-init zle-keymap-select {
+    VIM_PROMPT="[% NORMAL]%"
+    RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
+    zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
+# }}}
 
 setopt interactive_comments
 setopt correct
@@ -32,10 +40,6 @@ setopt autocd
 setopt hist_ignore_dups appendhistory share_history
 # immediately append history, rather than after terminal dies
 # setopt incappendhistory
-
-# undo ^S and ^Q functionality
-stty start undef
-stty stop undef
 
 autoload -Uz compinit
 compdump="$HOME/.config/zsh/.zcompcache/.zcompdump"
@@ -55,25 +59,16 @@ export DIRSTACKSIZE=100
 # pushdtohome:pushd with no argument adds home rather than swaping top two directories
 setopt autopushd pushdminus pushdsilent
 
-# enter vi mode
-KEYTIMEOUT=1
-bindkey -v
-autoload -z edit-command-line
-zle -N edit-command-line
-bindkey -M vicmd v edit-command-line
-
-# completion of command using most recent match in history with vim completion
-autoload -Uz up-line-or-beginning-search
-autoload -Uz down-line-or-beginning-search
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
-bindkey "^p" up-line-or-beginning-search
-bindkey "^n" down-line-or-beginning-search
+bindkey "^?" backward-delete-char
+bindkey "^U" backward-kill-line
+bindkey "^W" backward-kill-word
+bindkey "^p" history-beginning-search-backward
+bindkey "^n" history-beginning-search-forward
 
 alias ls="\ls -FG"
 alias rm="\rm -i"
 alias mv="\mv -i"
-alias l="ls -lAh"
+alias l="ls -lAho"
 
 alias cleanDS="find . -name '*.DS_Store' -type f -delete"
 alias path='echo $PATH | tr -s ":" "\n"'
@@ -85,6 +80,7 @@ alias zshrc="vi $XDG_CONFIG_HOME/zsh/.zshrc"
 alias src="source ~/.config/zsh/.zshrc; source ~/.config/zsh/.zprofile"
 alias book="vi $HOME/code/web/bookmarks/input.md"
 
+alias shortcuts='bindkey'
 alias vim='printf "use vi\n"'
 alias vi="nvim"
 alias jl="julia"
@@ -95,8 +91,8 @@ alias com="git commit"
 alias add="git add -A"
 alias s="git status"
 
-alias sbrown="ssh -t b 'tmux a || tmux new'"
-alias mbrown="/Applications/Tunnelblick.app/Contents/MacOS/Tunnelblick > /dev/null 2>&1 &; mosh --no-init --experimental-remote-ip=remote b /home/jeveleth/bin/special-tmux; killall Tunnelblick;"
+alias sb="ssh -t b 'tmux a || tmux new'"
+alias mb="/Applications/Tunnelblick.app/Contents/MacOS/Tunnelblick > /dev/null 2>&1 &; mosh --no-init --experimental-remote-ip=remote b /home/jeveleth/bin/special-tmux; killall Tunnelblick;"
 
 # FUNCTIONS
 # nnn
@@ -127,6 +123,9 @@ vis() {
     sed -i '' -e $string $XDG_CONFIG_HOME/alacritty/alacritty.yml
 }
 
+zathura() {
+    /usr/local/bin/zathura "$@" > /dev/null 2>&1 &
+}
 text() {
     command="tell application \"Messages\" to send \"${1:-hey sexy}\" to buddy \"${2:-Anna ❤️ Lee}\""
     osascript -e "$command"
@@ -134,13 +133,15 @@ text() {
 
 acp() {
     git add --update
-    git add --interactive
+    while [ "$(git ls-files --others --exclude-standard | head -c1 | wc -c)" -ne 0 ]; do
+        printf "add '$(git ls-files --others --exclude-standard)' (y/N) "
+        read ans
+        if [ ans = "y" ]; then
+            git add "$(head -n 1 $(git ls-files --others --exclude-standard))"
+        fi
+    done
     git commit -m "$@"
     git push
-}
-
-run-julia() {
-    julia --load "$1" -e "main($2)"
 }
 
 # https://mrigank11.github.io/2018/03/zsh-auto-completion/
@@ -150,22 +151,9 @@ _maketex() {
 }
 compdef _maketex maketex
 
-randomText() {
-    if ! ( (( $1 > 0 )) && (( $1 < 1000000 )) ); then
-        printf 'usage: randomText <num>\n'
-        return
-    fi
-    for ((i = 0; i < $1; i++)); do
-        if [[ $(($RANDOM % 10)) < 2 ]]; then
-            printf ' '
-            i+=1
-        fi
-        printf "$(($RANDOM % 10))"
-    done
-}
-
 # get direnv, and pyenv working, takes 0.06 seconds
 eval "$(direnv hook zsh)"
 if command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv init - zsh --no-rehash)"
 fi
+eval "$(jump shell)"

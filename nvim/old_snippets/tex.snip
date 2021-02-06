@@ -19,6 +19,16 @@ abbr    \[ expression \]
         ${1:TARGET}
         \]${0}
 
+snippet setm
+    \setminus
+
+snippet and
+    \land $0
+
+snippet inc
+        \includegraphics[width=0.49\linewidth]{${1}}
+        ${0}
+
 # ========== ENVIRONMENT ==========
 
 snippet \begin
@@ -237,7 +247,7 @@ snippet figure
 alias   \begin{figure} \figure
 	\begin{figure}[${1:h}]
 		\centering
-		\includegraphics[${2:width=${3\}}]{${4}}
+		\includegraphics[${2:width=${3:5cm\}}]{${4}}
 		\caption{${5}}
 		\label{${6}}
 	\end{figure}
@@ -329,15 +339,15 @@ alias   \begin{Vmatrix} \Vmatrix
 # ========== MATHBB ==========
 
 snippet reals
-alias \R
+alias RR
 	\mathbb{R}
 
 snippet integers
-alias \Z
+alias ZZ
 	\mathbb{Z}
 
 snippet naturals
-alias \N
+alias NN
 	\mathbb{N}
 
 # ========== SECTION ==========
@@ -383,25 +393,36 @@ snippet 1/
 	\frac{1}{${1}}${0}
 
 snippet frac
-alias 	frac // \frac{}{}
-	\frac{${1:num}}{${2:denom}} ${0}
+alias 	// \frac
+	\frac{${1:TARGET}}{${2}} ${0}
 
 snippet \left
 alias   left
 abbr	\left \right
 	\left${1:(} ${3:#:body} \right${2:)}${0}
 
+# snippet (
+# abbr	\left \right
+# 	\left( ${1:#:body} \right)${0}
+
 snippet (
-abbr	\left \right
-	\left( ${1:#:body} \right)${0}
+options word
+    (${1:TARGET}) ${0}
+
+snippet union
+alias cup
+    \cup $0
+
+snippet cap 
+    \cap $0
 
 snippet . 
 alias dot product
-	\cdot ${0}
+	\cdot $0
 
 snippet int 
 alias integral
-	\int_{${1}}^{${2}} ${3} d${4} ${5}
+	\int_{${1:0}}^{${2:\infty}} ${3} d${4} ${5}
 
 snippet sum 
 alias \sum^{}_{}
@@ -415,9 +436,20 @@ snippet set
 alias \{
     \{ ${1} \}${0}
 
-snippet conatains
-alias in
-    \in
+snippet in
+    \in $0
+
+snippet equals
+alias ==
+    &= ${1} \\\\
+    ${0}
+
+snippet not
+    \not
+
+snippet or
+alias lor
+    \lor ${0}
 
 # ========== FONT ==========
 
@@ -612,8 +644,8 @@ alias   \fullcite
 
 # ========== OTHERS ==========
 snippet usepackage
-alias   up \usepackage
-	\usepackage${1:#:[]}{${3}}${0}
+alias   up
+	\usepackage${1:[${2\}]}{${3}}${0}
 
 snippet ref
 alias   \ref
