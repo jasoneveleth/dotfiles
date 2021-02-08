@@ -22,17 +22,17 @@ source "/usr/local/opt/fzf/shell/key-bindings.zsh"
 # PS1="%{$(tput rev)%}%m%{$(tput sgr0)%} %# "
 # PS1=$'%{\e[7m%}%m%{\e[0m%} %# '
 PS1="%B[%m:%1~]%#%b "
-EPS1='%{%F{8}%}%~%{%f%}'
-RPROMPT=$EPS1
-# https://dougblack.io/words/zsh-vi-mode.html {{{
-function zle-line-init zle-keymap-select {
-    VIM_PROMPT="[% NORMAL]%"
-    RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
-    zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
-# }}}
+# EPS1='%{%F{8}%}%~%{%f%}'
+# RPROMPT=$EPS1
+# # https://dougblack.io/words/zsh-vi-mode.html {{{
+# function zle-line-init zle-keymap-select {
+#     VIM_PROMPT="[% NORMAL]%"
+#     RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
+#     zle reset-prompt
+# }
+# zle -N zle-line-init
+# zle -N zle-keymap-select
+# # }}}
 
 setopt interactive_comments
 setopt correct
@@ -59,9 +59,10 @@ export DIRSTACKSIZE=100
 # pushdtohome:pushd with no argument adds home rather than swaping top two directories
 setopt autopushd pushdminus pushdsilent
 
-bindkey "^?" backward-delete-char
-bindkey "^U" backward-kill-line
-bindkey "^W" backward-kill-word
+bindkey -e
+# bindkey "^?" backward-delete-char
+# bindkey "^U" backward-kill-line
+# bindkey "^W" backward-kill-word
 bindkey "^p" history-beginning-search-backward
 bindkey "^n" history-beginning-search-forward
 
@@ -75,7 +76,7 @@ alias path='echo $PATH | tr -s ":" "\n"'
 alias findhardlinks='find -x . -links +1 ! -type d -exec ls -li {} \; | rg --invert-match "Caches|(Group Containers)|(Application Support)" | sort -n'
 alias battery='pmset -g batt | sed -n "s/.*[[:space:]]\([[:digit:]]*%\);.*/\1/p"'
 alias noswap="rm -f /Users/jasoneveleth/.local/share/nvim/swap/*"
-alias vimrc="vi $XDG_CONFIG_HOME/nvim/init.vim"
+alias vimrc="vi $XDG_CONFIG_HOME/nvim/init.lua"
 alias zshrc="vi $XDG_CONFIG_HOME/zsh/.zshrc"
 alias src="source ~/.config/zsh/.zshrc; source ~/.config/zsh/.zprofile"
 alias book="vi $HOME/code/web/bookmarks/input.md"
@@ -132,14 +133,15 @@ text() {
 }
 
 acp() {
-    git add --update
-    while [ "$(git ls-files --others --exclude-standard | head -c1 | wc -c)" -ne 0 ]; do
-        printf "add '$(git ls-files --others --exclude-standard)' (y/N) "
-        read ans
-        if [ ans = "y" ]; then
-            git add "$(head -n 1 $(git ls-files --others --exclude-standard))"
-        fi
-    done
+    git add -A
+    # git add --update
+    # while [ "$(git ls-files --others --exclude-standard | head -c1 | wc -c)" -ne 0 ]; do
+    #     printf "add '$(git ls-files --others --exclude-standard)' (y/N) "
+    #     read ans
+    #     if [ ans = "y" ]; then
+    #         git add "$(head -n 1 $(git ls-files --others --exclude-standard))"
+    #     fi
+    # done
     git commit -m "$@"
     git push
 }

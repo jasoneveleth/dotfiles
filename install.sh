@@ -26,7 +26,7 @@ if [ -z "`ls $_dir`" ]; then
     cd ~
 fi
 
-brew install cask ctags direnv fd fzf graphviz htop jump mosh neofetch neovim nnn pyenv pypy3 ripgrep shellcheck speedtest-cli tldr tmux tree tree-sitter wget
+brew install cask ctags direnv fd fzf graphviz htop jump moreutils mosh neofetch neovim nnn pyenv pypy3 ripgrep shellcheck speedtest-cli tldr tmux tree tree-sitter wget
 brew cask install alacritty alfred appcleaner basictex discord fantastical gimp google-chrome julia keycastr mailplane minecraft osxfuse qlmarkdown qlstephen spotify tunnelblick zoom
 
 # brew tap zegervdv/zathura
