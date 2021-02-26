@@ -23,16 +23,8 @@ source "/usr/local/opt/fzf/shell/key-bindings.zsh"
 # PS1=$'%{\e[7m%}%m%{\e[0m%} %# '
 PS1="%B[%m:%1~]%#%b "
 # EPS1='%{%F{8}%}%~%{%f%}'
-# RPROMPT=$EPS1
-# # https://dougblack.io/words/zsh-vi-mode.html {{{
-# function zle-line-init zle-keymap-select {
-#     VIM_PROMPT="[% NORMAL]%"
-#     RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
-#     zle reset-prompt
-# }
-# zle -N zle-line-init
-# zle -N zle-keymap-select
-# # }}}
+ESP1=''
+RPROMPT=$EPS1
 
 setopt interactive_comments
 setopt correct
@@ -56,15 +48,9 @@ _comp_options+=(globdots) # include hidden files
 
 # directory history. ex % dirs -v or % cd -<num>
 export DIRSTACKSIZE=100
-# pushdtohome:pushd with no argument adds home rather than swaping top two directories
 setopt autopushd pushdminus pushdsilent
 
-bindkey -e
-# bindkey "^?" backward-delete-char
-# bindkey "^U" backward-kill-line
-# bindkey "^W" backward-kill-word
-bindkey "^p" history-beginning-search-backward
-bindkey "^n" history-beginning-search-forward
+source $ZDOTDIR/readline.zsh
 
 alias ls="\ls -FG"
 alias rm="\rm -i"
@@ -75,16 +61,16 @@ alias cleanDS="find . -name '*.DS_Store' -type f -delete"
 alias path='echo $PATH | tr -s ":" "\n"'
 alias findhardlinks='find -x . -links +1 ! -type d -exec ls -li {} \; | rg --invert-match "Caches|(Group Containers)|(Application Support)" | sort -n'
 alias battery='pmset -g batt | sed -n "s/.*[[:space:]]\([[:digit:]]*%\);.*/\1/p"'
-alias noswap="rm -f /Users/jasoneveleth/.local/share/nvim/swap/*"
-alias vimrc="vi $XDG_CONFIG_HOME/nvim/init.lua"
+alias noswap="rm -f $HOME/.local/share/nvim/swap/*"
+alias vimrc="vi $XDG_CONFIG_HOME/nvim/init.vim"
 alias zshrc="vi $XDG_CONFIG_HOME/zsh/.zshrc"
-alias src="source ~/.config/zsh/.zshrc; source ~/.config/zsh/.zprofile"
+alias src="source ~/.config/zsh/.zshrc && printf 'source .zshrc'; source ~/.config/zsh/.zprofile && printf 'sourced .zprofile\n'"
 alias book="vi $HOME/code/web/bookmarks/input.md"
 
 alias shortcuts='bindkey'
 alias vim='printf "use vi\n"'
 alias vi="nvim"
-alias jl="julia"
+alias jl="/usr/local/bin/julia"
 alias ql="qlmanage -p 2>/dev/null"
 alias brew="/usr/bin/env PATH=${PATH/$PYENV_ROOT\/shims:/} /usr/local/bin/brew" # make brew and pyenv play nice
 
@@ -127,21 +113,14 @@ vis() {
 zathura() {
     /usr/local/bin/zathura "$@" > /dev/null 2>&1 &
 }
+
 text() {
     command="tell application \"Messages\" to send \"${1:-hey sexy}\" to buddy \"${2:-Anna ❤️ Lee}\""
     osascript -e "$command"
 }
 
 acp() {
-    git add -A
-    # git add --update
-    # while [ "$(git ls-files --others --exclude-standard | head -c1 | wc -c)" -ne 0 ]; do
-    #     printf "add '$(git ls-files --others --exclude-standard)' (y/N) "
-    #     read ans
-    #     if [ ans = "y" ]; then
-    #         git add "$(head -n 1 $(git ls-files --others --exclude-standard))"
-    #     fi
-    # done
+    git add --update
     git commit -m "$@"
     git push
 }
@@ -155,7 +134,5 @@ compdef _maketex maketex
 
 # get direnv, and pyenv working, takes 0.06 seconds
 eval "$(direnv hook zsh)"
-if command -v pyenv 1>/dev/null 2>&1; then
-    eval "$(pyenv init - zsh --no-rehash)"
-fi
+eval "$(pyenv init - zsh --no-rehash)"
 eval "$(jump shell)"

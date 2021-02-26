@@ -2,44 +2,92 @@ local o = vim.o
 local bo = vim.bo
 local wo = vim.wo
 local cmd = vim.cmd
+local g = vim.g
 
-o.incsearch = true
 o.inccommand = 'split'
 o.shortmess = 'xtToOFc'
-o.hlsearch = false
-o.joinspaces = true
+o.joinspaces = false
 o.ignorecase = true
 o.smartcase = true
 o.hidden = true
-o.autoread = true
 o.gdefault = true
-o.autoindent = true
 o.shiftround = true
 bo.shiftwidth = 4
 bo.expandtab = true
-bo.softtabstop = 4
-bo.tabstop = 4
-o.tags = './tags;,./.tags;,' .. vim.env.HOME .. '/.config/nvim/systags'
+o.tags = 'tags;,.tags;,'
 o.clipboard = 'unnamed'
 wo.number = true
 wo.relativenumber = true
-o.grepprg = 'rg --vimgrep'
+o.grepprg = 'rg --vimgrep --hidden'
 o.exrc = true
-bo.undofile = true
+-- bo.undofile = true
+cmd('set undofile')
 o.undodir = vim.env.HOME .. '/.local/share/nvim/undo//'
-o.path = '.,,' .. vim.env.HOME .. '/.config/nvim/**,' .. vim.env.HOME .. '/.config/zsh/**'
-o.completeopt = 'menuone'
-o.runtimepath = o.runtimepath .. ',/usr/local/opt/fzf'
+o.path = '.,**'
 wo.list = true
 o.listchars = 'tab:│ ,extends:>'
 wo.breakindent = true
 wo.breakindentopt = 'sbr'
-o.showbreak = '+++ '
+o.showbreak = '++'
 wo.cursorline = true
+bo.omnifunc = 'syntaxcomplete#Complete'
 
-vim.cmd('syntax on')
-vim.cmd('colorscheme off')
+cmd('syntax enable')
+cmd('colorscheme off')
 o.background = 'dark'
 
-vim.g.python3_host_prog = '$HOME/.config/pyenv/shims/python'
-vim.g.netrw_dirhistmax = 0
+g.loaded_python_provider = 1
+g.python_host_skip_check = 1
+g.python_host_prog = '/usr/bin/python'
+g.python3_host_skip_check = 1
+g.python3_host_prog = '$HOME/.config/pyenv/shims/python'
+
+g.netrw_dirhistmax = 0
+g.tex_flavor = 'latex'
+
+g.vimtex_view_method = 'skim'
+g.vimtex_fold_manual = 1
+
+g.targets_seekRanges = 'cc cr cb cB lc ac Ac lr rr ll lb ar ab lB Ar aB AB rb al rB Al'
+g.CoolTotalMatches = 1
+
+g.UltiSnipsExpandTrigger = "<tab>"
+g.UltiSnipsJumpForwardTrigger = "<tab>"
+g.UltiSnipsJumpBackwardTrigger = "<s-tab>"
+g.UltiSnipsSnippetDirectories = {"ftplugin/my_snippets"}
+-- ultisnip nvim fix: https://github.com/neovim/neovim/issues/5728#issuecomment-406475616
+
+-- -- Treesitter:
+-- require'nvim-treesitter.configs'.setup {
+-- highlight = { enable = true },
+-- incremental_selection = { enable = true },
+-- textobjects = { enable = true },
+-- indent = { 
+-- enable = true,
+-- disable = { "python", "tex" },
+-- },
+-- }
+-- -- highlight link TSFuncBuiltin Builtin
+-- -- highlight link TSPunctDelimiter Normal
+-- -- highlight link TSPunctBracket Normal
+
+-- -- Neosnippet: 
+-- let g:neosnippet#disable_runtime_snippets = {'_' : 1}
+-- let g:neosnippet#snippets_directory = "~/dotfiles/nvim/mysnippets"
+
+-- -- Completion:
+-- let g:completion_enable_auto_popup = 1
+-- let g:completion_trigger_keyword_length = 3
+-- let g:completion_auto_change_source = 1
+-- let g:completion_matching_strategy_list = ['exact', 'substring']
+-- let g:completion_enable_snippet = 'Neosnippet'
+-- let g:completion_chain_complete_list = [
+--             \{'complete_items' : ['ts', 'snippet']}, 
+--             \{'mode' : 'omni,tags'},
+--             \{'mode' : '<c-p>' },
+--             \{'mode' : '<c-n>' }
+--             \]
+-- " Use completion-nvim in every buffer
+-- autocmd BufEnter *.c,*.h,*.jl,*.py,*.html,*.js,*.java,*.sh,*.zsh lua require'completion'.on_attach()
+-- imap <silent> <c-k> <Plug>(completion_trigger)
+-- set completeopt+=noselect

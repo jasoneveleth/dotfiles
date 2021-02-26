@@ -1,12 +1,11 @@
+set viminfo+=n~/.config/vim/viminfo
 syn on
-set nohlsearch
 set exrc
-set incsearch inccommand=split
+set incsearch
 set hidden autoread
 set number relativenumber
 set nojoinspaces
 set gdefault
-set noerrorbells
 set undofile undodir=~/.local/share/nvim/undo//
 set shiftwidth=4 shiftround 
 set softtabstop=4 tabstop=4 expandtab
@@ -15,11 +14,9 @@ set clipboard+=unnamed
 set shortmess=xtToOFc
 set grepprg=rg\ --vimgrep
 set completeopt=menuone,noinsert,noselect
-set path=.,,~/.config/zsh/,~/.config/nvim/,
 set rtp+=/usr/local/opt/fzf
 set tags=./tags;,./.tags;,
 set conceallevel=1
-set viminfo='50,<1000,s100,:0,n~/.config/vim/viminfo
 set directory=~/.local/share/vim/swp//
 set backspace=indent,eol,start
 set ruler
@@ -34,11 +31,8 @@ filetype indent plugin on
 let mapleader = " "
 nnoremap <Up> <c-y>
 nnoremap <Down> <c-e>
-nnoremap <leader>f :FZF<cr>
 vnoremap <leader>p "_dP
 nnoremap <leader>r :call system('ctags -R -o .tags')<cr>
 nnoremap <leader>b :call myfunctions#Buffers()<cr>
 nnoremap <expr> <leader>o filter(range(1, winnr('$')), 'getwinvar(v:val, "&ft") == "qf"')==[] ? ':cope<cr>' : ':ccl<cr>' 
-
-hi! Normal ctermbg=NONE guibg=NONE
-hi! NonText ctermbg=NONE guibg=NONE
+let g:hasbeenset = 1

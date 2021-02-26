@@ -6,3 +6,12 @@
 	email = jj11@eveleth.com
 [color]
 	ui = auto
+[alias]
+	l = log --graph -n 30 --pretty=format:'%Cred%h%Creset %Cgreen(%cr) %C(bold blue)<%an>%Creset %C(yellow)%d%Creset %s' --abbrev-commit
+	co = checkout
+	s = status -s
+	br = branch
+	c = commit --verbose
+	a = add
+	alias = !git config -l | grep '^alias.' | cut -d'.' -f2
+

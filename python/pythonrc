@@ -1,10 +1,13 @@
+import atexit
+import os
 import readline
-readline.write_history_file = lambda *args: None
-# readline.write_history_file('$XDG_CONFIG_HOME/python/hist')
 
-# import readline
-# import time
-#
-# readline.add_history("# " + time.asctime()) # prevent default use of ~/.python_history
-# readline.set_history_length(-1) # unlimited
+if 'PYTHONHISTFILE' in os.environ:
+    histfile = os.path.expanduser(os.environ['PYTHONHISTFILE'])
+    readline.read_history_file(histfile)
+    atexit.register(readline.write_history_file, histfile)
+else:
+    print("WARNING: no history file found")
+    readline.write_history_file = lambda *args: None
 
+import numpy as np

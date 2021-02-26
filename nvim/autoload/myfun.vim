@@ -7,9 +7,9 @@ function! myfun#DiffWithSaved()
 endfunction
 
 function! myfun#HardMode()
+    nnoremap <expr> k v:count == 0 ? '' : 'k'
+    nnoremap <expr> j v:count == 0 ? '' : 'j'
     nnoremap h <nop>
-    nnoremap j <nop>
-    nnoremap k <nop>
     nnoremap l <nop>
     nnoremap w <nop>
     nnoremap b <nop>
@@ -109,15 +109,14 @@ function! myfun#NotesFind(split)
     endif
 endfunction
 
-" function! myfun#Enter()
-"     let before=getline('.')[col('.')-2] 
-"     echo before
-"     if (before == "{") || (before == "(")
-"         return "O"
-"     else
-"         return ""
-"     endif
-" endfunction
+function! myfun#Enter()
+    let before=getline('.')[col('.')-2] 
+    if (before == "{")
+        return "\<cr>}\<esc>O"
+    else
+        return "\<cr>"
+    endif
+endfunction
 
 " function! myfun#InsertBrace()
 "     let cursor=getline('.')[col('.')-1]

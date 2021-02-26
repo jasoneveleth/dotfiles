@@ -6,10 +6,14 @@ if [ -f /etc/profile ]; then
     . /etc/profile
 fi
 
+HISTSIZE=1000000
+SAVEHIST=10000000
+
 export PATH="$HOME/bin:~/.pyenv/bin:/usr/local/sbin:/usr/local/opt/openjdk/bin:$HOME/Library/Python/3.8/bin:/usr/local/lib/ruby/gems/2.7.0/bin:$PATH:."
 export ICLOUD="/Users/jasoneveleth/Library/Mobile Documents/com~apple~CloudDocs"
 export XDG_CONFIG_HOME="$HOME/.config"
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
+export PYTHONHISTFILE="$HOME/.local/share/python/history"
 export PYENV_ROOT="$XDG_CONFIG_HOME/pyenv"
 export MPLCONFIGDIR="$XDG_CONFIG_HOME/matplotlib"
 export PYLINTHOME="$XDG_CONFIG_HOME/python/pylint.d"
@@ -34,9 +38,10 @@ export EDITOR="nvim"
 export VISUAL="$EDITOR"
 export JOURNAL="$HOME/personal/journal.md"
 
-export CPATH="$HOME/code/c/include"
-export LD_LIBRARY_PATH="$HOME/code/c/lib"
-export DYLD_LIBRARY_PATH="$HOME/code/c/lib"
+# export VIMINIT= 'let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
+
 # to fix pyenv
 export LDFLAGS="-L$(xcrun --show-sdk-path)/usr/lib"
 
+# export LANG="en_US.UTF-8"
+# export LC_ALL="en_US.UTF-8"

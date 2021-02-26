@@ -80,6 +80,8 @@ key_bindings:
   - { key: A,         mods: Alt,       chars: "\x1ba"                     }
   - { key: C,         mods: Alt,       chars: "\x1bc"                     }
   - { key: D,         mods: Alt,       chars: "\x1bd"                     }
+  - { key: B,         mods: Alt,       chars: "\x1bb"                     }
+  - { key: F,         mods: Alt,       chars: "\x1bf"                     }
   - { key: Return,   mods: Shift,   chars: "\x1b[13;2u" }
   - { key: Return,   mods: Control, chars: "\x1b[13;5u" }
 
