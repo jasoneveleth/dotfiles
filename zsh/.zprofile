@@ -11,7 +11,11 @@ SAVEHIST=10000000
 
 export PATH="$HOME/bin:~/.pyenv/bin:/usr/local/sbin:/usr/local/opt/openjdk/bin:$HOME/Library/Python/3.8/bin:/usr/local/lib/ruby/gems/2.7.0/bin:$PATH:."
 export ICLOUD="/Users/jasoneveleth/Library/Mobile Documents/com~apple~CloudDocs"
+
 export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
 export PYTHONHISTFILE="$HOME/.local/share/python/history"
 export PYENV_ROOT="$XDG_CONFIG_HOME/pyenv"
@@ -23,6 +27,9 @@ export LESSHISTFILE="$HOME/.cache/less/histfile"
 export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME/jupyter"
 export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
 export GEM_HOME="$XDG_CONFIG_HOME/gem/ruby/2.7.0"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
+export npm_config_devdir="$XDG_DATA_HOME"/node-gyp
 
 export KEYTIMEOUT=1
 export JULIA_NUM_THREADS=4

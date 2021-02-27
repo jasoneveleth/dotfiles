@@ -7,6 +7,7 @@ python/pylint.d/
 python/idlerc/
 .ghcup/
 gem/
+npm/
 jupyter/custom/
 jupyter/migrated
 ipython/profile_default/startup/README
@@ -29,3 +30,4 @@ vim/autoload/plug.vim
 vim/autoload/plug.vim.old
 
 nvim/pack/*
+

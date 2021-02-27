@@ -2,6 +2,10 @@
 # bindkey "^U" backward-kill-line
 # bindkey "^W" backward-kill-word
 
+# EPS1='%{%F{8}%}%~%{%f%}'
+# ESP1=''
+# RPROMPT=$EPS1
+
 # # https://dougblack.io/words/zsh-vi-mode.html {{{
 # function zle-line-init zle-keymap-select {
 #     VIM_PROMPT="[% NORMAL]%"

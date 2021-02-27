@@ -57,6 +57,10 @@ g.UltiSnipsJumpBackwardTrigger = "<s-tab>"
 g.UltiSnipsSnippetDirectories = {"ftplugin/my_snippets"}
 -- ultisnip nvim fix: https://github.com/neovim/neovim/issues/5728#issuecomment-406475616
 
+g.fzf_layout = { down = '20%' }
+cmd("let $FZF_DEFAULT_OPTS=''")
+cmd("command! -bang -nargs=? -complete=dir Files call fzf#vim#files(<q-args>, {'options': '--prompt \"> \" --info=inline'}, <bang>0)")
+
 -- -- Treesitter:
 -- require'nvim-treesitter.configs'.setup {
 -- highlight = { enable = true },

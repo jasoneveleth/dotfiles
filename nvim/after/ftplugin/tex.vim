@@ -3,6 +3,9 @@ setlocal conceallevel=1
 setlocal spell
 setlocal makeprg=maketex\ %
 
+paq 'SirVer/ultisnips'
+paq 'lervag/vimtex'
+
 inoremap <buffer> <C-s> <c-g>u<Esc>[s1z=`]a
 inoremap <buffer> <c-f> <c-g>u$<space><esc>Bi$<esc>:undoj<cr>f$a
 " other candidates for insert ctrl B
