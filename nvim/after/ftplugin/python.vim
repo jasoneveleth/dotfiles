@@ -1,5 +1,4 @@
 setlocal commentstring=#\ %s
-setlocal omnifunc=python3complete#Complete
 setlocal include=^\s\
 set include=^\\s*\\(from\\\|import\\)\\s*\\zs\\(\\S\\+\\s\\{-\\}\\)*\\ze\\($\\\|\ as\ \\)
 

@@ -8,6 +8,8 @@ map('x', 'y', 'myy`y', { noremap = true })
 map('n', '<Up>', '<c-y>', { noremap = true })
 map('n', '<Down>', '<c-e>', { noremap = true })
 map('n', '\'', '`', { noremap = true })
+map('n', 'gl', '$', { noremap = true })
+map('n', 'gh', '0', { noremap = true })
 -- : ;
 -- jk <esc>
 -- J, K in x to dP, and djp

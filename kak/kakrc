@@ -10,4 +10,5 @@ set-option global autoreload yes
 # Fix LiveReload?? - https://github.com/alexherbo2/configuration/blob/master/config/kak/kakrc
 # set-option global writemethod replace
 
-set-option global ui_options ncurses_assistant=cat
+# set-option global ui_options ncurses_assistant=cat
+set-option global ui_options ncurses_assistant=clippy

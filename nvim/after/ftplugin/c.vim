@@ -4,7 +4,7 @@
 " ino <expr> <cr> myfunctions#Enter()
 setlocal commentstring=//\ %s
 let g:completion_trigger_character = ['.']
-setlocal omnifunc=ccomplete#Complete
+" setlocal omnifunc=ccomplete#Complete
 set tags+=$HOME/.cache/nvim/systags
 set sw=4
 set smarttab

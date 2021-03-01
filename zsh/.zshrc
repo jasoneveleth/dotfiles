@@ -10,8 +10,6 @@ fi
 source "/usr/local/opt/fzf/shell/key-bindings.zsh"
 # ------------- MAY NEED UPDATING
 
-# PS1="%{$(tput rev)%}%m%{$(tput sgr0)%} %# "
-# PS1=$'%{\e[7m%}%m%{\e[0m%} %# '
 PS1="%B[%m:%1~]%#%b "
 
 setopt interactive_comments

@@ -16,9 +16,6 @@ paq 'wellle/targets.vim'
 paq 'romainl/vim-cool'
 paq 'junegunn/fzf.vim'
 paq 'junegunn/fzf'
--- paq 'tpope/vim-fugitive'
--- paq 'Konfekt/FastFold'
--- paq 'matze/vim-tex-fold'
 
 require('settings')
 require('maps')
