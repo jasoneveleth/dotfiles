@@ -29,12 +29,15 @@ o.listchars = 'tab:│ ,extends:>'
 wo.breakindent = true
 wo.breakindentopt = 'sbr'
 o.showbreak = '++'
-wo.cursorline = true
+-- wo.cursorline = true
 bo.omnifunc = 'syntaxcomplete#Complete'
 
-cmd('syntax enable')
-cmd('colorscheme off')
-o.background = 'dark'
+cmd('silent cd %:h')
+-- cmd('syntax enable')
+cmd('syntax off')
+cmd('hi MatchParen ctermbg=8 ctermfg=NONE')
+-- cmd('colorscheme off')
+-- o.background = 'dark'
 
 g.loaded_python_provider = 1
 g.python_host_skip_check = 1
@@ -60,6 +63,10 @@ g.UltiSnipsSnippetDirectories = {"ftplugin/my_snippets"}
 g.fzf_layout = { down = '20%' }
 cmd("let $FZF_DEFAULT_OPTS=''")
 cmd("command! -bang -nargs=? -complete=dir Files call fzf#vim#files(<q-args>, {'options': '--prompt \"> \" --info=inline'}, <bang>0)")
+
+g.qf_auto_open_quickfix = 1
+g.qf_auto_quit = 1
+g.qf_shorten_path = 1
 
 -- -- Treesitter:
 -- require'nvim-treesitter.configs'.setup {

@@ -29,11 +29,13 @@ export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
 export GEM_HOME="$XDG_CONFIG_HOME/gem/ruby/2.7.0"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
+export BIBINPUTS="$HOME/.config/latex"  
 export npm_config_devdir="$XDG_DATA_HOME"/node-gyp
 
 export KEYTIMEOUT=1
 export JULIA_NUM_THREADS=4
-export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git'"
+export FZF_DEFAULT_COMMAND='fd --type file --hidden --exclude .git --exclude node_modules --exclude __pycache__'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export PYTHONDONTWRITEBYTECODE=1
 export HOMEBREW_NO_AUTO_UPDATE=1
 export NNN_BMS='n:~/notes;i:~/code/python/nistsurf;z:~/.config/zsh;v:~/.config/nvim;c:~/code/c;d:~/.config'

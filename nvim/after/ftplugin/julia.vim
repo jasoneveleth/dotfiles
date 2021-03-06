@@ -1,2 +1,2 @@
 setlocal commentstring=#\ %s
-setlocal makeprg=julia\ %
+setlocal makeprg=julia\ --load\ %\ -e\ \"main($2)\"

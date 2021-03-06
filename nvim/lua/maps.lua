@@ -10,6 +10,9 @@ map('n', '<Down>', '<c-e>', { noremap = true })
 map('n', '\'', '`', { noremap = true })
 map('n', 'gl', '$', { noremap = true })
 map('n', 'gh', '0', { noremap = true })
+map('n', '<leader>', '<nop>', {})
+map('i', '<up>', '<c-\\><c-o><c-y>', { noremap = true })
+map('i', '<down>', '<c-\\><c-o><c-e>', { noremap = true })
 -- : ;
 -- jk <esc>
 -- J, K in x to dP, and djp
@@ -40,14 +43,15 @@ map('n', '<leader>p', ":Files<CR>", { silent = true })
 -- nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 
 vim.g.tmux_navigator_no_mappings = 1
-map('n', '<m-l>', ':TmuxNavigateLeft<cr>', {noremap = true, silent = true})
-map('n', '<m-h>', ':TmuxNavigateRight<cr>', {noremap = true, silent = true})
+map('n', '<m-l>', ':TmuxNavigateRight<cr>', {noremap = true, silent = true})
+map('n', '<m-h>', ':TmuxNavigateLeft<cr>', {noremap = true, silent = true})
 map('n', '<m-j>', ':TmuxNavigateDown<cr>', {noremap = true, silent = true})
 map('n', '<m-k>', ':TmuxNavigateUp<cr>', {noremap = true, silent = true})
 
 map('x', 'ga', '<Plug>(EasyAlign)', {silent = true})
 map('n', 'ga', '<Plug>(EasyAlign)', {silent = true})
 
+cmd("cabbrev <expr> make getcmdtype() == \":\" && getcmdline() == 'make' ? 'silent make' : 'make'")
 -- " Neosnippet: mappings
 -- imap <expr> <tab> myfun#Tab()
 -- smap <tab>     <Plug>(neosnippet_expand_or_jump)

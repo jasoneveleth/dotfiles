@@ -21,8 +21,8 @@ autoload -U edit-command-line
 zle -N edit-command-line
 
 bindkey -e
-bindkey "^p" history-beginning-search-backward
-bindkey "^n" history-beginning-search-forward
+# bindkey "^p" history-beginning-search-backward
+# bindkey "^n" history-beginning-search-forward
 bindkey '^x^e' edit-command-line
 bindkey "^u" backward-kill-line
 bindkey "^k" kill-line

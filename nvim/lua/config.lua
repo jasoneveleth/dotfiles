@@ -16,6 +16,7 @@ paq 'wellle/targets.vim'
 paq 'romainl/vim-cool'
 paq 'junegunn/fzf.vim'
 paq 'junegunn/fzf'
+paq 'romainl/vim-qf'
 
 require('settings')
 require('maps')

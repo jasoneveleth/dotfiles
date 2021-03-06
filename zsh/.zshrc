@@ -1,20 +1,25 @@
 #!/bin/zsh
 
-[ -f "${GHCUP_INSTALL_BASE_PREFIX:="$HOME"}/.ghcup/env" ] && . "${GHCUP_INSTALL_BASE_PREFIX:="$HOME"}/.ghcup/env"
-
-# .fzf.zsh --- MAY NEED UPDATING
+# ------------- fzf
 if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
   export PATH="${PATH:+${PATH}:}/usr/local/opt/fzf/bin"
 fi
 [[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
 source "/usr/local/opt/fzf/shell/key-bindings.zsh"
-# ------------- MAY NEED UPDATING
 
+# ------------- general
 PS1="%B[%m:%1~]%#%b "
 
 setopt interactive_comments
 setopt hist_ignore_dups appendhistory share_history
 
+# directory history. ex % dirs -v or % cd -<num>
+export DIRSTACKSIZE=100
+setopt autopushd pushdminus pushdsilent
+
+source $ZDOTDIR/readline.zsh
+
+# ------------- completion
 autoload -Uz compinit
 compdump="$HOME/.config/zsh/.zcompcache/.zcompdump"
 # {unix time} - {compdump modified date} > {seconds in a day}
@@ -28,20 +33,22 @@ else
 fi
 _comp_options+=(globdots) # include hidden files
 
-# directory history. ex % dirs -v or % cd -<num>
-export DIRSTACKSIZE=100
-setopt autopushd pushdminus pushdsilent
+# https://mrigank11.github.io/2018/03/zsh-auto-completion/
+_maketex() {
+    local state 
+    _arguments '1: :($(ls *.tex))'
+}
+compdef _maketex maketex
 
-source $ZDOTDIR/readline.zsh
-
+# ------------- aliases
 alias ls="\ls -FG"
 alias rm="\rm -i"
 alias mv="\mv -i"
 
 alias cleanDS="find . -name '*.DS_Store' -type f -delete"
 alias path='echo $PATH | tr -s ":" "\n"'
-alias findhardlinks='find -x . -links +1 ! -type d -exec ls -li {} \; | rg --invert-match "Caches|(Group Containers)|(Application Support)" | sort -n'
-alias battery='pmset -g batt | sed -n "s/.*[[:space:]]\([[:digit:]]*%\);.*/\1/p"'
+alias findhardlinks='find -x . -links +1 ! -type d ! -regex "Caches|(Group Containers)|(Application Support)" -exec ls -l {} \; 2> /dev/null | sort -nk2'
+alias battery="pmset -g batt | egrep -o '\d+%'"
 alias noswap="rm -f $HOME/.local/share/nvim/swap/*"
 alias vimrc="vi $XDG_CONFIG_HOME/nvim/init.vim"
 alias zshrc="vi $XDG_CONFIG_HOME/zsh/.zshrc"
@@ -50,19 +57,16 @@ alias book="vi $HOME/code/web/bookmarks/input.md"
 alias ..='cd ..'
 alias ...='cd ../..'
 
-# alias shortcuts='bindkey'
-alias vim='printf "use vi\n"'
 alias vi="nvim"
 alias g='git'
-alias jl="/usr/local/bin/julia"
+alias jl="julia"
 alias ql="qlmanage -p 2>/dev/null"
-alias brew="/usr/bin/env PATH=${PATH/$PYENV_ROOT\/shims:/} /usr/local/bin/brew" # make brew and pyenv play nice
+alias less="bat"
 
 alias sb="ssh -t b 'tmux a || tmux new'"
-alias mb="Tunnelblick > /dev/null 2>&1 &; mosh --no-init --experimental-remote-ip=remote b /home/jeveleth/bin/special-tmux; killall Tunnelblick;"
+alias mb="open -a Tunnelblick; mosh --no-init --experimental-remote-ip=remote b /home/jeveleth/bin/special-tmux; killall Tunnelblick;"
 
-# FUNCTIONS
-# nnn
+# ------------- functions
 n() {
     # Block nesting of nnn in subshells
     if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
@@ -70,11 +74,8 @@ n() {
         return
     fi
 
-    # The default behaviour is to cd on quit (nnn checks if NNN_TMPFILE is set)
-    # To cd on quit only on ^G, remove the "export" (as in don't export is,
-    # this is current functionality
+    # To cd on quit only on ^G, remove the "export" (like what it is now)
     NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
-
     nnn "$@"
 
     if [ -f "$NNN_TMPFILE" ]; then
@@ -90,18 +91,7 @@ vis() {
     sed -i '' -e $string $XDG_CONFIG_HOME/alacritty/alacritty.yml
 }
 
-text() {
-    command="tell application \"Messages\" to send \"${1:-hey sexy}\" to buddy \"${2:-Anna ❤️ Lee}\""
-    osascript -e "$command"
-}
-
-# https://mrigank11.github.io/2018/03/zsh-auto-completion/
-_maketex() {
-    local state 
-    _arguments '1: :($(ls *.tex))'
-}
-compdef _maketex maketex
-
+# ------------- hooks (time wasters)
 eval "$(direnv hook zsh)"
 eval "$(pyenv init - zsh --no-rehash)"
 eval "$(jump shell)"

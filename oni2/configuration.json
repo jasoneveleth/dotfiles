@@ -1,5 +1,5 @@
-
 {
+  "workbench.colorTheme": "One Dark Pro",
   "editor.detectIndentation": true,
   "editor.fontFamily": "JetBrainsMono-Regular.ttf",
   "editor.fontSize": 14,
@@ -18,7 +18,7 @@
   "editor.tabSize": 4,
   "editor.zenMode.hideTabs": true,
   "editor.zenMode.singleFile": true,
-  "files.exclude": ["_esy", "node_modules", ".git"],
+  "files.exclude": [ "_esy", "node_modules", ".git" ],
   "workbench.activityBar.visible": true,
   "workbench.editor.showTabs": true,
   "workbench.editor.enablePreview": true,
@@ -27,5 +27,5 @@
   "workbench.sideBar.visible": true,
   "workbench.statusBar.visible": true,
   "workbench.tree.indent": 2,
-  "vim.useSystemClipboard": ["yank"]
+  "vim.useSystemClipboard": [ "yank" ]
 }

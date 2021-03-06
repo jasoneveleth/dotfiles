@@ -12,6 +12,6 @@
 	s = status -s
 	br = branch
 	c = commit --verbose
-	a = add
+	a = add -A
+	p = push
 	alias = !git config -l | grep '^alias.' | cut -d'.' -f2
-

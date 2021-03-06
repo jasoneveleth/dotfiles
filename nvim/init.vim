@@ -5,6 +5,8 @@ if exists('g:vscode')
     nmap gc  <Plug>VSCodeCommentary
     omap gc  <Plug>VSCodeCommentary
     nmap gcc <Plug>VSCodeCommentaryLine
+    nnoremap K :call VSCodeNotify('editor.action.showHover')<cr>
+    nnoremap == :call VSCodeNotify('editor.action.formatDocument')<cr>
     " nnoremap <leader>b :call VSCodeNotify('workbench.action.quickOpen')<CR>
     augroup makingCommands
         autocmd!
