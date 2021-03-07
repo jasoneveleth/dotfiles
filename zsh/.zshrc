@@ -57,6 +57,7 @@ alias book="vi $HOME/code/web/bookmarks/input.md"
 alias ..='cd ..'
 alias ...='cd ../..'
 
+alias oni="oni2"
 alias vi="nvim"
 alias g='git'
 alias jl="julia"

@@ -13,5 +13,6 @@
 	br = branch
 	c = commit --verbose
 	a = add -A
+	ac = !git add -A && git commit --verbose
 	p = push
 	alias = !git config -l | grep '^alias.' | cut -d'.' -f2
