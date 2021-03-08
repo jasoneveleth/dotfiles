@@ -9,7 +9,7 @@ fi
 HISTSIZE=1000000
 SAVEHIST=10000000
 
-export PATH="$HOME/bin:~/.pyenv/bin:/usr/local/sbin:/usr/local/opt/openjdk/bin:$HOME/Library/Python/3.8/bin:/usr/local/lib/ruby/gems/2.7.0/bin:$PATH:."
+export PATH="$HOME/bin:$HOME/code/unix:~/.pyenv/bin:/usr/local/sbin:/usr/local/lib/ruby/gems/2.7.0/bin:$PATH:."
 export ICLOUD="/Users/jasoneveleth/Library/Mobile Documents/com~apple~CloudDocs"
 
 export XDG_CONFIG_HOME="$HOME/.config"
