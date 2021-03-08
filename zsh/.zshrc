@@ -63,6 +63,7 @@ alias g='git'
 alias jl="julia"
 alias ql="qlmanage -p 2>/dev/null"
 alias less="bat"
+alias cat="bat"
 
 alias sb="ssh -t b 'tmux a || tmux new'"
 alias mb="open -a Tunnelblick; mosh --no-init --experimental-remote-ip=remote b /home/jeveleth/bin/special-tmux; killall Tunnelblick;"

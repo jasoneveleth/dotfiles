@@ -17,6 +17,7 @@ set exrc
 " set undofile
 set undofile
 set undodir=$HOME/.local/share/nvim/undo//
+set spellfile=$HOME/.local/share/nvim/en.utf-8.add
 set path=.,**
 set list
 set listchars=tab:│\ ,extends:>
@@ -38,6 +39,10 @@ let g:netrw_dirhistmax = 0
 let g:tex_flavor = 'latex'
 
 nnoremap ' `
+nnoremap <up> <c-y>
+nnoremap <down> <c-e>
+inoremap <up> <c-\><c-o><c-y>
+inoremap <down> <c-\><c-o><c-e>
 
 " function Osc52Yank()
 "     let buffer=system('base64', @0)
@@ -46,7 +51,7 @@ nnoremap ' `
 "     silent exe "!echo -ne ".shellescape(buffer)." > ".shellescape('/dev/tty')
 " endfunction
 
-augroup yank
+augroup Yank
     autocmd!
     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
     autocmd TextYankPost * if v:event.operator ==# 'y' | call Osc52Yank() | endif
@@ -64,3 +69,7 @@ augroup FZF
     autocmd BufLeave <buffer> set nu rnu
 augroup END
 
+augroup Autocomment
+    autocmd!
+    autocmd BufEnter * set formatoptions-=o
+augroup END

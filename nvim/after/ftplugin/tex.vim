@@ -5,7 +5,7 @@ setlocal makeprg=maketex\ %
 
 inoremap <buffer> <C-s> <c-g>u<Esc>[s1z=`]a
 inoremap <buffer> <c-f> <c-g>u$<space><esc>Bi$<esc>:undoj<cr>f$a
-let g:vimtex_indent_enabled = 1
+" let g:vimtex_indent_enabled = 1
 
 " visual and operator-pending
 " xnoremap <buffer>i$ :<C-u>silent normal! lT$vt$<CR>

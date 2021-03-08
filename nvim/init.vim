@@ -42,15 +42,11 @@ let g:qf_shorten_path = 1
 
 let g:mapleader = ' '
 xnoremap <leaderp "_dP
-xnoremap y myy`y
-nnoremap <Up> <c-y>
-nnoremap <Down> <c-e>
-inoremap <up> <c-\><c-o><c-y>
-inoremap <down> <c-\><c-o><c-e>
 nnoremap <expr> k v:count == 0 ? 'gk' : 'k'
 nnoremap <expr> j v:count == 0 ? 'gj' : 'j'
 vnoremap * y/<C-R>"<CR>
 noremap <leader>a =ip
+" xnoremap y myy`y
 " J, K in x to dP, and djp
 " >, < in x to >gv and <gv OR use .
 

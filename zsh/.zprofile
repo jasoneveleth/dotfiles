@@ -9,7 +9,7 @@ fi
 HISTSIZE=1000000
 SAVEHIST=10000000
 
-export PATH="$HOME/bin:$HOME/code/unix:~/.pyenv/bin:/usr/local/sbin:/usr/local/lib/ruby/gems/2.7.0/bin:$PATH:."
+export PATH="$HOME/bin:~/.pyenv/bin:$PATH:."
 export ICLOUD="/Users/jasoneveleth/Library/Mobile Documents/com~apple~CloudDocs"
 
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -38,6 +38,7 @@ export FZF_DEFAULT_COMMAND='fd --type file --hidden --exclude .git --exclude nod
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export PYTHONDONTWRITEBYTECODE=1
 export HOMEBREW_NO_AUTO_UPDATE=1
+# export VIMINIT= 'let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export NNN_BMS='n:~/notes;i:~/code/python/nistsurf;z:~/.config/zsh;v:~/.config/nvim;c:~/code/c;d:~/.config'
 export NNN_PLUG='e:-_ewrap $nnn*;n:-_fzfnotes*;v:-_nvim*'
 export NNN_OPTS="en"
@@ -47,10 +48,5 @@ export EDITOR="nvim"
 export VISUAL="$EDITOR"
 export JOURNAL="$HOME/personal/journal.md"
 
-# export VIMINIT= 'let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
-
 # to fix pyenv
 export LDFLAGS="-L$(xcrun --show-sdk-path)/usr/lib"
-
-# export LANG="en_US.UTF-8"
-# export LC_ALL="en_US.UTF-8"
