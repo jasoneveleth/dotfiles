@@ -41,17 +41,19 @@ _maketex() {
 compdef _maketex maketex
 
 # ------------- aliases
-alias ls="\ls -FG"
-alias rm="\rm -i"
-alias mv="\mv -i"
+alias ls="\ls -G"
+alias ll="ls -l"
+alias la="ls -Al"
+alias rm="rm -i"
+alias mv="mv -i"
 
 alias cleanDS="find . -name '*.DS_Store' -type f -delete"
 alias path='echo $PATH | tr -s ":" "\n"'
 alias findhardlinks='find -x . -links +1 ! -type d ! -regex "Caches|(Group Containers)|(Application Support)" -exec ls -l {} \; 2> /dev/null | sort -nk2'
 alias battery="pmset -g batt | egrep -o '\d+%'"
 alias noswap="rm -f $HOME/.local/share/nvim/swap/*"
-alias vimrc="vi $XDG_CONFIG_HOME/nvim/init.vim"
-alias zshrc="vi $XDG_CONFIG_HOME/zsh/.zshrc"
+# alias vimrc="vi $XDG_CONFIG_HOME/nvim/init.vim"
+# alias zshrc="vi $XDG_CONFIG_HOME/zsh/.zshrc"
 alias src="source ~/.config/zsh/.zshrc && printf 'source .zshrc'; source ~/.config/zsh/.zprofile && printf 'sourced .zprofile\n'"
 alias book="vi $HOME/code/web/bookmarks/input.md"
 alias ..='cd ..'
@@ -69,31 +71,25 @@ alias sb="ssh -t b 'tmux a || tmux new'"
 alias mb="open -a Tunnelblick; mosh --no-init --experimental-remote-ip=remote b /home/jeveleth/bin/special-tmux; killall Tunnelblick;"
 
 # ------------- functions
-n() {
-    # Block nesting of nnn in subshells
-    if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
-        echo "nnn is already running"
-        return
-    fi
+# n() {
+#     # Block nesting of nnn in subshells
+#     if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
+#         echo "nnn is already running"
+#         return
+#     fi
 
-    # To cd on quit only on ^G, remove the "export" (like what it is now)
-    NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
-    nnn "$@"
+#     # To cd on quit only on ^G, remove the "export" (like what it is now)
+#     NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+#     nnn "$@"
 
-    if [ -f "$NNN_TMPFILE" ]; then
-            . "$NNN_TMPFILE"
-            rm -f "$NNN_TMPFILE" > /dev/null
-    fi
-}
-
-vis() {
-    string='s/background_opacity:.*$/background_opacity: '
-    string+=$1
-    string+='/'
-    sed -i '' -e $string $XDG_CONFIG_HOME/alacritty/alacritty.yml
-}
+#     if [ -f "$NNN_TMPFILE" ]; then
+#             . "$NNN_TMPFILE"
+#             rm -f "$NNN_TMPFILE" > /dev/null
+#     fi
+# }
+alias n=nnn
 
 # ------------- hooks (time wasters)
+SHELL=/bin/zsh
 eval "$(direnv hook zsh)"
-eval "$(pyenv init - zsh --no-rehash)"
 eval "$(jump shell)"

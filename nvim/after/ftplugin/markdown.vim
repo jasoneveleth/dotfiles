@@ -1,4 +1,4 @@
-setlocal spell
+" setlocal spell
 
 " https://git.peppe.rs/vim/better-text-objs/tree/plugin/better-text-objs.vim
 xnoremap <buffer> ix :<C-u>normal vi`<CR>

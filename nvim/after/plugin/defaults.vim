@@ -41,6 +41,8 @@ let g:tex_flavor = 'latex'
 nnoremap ' `
 nnoremap <up> <c-y>
 nnoremap <down> <c-e>
+nnoremap <c-j> :cnext<cr>
+nnoremap <c-k> :cprevious<cr>
 inoremap <up> <c-\><c-o><c-y>
 inoremap <down> <c-\><c-o><c-e>
 
@@ -54,7 +56,7 @@ inoremap <down> <c-\><c-o><c-e>
 augroup Yank
     autocmd!
     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
-    autocmd TextYankPost * if v:event.operator ==# 'y' | call Osc52Yank() | endif
+    " autocmd TextYankPost * if v:event.operator ==# 'y' | call Osc52Yank() | endif
 augroup END
 
 augroup LineEnd

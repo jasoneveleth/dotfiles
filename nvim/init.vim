@@ -16,7 +16,7 @@ Plug 'junegunn/fzf'
 Plug 'romainl/vim-qf'
 call plug#end()
 
-if isdirectory('%:h') | silent cd %:h | endif
+if isdirectory(expand('%:h')) | silent cd %:h | endif
 
 let g:targets_seekRanges = 'cc cr cb cB lc ac Ac lr rr ll lb ar ab lB Ar aB AB rb al rB Al'
 let g:CoolTotalMatches = 1

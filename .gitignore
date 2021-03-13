@@ -1,6 +1,7 @@
 cabal/
 gtk-3.0/
 matplotlib/
+spotifyd/
 gtk-2.0/
 darktable/
 python/pylint.d/
@@ -15,19 +16,8 @@ ipython/profile_default/history.sqlite
 pyenv/versions/*
 pyenv/shims/*
 
-
-*.netrwhist
-
 zsh/.zcompcache/
 zsh/.zsh_history
 zsh/.zsh_sessions/
 
-vim/viminfo*
-vim/plugged/*
-vim/undo/*
-vim/swp/*
-vim/autoload/plug.vim
-vim/autoload/plug.vim.old
-
-nvim/pack/*
-
+karabiner/automatic_backups

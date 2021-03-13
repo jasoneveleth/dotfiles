@@ -1,6 +1,6 @@
 setlocal sw=2
 setlocal conceallevel=1
-setlocal spell
+" setlocal spell
 setlocal makeprg=maketex\ %
 
 inoremap <buffer> <C-s> <c-g>u<Esc>[s1z=`]a

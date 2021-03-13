@@ -6,15 +6,15 @@ if [ -f /etc/profile ]; then
     . /etc/profile
 fi
 
-HISTSIZE=1000000
-SAVEHIST=10000000
-
-export PATH="$HOME/bin:~/.pyenv/bin:$PATH:."
-export ICLOUD="/Users/jasoneveleth/Library/Mobile Documents/com~apple~CloudDocs"
+export HISTSIZE=1000000
+export SAVEHIST=1000000
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
+
+export PATH="$HOME/bin:$XDG_CONFIG_HOME/pyenv/shims:$PATH:."
+export ICLOUD="/Users/jasoneveleth/Library/Mobile Documents/com~apple~CloudDocs"
 
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
 export PYTHONHISTFILE="$HOME/.local/share/python/history"
@@ -34,6 +34,7 @@ export npm_config_devdir="$XDG_DATA_HOME"/node-gyp
 
 export KEYTIMEOUT=1
 export JULIA_NUM_THREADS=4
+export JULIA_DEPOT_PATH="$XDG_CONFIG_HOME/julia"
 export FZF_DEFAULT_COMMAND='fd --type file --hidden --exclude .git --exclude node_modules --exclude __pycache__'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export PYTHONDONTWRITEBYTECODE=1

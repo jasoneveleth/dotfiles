@@ -1,1 +1,2 @@
 $clean_ext = "%R.bbl %R.run.xml";
+# @BIBINPUTS = ( ".", "/Users/jason/.config/latex" ); 
