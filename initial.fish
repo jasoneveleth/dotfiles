@@ -18,6 +18,7 @@ set -Ux NPM_CONFIG_USERCONFIG "$XDG_CONFIG_HOME/npm/npmrc"
 set -Ux CONDARC "$XDG_CONFIG_HOME/conda/condarc"
 set -Ux BIBINPUTS "$HOME/.config/latex"  
 set -Ux npm_config_devdir "$XDG_DATA_HOME"/node-gyp
+set -Ux JUMP_HOME $XDG_CONFIG_HOME/jump
 
 set -Ux KEYTIMEOUT 1
 set -Ux JULIA_NUM_THREADS 4
@@ -46,3 +47,4 @@ abbr -a less bat
 abbr -a g git
 abbr -a n nnn
 abbr -a vi nvim
+abbr -a top gotop

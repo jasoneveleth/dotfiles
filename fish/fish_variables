@@ -13,13 +13,14 @@ SETUVAR --export IPYTHONDIR:/Users/jason/\x2econfig/ipython
 SETUVAR --export JOURNAL:/Users/jason/personal/journal\x2emd
 SETUVAR --export --path JULIA_DEPOT_PATH:/Users/jason/\x2econfig/julia
 SETUVAR --export JULIA_NUM_THREADS:4
+SETUVAR --export JUMP_HOME:/Users/jason/\x2econfig/jump
 SETUVAR --export JUPYTER_CONFIG_DIR:/Users/jason/\x2econfig/jupyter
 SETUVAR --export KEYTIMEOUT:1
 SETUVAR --export LESSHISTFILE:/Users/jason/\x2ecache/less/histfile
 SETUVAR --export MPLCONFIGDIR:/Users/jason/\x2econfig/matplotlib
 SETUVAR --export NNN_BMS:n\x3a\x7e/notes\x3bi\x3a\x7e/code/python/nistsurf\x3bz\x3a\x7e/\x2econfig/zsh\x3bv\x3a\x7e/\x2econfig/nvim\x3bc\x3a\x7e/code/c\x3bd\x3a\x7e/\x2econfig
 SETUVAR --export NNN_COLORS:4512
-SETUVAR --export NNN_OPTS:en
+SETUVAR --export NNN_OPTS:e
 SETUVAR --export NNN_PLUG:e\x3a\x2d_ewrap\x20\x24nnn\x2a\x3bn\x3a\x2d_fzfnotes\x2a\x3bv\x3a\x2d_nvim\x2a
 SETUVAR --export NPM_CONFIG_USERCONFIG:/Users/jason/\x2econfig/npm/npmrc
 SETUVAR --export PAGER:less
@@ -38,6 +39,7 @@ SETUVAR _fish_abbr_cat:bat
 SETUVAR _fish_abbr_g:git
 SETUVAR _fish_abbr_less:bat
 SETUVAR _fish_abbr_n:nnn
+SETUVAR _fish_abbr_top:gotop\x20\x2df
 SETUVAR _fish_abbr_vi:nvim
 SETUVAR fish_color_autosuggestion:555
 SETUVAR fish_color_cancel:normal
@@ -62,6 +64,7 @@ SETUVAR fish_color_selection:c0c0c0
 SETUVAR fish_color_status:red
 SETUVAR fish_color_user:00ff00
 SETUVAR fish_color_valid_path:normal
+SETUVAR fish_greeting:
 SETUVAR fish_key_bindings:fish_default_key_bindings
 SETUVAR fish_pager_color_completion:normal
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow

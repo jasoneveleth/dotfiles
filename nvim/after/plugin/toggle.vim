@@ -11,5 +11,6 @@ nnoremap yob :if &showbreak == '++' <bar> set sbr= <bar> else <bar> set sbr=++ <
 nnoremap yod :cd %:h<cr>
 
 " toggle backgroundwarning
+nnoremap yol :hi! link BackgroundWarning Normal<cr>
 
 " toggle o in format options?? (commenting onto opened line)

@@ -1,19 +1,18 @@
 packadd cfilter
 
 call plug#begin('~/.local/share/nvim//plugged')
-Plug 'pbrisbin/vim-colors-off'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-commentary'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'ajpaulson/julia-syntax.vim'
-Plug 'jasoneveleth/vim-dim'
-Plug 'junegunn/vim-easy-align'
-Plug 'wellle/targets.vim'
+Plug 'romainl/vim-qf'
 Plug 'romainl/vim-cool'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf'
-Plug 'romainl/vim-qf'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'ajpaulson/julia-syntax.vim'
+Plug 'jasoneveleth/vim-dim'
+Plug 'wellle/targets.vim'
+Plug 'nvim-treesitter/nvim-treesitter'
 call plug#end()
 
 if isdirectory(expand('%:h')) | silent cd %:h | endif
@@ -30,22 +29,24 @@ let g:qf_auto_quit = 1
 let g:qf_shorten_path = 1
 
 " Treesitter:
-" require'nvim-treesitter.configs'.setup {
-" highlight = { enable = true },
-" incremental_selection = { enable = true },
-" textobjects = { enable = true },
-" indent = { 
-" enable = true,
-" disable = { "python", "tex" },
-" },
-" }
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+    highlight = { enable = true },
+    incremental_selection = { enable = true },
+    textobjects = { enable = true },
+    indent = { 
+        enable = true,
+        disable = { "python", "tex" },
+    },
+}
+EOF
 
 let g:mapleader = ' '
 xnoremap <leaderp "_dP
 nnoremap <expr> k v:count == 0 ? 'gk' : 'k'
 nnoremap <expr> j v:count == 0 ? 'gj' : 'j'
 vnoremap * y/<C-R>"<CR>
-noremap <leader>a =ip
+nnoremap <leader>a =ip
 " xnoremap y myy`y
 " J, K in x to dP, and djp
 " >, < in x to >gv and <gv OR use .
@@ -61,9 +62,6 @@ nnoremap <silent> <m-l> :TmuxNavigateRight<cr>
 nnoremap <silent> <m-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <m-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <m-k> :TmuxNavigateUp<cr>
-
-xnoremap <silent> ga <Plug>(EasyAlign)
-nnoremap <silent> ga <Plug>(EasyAlign)
 
 cabbrev <expr> make getcmdtype() == ":" && getcmdline() == 'make' ? 'silent make' : 'make'
 

@@ -15,6 +15,9 @@ ipython/profile_default/startup/README
 ipython/profile_default/history.sqlite
 pyenv/versions/*
 pyenv/shims/*
+oni2/extensions/
+oni2/workspace/
+oni2/store/
 
 zsh/.zcompcache/
 zsh/.zsh_history

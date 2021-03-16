@@ -2,7 +2,7 @@
 
 cd ~ || exit
 
-echo "ZDOTDIR=$HOME/.config/zsh" > ~/.zshenv
+# echo "ZDOTDIR=$HOME/.config/zsh" into beginning of /etc/zshrc
 
 # set up soft links
 ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"

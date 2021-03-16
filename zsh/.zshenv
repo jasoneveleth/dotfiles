@@ -24,13 +24,15 @@ export PYLINTHOME="$XDG_CONFIG_HOME/python/pylint.d"
 export CABAL_CONFIG="$XDG_CONFIG_HOME/cabal"
 export IDLESTARTUP="$XDG_CONFIG_HOME/python/idlerc"
 export LESSHISTFILE="$HOME/.cache/less/histfile"
+export JUMP_HOME="$XDG_CONFIG_HOME/jump"
 export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME/jupyter"
 export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
 export GEM_HOME="$XDG_CONFIG_HOME/gem/ruby/2.7.0"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
-export BIBINPUTS="$HOME/.config/latex"  
+export BIBINPUTS="$XDG_CONFIG_HOME/latex"  
 export npm_config_devdir="$XDG_DATA_HOME"/node-gyp
+export JUMP_HOME="$XDG_CONFIG_HOME/jump"
 
 export KEYTIMEOUT=1
 export JULIA_NUM_THREADS=4
