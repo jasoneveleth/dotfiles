@@ -44,6 +44,7 @@ compdef _maketex maketex
 alias ls="\ls -G"
 alias ll="ls -l"
 alias la="ls -Al"
+alias rm='printf "idiot no. use ls first, then /bin/rm if you really want.\notherwise just trash\n"'
 
 alias cleanDS="find . -name '*.DS_Store' -type f -delete"
 alias path='echo $PATH | tr -s ":" "\n"'

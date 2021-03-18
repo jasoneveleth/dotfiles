@@ -4,6 +4,8 @@ matplotlib/
 spotifyd/
 gtk-2.0/
 darktable/
+gcloud/
+keras/
 python/pylint.d/
 python/idlerc/
 .ghcup/

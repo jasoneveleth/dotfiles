@@ -19,6 +19,7 @@ set -Ux CONDARC "$XDG_CONFIG_HOME/conda/condarc"
 set -Ux BIBINPUTS "$HOME/.config/latex"  
 set -Ux npm_config_devdir "$XDG_DATA_HOME"/node-gyp
 set -Ux JUMP_HOME $XDG_CONFIG_HOME/jump
+set -Ux GTK2_RC_FILES "$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
 
 set -Ux KEYTIMEOUT 1
 set -Ux JULIA_NUM_THREADS 4

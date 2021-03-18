@@ -13,7 +13,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 
-export PATH="$HOME/bin:$XDG_CONFIG_HOME/pyenv/shims:$PATH:."
+export PATH="$HOME/.local/bin:$XDG_CONFIG_HOME/pyenv/shims:$PATH:."
 export ICLOUD="/Users/jasoneveleth/Library/Mobile Documents/com~apple~CloudDocs"
 
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
@@ -30,10 +30,12 @@ export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
 export GEM_HOME="$XDG_CONFIG_HOME/gem/ruby/2.7.0"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
-export BIBINPUTS="$XDG_CONFIG_HOME/latex"  
 export npm_config_devdir="$XDG_DATA_HOME"/node-gyp
 export JUMP_HOME="$XDG_CONFIG_HOME/jump"
+export KERAS_HOME="$XDG_CONFIG_HOME"/keras
+export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
 
+export BIBINPUTS="$XDG_CONFIG_HOME/latex"  
 export KEYTIMEOUT=1
 export JULIA_NUM_THREADS=4
 export JULIA_DEPOT_PATH="$XDG_CONFIG_HOME/julia"

@@ -1,6 +1,7 @@
 {
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": true,
+  "python.pythonPath": "/Users/jason/.config/pyenv/shims/python",
   "workbench.colorTheme": "One Dark Pro",
   "editor.detectIndentation": true,
   "editor.fontFamily": "JetBrainsMono-Regular.ttf",
