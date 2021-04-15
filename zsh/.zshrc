@@ -7,8 +7,12 @@ fi
 [[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
 source "/usr/local/opt/fzf/shell/key-bindings.zsh"
 
+# ------------- make like fish
+# https://github.com/zsh-users/zsh-autosuggestions
+source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # ------------- general
-PS1="%B[%m:%1~]%#%b "
+PS1="[%m:%1~]%# "
 
 setopt interactive_comments
 setopt hist_ignore_dups appendhistory share_history
@@ -41,20 +45,16 @@ _maketex() {
 compdef _maketex maketex
 
 # ------------- aliases
-alias ls="\ls -G"
+alias ls="/bin/ls -G"
 alias ll="ls -l"
 alias la="ls -Al"
-alias rm='printf "idiot no. use ls first, then /bin/rm if you really want.\notherwise just trash\n"'
+alias rm='printf "idiot no. use ls first, then /bin/rm if you really want.\notherwise just \`trash\`\n"'
 
 alias cleanDS="find . -name '*.DS_Store' -type f -delete"
 alias path='echo $PATH | tr -s ":" "\n"'
-alias findhardlinks='find -x . -links +1 ! -type d ! -regex "Caches|(Group Containers)|(Application Support)" -exec ls -l {} \; 2> /dev/null | sort -nk2'
+alias findhardlinks='find -E . -links +1 \! -type d \! -regex "\./Library/.*" -exec ls -l {} \; 2> /dev/null | sort -nk2'
 alias battery="pmset -g batt | egrep -o '\d+%'"
 alias noswap="rm -f $HOME/.local/share/nvim/swap/*"
-# alias vimrc="vi $XDG_CONFIG_HOME/nvim/init.vim"
-# alias zshrc="vi $XDG_CONFIG_HOME/zsh/.zshrc"
-alias src="source ~/.config/zsh/.zshrc && printf 'source .zshrc'; source ~/.config/zsh/.zprofile && printf 'sourced .zprofile\n'"
-alias book="vi $HOME/code/web/bookmarks/input.md"
 alias ..='cd ..'
 alias ...='cd ../..'
 
@@ -65,30 +65,10 @@ alias jl="julia"
 alias ql="qlmanage -p 2>/dev/null"
 alias less="bat"
 alias cat="bat"
-
-alias sb="ssh -t b 'tmux a || tmux new'"
-alias mb="open -a Tunnelblick; mosh --no-init --experimental-remote-ip=remote b /home/jeveleth/bin/special-tmux; killall Tunnelblick;"
-
-# ------------- functions
-# n() {
-#     # Block nesting of nnn in subshells
-#     if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
-#         echo "nnn is already running"
-#         return
-#     fi
-
-#     # To cd on quit only on ^G, remove the "export" (like what it is now)
-#     NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
-#     nnn "$@"
-
-#     if [ -f "$NNN_TMPFILE" ]; then
-#             . "$NNN_TMPFILE"
-#             rm -f "$NNN_TMPFILE" > /dev/null
-#     fi
-# }
-alias n=nnn
+alias n="nnn"
+alias moshr="mosh --no-init --experimental-remote-ip=remote"
 
 # ------------- hooks (time wasters)
-SHELL=/bin/zsh
 eval "$(direnv hook zsh)"
 eval "$(jump shell)"
+source "$XDG_CONFIG_HOME"/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

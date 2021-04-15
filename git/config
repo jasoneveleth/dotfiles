@@ -1,6 +1,6 @@
 [core]
 	editor = nvim
-	excludesfile = /Users/jasoneveleth/.config/git/gitignore_global
+	excludesfile = /Users/jason/.config/git/gitignore_global
 [user]
 	name = Jason Eveleth
 	email = jj11@eveleth.com

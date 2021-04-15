@@ -46,7 +46,7 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 # export VIMINIT= 'let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export NNN_BMS='n:~/notes;i:~/code/python/nistsurf;z:~/.config/zsh;v:~/.config/nvim;c:~/code/c;d:~/.config'
 export NNN_PLUG='e:-_ewrap $nnn*;n:-_fzfnotes*;v:-_nvim*'
-export NNN_OPTS="en"
+export NNN_OPTS="e"
 export NNN_COLORS="4512"
 export PAGER="less"
 export EDITOR="nvim"

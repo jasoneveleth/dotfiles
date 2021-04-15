@@ -11,7 +11,7 @@ SETUVAR --export GTK2_RC_FILES:/Users/jason/\x2econfig/gtk\x2d2\x2e0/gtkrc\x2d2\
 SETUVAR --export HOMEBREW_NO_AUTO_UPDATE:1
 SETUVAR --export IDLESTARTUP:/Users/jason/\x2econfig/python/idlerc
 SETUVAR --export IPYTHONDIR:/Users/jason/\x2econfig/ipython
-SETUVAR --export JOURNAL:/Users/jason/personal/journal\x2emd
+SETUVAR --export JOURNAL:/Users/jason/\x2eroot/personal/journal\x2emd
 SETUVAR --export --path JULIA_DEPOT_PATH:/Users/jason/\x2econfig/julia
 SETUVAR --export JULIA_NUM_THREADS:4
 SETUVAR --export JUMP_HOME:/Users/jason/\x2econfig/jump
@@ -41,33 +41,34 @@ SETUVAR _fish_abbr_cat:bat
 SETUVAR _fish_abbr_g:git
 SETUVAR _fish_abbr_less:bat
 SETUVAR _fish_abbr_n:nnn
-SETUVAR fish_color_autosuggestion:555
-SETUVAR fish_color_cancel:normal
-SETUVAR fish_color_command:bcbcbc
-SETUVAR fish_color_comment:5f5f5f
-SETUVAR fish_color_cwd:008000
-SETUVAR fish_color_cwd_root:800000
-SETUVAR fish_color_end:bcbcbc
-SETUVAR fish_color_error:ff0000
-SETUVAR fish_color_escape:00a6b2
-SETUVAR fish_color_history_current:normal
+SETUVAR _fish_abbr_oni:oni2
+SETUVAR fish_color_autosuggestion:brblack
+SETUVAR fish_color_cancel:\x2dr
+SETUVAR fish_color_command:brgreen
+SETUVAR fish_color_comment:brmagenta
+SETUVAR fish_color_cwd:green
+SETUVAR fish_color_cwd_root:red
+SETUVAR fish_color_end:brmagenta
+SETUVAR fish_color_error:brred
+SETUVAR fish_color_escape:brcyan
+SETUVAR fish_color_history_current:\x2d\x2dbold
 SETUVAR fish_color_host:normal
 SETUVAR fish_color_host_remote:yellow
-SETUVAR fish_color_match:normal
+SETUVAR fish_color_match:\x2d\x2dbackground\x3dbrblue
 SETUVAR fish_color_normal:normal
-SETUVAR fish_color_operator:00a6b2
-SETUVAR fish_color_param:00d75f
-SETUVAR fish_color_quote:afffd7
-SETUVAR fish_color_redirection:00d75f
-SETUVAR fish_color_search_match:ffff00
-SETUVAR fish_color_selection:c0c0c0
+SETUVAR fish_color_operator:cyan
+SETUVAR fish_color_param:brblue
+SETUVAR fish_color_quote:yellow
+SETUVAR fish_color_redirection:bryellow
+SETUVAR fish_color_search_match:bryellow\x1e\x2d\x2dbackground\x3dbrblack
+SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_color_status:red
-SETUVAR fish_color_user:00ff00
-SETUVAR fish_color_valid_path:normal
+SETUVAR fish_color_user:brgreen
+SETUVAR fish_color_valid_path:\x2d\x2dunderline
 SETUVAR fish_greeting:
 SETUVAR fish_key_bindings:fish_default_key_bindings
 SETUVAR fish_pager_color_completion:normal
-SETUVAR fish_pager_color_description:B3A06D\x1eyellow
+SETUVAR fish_pager_color_description:yellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR --export fish_user_paths:/Users/jason/\x2elocal/bin\x1e/Users/jason/\x2econfig/pyenv/shims\x1e/Users/jason/\x2eicloud/root/uni/cs1430/google\x2dcloud\x2dsdk/bin

@@ -26,3 +26,5 @@ zsh/.zsh_history
 zsh/.zsh_sessions/
 
 karabiner/automatic_backups
+
+julia/logs/repl_history.jl

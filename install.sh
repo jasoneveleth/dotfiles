@@ -42,6 +42,11 @@ defaults write -g PMPrintingExpandedStateForPrint -bool TRUE
 defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 defaults write -g ApplePressAndHoldEnabled -bool false
 defaults write -g KeyRepeat -int 1
+# they will be numbered on duplication, rather than have date
+defaults write com.apple.screencapture "include-date" 0
+# name of screen shot
+defaults write com.apple.screencapture name "ss"
+killall SystemUIServer
 
 # sudo tlmgr install stackengine titlesec titling siunitx latexmk biber xypic enumitem footmisc
 # alias brew="/usr/bin/env PATH=${PATH/$PYENV_ROOT\/shims:/} /usr/local/bin/brew" # make brew and pyenv play nice

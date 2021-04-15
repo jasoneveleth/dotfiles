@@ -1,4 +1,5 @@
-" setlocal spell
+setlocal suffixesadd=.md
+setlocal linebreak
 
 " https://git.peppe.rs/vim/better-text-objs/tree/plugin/better-text-objs.vim
 xnoremap <buffer> ix :<C-u>normal vi`<CR>

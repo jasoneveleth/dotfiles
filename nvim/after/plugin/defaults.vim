@@ -8,13 +8,13 @@ set gdefault
 set shiftround
 set shiftwidth=4
 set expandtab
+set smarttab
 set tags=tags;,.tags;,
 set clipboard=unnamed
 set number
 set relativenumber
 set grepprg=rg\ --vimgrep\ --hidden
 set exrc
-" set undofile
 set undofile
 set undodir=$HOME/.local/share/nvim/undo//
 set spellfile=$HOME/.local/share/nvim/en.utf-8.add
@@ -26,6 +26,7 @@ set breakindentopt=sbr
 set showbreak=++
 " set cursorline
 set omnifunc=syntaxcomplete#Complete
+set shada=!,'20,<50,s10,h
 
 syntax off
 
@@ -41,8 +42,6 @@ let g:tex_flavor = 'latex'
 nnoremap ' `
 nnoremap <up> <c-y>
 nnoremap <down> <c-e>
-nnoremap <c-j> :cnext<cr>
-nnoremap <c-k> :cprevious<cr>
 inoremap <up> <c-\><c-o><c-y>
 inoremap <down> <c-\><c-o><c-e>
 
@@ -58,12 +57,6 @@ augroup Yank
     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
     " autocmd TextYankPost * if v:event.operator ==# 'y' | call Osc52Yank() | endif
 augroup END
-
-augroup LineEnd
-    autocmd!
-    autocmd ColorScheme * match BackgroundWarning /\%81v/
-    autocmd ColorScheme * highlight BackgroundWarning ctermbg=9 guibg=#be5046
-augroup END 
 
 augroup FZF
     autocmd!

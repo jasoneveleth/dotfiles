@@ -1,6 +1,6 @@
 setlocal sw=2
 setlocal conceallevel=1
-" setlocal spell
+setlocal linebreak
 setlocal makeprg=maketex\ %
 
 inoremap <buffer> <C-s> <c-g>u<Esc>[s1z=`]a
@@ -32,39 +32,40 @@ inoremap <buffer> <c-f> <c-g>u$<space><esc>Bi$<esc>:undoj<cr>f$a
 "     call feedkeys('a/', 'n')
 " endfunction
 
-" function! Math()
-"     return get(reverse(map(synstack(line('.'), col('.')), {i,v -> synIDattr(v, 'name')})), 0, '') =~# 'texMathZone\%(X\|Y\|V\)'
-" endfunction
+function! Math()
+    return get(reverse(map(synstack(line('.'), col('.')), {i,v -> synIDattr(v, 'name')})), 0, '') =~# 'texMathZone\%(w\|X\|Y\|V\)'
+endfunction
 
 
-" function! Snippet(char, old, new, mathmode)
-"     if a:mathmode && !vimtex#syntax#in_mathzone()
-"         return a:char
-"     endif
-"     let col = col('.')
-"     if getline('.')[col - len(a:old):col-1] . a:char == a:old
-"         " return a:char ."\<c-g>u\<c-o>d?" . a:old . "\<cr>" . a:new
-"         return a:char ."\<c-g>u \<c-o>d?" . a:old . "\<cr>\<bs>" . a:new
-"     else
-"         return a:char
-"     endif
-" endfunction
+function! Snippet(char, old, new, mathmode)
+    " if a:mathmode && !vimtex#syntax#in_mathzone()
+    if a:mathmode && !Math()
+        return a:char
+    endif
+    let col = col('.')
+    if getline('.')[col - len(a:old):col-1] . a:char == a:old
+        " return a:char ."\<c-g>u\<c-o>d?" . a:old . "\<cr>" . a:new
+        return a:char ."\<c-g>u \<c-o>d?" . a:old . "\<cr>\<bs>" . a:new
+    else
+        return a:char
+    endif
+endfunction
 
-" inoremap <expr>f Snippet("f", " iff", " \\iff", 0)
-" inoremap <expr>y Snippet("y", " ooo", " \\infty", 0)
+inoremap <expr>f Snippet("f", " iff", " \\iff", 1)
+inoremap <expr>k Snippet("k", " mk", " $$\<left>", 0)
+inoremap <expr>m Snippet("m", " dm", " \\[\<cr>\\]\<esc>O", 0)
+inoremap <expr>d Snippet("d", "td", "^{}\<left>", 1)
+inoremap <expr>r Snippet("r", "sr", "^2", 1)
+inoremap <expr>_ Snippet("_", "__", "_{}\<left>", 1)
+inoremap <expr>t Snippet("t", "tt", "\\text{}\<left>", 1)
+inoremap <expr>* Snippet("*", "**", "\\cdot", 1)
+inoremap <expr>x Snippet("x", "xx", "\\times", 1)
+inoremap <expr>> Snippet(">", "->", "\\to", 1)
+inoremap <expr>s Snippet("s", "invs", "^{-1}", 1)
+" inoremap <expr>= Snippet("=", " ==", " &= $1 \\\\", 1)
+" inoremap <expr>y Snippet("y", " ooo", " \\infty", 1)
 " " auto subscript for numbers (_\d and _{\d})
 " " neosnippet: begin, ali, sum, lim, prod, derivatives
-" inoremap <expr>k Snippet("k", " mk", " $$\<left>", 0)
-" inoremap <expr>m Snippet("m", " dm", " \\[\<cr>\\]\<esc>O", 0)
-" inoremap <expr>= Snippet("=", " ==", " &= $1 \\\\", 1)
-" inoremap <expr>d Snippet("d", "td", "^{}\<left>", 1)
-" inoremap <expr>r Snippet("r", "sr", "^2", 1)
-" inoremap <expr>_ Snippet("_", "__", "_{}\<left>", 1)
-" inoremap <expr>t Snippet("t", "tt", "\\text{}\<left>", 1)
-" inoremap <expr>* Snippet("*", "**", "\\cdot", 1)
-" inoremap <expr>x Snippet("x", "xx", "\\times", 1)
-" inoremap <expr>> Snippet(">", "->", "\\to", 1)
-" inoremap <expr>s Snippet("s", "invs", "^{-1}", 1)
 
 " set
 " mapsto
