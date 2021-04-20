@@ -2,6 +2,9 @@
 # bindkey "^U" backward-kill-line
 # bindkey "^W" backward-kill-word
 
+# bindkey "^p" history-beginning-search-backward
+# bindkey "^n" history-beginning-search-forward
+
 # EPS1='%{%F{8}%}%~%{%f%}'
 # ESP1=''
 # RPROMPT=$EPS1
@@ -21,8 +24,6 @@ autoload -U edit-command-line
 zle -N edit-command-line
 
 bindkey -e
-# bindkey "^p" history-beginning-search-backward
-# bindkey "^n" history-beginning-search-forward
 bindkey '^x^e' edit-command-line
 bindkey "^u" backward-kill-line
 bindkey "^k" kill-line

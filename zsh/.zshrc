@@ -7,15 +7,16 @@ fi
 [[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
 source "/usr/local/opt/fzf/shell/key-bindings.zsh"
 
-# ------------- make like fish
-# https://github.com/zsh-users/zsh-autosuggestions
-source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
 # ------------- general
 PS1="[%m:%1~]%# "
 
+# https://github.com/zsh-users/zsh-autosuggestions
+source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 setopt interactive_comments
-setopt hist_ignore_dups appendhistory share_history
+setopt inc_append_history
+# ^ maybe remove 'inc_' so it only adds once session exits
+setopt hist_ignore_all_dups
 
 # directory history. ex % dirs -v or % cd -<num>
 export DIRSTACKSIZE=100
@@ -24,17 +25,23 @@ setopt autopushd pushdminus pushdsilent
 source $ZDOTDIR/readline.zsh
 
 # ------------- completion
+# The following lines were added by compinstall
+zstyle ':completion:*' expand prefix suffix
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' menu select=1
+zstyle ':completion:*' squeeze-slashes true
+zstyle :compinstall filename '/Users/jason/.config/zsh/.zshrc'
 autoload -Uz compinit
-compdump="$HOME/.config/zsh/.zcompcache/.zcompdump"
-# {unix time} - {compdump modified date} > {seconds in a day}
-if (( $(date '+%s') - $(stat -f %m $compdump) > 86400 )); then
-    compinit -d $compdump
-    touch $compdump
-    zcompile $compdump
-    echo "compiled compdump"
+compdumpfile="$HOME/.config/zsh/.zcompcache/.zcompdump"
+# {unix time} - {compdumpfile modified date} > {seconds in a day}
+if (( $(date '+%s') - $(stat -f %m "$compdumpfile") > 86400 )); then
+    compinit -d "$compdumpfile"
+    touch "$compdumpfile"
+    zcompile "$compdumpfile"
 else
-    compinit -C
+    compinit -C -d "$compdumpfile"
 fi
+unset compdumpfile
 _comp_options+=(globdots) # include hidden files
 
 # https://mrigank11.github.io/2018/03/zsh-auto-completion/
@@ -72,3 +79,4 @@ alias moshr="mosh --no-init --experimental-remote-ip=remote"
 eval "$(direnv hook zsh)"
 eval "$(jump shell)"
 source "$XDG_CONFIG_HOME"/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+

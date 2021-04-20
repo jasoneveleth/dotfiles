@@ -26,7 +26,7 @@ done
 #     cd ~
 # fi
 
-brew install bat cask ctags direnv fd fzf graphviz htop jump moreutils mosh neofetch neovim nnn pyenv pypy3 ripgrep shellcheck speedtest-cli tmux tree
+brew install bat cask ctags direnv fd fzf graphviz htop jump moreutils mosh neofetch neovim nnn pyenv ripgrep shellcheck speedtest-cli tmux tree
 brew cask install alacritty alfred appcleaner basictex discord fantastical gimp google-chrome julia keycastr minecraft osxfuse qlmarkdown qlstephen spotify tunnelblick zoom
 
 # brew install mailplane
@@ -50,3 +50,7 @@ killall SystemUIServer
 
 # sudo tlmgr install stackengine titlesec titling siunitx latexmk biber xypic enumitem footmisc
 # alias brew="/usr/bin/env PATH=${PATH/$PYENV_ROOT\/shims:/} /usr/local/bin/brew" # make brew and pyenv play nice
+
+# edit /etc/profile and /etc/zprofile to not run path_helper which fucks up the path. one is run with `zsh -l` the other with `zsh`. use `-o sourcetrace` to figure out which file
+
+# edit end of vim note thing

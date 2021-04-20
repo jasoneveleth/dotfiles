@@ -39,12 +39,6 @@ let g:python3_host_prog = '$HOME/.config/pyenv/shims/python'
 let g:netrw_dirhistmax = 0
 let g:tex_flavor = 'latex'
 
-nnoremap ' `
-nnoremap <up> <c-y>
-nnoremap <down> <c-e>
-inoremap <up> <c-\><c-o><c-y>
-inoremap <down> <c-\><c-o><c-e>
-
 " function Osc52Yank()
 "     let buffer=system('base64', @0)
 "     let buffer=substitute(buffer, "\n", "", "")

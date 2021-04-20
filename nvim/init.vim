@@ -29,6 +29,7 @@ colorscheme dim
 
 let g:targets_seekRanges = 'cc cr cb cB lc ac Ac lr rr ll lb ar ab lB Ar aB AB rb al rB Al'
 let g:CoolTotalMatches = 1
+let g:peekaboo_delay = 30
 
 " let g:fzf_layout = { 'down': '20%' }
 " let $FZF_DEFAULT_OPTS=''
@@ -53,8 +54,10 @@ EOF
 set statusline=%<%f\ %h%m%r%=%-50.(%{nvim_treesitter#statusline(50)}%)\ %-14.(%l,%c%V%)\ %P
 
 let g:mapleader = ' '
+nnoremap ' `
 nnoremap <leader> <nop>
 xnoremap <leader>p "_dP
+nnoremap <leader>p 0"_DP
 nnoremap <expr> k v:count == 0 ? 'gk' : 'k'
 nnoremap <expr> j v:count == 0 ? 'gj' : 'j'
 nnoremap <c-j> :cnext<cr>
@@ -68,7 +71,11 @@ nnoremap U <c-r>
 " J, K in x to dP, and djp
 " >, < in x to >gv and <gv OR use .
 
-nnoremap <silent> <leader>u :UndotreeToggle<CR>
+map <up> <c-y>
+map <down> <c-e>
+
+nnoremap <silent> <leader>u :UndotreeToggle<cr>
+nnoremap <silent> <leader>s :Gstatus<cr>
 nnoremap <silent> <leader>r :call system('ctags -R -o .tags')<cr>
 nnoremap <silent> <leader>b :call myfun#Buffers()<cr>
 nnoremap <silent> <leader>d :call myfun#DiffWithSaved()<cr>', { noremap = true, silent = true })

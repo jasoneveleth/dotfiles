@@ -1,20 +1,16 @@
 #!/bin/zsh
 
-# this keeps tmux from messing with path variable
-if [ -f /etc/profile ]; then
-    PATH=""
-    . /etc/profile
-fi
+export PATH_FIXED=1
 
-export HISTSIZE=1000000
-export SAVEHIST=1000000
+export HISTSIZE=1000000000
+export SAVEHIST=$HISTSIZE
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
-
-export PATH="$HOME/.local/bin:$XDG_CONFIG_HOME/pyenv/shims:$PATH:."
-export ICLOUD="/Users/jasoneveleth/Library/Mobile Documents/com~apple~CloudDocs"
+export PATH="$HOME/.local/bin:$XDG_CONFIG_HOME/pyenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/Library/Apple/usr/bin:/usr/local/opt/fzf/bin:."
+# export PATH="$HOME/.local/bin:$XDG_CONFIG_HOME/pyenv/shims:$PATH:."
+export ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
 
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
 export PYTHONHISTFILE="$HOME/.local/share/python/history"
@@ -51,7 +47,8 @@ export NNN_COLORS="4512"
 export PAGER="less"
 export EDITOR="nvim"
 export VISUAL="$EDITOR"
-export JOURNAL="$HOME/personal/journal.md"
+export JOURNAL="$HOME/.root/personal/journal.md"
 
 # to fix pyenv
 export LDFLAGS="-L$(xcrun --show-sdk-path)/usr/lib"
+
