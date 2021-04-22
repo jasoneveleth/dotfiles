@@ -48,7 +48,7 @@ defaults write com.apple.screencapture "include-date" 0
 defaults write com.apple.screencapture name "ss"
 killall SystemUIServer
 
-# sudo tlmgr install stackengine titlesec titling siunitx latexmk biber xypic enumitem footmisc
+# sudo tlmgr install stackengine titlesec titling siunitx latexmk biber xypic enumitem footmisc courier
 # alias brew="/usr/bin/env PATH=${PATH/$PYENV_ROOT\/shims:/} /usr/local/bin/brew" # make brew and pyenv play nice
 
 # edit /etc/profile and /etc/zprofile to not run path_helper which fucks up the path. one is run with `zsh -l` the other with `zsh`. use `-o sourcetrace` to figure out which file

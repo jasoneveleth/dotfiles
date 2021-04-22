@@ -48,6 +48,7 @@ export PAGER="less"
 export EDITOR="nvim"
 export VISUAL="$EDITOR"
 export JOURNAL="$HOME/.root/personal/journal.md"
+export EXA_COLORS="*.pdf=35:*.wav=36:*.png=35:*.c=01:*.py=01"
 
 # to fix pyenv
 export LDFLAGS="-L$(xcrun --show-sdk-path)/usr/lib"

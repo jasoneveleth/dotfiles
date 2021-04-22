@@ -7,6 +7,9 @@ inoremap <buffer> <C-s> <c-g>u<Esc>[s1z=`]a
 inoremap <buffer> <c-f> <c-g>u$<space><esc>Bi$<esc>:undoj<cr>f$a
 " let g:vimtex_indent_enabled = 1
 
+nnoremap <buffer> \= :set fo+=a<cr>
+nnoremap <buffer> \- :set fo-=a<cr>
+
 " visual and operator-pending
 " xnoremap <buffer>i$ :<C-u>silent normal! lT$vt$<CR>
 " onoremap <buffer>i$ :silent normal vi$<CR>

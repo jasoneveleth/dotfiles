@@ -52,9 +52,9 @@ _maketex() {
 compdef _maketex maketex
 
 # ------------- aliases
-alias ls="/bin/ls -G"
-alias ll="ls -l"
-alias la="ls -Al"
+alias ls="exa"
+alias ll="exa -l"
+alias la="exa -al"
 alias rm='printf "idiot no. use ls first, then /bin/rm if you really want.\notherwise just \`trash\`\n"'
 
 alias cleanDS="find . -name '*.DS_Store' -type f -delete"
