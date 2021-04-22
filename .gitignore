@@ -29,3 +29,4 @@ karabiner/automatic_backups
 
 julia/logs/repl_history.jl
 zsh/zsh-autosuggestions/
+nvim/systags
