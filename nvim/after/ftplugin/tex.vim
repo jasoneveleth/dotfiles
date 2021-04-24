@@ -9,6 +9,7 @@ inoremap <buffer> <c-f> <c-g>u$<space><esc>Bi$<esc>:undoj<cr>f$a
 
 nnoremap <buffer> \= :set fo+=a<cr>
 nnoremap <buffer> \- :set fo-=a<cr>
+nnoremap <buffer> <leader>g :call texcount#Texcount()<cr>
 
 " visual and operator-pending
 " xnoremap <buffer>i$ :<C-u>silent normal! lT$vt$<CR>

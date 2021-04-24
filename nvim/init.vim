@@ -41,7 +41,10 @@ let g:personal_statusline = 1
 " Treesitter:
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-    highlight = { enable = true },
+    highlight = { 
+        enable = true,
+        disable = { "latex" },
+    },
     incremental_selection = { enable = true },
     textobjects = { enable = true },
     indent = { 

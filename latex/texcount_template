@@ -1,0 +1,11 @@
+ # https://tex.stackexchange.com/questions/239689/using-texcount-templates
+ # Use as sum count: text words + header words + other words
+ -sum=1,1,1
+
+ # Output template
+ -template=
+   \Word count: {sum}\n
+   \Equations: {inline} inline, {ds} displayed\n
+   \{float?Floats: {float}\n?float}
+   \{SUB?Subcounts:\n
+   \| {sum} words in {title}\n?SUB}
