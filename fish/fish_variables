@@ -71,5 +71,5 @@ SETUVAR fish_pager_color_completion:normal
 SETUVAR fish_pager_color_description:yellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
-SETUVAR --export fish_user_paths:/Users/jason/\x2elocal/bin\x1e/Users/jason/\x2econfig/pyenv/shims\x1e/Users/jason/\x2eicloud/root/uni/cs1430/google\x2dcloud\x2dsdk/bin
+SETUVAR --export fish_user_paths:/Users/jason/\x2elocal/bin\x1e/Users/jason/\x2econfig/pyenv/shims\x1e/Users/jason/\x2eicloud/root/uni/cs1430/google\x2dcloud\x2dsdk/bin\x1e/Users/jason/\x2evim/plugged/fzf/bin
 SETUVAR --export npm_config_devdir:/Users/jason/\x2elocal/share/node\x2dgyp

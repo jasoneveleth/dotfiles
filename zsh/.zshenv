@@ -32,6 +32,7 @@ export KERAS_HOME="$XDG_CONFIG_HOME"/keras
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
 
 export BIBINPUTS="$XDG_CONFIG_HOME/latex"  
+export BAT_THEME='TwoDark'
 export KEYTIMEOUT=1
 export JULIA_NUM_THREADS=4
 export JULIA_DEPOT_PATH="$XDG_CONFIG_HOME/julia"

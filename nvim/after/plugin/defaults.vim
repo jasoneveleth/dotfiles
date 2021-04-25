@@ -28,7 +28,7 @@ set showbreak=++
 set omnifunc=syntaxcomplete#Complete
 set shada=!,'20,<50,s10,h
 
-syntax off
+" syntax off
 
 let g:loaded_python_provider = 1
 let g:python_host_skip_check = 1

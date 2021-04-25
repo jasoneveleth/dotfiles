@@ -30,3 +30,10 @@ karabiner/automatic_backups
 julia/logs/repl_history.jl
 zsh/zsh-autosuggestions/
 nvim/systags
+
+ssh/config  
+ssh/google_compute_known_hosts  
+ssh/id_rsa  
+ssh/id_rsa.pub  
+ssh/known_hosts
+*/id_rsa

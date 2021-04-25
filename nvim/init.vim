@@ -1,7 +1,17 @@
-call plug#begin('~/.local/share/nvim//plugged')
+" disable some vim plugins
+let g:loaded_netrwPlugin=1
+let g:loaded_netrw = 1
+let loaded_gzip=1
+let loaded_matchit=1
+let g:loaded_tarPlugin=1
+let g:loaded_tar=1
+let g:loaded_zipPlugin=1
+let g:loaded_zip=1
+
+call plug#begin('~/.local/share/nvim/plugged')
+" Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-rsi'
-Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'romainl/vim-qf'
 Plug 'romainl/vim-cool'
@@ -16,10 +26,8 @@ Plug 'mbbill/undotree'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 
-" alternative: quickscope
-Plug 'deris/vim-shot-f'
+Plug 'deris/vim-shot-f' " alternative: quickscope
 Plug 'junegunn/vim-peekaboo'
-" Plug 'szw/vim-maximizer'
 call plug#end()
 
 if isdirectory(expand('%:h')) | silent cd %:h | endif
@@ -27,10 +35,9 @@ colorscheme dim
 
 let g:targets_seekRanges = 'cc cr cb cB lc ac Ac lr rr ll lb ar ab lB Ar aB AB rb al rB Al'
 let g:CoolTotalMatches = 1
-let g:peekaboo_delay = 30
+let g:peekaboo_delay = 120
 
 " let g:fzf_layout = { 'down': '20%' }
-" let $FZF_DEFAULT_OPTS=''
 " command! -bang -nargs=? -complete=dir MyFiles call fzf#vim#files(<q-args>, {'options': '--prompt "> " --info=hidden'}, <bang>0)
 
 let g:qf_auto_open_quickfix = 1
@@ -59,10 +66,8 @@ nnoremap ' `
 nnoremap <leader> <nop>
 xnoremap <leader>p "_dP
 nnoremap <leader>p 0"_DP
-" nnoremap <expr> k v:count == 0 ? 'gk' : 'm`' . v:count . 'k'
-" nnoremap <expr> j v:count == 0 ? 'gj' : 'm`' . v:count . 'j'
-nnoremap <expr> k v:count == 0 ? 'gk' : 'k'
-nnoremap <expr> j v:count == 0 ? 'gj' : 'j'
+nnoremap <expr> k v:count == 0 ? 'gk' : 'm`' . v:count . 'k'
+nnoremap <expr> j v:count == 0 ? 'gj' : 'm`' . v:count . 'j'
 nnoremap <c-j> :cnext<cr>
 nnoremap <c-k> :cprevious<cr>
 vnoremap * y/<C-R>"<CR>
@@ -80,7 +85,6 @@ map <down> <c-e>
 nnoremap <silent> <leader>u :UndotreeToggle<cr>
 nnoremap <silent> <leader>s :Gstatus<cr>
 nnoremap <silent> <leader>r :call system('ctags -R -o .tags')<cr>
-" nnoremap <silent> <leader>b :call myfun#Buffers()<cr>
 nnoremap <silent> <leader>b :Buffers<cr>
 nnoremap <silent> <leader>d :call myfun#DiffWithSaved()<cr>', { noremap = true, silent = true })
 nnoremap <silent><expr> <leader>o filter(range(1, winnr('$')), 'getwinvar(v:val, "&ft") == "qf"')==[] ? ":cope<cr>" : ":ccl<cr>"
@@ -94,4 +98,3 @@ nnoremap <silent> <m-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <m-k> :TmuxNavigateUp<cr>
 
 cabbrev <expr> make getcmdtype() == ":" && getcmdline() == 'make' ? 'silent make' : 'make'
-

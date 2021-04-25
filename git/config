@@ -17,3 +17,5 @@
 	acp = !git add -A && git commit --verbose && git push
 	p = push
 	alias = !git config -l | grep '^alias.' | cut -d'.' -f2
+[pull]
+	rebase = true
