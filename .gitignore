@@ -38,5 +38,6 @@ ssh/id_rsa.pub
 ssh/known_hosts
 */id_rsa
 id_rsa
+
 jump/scores.json
 oni2/store/global/store.json

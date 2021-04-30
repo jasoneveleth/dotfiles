@@ -1,6 +1,7 @@
 set inccommand=split
 set shortmess=xtToOFc
 set nojoinspaces
+set nowrap
 set ignorecase
 set smartcase
 set hidden
