@@ -25,11 +25,7 @@ set listchars=tab:│\ ,extends:>
 set breakindent
 set breakindentopt=sbr
 set showbreak=++
-" set cursorline
 set omnifunc=syntaxcomplete#Complete
-set shada=!,'20,<50,s10,h
-
-" syntax off
 
 let g:loaded_python_provider = 1
 let g:python_host_skip_check = 1
@@ -40,17 +36,30 @@ let g:python3_host_prog = '$HOME/.config/pyenv/shims/python'
 let g:netrw_dirhistmax = 0
 let g:tex_flavor = 'latex'
 
-" function Osc52Yank()
-"     let buffer=system('base64', @0)
-"     let buffer=substitute(buffer, "\n", "", "")
-"     let buffer='\e]52;c;'.buffer.'\e\'
-"     silent exe "!echo -ne ".shellescape(buffer)." > ".shellescape('/dev/tty')
-" endfunction
+" {{{ https://sunaku.github.io/tmux-yank-osc52.html
+" copy to attached terminal using the yank(1) script:
+" https://github.com/sunaku/home/blob/master/bin/yank
+function! Yank(text) abort
+  let escape = system('yank', a:text)
+  if v:shell_error
+    echoerr escape
+  else
+    call writefile([escape], '/dev/tty', 'b')
+  endif
+endfunction
+noremap <silent> <Leader>y y:<C-U>call Yank(@0)<CR>
+
+" automatically run yank(1) whenever yanking in Vim
+" (this snippet was contributed by Larry Sanderson)
+function! CopyYank() abort
+  call Yank(join(v:event.regcontents, "\n"))
+endfunction
+" }}}
 
 augroup Yank
     autocmd!
     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
-    " autocmd TextYankPost * if v:event.operator ==# 'y' | call Osc52Yank() | endif
+    autocmd TextYankPost * call CopyYank()
 augroup END
 
 augroup FZF

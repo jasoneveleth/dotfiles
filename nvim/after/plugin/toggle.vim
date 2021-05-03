@@ -14,8 +14,10 @@ nnoremap yod :cd %:h<cr>
 let g:WarningCol = 0
 nmap <silent> yol <Plug>(ToggleWarning)
 
-" toggle o in format options?? (commenting onto opened line)
+" toggle wrap
+nnoremap yow :set invwrap<cr>
 
+" toggle o in format options?? (commenting onto opened line)
 
 
 

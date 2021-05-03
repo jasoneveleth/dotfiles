@@ -26,6 +26,7 @@ Plug 'mbbill/undotree'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 
+Plug 'mhinz/vim-startify'
 Plug 'airblade/vim-gitgutter'
 Plug 'deris/vim-shot-f' " alternative: quickscope
 Plug 'junegunn/vim-peekaboo'

@@ -40,4 +40,5 @@ ssh/known_hosts
 id_rsa
 
 jump/scores.json
+jump/search.json
 oni2/store/global/store.json
