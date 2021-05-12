@@ -25,7 +25,9 @@ Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
+Plug 'chrisbra/Colorizer'
 
+Plug 'lervag/vimtex'
 Plug 'mhinz/vim-startify'
 Plug 'airblade/vim-gitgutter'
 Plug 'deris/vim-shot-f' " alternative: quickscope
@@ -46,6 +48,7 @@ let g:qf_auto_open_quickfix = 1
 let g:qf_auto_quit = 1
 let g:qf_shorten_path = 1
 let g:personal_statusline = 1
+let g:startify_bookmarks = [ {'c': '~/.config/nvim/init.vim'}, {'z': '~/.config/zsh/.zshrc'}, {'y': '~/.config/zsh/.zshenv'} ]
 
 " Treesitter:
 lua <<EOF
@@ -77,6 +80,8 @@ nnoremap <leader>a =ip
 nnoremap ga <c-^>
 nnoremap Q @q
 nnoremap U <c-r>
+nn <left> g-
+nn <right> g+
 " xnoremap y myy`y
 " J, K in x to dP, and djp
 " >, < in x to >gv and <gv OR use .
@@ -90,6 +95,7 @@ nnoremap <silent> <leader>r :call system('ctags -R -o .tags')<cr>
 nnoremap <silent> <leader>b :Buffers<cr>
 nnoremap <silent> <leader>d :call myfun#DiffWithSaved()<cr>', { noremap = true, silent = true })
 nnoremap <silent><expr> <leader>o filter(range(1, winnr('$')), 'getwinvar(v:val, "&ft") == "qf"')==[] ? ":cope<cr>" : ":ccl<cr>"
+nmap <silent><Leader>c :call setbufvar(winbufnr(popup_atcursor(split(system("git log -n 1 -L " . line(".") . ",+1:" . expand("%:p")), "\n"), { "padding": [1,1,1,1], "pos": "botleft", "wrap": 0 })), "&filetype", "git")<CR>
 nnoremap <silent> <leader>p :Files<CR>
 nnoremap <c-p> :Files<cr>
 

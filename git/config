@@ -19,3 +19,7 @@
 	alias = !git config -l | grep '^alias.' | cut -d'.' -f2
 [pull]
 	rebase = true
+[diff]
+	algorithm = minimal
+[init]
+	defaultBranch = master

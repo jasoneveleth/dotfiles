@@ -36,30 +36,30 @@ let g:python3_host_prog = '$HOME/.config/pyenv/shims/python'
 let g:netrw_dirhistmax = 0
 let g:tex_flavor = 'latex'
 
-" {{{ https://sunaku.github.io/tmux-yank-osc52.html
-" copy to attached terminal using the yank(1) script:
-" https://github.com/sunaku/home/blob/master/bin/yank
-function! Yank(text) abort
-  let escape = system('yank', a:text)
-  if v:shell_error
-    echoerr escape
-  else
-    call writefile([escape], '/dev/tty', 'b')
-  endif
-endfunction
-noremap <silent> <Leader>y y:<C-U>call Yank(@0)<CR>
+" " {{{ https://sunaku.github.io/tmux-yank-osc52.html
+" " copy to attached terminal using the yank(1) script:
+" " https://github.com/sunaku/home/blob/master/bin/yank
+" function! Yank(text) abort
+"   let escape = system('yank', a:text)
+"   if v:shell_error
+"     echoerr escape
+"   else
+"     call writefile([escape], '/dev/tty', 'b')
+"   endif
+" endfunction
+" noremap <silent> <Leader>y y:<C-U>call Yank(@0)<CR>
 
-" automatically run yank(1) whenever yanking in Vim
-" (this snippet was contributed by Larry Sanderson)
-function! CopyYank() abort
-  call Yank(join(v:event.regcontents, "\n"))
-endfunction
-" }}}
+" " automatically run yank(1) whenever yanking in Vim
+" " (this snippet was contributed by Larry Sanderson)
+" function! CopyYank() abort
+"   call Yank(join(v:event.regcontents, "\n"))
+" endfunction
+" " }}}
 
 augroup Yank
     autocmd!
     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
-    autocmd TextYankPost * call CopyYank()
+    " autocmd TextYankPost * call CopyYank()
 augroup END
 
 augroup FZF

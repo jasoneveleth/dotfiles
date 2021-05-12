@@ -1,2 +1,3 @@
 $clean_ext = "%R.bbl %R.run.xml";
+$pdf_previewer = "/Applications/Skim.app/Contents/MacOS/Skim"
 # @BIBINPUTS = ( ".", "/Users/jason/.config/latex" ); 

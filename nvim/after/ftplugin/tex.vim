@@ -1,5 +1,5 @@
 setlocal sw=2
-setlocal conceallevel=1
+" setlocal conceallevel=1
 setlocal linebreak
 setlocal makeprg=maketex\ %
 
