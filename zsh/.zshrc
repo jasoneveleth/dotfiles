@@ -62,7 +62,7 @@ alias path='echo $PATH | tr -s ":" "\n"'
 alias findhardlinks='find -E . -links +1 \! -type d \! -regex "\./Library/.*" -exec ls -l {} \; 2> /dev/null | sort -nk2'
 alias battery="pmset -g batt | egrep -o '\d+%'"
 alias noswap="rm -f $HOME/.local/share/nvim/swap/*"
-alias src='source $HOME/.config/zsh/.zshrc'
+alias src='source $HOME/.config/zsh/.zshrc && source $HOME/.config/zsh/.zshenv'
 alias ..='cd ..'
 alias ...='cd ../..'
 
@@ -74,7 +74,8 @@ alias cat="bat"
 alias n="nnn"
 alias moshr="mosh --no-init --experimental-remote-ip=remote"
 
-alias gs="git status -s"
+alias gs="git status"
+alias gss="git status -s"
 alias gap="git add -p"
 alias gac="git add -A && git commit --verbose"
 alias gc="git commit --verbose"

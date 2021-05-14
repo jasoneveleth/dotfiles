@@ -31,7 +31,10 @@ Plug 'lervag/vimtex'
 Plug 'mhinz/vim-startify'
 Plug 'airblade/vim-gitgutter'
 Plug 'deris/vim-shot-f' " alternative: quickscope
-Plug 'junegunn/vim-peekaboo'
+" Plug 'junegunn/vim-peekaboo'
+
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-compe'
 call plug#end()
 
 if isdirectory(expand('%:h')) | silent cd %:h | endif
@@ -66,6 +69,30 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
+" Lsp:
+lua require'lspconfig'.clangd.setup{}
+let g:compe = {}
+let g:compe.enabled = v:true
+let g:compe.autocomplete = v:true
+let g:compe.debug = v:false
+let g:compe.min_length = 1
+let g:compe.preselect = 'enable'
+let g:compe.throttle_time = 80
+let g:compe.source_timeout = 200
+let g:compe.incomplete_delay = 400
+let g:compe.max_abbr_width = 100
+let g:compe.max_kind_width = 100
+let g:compe.max_menu_width = 100
+let g:compe.documentation = v:true
+
+let g:compe.source = {}
+let g:compe.source.path = v:true
+let g:compe.source.buffer = v:true
+let g:compe.source.calc = v:true
+let g:compe.source.nvim_lsp = v:true
+let g:compe.source.nvim_lua = v:true
+let g:compe.source.ultisnips = v:true
+
 let g:mapleader = ' '
 nnoremap ' `
 nnoremap <leader> <nop>
@@ -73,6 +100,8 @@ xnoremap <leader>p "_dP
 nnoremap <leader>p 0"_DP
 nnoremap <expr> k v:count == 0 ? 'gk' : 'm`' . v:count . 'k'
 nnoremap <expr> j v:count == 0 ? 'gj' : 'm`' . v:count . 'j'
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 nnoremap <c-j> :cnext<cr>
 nnoremap <c-k> :cprevious<cr>
 vnoremap * y/<C-R>"<CR>
@@ -104,5 +133,13 @@ nnoremap <silent> <m-l> :TmuxNavigateRight<cr>
 nnoremap <silent> <m-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <m-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <m-k> :TmuxNavigateUp<cr>
+
+" Lsp:
+nnoremap <silent> gd :lua vim.lsp.buf.definition()<cr>
+nnoremap <silent> gD :lua vim.lsp.buf.declaration()<cr>
+nnoremap <silent> K :lua vim.lsp.buf.hover()<cr>
+nnoremap <silent> g] :lua vim.lsp.buf.implementation()<cr>
+nnoremap <silent> [d :lua vim.lsp.diagnostic.goto_prev()<cr> 
+nnoremap <silent> ]d :lua vim.lsp.diagnostic.goto_next()<cr>
 
 cabbrev <expr> make getcmdtype() == ":" && getcmdline() == 'make' ? 'silent make' : 'make'

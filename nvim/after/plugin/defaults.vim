@@ -25,7 +25,8 @@ set listchars=tab:│\ ,extends:>
 set breakindent
 set breakindentopt=sbr
 set showbreak=++
-set omnifunc=syntaxcomplete#Complete
+set omnifunc=v:lua.vim.lsp.omnifunc
+set completeopt=menuone,noselect
 
 let g:loaded_python_provider = 1
 let g:python_host_skip_check = 1

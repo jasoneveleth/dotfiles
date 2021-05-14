@@ -17,8 +17,10 @@ nmap <silent> yol <Plug>(ToggleWarning)
 " toggle wrap
 nnoremap yow :set invwrap<cr>
 
-" toggle o in format options?? (commenting onto opened line)
+" toggle lazyredraw
+nnoremap yor :set invlazyredraw<cr>
 
+" toggle o in format options?? (commenting onto opened line)
 
 
 fun! s:ToggleWarning() abort

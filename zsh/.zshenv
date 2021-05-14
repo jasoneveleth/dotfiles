@@ -8,7 +8,7 @@ export SAVEHIST=$HISTSIZE
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
-export PATH="$HOME/.local/bin:$XDG_CONFIG_HOME/pyenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/Library/Apple/usr/bin:/usr/local/opt/fzf/bin:."
+export PATH="$HOME/.local/bin:$XDG_CONFIG_HOME/pyenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/Library/Apple/usr/bin:/usr/local/opt/fzf/bin:.:/usr/local//Cellar/llvm/12.0.0/bin"
 # export PATH="$HOME/.local/bin:$XDG_CONFIG_HOME/pyenv/shims:$PATH:."
 export ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
 
@@ -46,10 +46,16 @@ export NNN_PLUG='e:-_ewrap $nnn*;n:-_fzfnotes*;v:-_nvim*'
 export NNN_OPTS="e"
 export NNN_COLORS="4512"
 export PAGER="bat"
+export MANPAGER='less'
 export EDITOR="nvim"
 export VISUAL="$EDITOR"
 export JOURNAL="$HOME/.root/personal/journal.md"
 export EXA_COLORS="*.pdf=35:*.wav=36:*.png=35:*.c=01:*.py=01"
+
+export CPATH="$HOME/dev/c/include/"
+# export DYLD_FALLBACK_LIBRARY_PATH="$HOME/code/c/lib:$DYLD_FALLBACK_LIBRARY_PATH"
+# export DYLD_LIBRARY_PATH="$HOME/code/c/lib"
+# export LD_LIBRARY_PATH="$HOME/dev/c/lib"
 
 # to fix pyenv
 export LDFLAGS="-L$(xcrun --show-sdk-path)/usr/lib"
