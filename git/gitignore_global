@@ -6,6 +6,7 @@ tags
 .tags
 
 .git/
+.env/
 __pycache__/
 
 *.swp

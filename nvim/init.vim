@@ -17,6 +17,8 @@ Plug 'romainl/vim-qf'
 Plug 'romainl/vim-cool'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf'
+Plug 'junegunn/gv.vim'
+Plug 'junegunn/vim-peekaboo'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ajpaulson/julia-syntax.vim'
 Plug 'jasoneveleth/vim-dim'
@@ -24,14 +26,12 @@ Plug 'wellle/targets.vim'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-fugitive'
-Plug 'junegunn/gv.vim'
 Plug 'chrisbra/Colorizer'
 
 Plug 'lervag/vimtex'
 Plug 'mhinz/vim-startify'
 Plug 'airblade/vim-gitgutter'
 Plug 'deris/vim-shot-f' " alternative: quickscope
-" Plug 'junegunn/vim-peekaboo'
 
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
@@ -42,10 +42,7 @@ colorscheme dim
 
 let g:targets_seekRanges = 'cc cr cb cB lc ac Ac lr rr ll lb ar ab lB Ar aB AB rb al rB Al'
 let g:CoolTotalMatches = 1
-let g:peekaboo_delay = 120
-
-" let g:fzf_layout = { 'down': '20%' }
-" command! -bang -nargs=? -complete=dir MyFiles call fzf#vim#files(<q-args>, {'options': '--prompt "> " --info=hidden'}, <bang>0)
+let g:peekaboo_delay = 500
 
 let g:qf_auto_open_quickfix = 1
 let g:qf_auto_quit = 1
@@ -87,11 +84,12 @@ let g:compe.documentation = v:true
 
 let g:compe.source = {}
 let g:compe.source.path = v:true
-let g:compe.source.buffer = v:true
+let g:compe.source.buffer = {'ignored_filetypes': ['markdown', 'gitcommit', 'yaml']}
 let g:compe.source.calc = v:true
 let g:compe.source.nvim_lsp = v:true
 let g:compe.source.nvim_lua = v:true
-let g:compe.source.ultisnips = v:true
+" let g:compe.source.vsnip = v:true
+" let g:compe.source.ultisnips = v:true
 
 let g:mapleader = ' '
 nnoremap ' `
@@ -109,8 +107,6 @@ nnoremap <leader>a =ip
 nnoremap ga <c-^>
 nnoremap Q @q
 nnoremap U <c-r>
-nn <left> g-
-nn <right> g+
 " xnoremap y myy`y
 " J, K in x to dP, and djp
 " >, < in x to >gv and <gv OR use .
@@ -124,7 +120,6 @@ nnoremap <silent> <leader>r :call system('ctags -R -o .tags')<cr>
 nnoremap <silent> <leader>b :Buffers<cr>
 nnoremap <silent> <leader>d :call myfun#DiffWithSaved()<cr>', { noremap = true, silent = true })
 nnoremap <silent><expr> <leader>o filter(range(1, winnr('$')), 'getwinvar(v:val, "&ft") == "qf"')==[] ? ":cope<cr>" : ":ccl<cr>"
-nmap <silent><Leader>c :call setbufvar(winbufnr(popup_atcursor(split(system("git log -n 1 -L " . line(".") . ",+1:" . expand("%:p")), "\n"), { "padding": [1,1,1,1], "pos": "botleft", "wrap": 0 })), "&filetype", "git")<CR>
 nnoremap <silent> <leader>p :Files<CR>
 nnoremap <c-p> :Files<cr>
 
@@ -141,5 +136,6 @@ nnoremap <silent> K :lua vim.lsp.buf.hover()<cr>
 nnoremap <silent> g] :lua vim.lsp.buf.implementation()<cr>
 nnoremap <silent> [d :lua vim.lsp.diagnostic.goto_prev()<cr> 
 nnoremap <silent> ]d :lua vim.lsp.diagnostic.goto_next()<cr>
+inoremap <silent><expr> <c-l> compe#complete()
 
 cabbrev <expr> make getcmdtype() == ":" && getcmdline() == 'make' ? 'silent make' : 'make'

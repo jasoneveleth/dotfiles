@@ -8,13 +8,13 @@ export SAVEHIST=$HISTSIZE
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
-export PATH="$HOME/.local/bin:$XDG_CONFIG_HOME/pyenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/Library/Apple/usr/bin:/usr/local/opt/fzf/bin:.:/usr/local//Cellar/llvm/12.0.0/bin"
-# export PATH="$HOME/.local/bin:$XDG_CONFIG_HOME/pyenv/shims:$PATH:."
+export PATH="$HOME/.local/bin:/usr/local/bin:$PATH:/Library/TeX/texbin:/Library/Apple/usr/bin:/usr/local/opt/fzf/bin:."
+# export PATH="$XDG_CONFIG_HOME/pyenv/shims:$PATH"
 export ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
 
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
 export PYTHONHISTFILE="$HOME/.local/share/python/history"
-export PYENV_ROOT="$XDG_CONFIG_HOME/pyenv"
+# export PYENV_ROOT="$XDG_CONFIG_HOME/pyenv"
 export MPLCONFIGDIR="$XDG_CONFIG_HOME/matplotlib"
 export PYLINTHOME="$XDG_CONFIG_HOME/python/pylint.d"
 export CABAL_CONFIG="$XDG_CONFIG_HOME/cabal"
@@ -35,6 +35,7 @@ export BIBINPUTS="$XDG_CONFIG_HOME/latex"
 export BAT_THEME='TwoDark'
 export KEYTIMEOUT=1
 export JULIA_NUM_THREADS=4
+export NTHREADS=4
 export JULIA_DEPOT_PATH="$XDG_CONFIG_HOME/julia"
 export FZF_DEFAULT_COMMAND='fd --type file --hidden --exclude .git --exclude node_modules --exclude __pycache__'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -58,5 +59,6 @@ export CPATH="$HOME/dev/c/include/"
 # export LD_LIBRARY_PATH="$HOME/dev/c/lib"
 
 # to fix pyenv
-export LDFLAGS="-L$(xcrun --show-sdk-path)/usr/lib"
+# export LDFLAGS="-L$(xcrun --show-sdk-path)/usr/lib"
 
+setopt no_global_rcs

@@ -54,7 +54,7 @@ compdef _maketex maketex
 # ------------- aliases
 alias ls="exa"
 alias ll="exa -l"
-alias la="exa -al"
+alias la="exa -la"
 alias rm='printf "idiot no. use ls first, then /bin/rm if you really want.\notherwise just \`trash\`\n"'
 
 alias cleanDS="find . -name '*.DS_Store' -type f -delete"
@@ -63,18 +63,22 @@ alias findhardlinks='find -E . -links +1 \! -type d \! -regex "\./Library/.*" -e
 alias battery="pmset -g batt | egrep -o '\d+%'"
 alias noswap="rm -f $HOME/.local/share/nvim/swap/*"
 alias src='source $HOME/.config/zsh/.zshrc && source $HOME/.config/zsh/.zshenv'
+alias j='cd $(quick) && pwd'
 alias ..='cd ..'
 alias ...='cd ../..'
 
+alias python='[ -e ./.env/bin/activate ] && [ -z ${VIRTUAL_ENV+x} ] && echo sourced && . ./.env/bin/activate; python'
+alias d='deactivate'
 alias oni="oni2"
 alias vi="nvim"
 alias ql="qlmanage -p 2>/dev/null"
 alias less="bat"
 alias cat="bat"
 alias n="nnn"
-alias moshr="mosh --no-init --experimental-remote-ip=remote"
 
 alias gs="git status"
+alias ga="git add"
+alias gA="git add -A"
 alias gss="git status -s"
 alias gap="git add -p"
 alias gac="git add -A && git commit --verbose"
@@ -83,11 +87,8 @@ alias gacp="git add -A && git commit --verbose && git push"
 alias gp="git push"
 alias gd="git diff"
 alias gdc="git diff --cached"
-alias gl="git log --graph -n 30 --pretty=format:'%Cred%h%Creset %Cgreen(%cr) %C(bold blue)<%an>%Creset %C(yellow)%d%Creset %s' --abbrev-commit --all"
+alias gl="git log -n 30 --graph --abbrev-commit --all --pretty=format:'%Cred%h%Creset %Cgreen(%cr) %C(bold blue)<%an>%Creset %C(yellow)%d%Creset %s'"
 alias galias="grep 'alias g' $HOME/.config/zsh/.zshrc | cut -d' ' -f2-"
 
-# ------------- hooks (time wasters)
-eval "$(direnv hook zsh)"
-eval "$(jump shell)"
 source "$XDG_CONFIG_HOME"/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 

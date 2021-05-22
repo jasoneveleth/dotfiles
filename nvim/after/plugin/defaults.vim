@@ -15,7 +15,6 @@ set clipboard=unnamed
 set number
 set relativenumber
 set grepprg=rg\ --vimgrep\ --hidden
-set exrc
 set undofile
 set undodir=$HOME/.local/share/nvim/undo//
 set spellfile=$HOME/.local/share/nvim/en.utf-8.add
@@ -74,3 +73,7 @@ augroup Autocomment
     autocmd BufEnter * set formatoptions-=o
 augroup END
 
+augroup cfiles
+  autocmd!
+  autocmd BufRead,BufNewFile *.h,*.c set filetype=c
+augroup END
