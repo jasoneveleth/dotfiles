@@ -23,7 +23,11 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'ajpaulson/julia-syntax.vim'
 Plug 'jasoneveleth/vim-dim'
 Plug 'wellle/targets.vim'
+if has('nvim-0.5')
 Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-compe'
+endif
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-fugitive'
 Plug 'chrisbra/Colorizer'
@@ -33,8 +37,6 @@ Plug 'mhinz/vim-startify'
 Plug 'airblade/vim-gitgutter'
 Plug 'deris/vim-shot-f' " alternative: quickscope
 
-Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/nvim-compe'
 call plug#end()
 
 if isdirectory(expand('%:h')) | silent cd %:h | endif
@@ -51,6 +53,7 @@ let g:personal_statusline = 1
 let g:startify_bookmarks = [ {'c': '~/.config/nvim/init.vim'}, {'z': '~/.config/zsh/.zshrc'}, {'y': '~/.config/zsh/.zshenv'} ]
 
 " Treesitter:
+if has('nvim-0.5')
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
     highlight = { 
@@ -90,6 +93,7 @@ let g:compe.source.nvim_lsp = v:true
 let g:compe.source.nvim_lua = v:true
 " let g:compe.source.vsnip = v:true
 " let g:compe.source.ultisnips = v:true
+endif
 
 let g:mapleader = ' '
 nnoremap ' `

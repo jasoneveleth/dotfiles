@@ -1,12 +1,5 @@
 #!/bin/zsh
 
-# ------------- fzf
-if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
-  export PATH="${PATH:+${PATH}:}/usr/local/opt/fzf/bin"
-fi
-[[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
-source "/usr/local/opt/fzf/shell/key-bindings.zsh"
-
 # ------------- general
 PS1="[%m:%1~]%# "
 
@@ -33,15 +26,19 @@ zstyle ':completion:*' squeeze-slashes true
 zstyle :compinstall filename '/Users/jason/.config/zsh/.zshrc'
 autoload -Uz compinit
 compdumpfile="$HOME/.config/zsh/.zcompcache/.zcompdump"
-# {unix time} - {compdumpfile modified date} > {seconds in a day}
-if (( $(date '+%s') - $(stat -f %m "$compdumpfile") > 86400 )); then
+if [ $(uname -s) = Darwin ]; then
+    one_day_old="$(date '+%s') - $(stat -f %m $compdumpfile) > 86400"
+else
+    one_day_old="$(date '+%s') - $(stat -c %Y "$compdumpfile") > 86400"
+fi
+if (( $one_day_old )); then
     compinit -d "$compdumpfile"
     touch "$compdumpfile"
     zcompile "$compdumpfile"
 else
     compinit -C -d "$compdumpfile"
 fi
-unset compdumpfile
+unset compdumpfile one_day_old
 _comp_options+=(globdots) # include hidden files
 
 # https://mrigank11.github.io/2018/03/zsh-auto-completion/

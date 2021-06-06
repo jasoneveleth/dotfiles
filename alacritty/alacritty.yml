@@ -6,8 +6,7 @@ window:
   padding:
     x: 6
     y: 3
-  # decorations: none
-  decorations: buttonless
+  # decorations: buttonless
 scrolling:
   history: 10000
   multiplier: 1
@@ -15,15 +14,15 @@ background_opacity: 1
 
 font:
   normal:
-    family: Menlo
+    family: Hack
     style: Regular
   bold:
-    family: Menlo
+    family: Hack
     style: Bold
   italic:
-    family: Menlo
+    family: Hack
     style: Italic
-  size: 12.0
+  size: 10.0
   offset:
     x: 0
     y: 0
