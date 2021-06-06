@@ -21,6 +21,7 @@ oni2/extensions/
 oni2/workspace/
 oni2/store/
 
+zsh/.zcompdump
 zsh/.zcompcache/
 zsh/.zsh_history
 zsh/.zsh_sessions/
