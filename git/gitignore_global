@@ -13,3 +13,5 @@ __pycache__/
 *.pyc
 
 cscope.out
+*.o
+*.dSYM/

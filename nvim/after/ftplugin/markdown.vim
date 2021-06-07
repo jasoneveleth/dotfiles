@@ -1,5 +1,9 @@
 setlocal suffixesadd=.md
+" wrap long lines at a character in 'breakat' rather than last character on
+" the line, doesn't insert <EOL>s (\n) in file. Not used when wrap is off.
 setlocal linebreak
+set tw=80
+set sw=4
 
 " https://git.peppe.rs/vim/better-text-objs/tree/plugin/better-text-objs.vim
 xnoremap <buffer> ix :<C-u>normal vi`<CR>

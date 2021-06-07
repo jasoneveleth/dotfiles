@@ -1,20 +1,17 @@
 #!/bin/zsh
 
-export PATH_FIXED=1
-
 export HISTSIZE=1000000000
 export SAVEHIST=$HISTSIZE
+export HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
-export PATH="$HOME/.local/bin:/usr/local/bin:$PATH:/Library/TeX/texbin:/Library/Apple/usr/bin:/usr/local/opt/fzf/bin:."
-# export PATH="$XDG_CONFIG_HOME/pyenv/shims:$PATH"
+export PATH="$HOME/.local/bin:/usr/local/bin:$PATH:/Library/TeX/texbin:/Library/Apple/usr/bin:/usr/local/opt/llvm/bin/:/usr/local/opt/fzf/bin:."
 export ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
 
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
 export PYTHONHISTFILE="$HOME/.local/share/python/history"
-# export PYENV_ROOT="$XDG_CONFIG_HOME/pyenv"
 export MPLCONFIGDIR="$XDG_CONFIG_HOME/matplotlib"
 export PYLINTHOME="$XDG_CONFIG_HOME/python/pylint.d"
 export CABAL_CONFIG="$XDG_CONFIG_HOME/cabal"
@@ -54,11 +51,5 @@ export JOURNAL="$HOME/.root/personal/journal.md"
 export EXA_COLORS="*.pdf=35:*.wav=36:*.png=35:*.c=01:*.py=01"
 
 export CPATH="$HOME/dev/c/include/"
-# export DYLD_FALLBACK_LIBRARY_PATH="$HOME/code/c/lib:$DYLD_FALLBACK_LIBRARY_PATH"
-# export DYLD_LIBRARY_PATH="$HOME/code/c/lib"
-# export LD_LIBRARY_PATH="$HOME/dev/c/lib"
-
-# to fix pyenv
-# export LDFLAGS="-L$(xcrun --show-sdk-path)/usr/lib"
 
 setopt no_global_rcs

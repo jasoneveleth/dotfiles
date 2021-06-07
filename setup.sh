@@ -26,8 +26,9 @@ done
 #     cd ~
 # fi
 
-brew install bat cask ctags direnv fd fzf graphviz htop jump moreutils mosh neofetch neovim nnn pyenv ripgrep shellcheck speedtest-cli tmux tree
+brew install bat cask ctags direnv fd fzf graphviz htop jump moreutils mosh neofetch neovim nnn pyenv ripgrep shellcheck speedtest-cli tmux tree diff-so-fancy
 brew cask install alacritty alfred appcleaner basictex discord fantastical gimp google-chrome julia keycastr minecraft osxfuse qlmarkdown qlstephen spotify tunnelblick zoom
+# fonts: https://corgibytes.com/blog/2020/01/29/install-fonts-on-your-mac-from-the-command-line-with-homebrew/
 
 # brew install mailplane
 # brew tap zegervdv/zathura

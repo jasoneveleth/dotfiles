@@ -53,5 +53,5 @@ set statusline+=%=                                       " Right Side
 " set statusline+=%7*\|                                    " Separator
 set statusline+=%7*\ %y\                                 " FileType
 set statusline+=%6*\ %3p%%\                              " Colomn number
-set statusline+=%0*\ ln:\ %02l/%L\                       " Line number / total lines, percentage of document
+set statusline+=%0*\ %02l/%L\ :\ %c\                 " Line number / total lines, percentage of document, column number
 " set statusline+=%0*\ %n\                                 " Buffer number

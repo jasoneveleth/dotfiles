@@ -28,5 +28,5 @@ bindkey '^x^e' edit-command-line
 bindkey "^u" backward-kill-line
 bindkey "^k" kill-line
 
-bindkey '^[[A' history-beginning-search-backward
-bindkey '^[[B' history-beginning-search-forward
+# bindkey '^[[A' history-beginning-search-backward
+# bindkey '^[[B' history-beginning-search-forward

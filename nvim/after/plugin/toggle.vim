@@ -20,6 +20,7 @@ nnoremap yow :set invwrap<cr>
 " toggle lazyredraw
 nnoremap yor :set invlazyredraw<cr>
 
+nnoremap yox :set invcursorline invcursorcolumn<cr>
 " toggle o in format options?? (commenting onto opened line)
 
 

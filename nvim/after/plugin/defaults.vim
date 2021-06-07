@@ -11,7 +11,7 @@ set shiftwidth=4
 set expandtab
 set smarttab
 set tags=tags;,.tags;,
-set clipboard=unnamed
+set clipboard=unnamed,unnamedplus
 set number
 set relativenumber
 set grepprg=rg\ --vimgrep\ --hidden
@@ -31,7 +31,7 @@ let g:loaded_python_provider = 1
 let g:python_host_skip_check = 1
 let g:python_host_prog = '/usr/bin/python'
 let g:python3_host_skip_check = 1
-let g:python3_host_prog = '$HOME/.config/pyenv/shims/python'
+let g:python3_host_prog = '/usr/bin/python3'
 
 let g:netrw_dirhistmax = 0
 let g:tex_flavor = 'latex'
@@ -70,6 +70,7 @@ augroup END
 
 augroup Autocomment
     autocmd!
+    " don't insert comment leader after 'o'
     autocmd BufEnter * set formatoptions-=o
 augroup END
 
