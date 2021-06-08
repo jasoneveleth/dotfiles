@@ -68,7 +68,6 @@ alias act='[ -e ./.env/bin/activate ] && [ -z ${VIRTUAL_ENV+x} ] && echo sourced
 alias d='deactivate'
 alias python='act; python'
 alias oni="oni2"
-alias vi="nvim"
 alias ql="qlmanage -p 2>/dev/null"
 alias less="bat"
 alias cat="bat"
