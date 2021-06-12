@@ -47,7 +47,7 @@ let g:targets_seekRanges = 'cc cr cb cB lc ac Ac lr rr ll lb ar ab lB Ar aB AB r
 let g:CoolTotalMatches = 1
 let g:peekaboo_delay = 500
 let g:rooter_patterns = ['.git', 'Makefile']
-" let g:rooter_silent_chdir = 1
+let g:rooter_silent_chdir = 1
 let g:qf_auto_open_quickfix = 1
 let g:qf_auto_quit = 1
 let g:qf_shorten_path = 1
@@ -74,6 +74,7 @@ EOF
 
 " Lsp:
 lua require'lspconfig'.clangd.setup{}
+lua require'lspconfig'.pyright.setup{}
 let g:compe = {}
 let g:compe.enabled = v:true
 let g:compe.autocomplete = v:true

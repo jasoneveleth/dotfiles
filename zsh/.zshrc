@@ -77,6 +77,8 @@ alias m='make'
 alias mc='make clean'
 alias mr='make run'
 alias mt='make test'
+alias mct='make clean test'
+alias mcr='make clean run'
 
 alias gs="git status"
 alias ga="git add"
@@ -89,7 +91,9 @@ alias gacp="git add -A && git commit --verbose && git push"
 alias gp="git push"
 alias gd="git diff"
 alias gdc="git diff --cached"
-alias gl="git log -n 30 --graph --abbrev-commit --all --pretty=format:'%Cred%h%Creset %Cgreen(%cr) %C(bold blue)<%an>%Creset %C(yellow)%d%Creset %s'"
+alias gla="git log -n 30 --graph --abbrev-commit --all --pretty=format:'%C(yellow)%h %Cgreen(%cr) %C(bold blue)<%an>%C(auto)%d%Creset %s'"
+alias glt="git log -n 30 --abbrev-commit --all --pretty=format:'%C(auto)%h %Cgreen(%cr)%C(auto)%d %s'"
+alias gl="git log -n 32 --all --oneline"
 alias galias="grep 'alias g' $HOME/.config/zsh/.zshrc | cut -d' ' -f2-"
 
 source "$XDG_CONFIG_HOME"/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
