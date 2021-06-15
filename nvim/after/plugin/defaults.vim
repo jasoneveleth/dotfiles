@@ -75,6 +75,15 @@ augroup Autocomment
 augroup END
 
 augroup cfiles
-  autocmd!
-  autocmd BufRead,BufNewFile *.h,*.c set filetype=c
+    autocmd!
+    autocmd BufRead,BufNewFile *.h,*.c set filetype=c
 augroup END
+
+augroup restore_cursor
+    autocmd!
+    autocmd BufReadPost *
+                \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+                \ |   exe "normal! g`\""
+                \ | endif
+augroup END
+
