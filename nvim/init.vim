@@ -35,7 +35,7 @@ Plug 'airblade/vim-rooter'
 
 Plug 'lervag/vimtex'
 Plug 'mhinz/vim-startify'
-" Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 Plug 'deris/vim-shot-f' " alternative: quickscope
 
 call plug#end()
@@ -176,5 +176,5 @@ nmap <Leader>lP :call Paste(v:register, "l", "P")<CR>
 nmap <Leader>lp :call Paste(v:register, "l", "p")<CR>
 nmap <Leader>cP :call Paste(v:register, "v", "P")<CR>
 nmap <Leader>cp :call Paste(v:register, "v", "p")<CR>
-nnoremap <unique> <Leader>P ""P<CR>
-nnoremap <unique> <Leader>p ""p<CR>
+nnoremap <Leader>P ""P<CR>
+nnoremap <Leader>p ""p<CR>
