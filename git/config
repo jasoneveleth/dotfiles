@@ -27,3 +27,7 @@
 	diffFilter = "diff-so-fancy --patch"
 [diff-so-fancy]
 	markEmptyLines = false
+[rebase]
+	autosquash = true
+[advice]
+	detached = head
