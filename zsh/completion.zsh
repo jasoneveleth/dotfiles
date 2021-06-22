@@ -19,6 +19,7 @@ else
     compinit -C -d "$compdumpfile"
 fi
 unset compdumpfile one_day_old
+
 _comp_options+=(globdots) # include hidden files
 
 # https://mrigank11.github.io/2018/03/zsh-auto-completion/
