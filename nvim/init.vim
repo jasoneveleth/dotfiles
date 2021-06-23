@@ -54,6 +54,7 @@ let g:qf_shorten_path = 1
 let g:personal_statusline = 1
 let g:startify_bookmarks = [ {'c': '~/.config/nvim/init.vim'}, {'z': '~/.config/zsh/.zshrc'}, {'y': '~/.config/zsh/.zshenv'} ]
 let g:startify_custom_header = []
+let g:floaterm_opener = 'vsplit'
 
 " Treesitter:
 if has('nvim-0.5')
@@ -106,7 +107,6 @@ nnoremap <expr> k v:count == 0 ? 'gk' : 'm`' . v:count . 'k'
 nnoremap <expr> j v:count == 0 ? 'gj' : 'm`' . v:count . 'j'
 nnoremap <c-j> :cnext<cr>
 nnoremap <c-k> :cprevious<cr>
-nnoremap <leader>a =ip
 nnoremap ga <c-^>
 nnoremap Q @q
 nnoremap U <c-r>
@@ -121,10 +121,11 @@ map <up> <c-y>
 map <down> <c-e>
 
 nnoremap <silent> <leader>u :UndotreeToggle<cr>
-nnoremap <silent> <leader>s :Git<cr>
-nnoremap <silent> <leader>r :call system('ctags -R -o .tags')<cr>
+nnoremap <silent> <leader>s :FloatermNew git status<cr>
+nnoremap <silent> <leader>d :FloatermNew git diff<cr>
+nnoremap <silent> <leader>a :Git add -A<cr>
+nnoremap <silent> <leader>c :vertical Git commit --verbose<cr>
 nnoremap <silent> <leader>b :Buffers<cr>
-nnoremap <silent> <leader>d :call myfun#DiffWithSaved()<cr>
 nnoremap <silent> <leader>g :RG<cr>
 nnoremap <silent><expr> <leader>o filter(range(1, winnr('$')), 'getwinvar(v:val, "&ft") == "qf"')==[] ? ":cope<cr>" : ":ccl<cr>"
 nnoremap <c-p> :Files<cr>
