@@ -9,7 +9,7 @@ let g:loaded_zipPlugin=1
 let g:loaded_zip=1
 
 call plug#begin('~/.local/share/nvim/plugged')
-" Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-repeat'
