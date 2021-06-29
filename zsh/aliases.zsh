@@ -25,6 +25,7 @@ alias n="nnn"
 
 alias m='make'
 alias mc='make clean'
+alias mca='make clean all'
 alias mr='make run'
 alias mt='make test'
 alias mct='make clean test'
