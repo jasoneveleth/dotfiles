@@ -6,6 +6,7 @@ stty -ixon
 # bindkey '^[[A' history-beginning-search-backward
 # bindkey '^[[B' history-beginning-search-forward
 
+autoload edit-command-line
 zle -N edit-command-line
 
 bindkey -e

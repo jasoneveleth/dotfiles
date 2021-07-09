@@ -26,6 +26,7 @@ set showbreak=++
 set omnifunc=v:lua.vim.lsp.omnifunc
 set completeopt=menuone,noselect
 set cursorline
+set signcolumn=yes
 
 let g:loaded_python_provider = 1
 let g:python_host_skip_check = 1

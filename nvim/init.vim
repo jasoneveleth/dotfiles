@@ -123,6 +123,7 @@ map <down> <c-e>
 nnoremap <silent> <leader>u :UndotreeToggle<cr>
 nnoremap <silent> <leader>s :FloatermNew git status<cr>
 nnoremap <silent> <leader>d :FloatermNew git diff<cr>
+nnoremap <silent> <leader>l yy:silent FloatermNew git log -S "<c-r>"" %<cr>
 nnoremap <silent> <leader>a :Git add -A<cr>
 nnoremap <silent> <leader>c :vertical Git commit --verbose<cr>
 nnoremap <silent> <leader>b :Buffers<cr>

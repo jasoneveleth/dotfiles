@@ -1,7 +1,8 @@
 alias ls="exa -s type"
 alias ll="exa -l -s type"
 alias la="exa -la -s type"
-alias rm='printf "idiot no. use ls first, then /bin/rm if you really want.\notherwise just \`trash\`\n"'
+alias rm='printf "this is not the command you are looking for. use: \`trash\`\n"; false'
+alias cp='cp -i'
 
 alias cleanDS="find . -name '*.DS_Store' -type f -delete"
 alias path='echo $PATH | tr -s ":" "\n"'
@@ -45,6 +46,8 @@ alias gacp="git add -A && git commit --verbose && git push"
 alias gp="git push"
 alias gr="git rebase"
 alias gf="git fetch"
+alias gco="git checkout"
+alias gam="git amend"
 
 alias gd="git diff"
 alias gdc="git diff --cached"
