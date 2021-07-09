@@ -29,19 +29,19 @@ Plug 'hrsh7th/nvim-compe'
 endif
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-fugitive'
-Plug 'chrisbra/Colorizer'
+" Plug 'chrisbra/Colorizer'
 Plug 'airblade/vim-rooter'
 Plug 'voldikss/vim-floaterm'
 
-Plug 'lervag/vimtex'
+" Plug 'lervag/vimtex'
 Plug 'mhinz/vim-startify'
-Plug 'airblade/vim-gitgutter'
-Plug 'deris/vim-shot-f' " alternative: quickscope
+" Plug 'airblade/vim-gitgutter'
+" Plug 'deris/vim-shot-f' " alternative: quickscope
 
 call plug#end()
 
 if isdirectory(expand('%:h')) | silent cd %:h | endif
-colorscheme dim
+silent! colorscheme dim
 
 let g:targets_seekRanges = 'cc cr cb cB lc ac Ac lr rr ll lb ar ab lB Ar aB AB rb al rB Al'
 let g:CoolTotalMatches = 1

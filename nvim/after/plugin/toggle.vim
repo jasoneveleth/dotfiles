@@ -14,6 +14,9 @@ nnoremap yod :cd %:h<cr>
 let g:WarningCol = 0
 nmap <silent> yol <Plug>(ToggleWarning)
 
+" toggle relative number
+nnoremap <leader><leader> :set invrelativenumber<cr>
+
 " toggle wrap
 nnoremap yow :set invwrap<cr>
 

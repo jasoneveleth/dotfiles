@@ -22,7 +22,7 @@
 [diff]
 	algorithm = minimal
 [init]
-	defaultBranch = master
+	defaultBranch = main
 [interactive]
 	diffFilter = "diff-so-fancy --patch"
 [diff-so-fancy]

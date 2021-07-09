@@ -13,7 +13,6 @@ set smarttab
 set tags=tags;,.tags;,
 set clipboard=unnamed,unnamedplus
 set number
-set relativenumber
 set grepprg=rg\ --vimgrep\ --hidden
 set undofile
 set undodir=$HOME/.local/share/nvim/undo//
@@ -26,6 +25,7 @@ set breakindentopt=sbr
 set showbreak=++
 set omnifunc=v:lua.vim.lsp.omnifunc
 set completeopt=menuone,noselect
+set cursorline
 
 let g:loaded_python_provider = 1
 let g:python_host_skip_check = 1
@@ -65,7 +65,7 @@ augroup END
 augroup FZF
     autocmd!
     autocmd FileType fzf set nonu nornu
-    autocmd BufLeave <buffer> set nu rnu
+    autocmd BufLeave <buffer> set nu
 augroup END
 
 augroup Autocomment
