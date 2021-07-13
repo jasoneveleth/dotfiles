@@ -1,9 +1,0 @@
-{
-  "keys": {
-    "command": {
-      "bind": {
-        "ctrl-r": "jupyter-notebook:run-all-cells"
-      }
-    }
-  }
-}
