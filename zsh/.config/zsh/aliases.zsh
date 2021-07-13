@@ -57,5 +57,5 @@ alias glg="git log --all --oneline"
 alias glt="git log -n 30 --abbrev-commit --all --pretty=format:'%C(auto)%h %Cgreen(%cr)%C(auto)%d %s'"
 alias gla="git log -n 30 --graph --abbrev-commit --all --pretty=format:'%C(yellow)%h %Cgreen(%cr) %C(bold blue)<%an>%C(auto)%d%Creset %s'"
 
-alias galias="grep 'alias g' $HOME/.config/zsh/.zshrc | cut -d' ' -f2-"
+alias galias="grep 'alias g' $HOME/.config/zsh/aliases.zsh | cut -d' ' -f2-"
 #======================= END GIT ===============================#
