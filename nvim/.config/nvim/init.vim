@@ -54,6 +54,7 @@ let g:personal_statusline = 1
 let g:startify_bookmarks = [ {'c': '~/.config/nvim/init.vim'}, {'z': '~/.config/zsh/.zshrc'}, {'y': '~/.config/zsh/.zshenv'} ]
 let g:startify_custom_header = []
 let g:floaterm_opener = 'vsplit'
+let g:tmux_navigator_no_mappings = 1
 
 " Treesitter:
 if has('nvim-0.5')
@@ -135,7 +136,6 @@ nnoremap <silent> <leader>g :RG<cr>
 nnoremap <silent><expr> <leader>o filter(range(1, winnr('$')), 'getwinvar(v:val, "&ft") == "qf"')==[] ? ":cope<cr>" : ":ccl<cr>"
 nnoremap <c-p> :Files<cr>
 
-let g:tmux_navigator_no_mappings = 1
 nnoremap <silent> <m-l> :TmuxNavigateRight<cr>
 nnoremap <silent> <m-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <m-j> :TmuxNavigateDown<cr>
