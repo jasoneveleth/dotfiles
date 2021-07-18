@@ -9,33 +9,33 @@ let g:loaded_zipPlugin=1
 let g:loaded_zip=1
 
 function! PackInit() abort
-  packadd minpac
+    packadd minpac
 
-  call minpac#init()
-  call minpac#add('k-takata/minpac', {'type': 'opt'})
-  call minpac#add('tpope/vim-commentary')
-  call minpac#add('tpope/vim-surround')
-  call minpac#add('tpope/vim-rsi')
-  call minpac#add('tpope/vim-repeat')
-  call minpac#add('romainl/vim-qf')
-  call minpac#add('romainl/vim-cool')
-  call minpac#add('junegunn/fzf.vim')
-  call minpac#add('junegunn/fzf')
-  call minpac#add('junegunn/vim-peekaboo')
-  call minpac#add('christoomey/vim-tmux-navigator')
-  call minpac#add('ajpaulson/julia-syntax.vim')
-  call minpac#add('jasoneveleth/vim-dim')
-  call minpac#add('wellle/targets.vim')
-  call minpac#add('nvim-treesitter/nvim-treesitter')
-  call minpac#add('neovim/nvim-lspconfig')
-  call minpac#add('hrsh7th/nvim-compe')
-  call minpac#add('ray-x/lsp_signature.nvim')
-  call minpac#add('mbbill/undotree')
-  call minpac#add('tpope/vim-fugitive')
-  call minpac#add('chrisbra/Colorizer')
-  call minpac#add('airblade/vim-rooter')
-  call minpac#add('voldikss/vim-floaterm')
-  call minpac#add('mhinz/vim-startify')
+    call minpac#init()
+    call minpac#add('k-takata/minpac', {'type': 'opt'})
+    call minpac#add('tpope/vim-commentary')
+    call minpac#add('tpope/vim-surround')
+    call minpac#add('tpope/vim-rsi')
+    call minpac#add('tpope/vim-repeat')
+    call minpac#add('romainl/vim-qf')
+    call minpac#add('romainl/vim-cool')
+    call minpac#add('junegunn/fzf.vim')
+    call minpac#add('junegunn/fzf')
+    call minpac#add('junegunn/vim-peekaboo')
+    call minpac#add('christoomey/vim-tmux-navigator')
+    call minpac#add('ajpaulson/julia-syntax.vim')
+    call minpac#add('jasoneveleth/vim-dim')
+    call minpac#add('wellle/targets.vim')
+    call minpac#add('nvim-treesitter/nvim-treesitter')
+    call minpac#add('neovim/nvim-lspconfig')
+    call minpac#add('hrsh7th/nvim-compe')
+    call minpac#add('ray-x/lsp_signature.nvim')
+    call minpac#add('mbbill/undotree')
+    call minpac#add('tpope/vim-fugitive')
+    call minpac#add('chrisbra/Colorizer')
+    call minpac#add('airblade/vim-rooter')
+    call minpac#add('voldikss/vim-floaterm')
+    call minpac#add('mhinz/vim-startify')
 endfunction
 
 command! PackUpdate call PackInit() | call minpac#update()
@@ -165,21 +165,21 @@ cabbrev <expr> make getcmdtype() == ":" && getcmdline() == 'make' ? 'silent make
 " https://github.com/junegunn/fzf.vim#example-advanced-ripgrep-integration
 " allows regex to be used
 function! RipgrepFzf(query, fullscreen)
-  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
-  let initial_command = printf(command_fmt, shellescape(a:query))
-  let reload_command = printf(command_fmt, '{q}')
-  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
-  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+    let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
+    let initial_command = printf(command_fmt, shellescape(a:query))
+    let reload_command = printf(command_fmt, '{q}')
+    let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+    call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
 endfunction
 
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
 " experimental
 function! Paste(regname, pasteType, pastecmd)
-  let reg_type = getregtype(a:regname)
-  call setreg(a:regname, getreg(a:regname), a:pasteType)
-  exe 'normal "'.a:regname . a:pastecmd
-  call setreg(a:regname, getreg(a:regname), reg_type)
+    let reg_type = getregtype(a:regname)
+    call setreg(a:regname, getreg(a:regname), a:pasteType)
+    exe 'normal "'.a:regname . a:pastecmd
+    call setreg(a:regname, getreg(a:regname), reg_type)
 endfunction
 nmap <Leader>lP :call Paste(v:register, "l", "P")<CR>
 nmap <Leader>lp :call Paste(v:register, "l", "p")<CR>
