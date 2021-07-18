@@ -8,36 +8,39 @@ let g:loaded_tar=1
 let g:loaded_zipPlugin=1
 let g:loaded_zip=1
 
-call plug#begin('~/.local/share/nvim/plugged')
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-rsi'
-Plug 'tpope/vim-repeat'
-Plug 'romainl/vim-qf'
-Plug 'romainl/vim-cool'
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/fzf'
-Plug 'junegunn/vim-peekaboo'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'ajpaulson/julia-syntax.vim'
-Plug 'jasoneveleth/vim-dim'
-Plug 'wellle/targets.vim'
-Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/nvim-compe'
-Plug 'ray-x/lsp_signature.nvim'
-Plug 'mbbill/undotree'
-Plug 'tpope/vim-fugitive'
-" Plug 'chrisbra/Colorizer'
-Plug 'airblade/vim-rooter'
-Plug 'voldikss/vim-floaterm'
+function! PackInit() abort
+  packadd minpac
 
-" Plug 'lervag/vimtex'
-Plug 'mhinz/vim-startify'
-" Plug 'airblade/vim-gitgutter'
-" Plug 'deris/vim-shot-f' " alternative: quickscope
+  call minpac#init()
+  call minpac#add('k-takata/minpac', {'type': 'opt'})
+  call minpac#add('tpope/vim-commentary')
+  call minpac#add('tpope/vim-surround')
+  call minpac#add('tpope/vim-rsi')
+  call minpac#add('tpope/vim-repeat')
+  call minpac#add('romainl/vim-qf')
+  call minpac#add('romainl/vim-cool')
+  call minpac#add('junegunn/fzf.vim')
+  call minpac#add('junegunn/fzf')
+  call minpac#add('junegunn/vim-peekaboo')
+  call minpac#add('christoomey/vim-tmux-navigator')
+  call minpac#add('ajpaulson/julia-syntax.vim')
+  call minpac#add('jasoneveleth/vim-dim')
+  call minpac#add('wellle/targets.vim')
+  call minpac#add('nvim-treesitter/nvim-treesitter')
+  call minpac#add('neovim/nvim-lspconfig')
+  call minpac#add('hrsh7th/nvim-compe')
+  call minpac#add('ray-x/lsp_signature.nvim')
+  call minpac#add('mbbill/undotree')
+  call minpac#add('tpope/vim-fugitive')
+  call minpac#add('chrisbra/Colorizer')
+  call minpac#add('airblade/vim-rooter')
+  call minpac#add('voldikss/vim-floaterm')
+  call minpac#add('mhinz/vim-startify')
+endfunction
 
-call plug#end()
+command! PackUpdate call PackInit() | call minpac#update()
+command! PackClean  call PackInit() | call minpac#clean()
+command! PackStatus packadd minpac | call minpac#status()
 
 if isdirectory(expand('%:h')) | silent cd %:h | endif
 silent! colorscheme dim
