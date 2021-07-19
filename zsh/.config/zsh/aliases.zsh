@@ -23,6 +23,19 @@ alias ql="qlmanage -p 2>/dev/null"
 alias less="bat"
 alias cat="bat"
 alias n="nnn"
+alias icat="kitty +kitten icat --align=left"
+alias isvg="rsvg-convert | icat"
+alias idot="dot -Tsvg \
+    -Gbgcolor=#282c34 \
+    -Gcolor=#abb2bf \
+    -Gfontcolor=#abb2bf \
+    -Gfontname=Hack \
+    -Nfontname=Hack \
+    -Nfontcolor=#abb2bf \
+    -Ncolor=#abb2bf \
+    -Efontcolor=#abb2bf \
+    -Efontname=Hack \
+    -Ecolor=#abb2bf | isvg"
 
 alias m='make'
 alias mc='make clean'

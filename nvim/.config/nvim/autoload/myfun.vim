@@ -1,3 +1,51 @@
+function! myfun#PackInit() abort
+    packadd minpac
+
+    call minpac#init()
+    call minpac#add('k-takata/minpac', {'type': 'opt'})
+    call minpac#add('tpope/vim-commentary')
+    call minpac#add('tpope/vim-surround')
+    call minpac#add('tpope/vim-rsi')
+    call minpac#add('tpope/vim-repeat')
+    call minpac#add('romainl/vim-qf')
+    call minpac#add('romainl/vim-cool')
+    call minpac#add('junegunn/fzf.vim')
+    call minpac#add('junegunn/fzf')
+    call minpac#add('junegunn/vim-peekaboo')
+    call minpac#add('christoomey/vim-tmux-navigator')
+    call minpac#add('ajpaulson/julia-syntax.vim')
+    call minpac#add('jasoneveleth/vim-dim')
+    call minpac#add('wellle/targets.vim')
+    call minpac#add('mbbill/undotree')
+    call minpac#add('tpope/vim-fugitive')
+    call minpac#add('chrisbra/Colorizer')
+    call minpac#add('airblade/vim-rooter')
+    call minpac#add('voldikss/vim-floaterm')
+    call minpac#add('mhinz/vim-startify')
+    if has('nvim-0.5')
+        call minpac#add('nvim-treesitter/nvim-treesitter')
+        call minpac#add('neovim/nvim-lspconfig')
+        call minpac#add('hrsh7th/nvim-compe')
+    endif
+endfunction
+
+" https://github.com/junegunn/fzf.vim#example-advanced-ripgrep-integration
+" allows regex to be used
+function! myfun#RipgrepFzf(query, fullscreen)
+    let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
+    let initial_command = printf(command_fmt, shellescape(a:query))
+    let reload_command = printf(command_fmt, '{q}')
+    let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+    call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+
+function! myfun#Paste(regname, pasteType, pastecmd)
+    let reg_type = getregtype(a:regname)
+    call setreg(a:regname, getreg(a:regname), a:pasteType)
+    exe 'normal "'.a:regname . a:pastecmd
+    call setreg(a:regname, getreg(a:regname), reg_type)
+endfunction
+
 function! myfun#DiffWithSaved()
     let filetype=&ft
     diffthis
