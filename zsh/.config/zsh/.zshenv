@@ -7,7 +7,16 @@ export HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
-export PATH="$HOME/.local/bin:/usr/local/bin:$PATH:/Library/TeX/texbin:/Library/Apple/usr/bin:/usr/local/opt/llvm/bin/:/usr/local/opt/fzf/bin:."
+
+BASEPATH="$BASEPATH"
+if [ "$BASEPATH" = "" ]; then
+    export BASEPATH="$PATH"
+fi
+export PATH="$HOME/.local/bin:/usr/local/bin:$BASEPATH:."
+if [ "$(uname)" = "Darwin" ]; then
+    PATH="$PATH:/Library/TeX/texbin:/usr/local/opt/llvm/bin/"
+fi
+
 export ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
 
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
