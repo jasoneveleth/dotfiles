@@ -26,10 +26,11 @@ alias n="nnn"
 alias icat="kitty +kitten icat --align=left"
 alias isvg="rsvg-convert | icat"
 alias idot="dot -Tsvg \
-    -Gbgcolor=#282c34 \
+    -Gbgcolor=transparent \
     -Gcolor=#abb2bf \
     -Gfontcolor=#abb2bf \
     -Gfontname=Hack \
+    -Grankdir=LR \
     -Nfontname=Hack \
     -Nfontcolor=#abb2bf \
     -Ncolor=#abb2bf \

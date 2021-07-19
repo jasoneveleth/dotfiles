@@ -12,3 +12,4 @@ xnoremap <buffer> ax :<C-u>normal va`<CR>
 onoremap <buffer> ax :<C-u>normal va`<CR>
 
 inoremap <buffer> ;d <esc>:let @s=system('date "+%Y-%m-%d"')<cr>a<c-r>s<bs>
+nnoremap <buffer> <leader>x 0f[lrx
