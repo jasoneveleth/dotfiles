@@ -50,7 +50,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export PYTHONDONTWRITEBYTECODE=1
 export HOMEBREW_NO_AUTO_UPDATE=1
 # export VIMINIT= 'let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
-export NNN_BMS='n:~/notes;i:~/dev/python/nistsurf;z:~/.config/zsh;v:~/.config/nvim;c:~/code/c;d:~/.config'
+export NNN_BMS='o:~/notes;n:~/nist/code;c:~/.config'
 # export NNN_PLUG='e:-_ewrap $nnn*;n:-_fzfnotes*;v:-_nvim*'
 export NNN_PLUG='n:-_fzfnotes*;v:-_nvim*'
 export NNN_OPTS="e"

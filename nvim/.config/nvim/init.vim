@@ -19,6 +19,7 @@ let g:qf_shorten_path = 1
 let g:personal_statusline = 1
 let g:startify_bookmarks = [ {'c': '~/.config/nvim/init.vim'}, {'z': '~/.config/zsh/.zshrc'}, {'y': '~/.config/zsh/.zshenv'} ]
 let g:startify_custom_header = []
+let g:startify_files_number = 5
 let g:floaterm_opener = 'vsplit'
 let g:tmux_navigator_no_mappings = 1
 
