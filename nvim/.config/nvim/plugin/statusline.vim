@@ -48,10 +48,9 @@ set statusline+=%6*\ %<%f%m%r%h%w\                       " File path, modified, 
 set statusline+=%7*                                      " Separator
 set statusline+=%=                                       " Right Side
 " set statusline+=\ (%{&ff})\                              " FileFormat (dos/unix..)
-" set statusline+=%7*\|                                    " Separator
 " set statusline+=%7*\ %{''.(&fenc!=''?&fenc:&enc).''}\    " Encoding
 " set statusline+=%7*\|                                    " Separator
 set statusline+=%7*\ %y\                                 " FileType
-set statusline+=%6*\ %3p%%\ of\ %L\                  " percentage of document, total lines
-set statusline+=%0*\ %3l:%2c\                        " Line number , column number
+set statusline+=%6*\ %2p%%\                  " percentage of document
+set statusline+=%0*\ %2l/%L:%2c\                        " Line number , column number
 " set statusline+=%0*\ %n\                                 " Buffer number
