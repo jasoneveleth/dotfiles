@@ -12,4 +12,15 @@ xnoremap <buffer> ax :<C-u>normal va`<CR>
 onoremap <buffer> ax :<C-u>normal va`<CR>
 
 inoremap <buffer> ;d <esc>:let @s=system('date "+%Y-%m-%d"')<cr>a<c-r>s<bs>
-nnoremap <buffer> <leader>x 0f[lrx
+nmap <buffer><expr> <c-g> ToggleChar()
+
+function! ToggleChar() abort
+    let line = getline('.') 
+    if line =~ '\s*- \[x\]'
+        return '0f[lr j'
+    elseif line =~ '\s*- \[ \]'
+        return '0f[lrxj'
+    else
+        echoerr 'not a valid line: `' . line . '`'
+    endif
+endfunction

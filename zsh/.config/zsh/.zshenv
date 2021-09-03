@@ -56,7 +56,6 @@ export NNN_PLUG='n:-_fzfnotes*;v:-_nvim*'
 export NNN_OPTS="e"
 export NNN_COLORS="4512"
 export PAGER="bat"
-export MANPAGER='less'
 export EDITOR="nvim"
 export VISUAL="$EDITOR"
 export JOURNAL="$HOME/.root/personal/journal.md"

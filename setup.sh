@@ -14,11 +14,11 @@ echo "ZDOTDIR=$HOME/.config/zsh" | sudo tee /etc/zshenv
 
 # set up soft links
 ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
-ln -s ~/Documents .icloud
+ln -s ~/Documents .root
 
 list="dev notes"
 echo "$list" | tr ' ' '\n' | while read item; do
-  ln -s ./.icloud/$item $item
+  ln -s ./.root/$item $item
 done
 
 # set defaults
@@ -35,7 +35,14 @@ killall SystemUIServer
 
 # sudo tlmgr install stackengine titlesec titling siunitx latexmk biber xypic enumitem footmisc courier lastpage
 
-# edit /etc/profile and /etc/zprofile to not run path_helper which fucks up the path. one is run with `zsh -l` the other with `zsh`. use `-o sourcetrace` to figure out which file
+# edit /etc/profile and /etc/zprofile to not run path_helper which fucks up the
+# path. one is run with `zsh -l` the other with `zsh`. use `-o sourcetrace` to
+# figure out which file
+
+# chane nnn to be like this: (this removes the highlight for the '+')
+#	// addch((ent->flags & FILE_SELECTED) ? '+' | A_REVERSE | A_BOLD : ' ');
+#	addch((ent->flags & FILE_SELECTED) ? '+' | A_BOLD : ' ');
+
 
 # ```
 #  DIFF: for provider

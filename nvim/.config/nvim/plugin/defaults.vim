@@ -1,3 +1,46 @@
+if !has('nvim')
+    filetype plugin indent on
+    set autoindent
+    set autoread
+    set backspace=indent,eol,start
+    set backupdir=.,~/.local/share/nvim/backup
+    set belloff=all
+    set complete-=i
+    set cscopeverbose
+    set directory=~/.local/share/nvim/swap//
+    set display=lastline,msgsep
+    set encoding=utf-8
+    set fillchars=vert:│,fold:·,sep:│
+    set formatoptions=tcqj
+    set nofsync
+    set history=10000
+    set hlsearch
+    set incsearch
+    set langnoremap
+    set nolangremap
+    set laststatus=2
+    set listchars=tab:> ,trail:-,nbsp:+
+    set nrformats=bin,hex
+    set ruler
+    set sessionoptions+=unix,slash
+    set sessionoptions-=options
+    set shortmess+=F
+    set shortmess-=S
+    set showcmd
+    set sidescroll=1
+    set smarttab
+    set nostartofline
+    set tabpagemax=50
+    set tags=./tags;,tags
+    set ttimeoutlen=50
+    set ttyfast
+    set viewoptions=unix,slash
+    set undodir=~/.local/share/nvim/undo
+    set viminfo-=!
+    set wildmenu
+    set wildoptions=pum,tagfile
+endif
+
 set inccommand=split
 set shortmess=xtToOFc
 set nojoinspaces

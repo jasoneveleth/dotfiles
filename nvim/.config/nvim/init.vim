@@ -57,6 +57,7 @@ nnoremap <c-j> :cnext<cr>
 nnoremap <c-k> :cprevious<cr>
 nnoremap ga <c-^>
 nnoremap Q @q
+nnoremap Y y$
 nnoremap U <c-r>
 noremap gh ^
 noremap gl $
