@@ -12,7 +12,7 @@ BASEPATH="$BASEPATH"
 if [ "$BASEPATH" = "" ]; then
     export BASEPATH="$PATH"
 fi
-export PATH="$HOME/.local/bin:/usr/local/bin:$BASEPATH:."
+export PATH="$HOME/.local/bin:/usr/local/bin:/Applications/Racket v8.2/bin:$HOME/.elan/bin:$BASEPATH:."
 if [ "$(uname)" = "Darwin" ]; then
     PATH="$PATH:/Library/TeX/texbin:/usr/local/opt/llvm/bin/"
 fi
@@ -50,10 +50,9 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export PYTHONDONTWRITEBYTECODE=1
 export HOMEBREW_NO_AUTO_UPDATE=1
 # export VIMINIT= 'let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
-export NNN_BMS='o:~/notes;n:~/nist/code;c:~/.config'
+export NNN_BMS='o:~/notes;c:~/.config;v:~/.config/nvim'
 # export NNN_PLUG='e:-_ewrap $nnn*;n:-_fzfnotes*;v:-_nvim*'
-export NNN_PLUG='n:-_fzfnotes*;v:-_nvim*'
-export NNN_OPTS="e"
+export NNN_PLUG='n:fzfnotes;v:nvim'
 export NNN_COLORS="4512"
 export PAGER="bat"
 export EDITOR="nvim"

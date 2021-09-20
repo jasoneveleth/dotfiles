@@ -8,7 +8,6 @@ let g:loaded_tar=1
 let g:loaded_zipPlugin=1
 let g:loaded_zip=1
 
-let g:targets_seekRanges = 'cc cr cb cB lc ac Ac lr rr ll lb ar ab lB Ar aB AB rb al rB Al'
 let g:CoolTotalMatches = 1
 let g:peekaboo_delay = 500
 let g:rooter_patterns = ['.git', 'Makefile']
@@ -62,34 +61,11 @@ nnoremap U <c-r>
 noremap gh ^
 noremap gl $
 noremap g. `.
-xnoremap <leader>p p
-xnoremap p "_c<C-r>*<Esc>
 xnoremap * y/<C-R>"<CR>
 map <up> <c-y>
 map <down> <c-e>
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-nnoremap <leader>h :<c-u>aboveleft vsplit<cr>:Files<cr>
-nnoremap <leader>j :<c-u>belowright split<cr>:Files<cr>
-nnoremap <leader>k :<c-u>aboveleft split<cr>:Files<cr>
-nnoremap <leader>l :<c-u>belowright vsplit<cr>:Files<cr>
-
-nnoremap <silent> <leader>u :UndotreeToggle<cr>
-nnoremap <silent> <leader>s :FloatermNew git status<cr>
-nnoremap <silent> <leader>d :FloatermNew git diff<cr>
-nnoremap <silent> <leader>y yy:silent FloatermNew git log -S "<c-r>"" %<cr>
-nnoremap <silent> <leader>a :Git add -A<cr>
-nnoremap <silent> <leader>c :vertical Git commit --verbose<cr>
-nnoremap <silent> <leader>b :Buffers<cr>
-nnoremap <silent> <leader>g :RG<cr>
-nnoremap <silent><expr> <leader>o filter(range(1, winnr('$')), 'getwinvar(v:val, "&ft") == "qf"')==[] ? ":cope<cr>" : ":ccl<cr>"
-nnoremap <c-p> :Files<cr>
-
-nnoremap <silent> <m-l> :TmuxNavigateRight<cr>
-nnoremap <silent> <m-h> :TmuxNavigateLeft<cr>
-nnoremap <silent> <m-j> :TmuxNavigateDown<cr>
-nnoremap <silent> <m-k> :TmuxNavigateUp<cr>
 
 nnoremap <silent> gd :lua vim.lsp.buf.definition()<cr>
 nnoremap <silent> gD :lua vim.lsp.buf.declaration()<cr>
@@ -104,12 +80,27 @@ nnoremap <silent> <c-l> :lua vim.lsp.diagnostic.goto_next()<cr>
 inoremap <silent> <c-k> <c-o>:lua vim.lsp.buf.signature_help()<cr>
 inoremap <silent><expr> <c-l> compe#complete()
 
-nmap <Leader>lP :call myfun#Paste(v:register, "l", "P")<CR>
-nmap <Leader>lp :call myfun#Paste(v:register, "l", "p")<CR>
-nmap <Leader>cP :call myfun#Paste(v:register, "v", "P")<CR>
-nmap <Leader>cp :call myfun#Paste(v:register, "v", "p")<CR>
-nnoremap <Leader>P ""P<CR>
-nnoremap <Leader>p ""p<CR>
+nnoremap <leader>h :<c-u>aboveleft vsplit<cr>:Files<cr>
+nnoremap <leader>j :<c-u>belowright split<cr>:Files<cr>
+nnoremap <leader>k :<c-u>aboveleft split<cr>:Files<cr>
+nnoremap <leader>l :<c-u>belowright vsplit<cr>:Files<cr>
+
+nnoremap <silent> <leader>u :UndotreeToggle<cr>
+nnoremap <silent> <leader>s :FloatermNew git status<cr>
+nnoremap <silent> <leader>d :FloatermNew git diff<cr>
+nnoremap <silent> <leader>y yy:silent FloatermNew git log -S "<c-r>"" %<cr>
+nnoremap <silent> <leader>a :Git add -A<cr>
+nnoremap <silent> <leader>c :vertical Git commit --verbose<cr>
+nnoremap <silent> <leader>b :Buffers<cr>
+nnoremap <silent> <leader>g :RG<cr>
+nnoremap <silent> <leader>e :exec 'e ~/.config/nvim/after/ftplugin/' . &ft . '.vim'<cr>
+nnoremap <silent><expr> <leader>o filter(range(1, winnr('$')), 'getwinvar(v:val, "&ft") == "qf"')==[] ? ":cope<cr>" : ":ccl<cr>"
+nnoremap <c-p> :Files<cr>
+
+nmap <leader>P :call myfun#Paste(v:register, "l", "P")<CR>
+nmap <leader>p :call myfun#Paste(v:register, "l", "p")<CR>
+" nmap <leader>cP :call myfun#Paste(v:register, "v", "P")<CR>
+" nmap <leader>cp :call myfun#Paste(v:register, "v", "p")<CR>
 
 cabbrev <expr> make getcmdtype() == ":" && getcmdline() == 'make' ? 'silent make' : 'make'
 

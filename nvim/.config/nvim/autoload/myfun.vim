@@ -7,6 +7,7 @@ function! myfun#PackInit() abort
     call minpac#add('tpope/vim-surround')
     call minpac#add('tpope/vim-rsi')
     call minpac#add('tpope/vim-repeat')
+    call minpac#add('tpope/vim-fugitive')
     call minpac#add('romainl/vim-qf')
     call minpac#add('romainl/vim-cool')
     call minpac#add('junegunn/fzf.vim')
@@ -17,11 +18,11 @@ function! myfun#PackInit() abort
     call minpac#add('jasoneveleth/vim-dim')
     call minpac#add('wellle/targets.vim')
     call minpac#add('mbbill/undotree')
-    call minpac#add('tpope/vim-fugitive')
     call minpac#add('chrisbra/Colorizer')
     call minpac#add('airblade/vim-rooter')
     call minpac#add('voldikss/vim-floaterm')
     call minpac#add('mhinz/vim-startify')
+    call minpac#add('jiangmiao/auto-pairs')
     if has('nvim-0.5')
         call minpac#add('nvim-treesitter/nvim-treesitter')
         call minpac#add('neovim/nvim-lspconfig')
@@ -166,52 +167,6 @@ function! myfun#Enter()
     endif
 endfunction
 
-" function! myfun#InsertBrace()
-"     let cursor=getline('.')[col('.')-1]
-"     if (!(cursor =~ '\S')) || (cursor == "}") || (cursor == ";")
-"         return "{}\<left>"
-"     else
-"         return "{"
-"     endif
-" endfunction
-
-" function! myfun#IgnoreBrace()
-"     let next=getline('.')[col('.')-1]
-"     if next == "}"
-"         return "\<right>"
-"     else
-"         return "}"
-"     endif
-" endfunction
-
-" function! myfun#InsertParen()
-"     let cursor=getline('.')[col('.')-1]
-"     if (!(cursor =~ '\S')) || (cursor == ")") || (cursor == ";")
-"         return "()\<left>"
-"     else
-"         return "("
-"     endif
-" endfunction
-
-" function! myfun#IgnoreParen()
-"     let next=getline('.')[col('.')-1]
-"     if next == ")"
-"         return "\<right>"
-"     else
-"         return ")"
-"     endif
-" endfunction
-
-" function! myfun#BS()
-"     " converting col to 0 index
-"     let surrounding = getline('.')[col('.')-2:col('.')]
-"     if (surrounding == "()") || (surrounding == "{}")
-"         return "\<right>\<bs>\<bs>"
-"     else
-"         return "\<bs>"
-"     endif
-" endfunction
-
 function! myfun#Search(string)
   if search(a:string)
     stopinsert
@@ -219,30 +174,4 @@ function! myfun#Search(string)
   else
     call feedkeys("\t", 'n')
   endif
-endfunction
-
-" https://www.reddit.com/r/neovim/comments/f2frf6/how_do_i_use_nvimlsps_omnicompletion_with_the_tab/fhd7ky8?utm_source=share&utm_medium=web2x&context=3
-function! myfun#Tab()
-    if neosnippet#expandable_or_jumpable()
-        return "\<Plug>(neosnippet_expand_or_jump)"
-    endif
-
-    let line = getline('.')                         " current line
-
-    let substr = strpart(line, -1, col('.')+1)      " from the start of the current
-    " line to one character right
-    " of the cursor
-    let substr = matchstr(substr, "[^ \t]*$")       " word till cursor
-    if (strlen(substr)==0)                          " nothing to match on empty string
-        return "\<tab>"
-    endif
-    let has_period = match(substr, '\.') != -1      " position of period, if any
-    let has_slash = match(substr, '\/') != -1       " position of slash, if any
-    if (!has_period && !has_slash)
-        return "\<C-X>\<C-P>"                         " existing text matching
-    elseif (has_slash)
-        return "\<C-X>\<C-F>"                         " file matching
-    else
-        return "\<C-X>\<C-O>"                         " plugin matching
-    endif
 endfunction

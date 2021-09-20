@@ -18,10 +18,10 @@ alias ...='cd ../..'
 alias act='[ -e ./.env/bin/activate ] && [ -z ${VIRTUAL_ENV+x} ] && echo sourced && . ./.env/bin/activate'
 alias d='deactivate'
 alias python='act; python'
+alias cs="source *env/bin/activate"
 alias oni="oni2"
 alias ql="qlmanage -p 2>/dev/null"
 alias less="bat"
-alias cat="bat"
 alias n="nnn"
 alias icat="kitty +kitten icat --align=left"
 alias isvg="rsvg-convert | icat"
