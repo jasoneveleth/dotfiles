@@ -61,7 +61,7 @@ nnoremap U <c-r>
 noremap gh ^
 noremap gl $
 noremap g. `.
-xnoremap * y/<C-R>"<CR>
+xnoremap * y/\V<C-R>"<CR>
 map <up> <c-y>
 map <down> <c-e>
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
