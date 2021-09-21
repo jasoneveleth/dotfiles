@@ -104,6 +104,7 @@ nmap <leader>p :call myfun#Paste(v:register, "l", "p")<CR>
 
 cabbrev <expr> make getcmdtype() == ":" && getcmdline() == 'make' ? 'silent make' : 'make'
 
+command! ConflictHighlights call myfun#ConflictsHighlight()
 command! -nargs=* -bang RG call myfun#RipgrepFzf(<q-args>, <bang>0)
 command! PackUpdate call myfun#PackInit() | call minpac#update()
 command! PackClean  call myfun#PackInit() | call minpac#clean()
