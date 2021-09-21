@@ -19,3 +19,6 @@ _history-incremental-search-backward () {
     zle .history-incremental-search-backward $BUFFER
 }
 zle -N history-incremental-search-backward _history-incremental-search-backward
+
+# -s to translate ^M
+bindkey -s '^n' 'nnn^M'
