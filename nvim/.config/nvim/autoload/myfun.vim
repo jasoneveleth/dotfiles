@@ -15,6 +15,7 @@ function! myfun#PackInit() abort
     call minpac#add('junegunn/vim-peekaboo')
     call minpac#add('christoomey/vim-tmux-navigator')
     call minpac#add('ajpaulson/julia-syntax.vim')
+    call minpac#add('leanprover/lean.vim')
     call minpac#add('jasoneveleth/vim-dim')
     call minpac#add('wellle/targets.vim')
     call minpac#add('mbbill/undotree')
