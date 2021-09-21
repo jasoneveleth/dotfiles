@@ -1,9 +1,3 @@
-# The following lines were added by compinstall
-zstyle ':completion:*' expand prefix suffix
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' menu select=1
-zstyle ':completion:*' squeeze-slashes true
-zstyle :compinstall filename '/Users/jason/.config/zsh/.zshrc'
 autoload -Uz compinit
 compdumpfile="$HOME/.config/zsh/.zcompcache/.zcompdump"
 if [ $(uname -s) = Darwin ]; then
@@ -21,6 +15,14 @@ fi
 unset compdumpfile one_day_old
 
 _comp_options+=(globdots) # include hidden files
+
+zstyle ':completion:*' menu select=long # only use menu if results go off the screen
+zstyle ':completion:*' expand prefix suffix # expand as much as possible
+zstyle ':completion:*' squeeze-slashes true # turn // -> /, rather than /*/
+
+# TODO: check out if this is the same as comdump
+# zstyle ':completion:*' use-cache on
+# zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/.zcompcache"
 
 # https://mrigank11.github.io/2018/03/zsh-auto-completion/
 _maketex() {
