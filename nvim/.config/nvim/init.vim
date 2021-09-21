@@ -45,6 +45,9 @@ let g:compe.source.nvim_lua = v:true
 " let g:compe.source.vsnip = v:true
 " let g:compe.source.ultisnips = v:true
 
+let fzf_comm=$FZF_DEFAULT_COMMAND
+let $FZF_DEFAULT_COMMAND = fzf_comm . ' --follow'
+
 silent! colorscheme dim
 
 let g:mapleader = ' '

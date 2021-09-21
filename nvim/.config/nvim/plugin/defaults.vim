@@ -56,7 +56,7 @@ set smarttab
 set tags=tags;,.tags;,
 set clipboard=unnamed,unnamedplus
 set number
-set grepprg=rg\ --vimgrep\ --hidden
+set grepprg=rg\ --vimgrep\ --hidden\ --follow
 set undofile
 set undodir=$HOME/.local/share/nvim/undo//
 set spellfile=$HOME/.local/share/nvim/en.utf-8.add
