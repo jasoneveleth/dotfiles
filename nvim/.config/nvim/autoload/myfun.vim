@@ -13,7 +13,6 @@ function! myfun#PackInit() abort
     call minpac#add('junegunn/fzf.vim')
     call minpac#add('junegunn/fzf')
     call minpac#add('junegunn/vim-peekaboo')
-    call minpac#add('christoomey/vim-tmux-navigator')
     call minpac#add('ajpaulson/julia-syntax.vim')
     call minpac#add('leanprover/lean.vim')
     call minpac#add('jasoneveleth/vim-dim')

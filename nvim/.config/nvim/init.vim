@@ -20,7 +20,6 @@ let g:startify_bookmarks = [ {'c': '~/.config/nvim/init.vim'}, {'z': '~/.config/
 let g:startify_custom_header = []
 let g:startify_files_number = 5
 let g:floaterm_opener = 'vsplit'
-let g:tmux_navigator_no_mappings = 1
 
 let g:compe = {}
 let g:compe.enabled = v:true
