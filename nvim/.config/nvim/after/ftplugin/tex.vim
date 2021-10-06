@@ -25,17 +25,19 @@ function! Snippet(char, old, new, mathmode)
         return a:char
     endif
     let col = col('.')
-    if getline('.')[col - len(a:old):col-1] . a:char == a:old
-        " return a:char ."\<c-g>u\<c-o>d?" . a:old . "\<cr>" . a:new
-        return a:char ."\<c-g>u \<c-o>d?" . a:old . "\<cr>\<bs>" . a:new
+    let possible_match = getline('.')[col - len(a:old):col-2] . a:char
+    if possible_match == a:old
+        let add_undo = "\<c-g>u"
+        let search_and_delete = "\<c-\>\<c-o>d?" . a:old . "\<cr>"
+        return a:char . add_undo . search_and_delete . a:new
     else
         return a:char
     endif
 endfunction
 
-inoremap <expr>f Snippet("f", " iff", " \\iff", 1)
 inoremap <expr>k Snippet("k", " mk", " $$\<left>", 0)
-inoremap <expr>m Snippet("m", " dm", " \\[\<cr>\\]\<esc>O", 0)
+inoremap <expr>m Snippet("m", " dm", " \\[\<cr>.\\]\<esc>O", 0)
+inoremap <expr>f Snippet("f", " iff", " \\iff", 1)
 inoremap <expr>d Snippet("d", "td", "^{}\<left>", 1)
 inoremap <expr>r Snippet("r", "sr", "^2", 1)
 inoremap <expr>_ Snippet("_", "__", "_{}\<left>", 1)
