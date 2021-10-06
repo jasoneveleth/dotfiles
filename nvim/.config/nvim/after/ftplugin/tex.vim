@@ -10,7 +10,12 @@ inoremap <buffer> <c-f> <c-g>u$<space><esc>Bi$<esc>:undoj<cr>f$a
 nnoremap <buffer> <leader>g :call texcount#Texcount()<cr>
 
 function! Math()
-    return get(reverse(map(synstack(line('.'), col('.')), {i,v -> synIDattr(v, 'name')})), 0, '') =~# 'texMathZone\%(w\|X\|Y\|V\)'
+    let syntax_list = synstack(line('.'), col('.')-1)
+    let mapped_list = map(syntax_list, {i,v -> synIDattr(v, 'name')})
+    let innermost_syn = get(reverse(mapped_list), 0, '')
+    " ^^ defaults to an empty string
+    echo mapped_list
+    return innermost_syn =~# 'texMathZone\(W\|X\|Y\|V\)'
 endfunction
 
 
