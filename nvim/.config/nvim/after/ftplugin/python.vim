@@ -1,5 +1,6 @@
 setlocal commentstring=#\ %s
 setlocal include=^\s\
+setlocal signcolumn=yes
 set include=^\\s*\\(from\\\|import\\)\\s*\\zs\\(\\S\\+\\s\\{-\\}\\)*\\ze\\($\\\|\ as\ \\)
 
 function! PyInclude(fname)

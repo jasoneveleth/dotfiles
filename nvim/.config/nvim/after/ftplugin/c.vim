@@ -1,4 +1,5 @@
 setlocal commentstring=//\ %s
+setlocal signcolumn=yes
 let g:completion_trigger_character = ['.']
 set tags+=$HOME/.cache/nvim/systags
 if has('macunix')
