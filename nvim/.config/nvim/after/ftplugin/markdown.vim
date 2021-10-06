@@ -5,6 +5,9 @@ setlocal linebreak
 set tw=80
 set sw=4
 
+" end an undo thing every sentence
+inoremap <buffer> . .<c-g>u
+
 " https://git.peppe.rs/vim/better-text-objs/tree/plugin/better-text-objs.vim
 xnoremap <buffer> ix :<C-u>normal vi`<CR>
 onoremap <buffer> ix :<C-u>normal vi`<CR>
