@@ -8,6 +8,11 @@ let g:loaded_tar=1
 let g:loaded_zipPlugin=1
 let g:loaded_zip=1
 
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+" let g:vimtex_quickfix_mode=0
+
 let g:CoolTotalMatches = 1
 let g:peekaboo_delay = 500
 let g:rooter_patterns = ['.git', 'Makefile']
@@ -37,7 +42,7 @@ let g:compe.documentation = v:true
 
 let g:compe.source = {}
 let g:compe.source.path = v:true
-let g:compe.source.buffer = {'ignored_filetypes': ['markdown', 'gitcommit', 'yaml']}
+let g:compe.source.buffer = {'ignored_filetypes': ['markdown', 'gitcommit', 'yaml', 'tex']}
 let g:compe.source.calc = v:true
 let g:compe.source.nvim_lsp = v:true
 let g:compe.source.nvim_lua = v:true
@@ -108,3 +113,4 @@ command! -nargs=* -bang RG call myfun#RipgrepFzf(<q-args>, <bang>0)
 command! PackUpdate call myfun#PackInit() | call minpac#update()
 command! PackClean  call myfun#PackInit() | call minpac#clean()
 command! PackStatus packadd minpac | call minpac#status()
+

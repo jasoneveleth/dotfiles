@@ -23,6 +23,9 @@ function! myfun#PackInit() abort
     call minpac#add('voldikss/vim-floaterm')
     call minpac#add('mhinz/vim-startify')
     call minpac#add('jiangmiao/auto-pairs')
+
+    call minpac#add('lervag/vimtex')
+    call minpac#add('SirVer/ultisnips', {'type': 'opt'})
     if has('nvim-0.5')
         call minpac#add('nvim-treesitter/nvim-treesitter')
         call minpac#add('neovim/nvim-lspconfig')
