@@ -7,8 +7,6 @@ inoremap <buffer> . .<c-g>u
 inoremap <buffer> <C-s> <c-g>u<Esc>[s1z=`]a
 inoremap <buffer> <c-f> <c-g>u$<space><esc>Bi$<esc>:undoj<cr>f$a
 
-nnoremap <buffer> \= :set fo+=a<cr>
-nnoremap <buffer> \- :set fo-=a<cr>
 nnoremap <buffer> <leader>g :call texcount#Texcount()<cr>
 
 function! Math()
