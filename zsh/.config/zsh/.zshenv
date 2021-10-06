@@ -58,6 +58,7 @@ export PAGER="bat"
 export EDITOR="nvim"
 export VISUAL="$EDITOR"
 export JOURNAL="$HOME/.root/personal/journal.md"
+export NIST_JOURNAL="$HOME/.root/misc/sem05/nist_prep/journal.md"
 export EXA_COLORS="*.pdf=35:*.wav=36:*.png=35:*.c=01:*.py=01"
 
 export CPATH="$HOME/dev/c/include/"

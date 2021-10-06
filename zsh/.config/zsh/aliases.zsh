@@ -15,6 +15,7 @@ alias so='source'
 alias ..='cd ..'
 alias ...='cd ../..'
 
+alias nist='date >> $NIST_JOURNAL; $EDITOR -c "norm! Go" $NIST_JOURNAL'
 alias act='[ -e ./.env/bin/activate ] && [ -z ${VIRTUAL_ENV+x} ] && echo sourced && . ./.env/bin/activate'
 alias d='deactivate'
 alias python='act; python'
