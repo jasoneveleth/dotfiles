@@ -8,14 +8,16 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 
-BASEPATH="$BASEPATH"
-if [ "$BASEPATH" = "" ]; then
-    export BASEPATH="$PATH"
+export BASEPATH="${BASEPATH:-$PATH}"
+PATH="$HOME/.local/bin:/usr/local/bin:$BASEPATH"
+if [ "$(uname)" = "Darwin" ]; then # on apple
+    PATH="$PATH:/Library/TeX/texbin"
+    PATH="$PATH:/usr/local/opt/llvm/bin/"
+    PATH="$PATH:/Applications/Racket v8.2/bin"
+    PATH="$PATH:/usr/local/opt/openjdk/bin"
+    PATH="$PATH:$HOME/.elan/bin"
 fi
-export PATH="$HOME/.local/bin:/usr/local/bin:/Applications/Racket v8.2/bin:$HOME/.elan/bin:$BASEPATH:."
-if [ "$(uname)" = "Darwin" ]; then
-    PATH="$PATH:/Library/TeX/texbin:/usr/local/opt/llvm/bin/"
-fi
+export PATH="$PATH:."
 
 export ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
 
@@ -38,6 +40,7 @@ export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
 export JUMP_HOME="$XDG_CONFIG_HOME/jump"
 export KERAS_HOME="$XDG_CONFIG_HOME"/keras
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home"
 
 export BIBINPUTS="$XDG_CONFIG_HOME/latex"  
 export BAT_THEME='TwoDark'
@@ -50,7 +53,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export PYTHONDONTWRITEBYTECODE=1
 export HOMEBREW_NO_AUTO_UPDATE=1
 # export VIMINIT= 'let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
-export NNN_BMS='o:~/notes;c:~/.config;v:~/.config/nvim;1:~/cs1951X;2:~/math1260;3:~/cs1730;4:~/cs1410;'
+export NNN_BMS='o:~/notes;c:~/.config;v:~/.config/nvim;1:~/cs1951X/code/src;2:~/math1260;3:~/cs1730;4:~/cs1410;'
 # export NNN_PLUG='e:-_ewrap $nnn*;n:-_fzfnotes*;v:-_nvim*'
 export NNN_PLUG='n:-!fzfnotes*;v:-!nvim*;'
 export NNN_COLORS="4512"

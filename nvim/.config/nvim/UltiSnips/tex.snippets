@@ -18,10 +18,16 @@ snippet template "Basic template" b
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath, amssymb}
 \usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage[shortlabels]{enumitem}
 
 \begin{document}
 	$0
 \end{document}
+endsnippet
+
+snippet pic "include graphics" b
+\includegraphics[${1:width=3in}]{$0}
 endsnippet
 
 snippet beg "begin{} / end{}" bA
@@ -425,7 +431,7 @@ endsnippet
 
 priority 100
 context "math()"
-snippet '(?<!\\)(sin|cos|arccot|cot|csc|ln|log|exp|star|perp)' "ln" rwA
+snippet '(?<!\\)(sin|cos|tan|arccot|cot|csc|ln|log|exp|star|perp)' "ln" rwA
 \\`!p snip.rv = match.group(1)`
 endsnippet
 
@@ -437,8 +443,20 @@ endsnippet
 
 priority 200
 context "math()"
-snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|pi|zeta|int)' "ln" rwA
+snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|zeta|int)' "ln" rwA
 \\`!p snip.rv = match.group(1)`
+endsnippet
+
+priority 200
+context "math()"
+snippet '(?<!\\)pi' "pi" rwA
+\pi 
+endsnippet
+
+priority 100
+context "math()"
+snippet qq "quad" A
+,\quad 
 endsnippet
 
 
@@ -489,7 +507,7 @@ endsnippet
 
 context "math()"
 snippet set "set" wA
-\\{$1\\} $0
+ \\{$1\\} $0
 endsnippet
 
 snippet || "mid" iA
@@ -498,8 +516,8 @@ endsnippet
 
 
 context "math()"
-snippet cc "subset" Ai
-\subset 
+snippet cc "subset" iA
+ \subset 
 endsnippet
 
 snippet notin "not in " iA
@@ -511,6 +529,7 @@ snippet inn "in " iA
 \in 
 endsnippet
 
+context "math()"
 snippet NN "n" iA
 \mathbb{N}
 endsnippet
@@ -545,6 +564,10 @@ endsnippet
 
 snippet ZZ "Z" iA
 \mathbb{Z}
+endsnippet
+
+snippet CC "C" iA
+\mathbb{C}
 endsnippet
 
 # snippet <! "normal" iA

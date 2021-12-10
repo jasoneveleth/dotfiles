@@ -5,25 +5,19 @@ function! myfun#PackInit() abort
     call minpac#add('k-takata/minpac', {'type': 'opt'})
     call minpac#add('tpope/vim-commentary')
     call minpac#add('tpope/vim-surround')
-    call minpac#add('tpope/vim-rsi')
     call minpac#add('tpope/vim-repeat')
-    call minpac#add('tpope/vim-fugitive')
-    call minpac#add('romainl/vim-qf')
     call minpac#add('romainl/vim-cool')
     call minpac#add('junegunn/fzf.vim')
     call minpac#add('junegunn/fzf')
     call minpac#add('junegunn/vim-peekaboo')
-    call minpac#add('ajpaulson/julia-syntax.vim')
-    call minpac#add('leanprover/lean.vim')
     call minpac#add('jasoneveleth/vim-dim')
-    call minpac#add('wellle/targets.vim')
     call minpac#add('mbbill/undotree')
-    call minpac#add('chrisbra/Colorizer')
-    call minpac#add('airblade/vim-rooter')
-    call minpac#add('voldikss/vim-floaterm')
+    " call minpac#add('airblade/vim-rooter')
     call minpac#add('mhinz/vim-startify')
-    call minpac#add('jiangmiao/auto-pairs')
+    call minpac#add('Raimondi/delimitMate')
 
+    call minpac#add('nvim-lua/plenary.nvim')
+    call minpac#add('Julian/lean.nvim')
     call minpac#add('lervag/vimtex')
     call minpac#add('SirVer/ultisnips', {'type': 'opt'})
     if has('nvim-0.5')
@@ -48,14 +42,6 @@ function! myfun#Paste(regname, pasteType, pastecmd)
     call setreg(a:regname, getreg(a:regname), a:pasteType)
     exe 'normal "'.a:regname . a:pastecmd
     call setreg(a:regname, getreg(a:regname), reg_type)
-endfunction
-
-function! myfun#DiffWithSaved()
-    let filetype=&ft
-    diffthis
-    vnew | -1r #
-    diffthis
-    exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
 
 function! myfun#HardMode()
@@ -158,15 +144,6 @@ function! myfun#NotesFind(split)
         execute 'vsplit **/' . filepath . '*'
     else
         execute 'edit **/' . filepath . '*'
-    endif
-endfunction
-
-function! myfun#Enter()
-    let before=getline('.')[col('.')-2] 
-    if (before == "{")
-        return "\<cr>}\<esc>O"
-    else
-        return "\<cr>"
     endif
 endfunction
 

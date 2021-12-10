@@ -4,10 +4,11 @@ import readline
 
 if 'PYTHONHISTFILE' in os.environ:
     histfile = os.path.expanduser(os.environ['PYTHONHISTFILE'])
+    # sometimes fails: https://stackoverflow.com/questions/17824898/why-does-readline-read-history-file-give-me-ioerror-errno-2-no-such-file-or
     readline.read_history_file(histfile)
     atexit.register(readline.write_history_file, histfile)
 else:
-    print("WARNING: no history file found")
+    print("WARNING: no history file found, not reading history")
     readline.write_history_file = lambda *args: None
 
 import numpy as np

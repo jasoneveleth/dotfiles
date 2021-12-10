@@ -7,17 +7,10 @@
 [color]
 	ui = auto
 [alias]
-	l = log --graph -n 30 --pretty=format:'%Cred%h%Creset %Cgreen(%cr) %C(bold blue)<%an>%Creset %C(yellow)%d%Creset %s' --abbrev-commit
-	co = checkout
-	s = status -s
-	br = branch
-	c = commit --verbose
-	a = add -A
-	ac = !git add -A && git commit --verbose
-	acp = !git add -A && git commit --verbose && git push
-	p = push
 	alias = !git config -l | grep '^alias.' | cut -d'.' -f2
 	amend = commit --amend --no-edit
+	unadd = restore --staged
+	discard = reset --hard
 [pull]
 	rebase = true
 [diff]

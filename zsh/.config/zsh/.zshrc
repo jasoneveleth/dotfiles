@@ -1,6 +1,7 @@
 #!/bin/zsh
 
 PS1="[%m:%1~]%# "
+[ -n "$NNNLVL" ] && PS1="N$NNNLVL $PS1"
 
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 

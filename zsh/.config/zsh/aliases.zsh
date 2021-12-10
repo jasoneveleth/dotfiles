@@ -16,10 +16,10 @@ alias ..='cd ..'
 alias ...='cd ../..'
 
 alias nist='date >> $NIST_JOURNAL; $EDITOR -c "norm! Go" $NIST_JOURNAL'
-alias act='[ -e ./.env/bin/activate ] && [ -z ${VIRTUAL_ENV+x} ] && echo sourced && . ./.env/bin/activate'
+# alias act='[ -e ./.env/bin/activate ] && [ -z ${VIRTUAL_ENV+x} ] && echo sourced && . ./.env/bin/activate'
 alias d='deactivate'
-alias python='act; python'
-alias cs="source *env/bin/activate"
+alias a='source ~/.root/dev/python/venv/bin/activate'
+alias cs="source ~/cs1410/cs1410_env/bin/activate"
 alias oni="oni2"
 alias ql="qlmanage -p 2>/dev/null"
 alias less="bat"
@@ -51,24 +51,23 @@ alias mcr='make clean run'
 alias gs="git status"
 alias gss="git status -s"
 
-alias ga="git add"
-alias gA="git add -A"
+alias gaa="git add -A"
 alias gap="git add -p"
 alias gc="git commit --verbose"
-alias gac="git add -A && git commit --verbose"
-alias gacp="git add -A && git commit --verbose && git push"
+alias gca="git add -A && git commit --verbose"
+alias gpa="git add -A && git commit --verbose && git push"
 
 alias gp="git push"
 alias gr="git rebase"
-alias gf="git fetch"
 alias gco="git checkout"
 alias gam="git amend"
+# alias gconflict="git diff --name-only --diff-filter=U"
 
-alias gd="git diff"
-alias gdc="git diff --cached"
+alias gd="git diff HEAD"
+alias gds="git diff --cached" # staged
+alias gdu="git diff"          # unstaged
 
-alias gl="git log -n 16 --all --oneline"
-alias glg="git log --all --oneline"
+alias gl="git log --all --oneline --graph"
 alias glt="git log -n 30 --abbrev-commit --all --pretty=format:'%C(auto)%h %Cgreen(%cr)%C(auto)%d %s'"
 alias gla="git log -n 30 --graph --abbrev-commit --all --pretty=format:'%C(yellow)%h %Cgreen(%cr) %C(bold blue)<%an>%C(auto)%d%Creset %s'"
 

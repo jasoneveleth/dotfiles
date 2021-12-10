@@ -2,7 +2,7 @@
 
 cd ~ || exit
 
-brew install bat cask cloc coreutils diff-so-fancy exa fd ffmpeg fzf graphviz htop imagemagick ipython libsvg moreutils mosh neofetch neovim nnn pandoc pv ripgrep shellcheck speedtest-cli stow tmux trash tree
+brew install bat cask cloc coreutils diff-so-fancy exa fd ffmpeg fzf graphviz htop imagemagick ipython libsvg moreutils mosh neofetch neovim nnn pandoc pv ripgrep shellcheck speedtest-cli stow tmux trash tree bluetoothconnector dvipng
 brew install --cask alacritty alfred appcleaner basictex discord fantastical flux font-hack gimp julia keycastr kitty minecraft osxfuse qlmarkdown qlstephen skim spotify tunnelblick zoom tinkertools imageoptim
 # fonts: https://corgibytes.com/blog/2020/01/29/install-fonts-on-your-mac-from-the-command-line-with-homebrew/
 # brew install mailplane
@@ -33,7 +33,9 @@ defaults write com.apple.screencapture "include-date" 0
 defaults write com.apple.screencapture name "ss"
 killall SystemUIServer
 
-# sudo tlmgr install stackengine titlesec titling siunitx latexmk biber xypic enumitem footmisc courier lastpage
+# sudo tlmgr install stackengine titlesec titling siunitx latexmk biber xypic enumitem footmisc courier lastpage 
+# manim
+# sudo tlmgr install standalone doublestroke preview relsize calligra
 
 # edit /etc/profile and /etc/zprofile to not run path_helper which fucks up the
 # path. one is run with `zsh -l` the other with `zsh`. use `-o sourcetrace` to
@@ -42,6 +44,8 @@ killall SystemUIServer
 # chane nnn to be like this: (this removes the highlight for the '+')
 #	// addch((ent->flags & FILE_SELECTED) ? '+' | A_REVERSE | A_BOLD : ' ');
 #	addch((ent->flags & FILE_SELECTED) ? '+' | A_BOLD : ' ');
+
+# sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
 
 
 # ```

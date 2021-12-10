@@ -1,6 +1,7 @@
-if g:personal_statusline == 0
+if exists("loaded_personal_statusline")
     finish
 endif
+let g:loaded_personal_statusline = 1
 
 " https://gist.github.com/meskarune/57b613907ebd1df67eb7bdb83c6e6641
 " status bar colors

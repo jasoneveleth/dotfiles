@@ -1,3 +1,8 @@
+if exists("loaded_toggle")
+    finish
+endif
+let g:loaded_toggle = 1
+
 " toggle spell
 nnoremap yos :set invspell <bar> set spell?<cr>
 
