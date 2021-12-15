@@ -1,6 +1,7 @@
 alias ls="exa -s type"
 alias ll="exa -l -s type"
 alias la="exa -la -s type"
+alias grep="grep --color=auto"
 alias rm='printf "this is not the command you are looking for. use: \`trash\`\n"; false'
 alias cp='cp -i'
 
@@ -51,6 +52,7 @@ alias mcr='make clean run'
 alias gs="git status"
 alias gss="git status -s"
 
+alias ga="git add"
 alias gaa="git add -A"
 alias gap="git add -p"
 alias gc="git commit --verbose"
