@@ -13,6 +13,7 @@ bindkey -e
 bindkey '^x^e' edit-command-line
 bindkey "^u" backward-kill-line
 bindkey "^k" kill-line
+bindkey '^[[Z' reverse-menu-complete
 
 # allow ctrl-r to take current text on commandline
 _history-incremental-search-backward () {
