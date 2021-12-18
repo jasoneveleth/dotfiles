@@ -14,6 +14,7 @@ function! myfun#PackInit() abort
     call minpac#add('mbbill/undotree')
     call minpac#add('joshdick/onedark.vim')
     call minpac#add('mcchrish/nnn.vim')
+    call minpac#add('mhinz/vim-sayonara')
     " call minpac#add('airblade/vim-rooter')
     call minpac#add('mhinz/vim-startify')
     call minpac#add('Raimondi/delimitMate')

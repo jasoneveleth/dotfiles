@@ -70,6 +70,7 @@ set cursorline
 set formatoptions+=r
 set noshowcmd
 set guifont=Hack:h14
+set mouse=a
 
 if &termguicolors
     silent! colorscheme onedark
@@ -90,11 +91,12 @@ nnoremap ga <c-^>
 noremap gh ^
 noremap gl $
 xnoremap * y/\V<C-R>"<CR>
-set mouse=a
-map <ScrollWheelUp> <C-Y>
-map <ScrollWheelDown> <C-E>
-map <S-ScrollWheelUp> <C-U>
-map <S-ScrollWheelDown> <C-D>
+noremap <ScrollWheelUp> <C-Y>
+noremap <ScrollWheelDown> <C-E>
+noremap <S-ScrollWheelUp> <C-U>
+noremap <S-ScrollWheelDown> <C-D>
+noremap <ScrollWheelRight> zl
+noremap <ScrollWheelLeft> zh
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 nnoremap <leader>. :lcd ..<cr>
@@ -103,16 +105,29 @@ nnoremap <leader>S #``cgN
 xnoremap <leader>i :'<,'>normal ^i
 xnoremap <leader>a :'<,'>normal $a
 
+" window stuff
+nnoremap <leader>ww <C-w><bar>
+nnoremap <leader>wt <C-w>_
+nnoremap <leader>wm <C-w><bar><C-w>_
+nnoremap <leader>we <C-w>=
+nnoremap <leader>wq :close<cr>
+nnoremap <leader>wk :Sayonara!<cr>
+
+noremap <s-up>    <C-W>+
+noremap <s-down>  <C-W>-
+noremap <s-left>  <C-W>>
+noremap <s-right> <C-W><
+
 nnoremap <silent> gd :lua vim.lsp.buf.definition()<cr>
 nnoremap <silent> gD :lua vim.lsp.buf.declaration()<cr>
-nnoremap <silent> K :lua vim.lsp.buf.hover()<cr>
-nnoremap <silent> g] :lua vim.lsp.buf.implementation()<cr>
-nnoremap <silent> gR :lua vim.lsp.buf.references()<cr>
 nnoremap <silent> gr :lua vim.lsp.buf.rename()<cr>
-nnoremap <silent> <leader>gtd :lua vim.lsp.buf.type_definition()<cr>
+nnoremap <silent> gR :lua vim.lsp.buf.references()<cr>
+nnoremap <silent> gx :lua vim.lsp.diagnostic.goto_next()<cr>
+nnoremap <silent> gX :lua vim.lsp.diagnostic.goto_prev()<cr> 
 nnoremap <silent> <leader>gq :lua vim.lsp.buf.formatting()<CR>
-nnoremap <silent> <leader>n :lua vim.lsp.diagnostic.goto_prev()<cr> 
-nnoremap <silent> <leader>p :lua vim.lsp.diagnostic.goto_next()<cr>
+nnoremap <silent> K :lua vim.lsp.buf.hover()<cr>
+" nnoremap <silent> g] :lua vim.lsp.buf.implementation()<cr>
+" nnoremap <silent> gDt :lua vim.lsp.buf.type_definition()<cr>
 " inoremap <silent> <c-k> <c-o>:lua vim.lsp.buf.signature_help()<cr>
 inoremap <silent><expr> <c-l> compe#complete()
 
@@ -138,6 +153,7 @@ tnoremap <a-h> <c-\><c-n><c-w>h
 tnoremap <a-l> <c-\><c-n><c-w>l
 tnoremap <a-j> <c-\><c-n><c-w>j
 tnoremap <a-k> <c-\><c-n><c-w>k
+tnoremap <C-Space> <C-\><C-n>
 map ˙ <a-h>
 map ∆ <a-j>
 map ˚ <a-k
@@ -150,6 +166,10 @@ tmap ˙ <a-h>
 tmap ∆ <a-j>
 tmap ˚ <a-k
 tmap ¬ <a-l>
+tmap ≥ <a-.>
+tmap ∫ <a-b>
+tmap ∂ <a-d>
+tmap ƒ <a-f>
 
 " nmap <leader>P :call myfun#Paste(v:register, "l", "P")<CR>
 " nmap <leader>p :call myfun#Paste(v:register, "l", "p")<CR>
@@ -186,17 +206,6 @@ function! FloatingFullscreen()
 
   return win_id
 endfunction
-
-nnoremap <leader>ww <C-w><bar>
-nnoremap <leader>wt <C-w>_
-nnoremap <leader>we <C-w>=
-nnoremap <leader>wm <C-w><bar><C-w>_
-tnoremap <C-Space> <C-\><C-n>
-
-noremap <s-up>    <C-W>+
-noremap <s-down>  <C-W>-
-noremap <s-left>  <C-W>>
-noremap <s-right> <C-W><
 
 let g:window_key_prefix = "<space>"
 " the first value is the key and the second is the new window command
