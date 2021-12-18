@@ -48,6 +48,8 @@ alias mt='make test'
 alias mct='make clean test'
 alias mcr='make clean run'
 
+alias vi='printf "this is not the command you are looking for. use: \`nvr\`\n"; false'
+
 #======================= GIT ===============================#
 alias gs="git status"
 alias gss="git status -s"

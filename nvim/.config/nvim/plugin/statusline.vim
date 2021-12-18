@@ -24,7 +24,7 @@ let g:color2gui={
     \ 'green' : '#98C379',
     \ 'blue' : '#61AFEF',
     \ 'magenta' : '#C678DD',
-    \ 'light' : '#ABB2BF',
+    \ 'light' : '#FFFFFF',
     \ 'grey' : '#3E4452',
     \ 'dark' : '#2C323C',
     \}
