@@ -25,6 +25,7 @@ alias oni="oni2"
 alias ql="qlmanage -p 2>/dev/null"
 alias less="bat"
 alias n="nnn"
+alias nnn='nnn && test -e "$HOME/.config/nnn/.lastd" && . "$HOME/.config/nnn/.lastd" && /bin/rm -f "$HOME/.config/nnn/.lastd" > /dev/null'
 alias icat="kitty +kitten icat --align=left"
 alias isvg="rsvg-convert | icat"
 alias idot="dot -Tsvg \
@@ -57,8 +58,10 @@ alias gss="git status -s"
 alias ga="git add"
 alias gaa="git add -A"
 alias gap="git add -p"
+
 alias gc="git commit --verbose"
 alias gca="git add -A && git commit --verbose"
+alias gcu="git add -u && git commit --verbose"
 alias gpa="git add -A && git commit --verbose && git push"
 
 alias gp="git push"

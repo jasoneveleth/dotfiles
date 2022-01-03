@@ -7,6 +7,8 @@ let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
+let g:delimitMate_expand_cr = 1
+
 " removes spaces when using the wrong character
 let g:surround_40 = "(\r)"
 let g:surround_123 = "{\r}"
@@ -26,7 +28,7 @@ let g:rooter_silent_chdir = 1
 
 let g:textobjs = ['$', ',', '.', ':', '+', ';', '=', '-', '_', '*', '#', '&', '~']
 
-let g:startify_bookmarks = [ {'c': '~/.config/nvim/init.vim'}, {'z': '~/.config/zsh/.zshrc'}, {'y': '~/.config/zsh/.zshenv'} ]
+call myfun#SourceBookmarks()
 let g:startify_custom_header = []
 let g:startify_files_number = 5
 

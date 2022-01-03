@@ -59,6 +59,7 @@ export NNN_PLUG='n:-!fzfnotes*;v:-!nvim*;'
 export NNN_COLORS="4512"
 export PAGER="bat"
 export EDITOR="nvr --remote-wait"
+export SONG="$HOME/.root/media/audio/Staff Credits 2 - Mario Kart Wii.mp3"
 export VISUAL="$EDITOR"
 export JOURNAL="$HOME/.root/personal/journal.md"
 export NIST_JOURNAL="$HOME/.root/misc/sem05/nist_prep/journal.md"

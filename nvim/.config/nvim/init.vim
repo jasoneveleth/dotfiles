@@ -84,10 +84,12 @@ nnoremap <expr> k v:count == 0 ? 'gk' : 'm`' . v:count . 'k'
 nnoremap <expr> j v:count == 0 ? 'gj' : 'm`' . v:count . 'j'
 nnoremap <c-j> :cnext<cr>
 nnoremap <c-k> :cprevious<cr>
+nnoremap <cr> :update<cr>
 nnoremap Q @q
 nnoremap Y y$
 nnoremap U <c-r>
 nnoremap ga <c-^>
+nnoremap g~ :cd ~<cr>
 noremap gh ^
 noremap gl $
 xnoremap * y/\V<C-R>"<CR>
@@ -99,7 +101,6 @@ noremap <ScrollWheelRight> zl
 noremap <ScrollWheelLeft> zh
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-nnoremap <leader>. :lcd ..<cr>
 nnoremap <leader>s *``cgn
 nnoremap <leader>S #``cgN
 xnoremap <leader>i :'<,'>normal ^i
@@ -110,8 +111,9 @@ nnoremap <leader>ww <C-w><bar>
 nnoremap <leader>wt <C-w>_
 nnoremap <leader>wm <C-w><bar><C-w>_
 nnoremap <leader>we <C-w>=
-nnoremap <leader>wq :close<cr>
+nnoremap <leader>wc :close<cr>
 nnoremap <leader>wk :Sayonara!<cr>
+nnoremap <leader>wq :w<cr>:Sayonara!<cr>a
 
 noremap <s-up>    <C-W>+
 noremap <s-down>  <C-W>-
@@ -156,20 +158,21 @@ tnoremap <a-k> <c-\><c-n><c-w>k
 tnoremap <C-Space> <C-\><C-n>
 map ˙ <a-h>
 map ∆ <a-j>
-map ˚ <a-k
+map ˚ <a-k>
 map ¬ <a-l>
 map! ˙ <a-h>
 map! ∆ <a-j>
-map! ˚ <a-k
+map! ˚ <a-k>
 map! ¬ <a-l>
 tmap ˙ <a-h>
 tmap ∆ <a-j>
-tmap ˚ <a-k
+tmap ˚ <a-k>
 tmap ¬ <a-l>
 tmap ≥ <a-.>
 tmap ∫ <a-b>
 tmap ∂ <a-d>
 tmap ƒ <a-f>
+tmap å <a-a>
 
 " nmap <leader>P :call myfun#Paste(v:register, "l", "P")<CR>
 " nmap <leader>p :call myfun#Paste(v:register, "l", "p")<CR>
@@ -257,6 +260,7 @@ command! -nargs=* -bang RgRegex call myfun#RipgrepFzf(<q-args>, <bang>0)
 command! PackUpdate call myfun#PackInit() | call minpac#update()
 command! PackClean  call myfun#PackInit() | call minpac#clean()
 command! PackStatus packadd minpac | call minpac#status()
+command! SourceBookmarks call myfun#SourceBookmarks()
 
 augroup ryan
   autocmd!
@@ -272,9 +276,9 @@ augroup END
 
 augroup Term
     autocmd!
-    autocmd TermOpen *:/bin/zsh call feedkeys("a")
+    autocmd TermOpen term://*:/bin/zsh call feedkeys("a")
     autocmd TermOpen * setlocal nonu nornu listchars= signcolumn=no scrolloff=0
-    autocmd TermClose *:/bin/zsh call feedkeys("\<cr>")
+    autocmd TermClose term://*:/bin/zsh call feedkeys("\<cr>")
 augroup END
 
 augroup Yank

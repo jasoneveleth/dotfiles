@@ -13,7 +13,8 @@ nmap <silent> yoc <Plug>(ToggleHighlight)
 nnoremap yob :if &showbreak == '++' <bar> set sbr= <bar> else <bar> set sbr=++ <bar> endif<cr>
 
 " adjust current directory
-nnoremap yod :lcd %:h<cr>
+nnoremap yof :lcd %:h<cr>
+nnoremap yod :lcd ..<cr>
 
 " toggle backgroundwarning
 let g:WarningCol = 0
