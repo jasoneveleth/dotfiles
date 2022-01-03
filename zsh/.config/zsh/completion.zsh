@@ -1,4 +1,11 @@
 autoload -Uz compinit
+
+_comp_options+=(globdots) # include hidden files
+
+# https://felipec.wordpress.com/2013/07/31/how-i-fixed-git-zsh-completion/
+fpath=($HOME/.config/zsh/fpath $fpath)
+zstyle ':completion:*:*:git:*' script "$HOME/.config/zsh/"git-completion.bash
+
 compdumpfile="$HOME/.config/zsh/.zcompcache/.zcompdump"
 if [ $(uname -s) = Darwin ]; then
     one_day_old="$(date '+%s') - $(stat -f %m $compdumpfile) > 86400"
@@ -13,8 +20,6 @@ else
     compinit -C -d "$compdumpfile"
 fi
 unset compdumpfile one_day_old
-
-_comp_options+=(globdots) # include hidden files
 
 zstyle ':completion:*' menu select=long # only use menu if results go off the screen
 zstyle ':completion:*' expand prefix suffix # expand as much as possible
