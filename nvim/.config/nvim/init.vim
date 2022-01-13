@@ -39,6 +39,7 @@ if !has('nvim')
     set viminfo-=!
     set wildmenu
     set wildoptions=pum,tagfile
+    nnoremap Y y$
 endif
 
 set shortmess=xtToOFc
@@ -71,6 +72,8 @@ set formatoptions+=r
 set noshowcmd
 set guifont=Hack:h14
 set mouse=a
+set termguicolors
+set notimeout
 
 if &termguicolors
     silent! colorscheme onedark
@@ -86,7 +89,6 @@ nnoremap <c-j> :cnext<cr>
 nnoremap <c-k> :cprevious<cr>
 nnoremap <cr> :update<cr>
 nnoremap Q @q
-nnoremap Y y$
 nnoremap U <c-r>
 nnoremap ga <c-^>
 nnoremap g~ :cd ~<cr>
@@ -101,6 +103,9 @@ noremap <ScrollWheelRight> zl
 noremap <ScrollWheelLeft> zh
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <c-;> <end>;
+inoremap <c-c> <esc>
+cnoremap <expr> %% expand('%:h').'/'
 nnoremap <leader>s *``cgn
 nnoremap <leader>S #``cgN
 xnoremap <leader>i :'<,'>normal ^i
@@ -111,9 +116,8 @@ nnoremap <leader>ww <C-w><bar>
 nnoremap <leader>wt <C-w>_
 nnoremap <leader>wm <C-w><bar><C-w>_
 nnoremap <leader>we <C-w>=
-nnoremap <leader>wc :close<cr>
+nnoremap <leader>wf :close<cr>
 nnoremap <leader>wk :Sayonara!<cr>
-nnoremap <leader>wq :w<cr>:Sayonara!<cr>a
 
 noremap <s-up>    <C-W>+
 noremap <s-down>  <C-W>-
@@ -128,7 +132,7 @@ nnoremap <silent> gx :lua vim.lsp.diagnostic.goto_next()<cr>
 nnoremap <silent> gX :lua vim.lsp.diagnostic.goto_prev()<cr> 
 nnoremap <silent> <leader>gq :lua vim.lsp.buf.formatting()<CR>
 nnoremap <silent> K :lua vim.lsp.buf.hover()<cr>
-" nnoremap <silent> g] :lua vim.lsp.buf.implementation()<cr>
+nnoremap <silent> g] :lua vim.lsp.buf.implementation()<cr>
 " nnoremap <silent> gDt :lua vim.lsp.buf.type_definition()<cr>
 " inoremap <silent> <c-k> <c-o>:lua vim.lsp.buf.signature_help()<cr>
 inoremap <silent><expr> <c-l> compe#complete()
@@ -244,23 +248,30 @@ function! MapWinCmd(key, command, user_enter)
   endfor
 endfunction
 
-call MapWinCmd("e", "e ", 1)
-call MapWinCmd("n", "enew <bar> setlocal bufhidden=hide nobuflisted " .
+" call MapWinCmd("e", "e ", 1)
+call MapWinCmd("e", "enew <bar> setlocal bufhidden=hide nobuflisted " .
       \ "buftype=nofile", 0)
 call MapWinCmd("c", "", 0)
 call MapWinCmd("t", "terminal", 0)
 call MapWinCmd("f", "Files", 0)
 call MapWinCmd("b", "Buffers", 0)
 call MapWinCmd("s", "Startify", 0)
+call MapWinCmd("n", "terminal nnn_remote", 0)
 " }}}
 
 
 command! ConflictHighlights call myfun#ConflictsHighlight()
 command! -nargs=* -bang RgRegex call myfun#RipgrepFzf(<q-args>, <bang>0)
+command! -bang -nargs=* RgContents
+            \ call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1,
+            \   fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)
 command! PackUpdate call myfun#PackInit() | call minpac#update()
 command! PackClean  call myfun#PackInit() | call minpac#clean()
 command! PackStatus packadd minpac | call minpac#status()
 command! SourceBookmarks call myfun#SourceBookmarks()
+command! Rename call myfun#RenameFile()
+command! Quickfix call myfun#OpenQuickfixList()
+command! Commands echo "ConflictHighlights -- highlight git conflicts\nRgRegex -- use rust regex rather than fuzzy finding\nRgContents -- only search contents not filenames too\nSourceBookmarks -- source Startify bookmarks\nRename -- rename current file\nQuickfix -- for file /tmp/quickfix"
 
 augroup ryan
   autocmd!
@@ -276,9 +287,9 @@ augroup END
 
 augroup Term
     autocmd!
-    autocmd TermOpen term://*:/bin/zsh call feedkeys("a")
+    autocmd TermOpen,BufEnter term://* startinsert
     autocmd TermOpen * setlocal nonu nornu listchars= signcolumn=no scrolloff=0
-    autocmd TermClose term://*:/bin/zsh call feedkeys("\<cr>")
+    autocmd TermClose * if &ft!="fzf"|call feedkeys("\<cr>")|endif
 augroup END
 
 augroup Yank

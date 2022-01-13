@@ -2,6 +2,7 @@
 
 PS1="[%m:%1~]%# "
 [ -n "$NNNLVL" ] && PS1="N$NNNLVL $PS1"
+[ -n "$NVIM_LISTEN_ADDRESS" ] && export EDITOR="nvr --remote-wait" && export VISUAL="$EDITOR"
 
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 

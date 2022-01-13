@@ -7,10 +7,15 @@ export HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
+export SD_ROOT="$HOME/.root/dev/unix"
+export LOCAL_BIN="$HOME/.local/bin"
 
 export BASEPATH="${BASEPATH:-$PATH}"
-PATH="$HOME/.local/bin:/usr/local/bin:$BASEPATH"
+PATH="$BASEPATH"
+PATH="/usr/local/bin:$PATH"
+PATH="$LOCAL_BIN:$PATH"
 if [ "$(uname)" = "Darwin" ]; then # on apple
+    PATH="$SD_ROOT:$PATH"
     PATH="$PATH:/Library/TeX/texbin"
     PATH="$PATH:/usr/local/opt/llvm/bin/"
     PATH="$PATH:/Applications/Racket v8.2/bin"
@@ -58,7 +63,7 @@ export NNN_BMS='o:~/notes;c:~/.config;v:~/.config/nvim;1:~/cs1951X/code/src;2:~/
 export NNN_PLUG='n:-!fzfnotes*;v:-!nvim*;'
 export NNN_COLORS="4512"
 export PAGER="bat"
-export EDITOR="nvr --remote-wait"
+[ "$EDITOR" = "" ] && export EDITOR="nvim"
 export SONG="$HOME/.root/media/audio/Staff Credits 2 - Mario Kart Wii.mp3"
 export VISUAL="$EDITOR"
 export JOURNAL="$HOME/.root/personal/journal.md"

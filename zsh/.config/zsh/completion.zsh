@@ -4,9 +4,9 @@ _comp_options+=(globdots) # include hidden files
 
 # https://felipec.wordpress.com/2013/07/31/how-i-fixed-git-zsh-completion/
 fpath=($HOME/.config/zsh/fpath $fpath)
-zstyle ':completion:*:*:git:*' script "$HOME/.config/zsh/"git-completion.bash
+zstyle ':completion:*:*:git:*' script "$HOME/.config/zsh/"git-completion.zsh
 
-compdumpfile="$HOME/.config/zsh/.zcompcache/.zcompdump"
+compdumpfile="$HOME/.local/share/zsh/zcompdump"
 if [ $(uname -s) = Darwin ]; then
     one_day_old="$(date '+%s') - $(stat -f %m $compdumpfile) > 86400"
 else
@@ -31,6 +31,9 @@ zstyle ':completion:*' squeeze-slashes true # turn // -> /, rather than /*/
 
 # https://mrigank11.github.io/2018/03/zsh-auto-completion/
 _maketex() {
+    # add arg 1, with text $(ls *.tex) in an array
+    # format is 'num:message:array_of_things' and you can add as many as you
+    # want to one _arguments call
     _arguments '1: :($(ls *.tex))'
 }
 compdef _maketex maketex

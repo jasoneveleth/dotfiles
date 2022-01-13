@@ -6,19 +6,21 @@ function! myfun#PackInit() abort
     call minpac#add('tpope/vim-commentary')
     call minpac#add('tpope/vim-surround')
     call minpac#add('tpope/vim-repeat')
+    call minpac#add('tpope/vim-fugitive')
     call minpac#add('romainl/vim-cool')
     call minpac#add('junegunn/fzf.vim')
     call minpac#add('junegunn/fzf')
     call minpac#add('junegunn/vim-peekaboo')
     call minpac#add('jasoneveleth/vim-dim')
+    call minpac#add('mhinz/vim-startify')
+    call minpac#add('mhinz/vim-sayonara')
     call minpac#add('mbbill/undotree')
     call minpac#add('joshdick/onedark.vim')
-    call minpac#add('mcchrish/nnn.vim')
-    call minpac#add('mhinz/vim-sayonara')
-    " call minpac#add('airblade/vim-rooter')
-    call minpac#add('mhinz/vim-startify')
+    call minpac#add('dkarter/bullets.vim')
+    call minpac#add('PeterRincker/vim-argumentative')
+    call minpac#add('justinmk/vim-sneak')
     call minpac#add('Raimondi/delimitMate')
-
+    call minpac#add('tjdevries/train.nvim')
     call minpac#add('nvim-lua/plenary.nvim')
     call minpac#add('Julian/lean.nvim')
     call minpac#add('lervag/vimtex')
@@ -27,6 +29,48 @@ function! myfun#PackInit() abort
         call minpac#add('nvim-treesitter/nvim-treesitter')
         call minpac#add('neovim/nvim-lspconfig')
         call minpac#add('hrsh7th/nvim-compe')
+    endif
+endfunction
+
+function! myfun#OpenQuickfixList()
+    cgetfile /tmp/quickfix
+    topleft cwindow
+    if &ft == "qf"
+        cc
+    endif
+endfunction
+
+" https://github.com/garybernhardt/dotfiles/blob/9e128843775d37983ca8f2ffc5d2cb46d7d4fc88/.vimrc#L567
+function! RemoveFancyCharacters()
+    let typo = {}
+    let typo["“"] = '"'
+    let typo["”"] = '"'
+    let typo["‘"] = "'"
+    let typo["’"] = "'"
+    let typo["–"] = '--'
+    let typo["—"] = '---'
+    let typo["…"] = '...'
+    :exe ":%s/".join(keys(typo), '\|').'/\=typo[submatch(0)]/ge'
+endfunction
+
+" https://vi.stackexchange.com/questions/305/how-can-i-rename-the-file-im-editing
+function! myfun#RenameFile()
+    let old_name = expand('%')
+    let new_name = input('New file name: ', expand('%'), 'file')
+    if new_name != '' && new_name != old_name
+        let v:errmsg = ""
+        exec ':saveas ' . new_name
+        if v:errmsg =~# '^$'
+            if expand("%:p") !=# old_name && filewritable(expand("%:p"))
+                silent exe "bwipe! " . old_name
+                if delete(old_name)
+                    echoerr "Could not delete " . l:curfile
+                endif
+                redraw!
+            endif
+        else
+            echoerr v:errmsg
+        endif
     endif
 endfunction
 

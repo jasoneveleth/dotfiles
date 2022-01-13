@@ -1,0 +1,42 @@
+#compdef sd
+
+# https://github.com/ianthehenry/sd/blob/master/_sd
+
+# emit a one line help message
+_sd_help_line() {
+    filename="${1##*/}"
+    if test -d "$1"; then
+        if test -f "$1/help"; then
+            head -n 1 "$1/help"
+        else
+            echo "$filename commands"
+        fi
+    elif test -x "$1"; then
+        if test -f "$1.help"; then
+            head -n 1 "$1.help"
+        else
+            awk 'NR==3 {$1 = ""; print substr($0, 2)}' < "$1"
+        fi
+    elif test -f "$1"; then
+        echo "text file"
+    fi
+}
+
+local state
+_arguments "1: :->cmd" "2: :->subcmd" "3: :->flags"
+if [ $state = "cmd" ]; then
+    dir="$SD_ROOT"
+elif [ $state = "subcmd" ]; then
+    dir="$SD_ROOT/$words[2]"
+elif [ $state = "flags" ]; then
+    _describe 'command' "('--edit:edit script' '--cat:cat script' '--which:echo pathname' '--new:make a new script with commandline args as content' '--help:help for a command')"
+    return
+else
+    return
+fi
+
+local -a subcmds
+for file in "$dir"/*(-*,/); do
+    subcmds=($subcmds "${file##*/}:$(_sd_help_line $file)") 
+done
+_describe 'command' subcmds

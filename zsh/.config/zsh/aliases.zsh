@@ -19,12 +19,12 @@ alias ...='cd ../..'
 alias nist='date >> $NIST_JOURNAL; $EDITOR -c "norm! Go" $NIST_JOURNAL'
 # alias act='[ -e ./.env/bin/activate ] && [ -z ${VIRTUAL_ENV+x} ] && echo sourced && . ./.env/bin/activate'
 alias d='deactivate'
-alias a='source ~/.root/dev/python/venv/bin/activate'
+alias venv='source ~/.root/dev/python/venv/bin/activate'
 alias cs="source ~/cs1410/cs1410_env/bin/activate"
 alias oni="oni2"
 alias ql="qlmanage -p 2>/dev/null"
+alias sc="shellcheck"
 alias less="bat"
-alias n="nnn"
 alias nnn='nnn && test -e "$HOME/.config/nnn/.lastd" && . "$HOME/.config/nnn/.lastd" && /bin/rm -f "$HOME/.config/nnn/.lastd" > /dev/null'
 alias icat="kitty +kitten icat --align=left"
 alias isvg="rsvg-convert | icat"
@@ -40,6 +40,10 @@ alias idot="dot -Tsvg \
     -Efontcolor=#abb2bf \
     -Efontname=Hack \
     -Ecolor=#abb2bf | isvg"
+
+alias e="$EDITOR"
+alias vs="nvr --remote-wait -O"
+alias sp="nvr --remote-wait -o"
 
 alias m='make'
 alias mc='make clean'
