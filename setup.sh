@@ -2,6 +2,14 @@
 
 cd ~ || exit
 
+mkdir -p ~/.config/nvim/pack/minpac/opt/minpac
+git clone https://github.com/k-takata/minpac.git ~/.config/nvim/pack/minpac/opt/minpac
+# -v verbose
+# -S stow
+# -t ~ target home directory
+# * means all
+stow -vS *
+
 brew install bat cask cloc coreutils diff-so-fancy exa fd ffmpeg fzf graphviz htop imagemagick ipython libsvg moreutils mosh neofetch neovim nnn pandoc pv ripgrep shellcheck speedtest-cli stow tmux trash tree bluetoothconnector dvipng
 brew install --cask alacritty alfred appcleaner basictex discord fantastical flux font-hack gimp julia keycastr kitty minecraft osxfuse qlmarkdown qlstephen skim spotify tunnelblick zoom tinkertools imageoptim stats
 # fonts: https://corgibytes.com/blog/2020/01/29/install-fonts-on-your-mac-from-the-command-line-with-homebrew/

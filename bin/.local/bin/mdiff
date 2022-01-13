@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+# use diff-so-fancy for normal diff of two files
+#
+# usage: mdiff file1 file2
+
+diff -u $1 $2 | diff-so-fancy | /usr/bin/less --tabs=4 -RFX

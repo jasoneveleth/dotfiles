@@ -1,0 +1,32 @@
+#!/bin/sh
+
+if [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
+    printf "USAGE:\n"
+    printf "\tnotes [-c[o]]\n"
+    printf "ARGS:\n"
+    printf "\t-c\tcontents of the files and file names\n"
+    printf "\t-co\tcontents of files only\n"
+    exit
+fi
+
+cd $HOME/.root/notes 
+while : ; do
+    if [ "$1" = "-c" ]; then
+        # contents of files and file names
+        file=`rg --color=always --smart-case '^' | fzf --print-query --ansi | tail -n1`
+    elif [ "$1" = "-co" ]; then
+        # contents of files only
+        file=`rg --color=always --smart-case '^' | fzf --print-query --ansi --delimiter : --nth 2 | tail -n1`
+    else
+        file=`fzf --print-query | tail -n1`
+    fi
+    if [ "$file" = "" ]; then
+        break
+    fi
+    if [ -f "$file" ]; then
+        $EDITOR $file
+    else
+        touch "$file"
+        $EDITOR "$file"
+    fi
+done
