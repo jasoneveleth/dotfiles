@@ -6,20 +6,32 @@ _comp_options+=(globdots) # include hidden files
 fpath=($HOME/.config/zsh/fpath $fpath)
 zstyle ':completion:*:*:git:*' script "$HOME/.config/zsh/"git-completion.zsh
 
+## COMPDUMP ## ================================
+
 compdumpfile="$HOME/.local/share/zsh/zcompdump"
-if [ $(uname -s) = Darwin ]; then
-    one_day_old="$(date '+%s') - $(stat -f %m $compdumpfile) > 86400"
+if ! [ -e "$compdumpfile" ]; then
+    # if the file doesn't exist
+    mkdir -p "$(dirname $compdumpfile)" 
+    refresh_compdump=true
+elif [ $(uname -s) = Darwin ]; then
+    # if it exists and we are on a mac, check if older than a day
+    refresh_compdump="$(date '+%s') - $(stat -f %m $compdumpfile) > 86400"
 else
-    one_day_old="$(date '+%s') - $(stat -c %Y "$compdumpfile") > 86400"
+    # if it exists and we are on linux, check if older than a day
+    refresh_compdump="$(date '+%s') - $(stat -c %Y "$compdumpfile") > 86400"
 fi
-if (( $one_day_old )); then
+if (( $refresh_compdump )); then
+    # make new one
     compinit -d "$compdumpfile"
     touch "$compdumpfile"
     zcompile "$compdumpfile"
 else
+    # read from old one
     compinit -C -d "$compdumpfile"
 fi
-unset compdumpfile one_day_old
+unset compdumpfile refresh_compdump
+
+## END COMPDUMP ## ============================
 
 zstyle ':completion:*' menu select=long # only use menu if results go off the screen
 zstyle ':completion:*' expand prefix suffix # expand as much as possible

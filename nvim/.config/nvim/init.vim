@@ -272,14 +272,16 @@ command! SourceBookmarks call myfun#SourceBookmarks()
 command! Rename call myfun#RenameFile()
 command! Quickfix call myfun#OpenQuickfixList()
 command! BufOnly silent! exec "%bd|e#|bd#"
+command! Statusline silent! exec "unlet g:loaded_personal_statusline|so ~/.config/nvim/plugin/statusline.vim"
 command! Commands echo "
     \ ConflictHighlights -- highlight git conflicts\n
-    \ RgRegex -- use rust regex rather than fuzzy finding\n
+    \ RgRegex    -- use rust regex rather than fuzzy finding\n
     \ RgContents -- only search contents not filenames too\n
     \ SourceBookmarks -- source Startify bookmarks\n
-    \ Rename -- rename current file\n
-    \ Quickfix -- for file /tmp/quickfix\n
-    \ BufOnly -- delete all other buffers, and keep current one\n
+    \ Rename     -- rename current file\n
+    \ Quickfix   -- for file /tmp/quickfix\n
+    \ BufOnly    -- delete all other buffers, and keep current one\n
+    \ Statusline -- resource the statusline to add colors again\n
     \ "
 
 augroup ryan

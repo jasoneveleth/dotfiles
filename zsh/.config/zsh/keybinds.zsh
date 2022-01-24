@@ -1,5 +1,5 @@
 # allow '^s' to be used
-stty sane
+stty -ixon
 
 # bindkey "^?" backward-delete-char
 # bindkey "^W" backward-kill-word
