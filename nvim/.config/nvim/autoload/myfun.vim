@@ -78,9 +78,11 @@ function! myfun#SourceBookmarks()
     let l:bookmarks = split(system("cat $HOME/.local/share/misc/bookmarks"), '\n')
     let g:startify_bookmarks = []
     for bookmark in l:bookmarks
-        let key = split(bookmark, ',')[0]
-        let file = split(bookmark, ',')[1]
-        let g:startify_bookmarks = g:startify_bookmarks + [{key: file}]
+        if len(split(bookmark, ',')) == 2
+            let key = split(bookmark, ',')[0]
+            let file = split(bookmark, ',')[1]
+            let g:startify_bookmarks = g:startify_bookmarks + [{key: file}]
+        endif
     endfor
 endfunction
 
