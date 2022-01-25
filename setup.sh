@@ -2,13 +2,18 @@
 
 cd ~ || exit
 
-mkdir -p ~/.config/nvim/pack/minpac/opt/minpac
-git clone https://github.com/k-takata/minpac.git ~/.config/nvim/pack/minpac/opt/minpac
+mkdir -p ~/.config/nvim/pack/
+mkdir -p ~/.local/share
+mkdir -p ~/.local/bin
+
 # -v verbose
 # -S stow
 # -t ~ target home directory
 # * means all
 stow -vS *
+
+mkdir -p ~/.config/nvim/pack/minpac/opt/minpac
+git clone https://github.com/k-takata/minpac.git ~/.config/nvim/pack/minpac/opt/minpac
 
 brew install bat cask cloc coreutils diff-so-fancy exa fd ffmpeg fzf graphviz htop imagemagick ipython libsvg moreutils mosh neofetch neovim nnn pandoc pv ripgrep shellcheck speedtest-cli stow tmux trash tree bluetoothconnector dvipng
 brew install --cask alacritty alfred appcleaner basictex discord fantastical flux font-hack gimp julia keycastr kitty minecraft osxfuse qlmarkdown qlstephen skim spotify tunnelblick zoom tinkertools imageoptim stats
@@ -95,34 +100,6 @@ killall SystemUIServer
 # +endfunction
 # ```
 
+# change caps lock to escape:
 # from: https://hidutil-generator.netlify.app
-# move this to ~/Library/LaunchAgents/com.local.KeyRemapping.plist
-# TODO THIS DOESN:T WORK BUT IT IS CLOSE
-cat <<"EOF" > ~/Library/LaunchAgents/com.local.KeyRemapping.plist
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-    <key>Label</key>
-    <string>com.local.KeyRemapping</string>
-    <key>ProgramArguments</key>
-    <array>
-        <string>/usr/bin/hidutil</string>
-        <string>property</string>
-        <string>--set</string>
-        <string>{"UserKeyMapping":[
-            {
-              "HIDKeyboardModifierMappingSrc": 0x700000029,
-              "HIDKeyboardModifierMappingDst": 0x700000039
-            },
-            {
-              "HIDKeyboardModifierMappingSrc": 0x700000039,
-              "HIDKeyboardModifierMappingDst": 0x700000029
-            }
-        ]}</string>
-    </array>
-    <key>RunAtLoad</key>
-    <true/>
-</dict>
-</plist>
-EOF
+# ~/Library/LaunchAgents/com.local.KeyRemapping.plist
