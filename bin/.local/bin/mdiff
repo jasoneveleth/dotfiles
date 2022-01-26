@@ -4,4 +4,4 @@
 #
 # usage: mdiff file1 file2
 
-diff -u $1 $2 | diff-so-fancy | /usr/bin/less --tabs=4 -RFX
+diff -u "$1" "$2" | diff-so-fancy | /usr/bin/less --tabs=4 -RFX

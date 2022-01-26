@@ -21,6 +21,14 @@ if [ "$(uname)" = "Darwin" ]; then # on apple
     PATH="$PATH:/Applications/Racket v8.2/bin"
     PATH="$PATH:/usr/local/opt/openjdk/bin"
     PATH="$PATH:$HOME/.elan/bin"
+    if [[ `uname -m` == 'arm64' ]]; then
+        PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}"
+        MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:"
+        INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}"
+        export HOMEBREW_PREFIX="/opt/homebrew";
+        export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
+        export HOMEBREW_REPOSITORY="/opt/homebrew";
+    fi
 fi
 export PATH="$PATH:."
 
@@ -50,8 +58,8 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home"
 export BIBINPUTS="$XDG_CONFIG_HOME/latex"  
 export BAT_THEME='TwoDark'
 export KEYTIMEOUT=1
-export JULIA_NUM_THREADS=4
-export NTHREADS=4
+export JULIA_NUM_THREADS=8
+# export NTHREADS=4
 export JULIA_DEPOT_PATH="$XDG_CONFIG_HOME/julia"
 export FZF_DEFAULT_COMMAND='fd --type file --hidden --exclude .git --exclude node_modules --exclude __pycache__ --follow'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
