@@ -14,6 +14,9 @@ source "$ZDOTDIR/"keybinds.zsh
 source "$ZDOTDIR/"completion.zsh
 source "$ZDOTDIR/"aliases.zsh
 
+if [[ `uname -m` == 'arm64' ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 source "$XDG_CONFIG_HOME/"zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # ^ strange quoting allows for `gf` to work in vim
 

@@ -53,7 +53,10 @@ export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
 export JUMP_HOME="$XDG_CONFIG_HOME/jump"
 export KERAS_HOME="$XDG_CONFIG_HOME"/keras
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home"
+
+if [ "$(uname)" = 'Darwin' ]; then
+    export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home"
+fi
 
 export BIBINPUTS="$XDG_CONFIG_HOME/latex"  
 export BAT_THEME='TwoDark'
