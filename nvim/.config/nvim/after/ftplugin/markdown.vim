@@ -17,6 +17,7 @@ xnoremap <buffer> ax :<C-u>normal va`<CR>
 onoremap <buffer> ax :<C-u>normal va`<CR>
 
 inoremap <buffer> ;d <esc>:let @s=system('date "+%Y-%m-%d"')<cr>a<c-r>s<bs>
+inoremap <buffer> ;4 $$$$<left><left>
 
 " for checklists
 nnoremap <buffer> <leader>n :g/\[ \]/<cr>

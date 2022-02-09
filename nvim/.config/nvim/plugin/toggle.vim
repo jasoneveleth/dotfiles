@@ -3,6 +3,9 @@ if exists("loaded_toggle")
 endif
 let g:loaded_toggle = 1
 
+nnoremap ]<space> o<esc>k
+nnoremap [<space> O<esc>j
+
 " toggle spell
 nnoremap yos :set invspell <bar> set spell?<cr>
 

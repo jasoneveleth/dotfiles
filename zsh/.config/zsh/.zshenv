@@ -83,4 +83,8 @@ export EXA_COLORS="*.pdf=35:*.wav=36:*.png=35:*.c=01:*.py=01"
 
 export CPATH="$HOME/dev/c/include/"
 
+if [[ `uname -m` == 'arm64' ]]; then
+    export JULIA_LOAD_PATH="~/.config/julia/environments/nvim-lspconfig:$JULIA_LOAD_PATH"
+fi
+
 setopt no_global_rcs

@@ -75,11 +75,15 @@ set mouse=a
 set termguicolors
 set notimeout
 
-if &termguicolors
-    silent! colorscheme onedark
-else
-    silent! colorscheme dim
+if !exists("loaded_colorscheme")
+    if &termguicolors
+        silent! colorscheme onedark
+        silent! hi CursorLineNr gui=bold
+    else
+        silent! colorscheme dim
+    endif
 endif
+let g:loaded_colorscheme = 1
 
 let g:mapleader = ' '
 nnoremap <leader> <nop>
@@ -92,6 +96,8 @@ nnoremap Q @q
 nnoremap U <c-r>
 nnoremap ga <c-^>
 nnoremap g~ :cd ~<cr>
+nnoremap c* *Ncgn
+nnoremap g. /\V<c-r>"<cr>cgn<c-a><esc>
 noremap gh ^
 noremap gl $
 xnoremap * y/\V<C-R>"<CR>
@@ -118,6 +124,7 @@ nnoremap <leader>wm <C-w><bar><C-w>_
 nnoremap <leader>we <C-w>=
 nnoremap <leader>wf :close<cr>
 nnoremap <leader>wk :Sayonara!<cr>
+nnoremap <leader>wj :Sayonara!<cr>:close<cr>
 
 noremap <s-up>    <C-W>+
 noremap <s-down>  <C-W>-
@@ -138,8 +145,9 @@ nnoremap <silent> g] :lua vim.lsp.buf.implementation()<cr>
 inoremap <silent><expr> <c-l> compe#complete()
 
 nnoremap <silent> <leader>u :UndotreeToggle<cr>
-nnoremap <silent> <c-b> :Buffers<cr>
-nnoremap <silent> <c-p> :Files<cr>
+nnoremap <c-p> <cmd>lua require('telescope.builtin').find_files({follow = "true"})<cr>
+nnoremap <c-g> <cmd>Telescope live_grep<cr>
+nnoremap <c-b> <cmd>Telescope buffers<cr>
 nnoremap <silent> <leader>e :exec 'e ~/.config/nvim/after/ftplugin/' . &ft . '.vim'<cr>
 nnoremap <silent><expr> <leader>o filter(range(1, winnr('$')), 'getwinvar(v:val, "&ft") == "qf"')==[] ? ":cope<cr>" : ":ccl<cr>"
 

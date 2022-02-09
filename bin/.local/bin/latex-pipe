@@ -1,0 +1,10 @@
+#!/bin/sh
+
+TDIR=`mktemp -d`
+tee "$TDIR/file.tex" > /dev/null
+cd "${TDIR}"
+latex -interaction batchmode -halt-on-error file.tex > /tmp/latexpipe-output.log
+cp file.log /tmp/latexpipe-log.log
+cat file.dvi
+cd ..
+rm -r ${TDIR}

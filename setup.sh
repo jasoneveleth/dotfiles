@@ -2,9 +2,10 @@
 
 cd ~ || exit
 
-mkdir -p ~/.config/nvim/pack/
-mkdir -p ~/.local/share
+mkdir -p ~/.config/nvim/pack/minpac
 mkdir -p ~/.local/bin
+mkdir -p ~/.local/share/{zsh,misc}
+mkdir -p ~/.local/share/misc
 
 # -v verbose
 # -S stow
@@ -46,9 +47,8 @@ defaults write com.apple.screencapture "include-date" 0
 defaults write com.apple.screencapture name "ss"
 killall SystemUIServer
 
-# sudo tlmgr install stackengine titlesec titling siunitx latexmk biber xypic enumitem footmisc courier lastpage 
+# sudo tlmgr install stackengine titlesec titling siunitx latexmk biber xypic enumitem footmisc courier lastpage standalone doublestroke preview relsize calligra nopageno
 # manim
-# sudo tlmgr install standalone doublestroke preview relsize calligra
 
 # edit /etc/profile and /etc/zprofile to not run path_helper which fucks up the
 # path. one is run with `zsh -l` the other with `zsh`. use `-o sourcetrace` to

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ "$#" = 2 ]; then
+    mktouch "$2"
+    chmod "$1" "$2"
+else
+    mktouch "$1"
+    chmod 755 "$1"
+fi
+
