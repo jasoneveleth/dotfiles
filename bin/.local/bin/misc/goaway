@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# kill -9 pid from `who` that match 172
+#
+# if it exists it, print all lines from who that look like ips, print the
+# pid and try to kill -9 it
+
+pid=$(who -a -H | grep 172 | awk '{print $7}')
+# pid=$(who -a -H | egrep '\(\d+\.\d+\.\d+\.\d+\)' | awk '{print $7}')
+if [ -n "$pid" ]; then
+    who -a -H | egrep '\(\d+\.\d+\.\d+\.\d+\)'
+    printf "killing \`$pid'\n"
+    kill -9 $pid
+    # read -p "Do you wish to kill this process? ($pid) " yn
+    # case $yn in
+    #     [Yy]* ) kill -9 "$pid";;
+    #     [Nn]* ) exit;;
+    #     * ) echo "not valid input";;
+    # esac
+fi

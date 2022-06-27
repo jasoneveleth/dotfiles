@@ -1,0 +1,213 @@
+html{font-family: "Times New Roman", Times, serif;}
+
+.number{ align-self: stretch;text-align: center;line-height:70px;}
+.name { font-weight:bold;postiion:absolute;top:0; bold;text-align: left; align-self: stretch;padding-top:20px;}
+.artist{text-align:left;color:lightgrey;}
+.album{text-align: left;word-break: break-all;padding-top:26px;;color:lightgrey;}
+.date{text-align: left;word-break: break-all;padding-top:26px;;color:lightgrey;}
+.albumArt{padding-top:20px;margin-left: auto; 
+margin-right: 10px;align-self:stretch;}
+
+.time{text-align: center;line-height:70px;}
+
+.title{position:relative;}
+.Titletitle{position:absolute;bottom:0;line-height:70px;}
+.Titlealbum{text-align: left;word-break: break-all;line-height:70px;color:lightgrey;}
+.audio {width: 100%; height:40px; bottom:0; background-color:#16191b; align-self:stretch;}
+.downloadImg{padding-top:10px;}
+.download {position:relative; align-self: stretch;word-break: break-all;}
+
+.download:hover {
+	box-shadow: 0 2px 4px 0 white;
+	transition: .1s;
+}
+
+.song:hover{
+	color:violet;
+	transition: .1s;
+}
+
+.skip{
+	background-color: #16191b;
+	width: 40px;
+	height: 40px;
+}
+
+.skip:hover{
+	box-shadow: 0 2px 4px 0 white;
+        transition: .1s;
+}
+
+.playerWrapper{
+	 background-color:#16191b;
+	 height:40px;
+	 display: grid;
+	 width:100%;
+	 position:fixed;
+	 bottom: 0;
+	 left:0;
+     	 grid-gap:0px;
+ 	 grid-template-columns: 40px minmax(25%, 100%) 40px;
+}
+
+.playlistWrapper{
+        width:100%;
+	height:200px;
+	position:relative;
+}
+
+.artWrapper{
+	display:inline-block;
+	width:200px;
+	height:200px;
+	padding-left: 45px;
+	float:left;
+	}
+
+.titleWrapper{
+	display:inline-block;
+	position: absolute;
+	bottom: -6px;
+	padding-bottom: 0px; 
+	font-size: 30px;
+	font-weight: bold;        
+	left: 295px;
+	}
+
+.violet{
+	color:violet;
+}
+
+.song{
+  //position:relative;
+  display: grid;
+  grid-template-columns: 5% 6% 30% 35% 14% 10%;
+  grid-row-gap: 0px;
+  //background-color: grey;
+  //background-color:#091923;
+  //font-family: "arial", Sans-serif;
+  height:50px;
+}
+
+.songTitle{
+  //position:relative;
+  display: grid;
+  grid-template-columns: 5% 6% 30% 35% 14% 10%;
+  grid-row-gap: 0px;
+  //background-color: grey;
+  color: lightgrey;
+  //background-color:#091923;
+  //font-family: "arial", Sans-serif;
+  //height:50px;
+}
+
+.songs{
+  margin-left:10%;
+  margin-right:10%;
+  display: grid;
+  grid-template-columns: 95% 5%;
+  //grid-row-gap: 1px;
+  //background-color: grey;
+  //background-color:#091923;
+  //font-family: "arial", Sans-serif;
+}
+
+.horizonalLine{
+	width:20%;
+	height:1px;
+}
+
+.align{
+	margin-left:10%;
+	float:inline-block;
+}
+
+@media only screen and (max-width: 600px) {	
+	.align {
+	   margin-right: auto;
+	   margin-left: auto
+	}
+	.songs{
+           margin-right: auto;
+	   margin-left: auto;
+    	   width:100%;
+	   grid-gap:25px;
+	   grid-template-columns: 90% 10%;
+	}
+	.playlistWrapper{
+	   width:100%;
+	   height:300px;
+	   position:relative;
+	}
+
+	.artWrapper{
+           width:200px;
+           height:200px;
+	   padding-left: 25%;
+           float:left;
+	}
+
+	.titleWrapper{
+           display:inline-block;
+           position: absolute;
+           bottom: 0px;
+	   padding-bottom: 0px; 
+	   font-size: 30px;
+           font-weight: bold;        
+	   left: 25%;
+	}
+	.albumArt{
+	display:none;
+	}
+	.cover{
+	width:100%;
+	height:100%;overflow: hidden;
+	}
+	.date{
+	display:none;
+	}
+	.songTitle{
+	  grid-template-columns: 5% 6% 40% 34% 15%;
+	}
+	.song{
+	  grid-template-columns: 5% 6% 40% 34% 15%;
+	}
+}
+/*usage
+<div class="songs">
+
+<div class="title">gggggggggggggggggggggggggggggggggggggggggggggggg</div>	
+	<div class="audio">
+		<audio controls>
+  			<source src="horse.mp3" type="audio/mpeg">
+		</audio>
+ 	</div>  
+<div class="download">1234</div>
+
+<div class="title">gggggggggggggggggggggggggggggggggggggggggggggggg</div>	
+	<div class="audio">
+		<audio controls>
+  			<source src="horse.mp3" type="audio/mpeg">
+		</audio>
+ 	</div>  
+<div class="download">1234</div>
+
+<div class="title">gggggggggggggggggggggggggggggggggggggggggggggggg</div>	
+	<div class="audio">
+		<audio controls>
+  			<source src="horse.mp3" type="audio/mpeg">
+		</audio>
+ 	</div>  
+<div class="download">1234</div>
+
+<div class="title">gggggggggggggggggggggggggggggggggggggggggggggggg</div>	
+	<div class="audio">
+		<audio controls>
+  			<source src="horse.mp3" type="audio/mpeg">
+		</audio>
+ 	</div>  
+<div class="download">1234</div>
+
+
+<div>
+*/

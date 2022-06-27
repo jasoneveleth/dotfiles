@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# one line of help message from file
+
+filetype=$(file -b --mime-type "$1" | sed 's|/.*||')
+filename="\`${1##*/}\`"
+if test "$filetype" = "text"; then
+    if test -x "$1"; then
+        tail -n +3 "$1" | head -n 1 | sed -E 's/^..?//'
+    else
+        printf "file %s is normal text\n" "$filename" && exit 1
+    fi
+elif test "$filetype" = "application"; then
+    printf "file %s is binary\n" "$filename" && exit 1
+else
+    printf "file %s is not found\n" "$filename" && exit 1
+fi

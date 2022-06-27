@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# list all system include directories
+
+gcc -x c -v -E /dev/null

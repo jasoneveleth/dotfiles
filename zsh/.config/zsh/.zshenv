@@ -7,30 +7,23 @@ export HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
-export SD_ROOT="$HOME/.root/dev/unix"
+export SD_ROOT="$HOME/dotfiles/bin/.local/bin"
 export LOCAL_BIN="$HOME/.local/bin"
 
-export BASEPATH="${BASEPATH:-$PATH}"
-PATH="$BASEPATH"
-PATH="/usr/local/bin:$PATH"
-PATH="$LOCAL_BIN:$PATH"
-if [ "$(uname)" = "Darwin" ]; then # on apple
-    PATH="$SD_ROOT:$PATH"
-    PATH="$PATH:/Library/TeX/texbin"
-    PATH="$PATH:/usr/local/opt/llvm/bin/"
-    PATH="$PATH:/Applications/Racket v8.2/bin"
-    PATH="$PATH:/usr/local/opt/openjdk/bin"
-    PATH="$PATH:$HOME/.elan/bin"
-    if [[ `uname -m` == 'arm64' ]]; then
-        PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}"
-        MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:"
-        INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}"
-        export HOMEBREW_PREFIX="/opt/homebrew";
-        export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
-        export HOMEBREW_REPOSITORY="/opt/homebrew";
-    fi
+if [ "$(uname)" = "Darwin" ]; then
+    ON_A_MAC=true
 fi
-export PATH="$PATH:."
+if [ `uname -m` = 'arm64' ]; then
+    HAVE_M1=true
+fi
+
+if [[ "$HAVE_M1" = true ]]; then
+    MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:"
+    INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}"
+    export HOMEBREW_PREFIX="/opt/homebrew";
+    export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
+    export HOMEBREW_REPOSITORY="/opt/homebrew";
+fi
 
 export ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
 
@@ -52,6 +45,8 @@ export GEM_HOME="$XDG_CONFIG_HOME/gem/ruby/2.7.0"
 export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
 export JUMP_HOME="$XDG_CONFIG_HOME/jump"
 export KERAS_HOME="$XDG_CONFIG_HOME"/keras
+export CARGO_HOME="$HOME/.local/share/cargo"
+export RUSTUP_HOME="$HOME/.local/share/rustup"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
 
 if [ "$(uname)" = 'Darwin' ]; then
@@ -74,7 +69,7 @@ export NNN_BMS='o:~/notes;c:~/.config;v:~/.config/nvim;1:~/cs1951X/code/src;2:~/
 export NNN_PLUG='n:-!fzfnotes*;v:-!nvim*;'
 export NNN_COLORS="4512"
 export PAGER="bat"
-[ "$EDITOR" = "" ] && export EDITOR="nvim"
+[ "$EDITOR" = "" ] && export EDITOR="nvim --listen /tmp/nvim.sock"
 export SONG="$HOME/.root/media/audio/Staff Credits 2 - Mario Kart Wii.mp3"
 export VISUAL="$EDITOR"
 export JOURNAL="$HOME/.root/personal/journal.md"
@@ -83,8 +78,33 @@ export EXA_COLORS="*.pdf=35:*.wav=36:*.png=35:*.c=01:*.py=01"
 
 export CPATH="$HOME/dev/c/include/"
 
-if [[ `uname -m` == 'arm64' ]]; then
+if [[ "$HAVE_M1" = true ]]; then
     export JULIA_LOAD_PATH="~/.config/julia/environments/nvim-lspconfig:$JULIA_LOAD_PATH"
+    export USING_CONDA=1
 fi
+
+# ======= PATH
+front_path=()
+front_path+=("$CARGO_HOME/bin")
+front_path+=("$LOCAL_BIN")
+front_path+=("$SD_ROOT")
+if [[ "$HAVE_M1" = true ]]; then
+    front_path+=("/opt/homebrew/bin:/opt/homebrew/sbin")
+fi
+front_path+=("/usr/local/bin")
+
+if [ "$ON_A_MAC" = true ]; then # on apple
+    path+=("/Library/TeX/texbin")
+    path+=("/usr/local/opt/llvm/bin/")
+    path+=("/Applications/Racket v8.2/bin")
+    path+=("/usr/local/opt/openjdk/bin")
+    path+=("$HOME/.elan/bin")
+fi
+path=($front_path $path)
+path+=(".")
+
+# remove duplicates
+typeset -U path
+# ======= PATH
 
 setopt no_global_rcs

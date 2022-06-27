@@ -1,0 +1,17 @@
+#!/bin/zsh
+
+# reinstall neovim in ~ and clean up
+
+cd ~
+/bin/rm -r neovim
+git clone https://github.com/neovim/neovim
+cd neovim
+# brew install automake
+if [ -z "${VAR-unset}" ]
+    make CMAKE_BUILD_TYPE=Release
+else
+    make CMAKE_BUILD_TYPE=Release CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOMEBREW_PREFIX"
+fi
+make install
+cd ~
+/bin/rm -r neovim

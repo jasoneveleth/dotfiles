@@ -35,11 +35,11 @@ if !has('nvim')
     set ttimeoutlen=50
     set ttyfast
     set viewoptions=unix,slash
-    set undodir=~/.local/share/nvim/undo
     set viminfo-=!
     set wildmenu
     set wildoptions=pum,tagfile
     nnoremap Y y$
+    nnoremap Q @q
 endif
 
 set shortmess=xtToOFc
@@ -57,7 +57,7 @@ set clipboard=unnamed,unnamedplus
 set number
 set relativenumber
 set undofile
-set undodir=$HOME/.local/share/nvim/undo//
+set undodir=$HOME/.local/state/nvim/undo//
 set spellfile=$HOME/.local/share/nvim/en.utf-8.add
 set path=.,**
 set list
@@ -85,6 +85,12 @@ if !exists("loaded_colorscheme")
 endif
 let g:loaded_colorscheme = 1
 
+" yank a tex formula (with $'s), execute this macro (depends on gdefault for :s)
+let @t = " jep:%joinIecho lv$S'A | itex:s/\\\\/\\\\\\\\/yy wj"
+
+" add vi folder to path
+let $PATH .= ':' . $HOME . '/.local/bin/vi/'
+
 let g:mapleader = ' '
 nnoremap <leader> <nop>
 nnoremap <expr> k v:count == 0 ? 'gk' : 'm`' . v:count . 'k'
@@ -92,7 +98,6 @@ nnoremap <expr> j v:count == 0 ? 'gj' : 'm`' . v:count . 'j'
 nnoremap <c-j> :cnext<cr>
 nnoremap <c-k> :cprevious<cr>
 nnoremap <cr> :update<cr>
-nnoremap Q @q
 nnoremap U <c-r>
 nnoremap ga <c-^>
 nnoremap g~ :cd ~<cr>
@@ -111,7 +116,7 @@ inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <c-;> <end>;
 inoremap <c-c> <esc>
-cnoremap <expr> %% expand('%:h').'/'
+" cnoremap <expr> %% expand('%:h').'/'
 nnoremap <leader>s *``cgn
 nnoremap <leader>S #``cgN
 xnoremap <leader>i :'<,'>normal ^i
@@ -124,7 +129,7 @@ nnoremap <leader>wm <C-w><bar><C-w>_
 nnoremap <leader>we <C-w>=
 nnoremap <leader>wf :close<cr>
 nnoremap <leader>wk :Sayonara!<cr>
-nnoremap <leader>wj :Sayonara!<cr>:close<cr>
+nnoremap <leader>wj :Sayonara!<cr><c-\><c-n>:close<cr>
 
 noremap <s-up>    <C-W>+
 noremap <s-down>  <C-W>-
@@ -137,21 +142,23 @@ nnoremap <silent> gr :lua vim.lsp.buf.rename()<cr>
 nnoremap <silent> gR :lua vim.lsp.buf.references()<cr>
 nnoremap <silent> gx :lua vim.lsp.diagnostic.goto_next()<cr>
 nnoremap <silent> gX :lua vim.lsp.diagnostic.goto_prev()<cr> 
+inoremap <silent> <c-k> <c-o>:lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent> <leader>gq :lua vim.lsp.buf.formatting()<CR>
 nnoremap <silent> K :lua vim.lsp.buf.hover()<cr>
 nnoremap <silent> g] :lua vim.lsp.buf.implementation()<cr>
 " nnoremap <silent> gDt :lua vim.lsp.buf.type_definition()<cr>
-" inoremap <silent> <c-k> <c-o>:lua vim.lsp.buf.signature_help()<cr>
 inoremap <silent><expr> <c-l> compe#complete()
 
 nnoremap <silent> <leader>u :UndotreeToggle<cr>
-nnoremap <c-p> <cmd>lua require('telescope.builtin').find_files({follow = "true"})<cr>
-nnoremap <c-g> <cmd>Telescope live_grep<cr>
-nnoremap <c-b> <cmd>Telescope buffers<cr>
+" nnoremap <c-p> <cmd>lua require('telescope.builtin').find_files({follow = "true"})<cr>
+nnoremap <c-p> <cmd>Files<cr>
+nnoremap <c-g> <cmd>RgRegex<cr>
+nnoremap <c-b> <cmd>Buffers<cr>
 nnoremap <silent> <leader>e :exec 'e ~/.config/nvim/after/ftplugin/' . &ft . '.vim'<cr>
 nnoremap <silent><expr> <leader>o filter(range(1, winnr('$')), 'getwinvar(v:val, "&ft") == "qf"')==[] ? ":cope<cr>" : ":ccl<cr>"
 
-inoremap <c-k> <c-a>
+inoremap <a-;> <esc>m`A;<esc>``a
+inoremap <c-s> <c-a>
 noremap! <c-a> <home>
 noremap! <c-e> <end>
 
@@ -281,6 +288,7 @@ command! Rename call myfun#RenameFile()
 command! Quickfix call myfun#OpenQuickfixList()
 command! BufOnly silent! exec "%bd|e#|bd#"
 command! Statusline silent! exec "unlet g:loaded_personal_statusline|so ~/.config/nvim/plugin/statusline.vim"
+command! NoUltiSnip silent! inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>" | inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 command! Commands echo "
     \ ConflictHighlights -- highlight git conflicts\n
     \ RgRegex    -- use rust regex rather than fuzzy finding\n
@@ -290,6 +298,7 @@ command! Commands echo "
     \ Quickfix   -- for file /tmp/quickfix\n
     \ BufOnly    -- delete all other buffers, and keep current one\n
     \ Statusline -- resource the statusline to add colors again\n
+    \ NoUltiSnip -- delete ultisnip tab binding
     \ "
 
 augroup ryan
@@ -344,6 +353,11 @@ augroup END
 " let g:neovide_remember_window_size = v:true
 let g:neovide_input_use_logo = v:true
 
+if $TERM ==# 'xterm-kitty'
+  autocmd UIEnter * if v:event.chan ==# 0 | call chansend(v:stderr, "\x1b[>1u") | endif
+  autocmd UILeave * if v:event.chan ==# 0 | call chansend(v:stderr, "\x1b[<1u") | endif
+endif
+
 " disable some vim plugins
 let g:loaded_netrwPlugin=1
 let g:loaded_netrw = 1
@@ -356,9 +370,14 @@ let g:loaded_zip=1
 
 let g:loaded_python_provider = 1
 let g:python_host_skip_check = 1
-let g:python_host_prog = '/usr/bin/python'
 let g:python3_host_skip_check = 1
-let g:python3_host_prog = '/usr/bin/python3'
+if !empty($CONDA_PREFIX)
+  let g:python_host_prog = $CONDA_PREFIX . '/bin/python'
+  let g:python3_host_prog = $CONDA_PREFIX . '/bin/python'
+else
+  let g:python_host_prog = '/usr/bin/python'
+  let g:python3_host_prog = '/usr/bin/python3'
+endif
 
 let g:netrw_dirhistmax = 0
 let g:tex_flavor = 'latex'

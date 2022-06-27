@@ -1,0 +1,13 @@
+#!/bin/zsh
+
+# toggle visibility of alacritty
+#
+# usage: vis 0.5
+
+# for some reason there is a 'unescaped newline' for sed
+# that's why we use zsh
+string='s/background_opacity:.*$/background_opacity: '
+string+=$1
+string+='/'
+sed -i '' -e $string $XDG_CONFIG_HOME/alacritty/alacritty.yml
+

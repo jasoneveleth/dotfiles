@@ -3,6 +3,14 @@ if exists("loaded_plugin_settings")
 endif
 let g:loaded_plugin_settings = 1
 
+" Bullets.vim
+let g:bullets_enabled_file_types = [
+    \ 'markdown',
+    \ 'text',
+    \ 'gitcommit',
+    \ 'scratch',
+    \ 'asciidoc'
+    \]
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'

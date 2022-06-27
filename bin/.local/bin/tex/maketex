@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# compile using pdflatex
+#
+# if latexmk exists, use it and grep for vim markers
+# otherwise use pdflatex, and make a ./text-stuff folder
+
+if ! command -v "latexmk" > /dev/null 2>&1; then
+printf "pdflatex\n"
+file=${1:-main}
+
+mkdir -p ./tex-stuff
+flags=""
+flags="${flags} -file-line-error" 
+flags="${flags} -output-directory=./tex-stuff"
+flags="${flags} -interaction=nonstopmode"
+pdflatex $flags "$file" | grep -E "(Error)|(.*:[0-9]+: )"
+mv ./tex-stuff/"${file%.tex}.pdf" .
+exit
+fi
+
+# printf "latexmk\n"
+latexmk -pdf -file-line-error -interaction=nonstopmode ${1:-main.tex} 2>&1 | egrep '^.*/.*.tex:[0-9]+: '

@@ -7,7 +7,7 @@ nnoremap ]<space> o<esc>k
 nnoremap [<space> O<esc>j
 
 " toggle spell
-nnoremap yos :set invspell <bar> set spell?<cr>
+nnoremap yos :setl invspell <bar> set spell?<cr>
 
 " colo dim
 nmap <silent> yoc <Plug>(ToggleHighlight)
@@ -27,7 +27,7 @@ nmap <silent> yol <Plug>(ToggleWarning)
 nnoremap <leader><leader> :set invrelativenumber<cr>
 
 " toggle wrap
-nnoremap yow :set invwrap<cr>
+nnoremap yow :setl invwrap<cr>
 
 " toggle lazyredraw
 nnoremap yor :set invlazyredraw<cr>

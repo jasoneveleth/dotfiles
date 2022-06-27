@@ -17,11 +17,13 @@ xnoremap <buffer> ax :<C-u>normal va`<CR>
 onoremap <buffer> ax :<C-u>normal va`<CR>
 
 inoremap <buffer> ;d <esc>:let @s=system('date "+%Y-%m-%d"')<cr>a<c-r>s<bs>
-inoremap <buffer> ;4 $$$$<left><left>
+inoremap <buffer> ;a \alpha
+inoremap <buffer> ;b \beta
+inoremap <buffer> ;s \sigma
 
 " for checklists
 nnoremap <buffer> <leader>n :g/\[ \]/<cr>
-nmap <buffer><expr> <c-g> ToggleChar()
+nmap <buffer><expr> <c-f> ToggleChar()
 
 " for checklists
 function! ToggleChar() abort
@@ -32,5 +34,33 @@ function! ToggleChar() abort
         return '0f[lrxj'
     else
         echoerr 'not a valid line: `' . line . '`'
+    endif
+endfunction
+
+let b:delimitMate_quotes = "\" ' $"
+let b:delimitMate_smart_matchpairs='^\%(\w\|\!\|[£]\|[^[:space:][:punct:]]\)'
+
+
+
+packadd ultisnips
+
+imap <tab> <c-r>=Tab(1)<cr>
+imap <s-tab> <c-r>=Tab(0)<cr>
+
+function! Tab(tab) abort
+    if a:tab
+        if UltiSnips#CanJumpForwards() || UltiSnips#CanExpandSnippet()
+            return "\<c-r>=Ultisnips#ExpandSnippetOrJump()\<cr>"
+        elseif pumvisible()
+            return "\<c-n>"
+        endif
+        return "\<tab>"
+    else
+        if UltiSnips#CanJumpBackwards() || UltiSnips#CanExpandSnippet()
+            return "\<c-r>=Ultisnips#ExpandSnippetOrJump()\<cr>"
+        elseif pumvisible()
+            return "\<c-p>"
+        endif
+        return "\<s-tab>"
     endif
 endfunction

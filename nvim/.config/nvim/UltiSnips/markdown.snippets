@@ -1,0 +1,106 @@
+# global !p
+# def math():
+# 	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
+
+# def comment(): 
+# 	return vim.eval('vimtex#syntax#in_comment()') == '1'
+
+# def env(name):
+# 	[x,y] = vim.eval("vimtex#env#is_inside('" + name + "')") 
+# 	return x != '0' and y != '0'
+
+# endglobal
+
+snippet mk "Math" wA
+$${1}$`!p
+if t[2] and t[2][0] not in [',', '.', '?', '-', ' ', ')']:
+	snip.rv = ' '
+else:
+	snip.rv = ''
+`$2
+endsnippet
+
+snippet xiso "isomorphic" wA
+\xrightarrow{\sim} 
+endsnippet
+
+snippet dm "Math" wA
+$$${1:${VISUAL}}.$$ $0
+endsnippet
+
+# context "math()"
+snippet EE "geq" iA
+\exists 
+endsnippet
+
+# context "math()"
+snippet AA "forall" iA
+\forall 
+endsnippet
+
+# context "math()"
+snippet !> "mapsto" iA
+\mapsto 
+endsnippet
+
+priority 100
+# context "math()"
+snippet -> "to" iA
+\to 
+endsnippet
+
+# context "math()"
+snippet invs "inverse" iA
+^{-1}
+endsnippet
+
+# context "math()"
+snippet set "set" wA
+ \\{$1\\} $0
+endsnippet
+
+# context "math()"
+snippet inn "in " iA
+\in 
+endsnippet
+
+# context "math()"
+snippet NN "n" iA
+\mathbb{N}
+endsnippet
+
+snippet RR "real" iA
+\mathbb{R}
+endsnippet
+
+snippet QQ "Q" iA
+\mathbb{Q}
+endsnippet
+
+snippet ZZ "Z" iA
+\mathbb{Z}
+endsnippet
+
+snippet CC "C" iA
+\mathbb{C}
+endsnippet
+
+# context "math()"
+# snippet tt "text" iA
+# \text{$1}$0
+# endsnippet
+
+# context "math()"
+snippet sr "^2" iA
+^2
+endsnippet
+
+# context "math()"
+snippet cb "^3" iA
+^3
+endsnippet
+
+# context "math()"
+snippet td "to the ... power" iA
+^{$1}$0
+endsnippet

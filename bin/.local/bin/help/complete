@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# line of zsh-completetion descriptions for a directory
+
+dir="$1"
+
+files="$(ls -1 $dir)"
+echo "$files" | while read file; do
+    printf "'%s:%s' " "${file}" "$(sd help line $dir/$file)"
+done

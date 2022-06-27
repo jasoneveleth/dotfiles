@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# block comment help message from file
+
+tail -n +3 "$1" | awk '/^#/ { print $0 } ! /^#/ { exit }' | sed -E 's/^..?//'

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# turn pure latex code into an svg -- NOT WORKING
+
+document='\\documentclass{article}\\begin{document}\\['
+document="${document}$(cat -)"
+document="${document}\\]\\end{document}"
+
+echo "${document}" | tee /tmp/tmp.tex
+
+latex /tmp/tmp.tex
+

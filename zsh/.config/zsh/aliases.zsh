@@ -17,11 +17,14 @@ alias ..='cd ..'
 alias ...='cd ../..'
 
 alias nist='date >> $NIST_JOURNAL; $EDITOR -c "norm! Go" $NIST_JOURNAL'
-# alias act='[ -e ./.env/bin/activate ] && [ -z ${VIRTUAL_ENV+x} ] && echo sourced && . ./.env/bin/activate'
-alias d='deactivate'
-alias venv='source ~/.root/dev/python/venv/bin/activate'
-alias cs="source ~/cs1410/cs1410_env/bin/activate"
+proj() {
+    TMPDIR=`sd misc proj "$@"`
+    cd "$TMPDIR"
+}
+alias n=' eval "$(zsh_history_next)"'
+alias notes='source $(which -p notes)'
 alias oni="oni2"
+alias maple="/Library/Frameworks/Maple.framework/Versions/2020/bin/maple"
 alias ql="qlmanage -p 2>/dev/null"
 alias sc="shellcheck"
 alias less="bat"
@@ -41,7 +44,7 @@ alias idot="dot -Tsvg \
     -Efontname=Hack \
     -Ecolor=#abb2bf | isvg"
 alias dvisvgm-pipe='dvisvgm --verbosity=0 --stdin --stdout --no-fonts --libgs=\"/opt/homebrew/lib/libgs.dylib\" 2> /dev/null'
-alias itex="(cat $HOME/.local/share/misc/header.tex; cat; echo '\\\\end{document}') | latex-pipe | idvi"
+alias itex="(cat $HOME/.local/share/misc/header.tex; cat; echo '\\\\end{document}') | sd tex latex-pipe | idvi"
 alias idvi="dvisvgm-pipe | \
             sed \"s/<path /& fill='#abb2bf' /g\" | \
             rsvg-convert -d 300 -p 300 | \
@@ -58,8 +61,6 @@ alias mr='make run'
 alias mt='make test'
 alias mct='make clean test'
 alias mcr='make clean run'
-
-alias vi='printf "this is not the command you are looking for. use: \`nvr\`\n"; false'
 
 #======================= GIT ===============================#
 alias gs="git status"

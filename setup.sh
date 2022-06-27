@@ -7,17 +7,25 @@ mkdir -p ~/.local/bin
 mkdir -p ~/.local/share/{zsh,misc}
 mkdir -p ~/.local/share/misc
 
+(cd src && make)
+
+dirs="$(ls -d */ | tr '\n' ' ')"
+# denylist for folders to stow
+dirs="${dirs//src /}"
+
 # -v verbose
 # -S stow
 # -t ~ target home directory
 # * means all
-stow -vS *
+stow -vS $dirs
 
 mkdir -p ~/.config/nvim/pack/minpac/opt/minpac
 git clone https://github.com/k-takata/minpac.git ~/.config/nvim/pack/minpac/opt/minpac
 
+brew tap homebrew/cask-fonts 
 brew install bat cask cloc coreutils diff-so-fancy exa fd ffmpeg fzf graphviz htop imagemagick ipython libsvg moreutils mosh neofetch neovim nnn pandoc pv ripgrep shellcheck speedtest-cli stow tmux trash tree bluetoothconnector dvipng
 brew install --cask alacritty alfred appcleaner basictex discord fantastical flux font-hack gimp julia keycastr kitty minecraft osxfuse qlmarkdown qlstephen skim spotify tunnelblick zoom tinkertools imageoptim stats
+brew install poppler # this gets pdftotext
 # fonts: https://corgibytes.com/blog/2020/01/29/install-fonts-on-your-mac-from-the-command-line-with-homebrew/
 # brew install mailplane
 # brew tap zegervdv/zathura
@@ -45,7 +53,30 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 defaults write -g KeyRepeat -int 1
 defaults write com.apple.screencapture "include-date" 0
 defaults write com.apple.screencapture name "ss"
+defaults write com.apple.screencapture location ~/Downloads
+# stop music from responding to buttons
 killall SystemUIServer
+
+# https://github.com/c-stephens/MacOS-Dotfiles/blob/master/macos/macos.sh
+# # Menu bar: hide the Time Machine, Volume, and User icons
+# for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
+# 	defaults write "${domain}" dontAutoLoad -array \
+# 		"/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
+# 		"/System/Library/CoreServices/Menu Extras/Volume.menu" \
+# 		"/System/Library/CoreServices/Menu Extras/User.menu"
+# done
+# defaults write com.apple.systemuiserver menuExtras -array \
+# 	"/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
+# 	"/System/Library/CoreServices/Menu Extras/AirPort.menu" \
+# 	"/System/Library/CoreServices/Menu Extras/Battery.menu" \
+# 	"/System/Library/CoreServices/Menu Extras/Clock.menu"
+# # Increase window resize speed for Cocoa applications
+# defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
+# # Use scroll gesture with the Ctrl (^) modifier key to zoom
+# defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
+# defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
+# # Follow the keyboard focus while zoomed in
+# defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
 
 # sudo tlmgr install stackengine titlesec titling siunitx latexmk biber xypic enumitem footmisc courier lastpage standalone doublestroke preview relsize calligra nopageno
 # manim

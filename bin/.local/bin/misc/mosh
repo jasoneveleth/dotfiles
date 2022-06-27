@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# wrapper around mosh for flags
+#
+# if arg matches b|brown then use --no-init and
+# --experimental-remote-ip=remote flags
+
+if ! [ -x /usr/local/bin/mosh ]; then
+    exit 1
+fi
+
+case $1 in
+    b|brown)
+        /usr/local/bin/mosh --no-init --experimental-remote-ip=remote $@
+        ;;
+    *)
+        /usr/local/bin/mosh $@
+        ;;
+esac

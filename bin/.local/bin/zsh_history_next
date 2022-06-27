@@ -1,0 +1,57 @@
+#!/usr/bin/env python3
+
+# replay zsh history
+#
+# Takes the most recent command and searches through zsh history to find the
+# last instance of it, then runs the command that came after it. 
+#
+# USAGE:
+#       $ zsh_history_next
+#
+# Note that if you don't want the `zsh_history_next` call itself to be added to
+# history, put a space before it (with `setopt hist_ignore_space` set).
+
+
+import os
+
+if "HISTFILE" in os.environ:
+    histfile = os.environ["HISTFILE"]
+elif os.path.exists("~/.config/zsh/.zsh_history"):
+    histfile = "~/.config/zsh/.zsh_history"
+elif "ZDOTDIR" in os.environ: 
+    file1 = os.path.join(os.environ["ZDOTDIR"], ".zhistory")
+    file2 = os.path.join(os.environ["ZDOTDIR"], ".zsh_history")
+    if os.path.exists(file1):
+        histfile = file1
+    elif os.path.exists(file2):
+        histfile = file2
+    else:
+        raise Exception("Can't file $HISTFILE or .zsh_history")
+elif os.path.exists("~/.zhistory"):
+    histfile = "~/.zhistory"
+elif os.path.exists("~/.zsh_history"):
+    histfile = "~/.zsh_history"
+else:
+    raise Exception("Can't file $HISTFILE or .zsh_history")
+
+commands = []
+with open(histfile) as f:
+    for line in f:
+        commands.append(line)
+
+# the most recent zsh command (so it's at the back of the list)
+recent_command = commands[-1]
+
+# since the list is reversed, the previous element was the next command
+previous = commands[-1]
+for i, c in enumerate(reversed(commands[:-1])):
+    if c == recent_command:
+        with open(histfile, "a") as f:
+            f.write(previous)
+        print(previous)
+        exit(0)
+    previous = c
+
+print("echo no match found")
+exit(1)
+

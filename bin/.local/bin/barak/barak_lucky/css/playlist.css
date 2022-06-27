@@ -1,0 +1,80 @@
+html{
+	background-color:#091923;
+	color:white;
+	font-family: "Times New Roman", Times, serif;
+background: rgb(9,12,35);
+background: linear-gradient(180deg, rgba(9,12,35,0.8239496482186625) 0%, rgba(9,25,35,1) 48%);
+height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.playlists{
+	justify-content: center;
+	margin-top:20px;
+	margin-left:40px;
+	margin-right:40px;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 200px);
+	//grid-template-rows: repeat(auto-fill, 200px);
+	overflow: hide;
+	grid-gap: 100px;
+	//background-color: coral;
+
+}
+
+.coverTitle{
+	display: grid;
+	grid-template-rows: 200px;
+	word-break: break-all;
+}
+
+.playlist:hover {
+  box-shadow: 0 4px 8px 0 white;
+  background-color:grey;
+  transition: .1s;
+}
+
+.playlist {
+	display: grid;
+	width: 200px; 
+	grid-template-columns: 100px 100px;
+	overflow: hide;
+	-webkit-user-select: none;
+	  	-ms-user-select: none;
+	  	user-select: none;
+}
+
+.playlist > a {
+	height: 100px;
+	-webkit-user-select: none;
+		-ms-user-select: none;
+ 	 	user-select: none;
+	//margin-left:auto;
+	//margin-right:auto;
+}
+
+/* usage
+
+<div class="playlists">
+
+<div class="playlist">
+  <a style="background-image:url('https://www.michigandaily.com/sites/default/files/styles/large/public/180411/Yeezus%20-%20Def%20Jam%20Recordings.jpg?itok=9lpE97_2');background-size:cover;"></a>
+  <a style="background-image:url('https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg');background-size:cover;"></a>
+  <a style="background-image:url('https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg');background-size:cover;"></a> 
+  <a style="background-image:url('https://www.michigandaily.com/sites/default/files/styles/large/public/180411/Yeezus%20-%20Def%20Jam%20Recordings.jpg?itok=9lpE97_2');background-size:cover;"></a>
+    <div style="text-align:center;width:100%;">title</div>
+</div>
+
+
+<div class="playlist">
+  <a style="background-image:url('https://www.michigandaily.com/sites/default/files/styles/large/public/180411/Yeezus%20-%20Def%20Jam%20Recordings.jpg?itok=9lpE97_2');background-size:cover;"></a>
+  <a style="background-image:url('https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg');background-size:cover;"></a>
+  <a style="background-image:url('https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg');background-size:cover;"></a> 
+  <a style="background-image:url('https://www.michigandaily.com/sites/default/files/styles/large/public/180411/Yeezus%20-%20Def%20Jam%20Recordings.jpg?itok=9lpE97_2');background-size:cover;"></a>
+    <div style="text-align:center;width:100%;">title</div>
+</div>
+
+</div>
+*/

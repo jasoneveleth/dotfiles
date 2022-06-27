@@ -10,11 +10,20 @@ require'lspconfig'.julials.setup{
     filetypes = { "julia" },
     single_file_support = true,
 }
+
+
+
+
+pyright = {}
+pyright.settings = {}
+pyright.settings.python = {}
+pyright.settings.python.pythonPath = "/opt/homebrew/Caskroom/miniforge/base/envs/tensorflow/bin/python"
+
+require'lspconfig'.pyright.setup(pyright)
 EOF
 " doesn't work becuase I don't install in defualt dir ~/.julia/environments/
 " lua require'lspconfig'.julials.setup{}
 lua require'lspconfig'.clangd.setup{}
-lua require'lspconfig'.pyright.setup{}
 lua require'lspconfig'.tsserver.setup{}
 lua require'lspconfig'.racket_langserver.setup{}
 " lua <<EOF

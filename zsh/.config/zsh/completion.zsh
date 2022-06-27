@@ -1,12 +1,17 @@
-autoload -Uz compinit
-
-_comp_options+=(globdots) # include hidden files
-
 # https://felipec.wordpress.com/2013/07/31/how-i-fixed-git-zsh-completion/
 fpath=($HOME/.config/zsh/fpath $fpath)
 zstyle ':completion:*:*:git:*' script "$HOME/.config/zsh/"git-completion.zsh
 
-## COMPDUMP ## ================================
+# homebrew https://docs.brew.sh/Shell-Completion
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+fi
+
+autoload -Uz compinit
+_comp_options+=(globdots) # include hidden files
+
+## COMPDUMP & COMPINIT ## ================================
 
 compdumpfile="$HOME/.local/share/zsh/zcompdump"
 if ! [ -e "$compdumpfile" ]; then
@@ -36,6 +41,22 @@ unset compdumpfile refresh_compdump
 zstyle ':completion:*' menu select=long # only use menu if results go off the screen
 zstyle ':completion:*' expand prefix suffix # expand as much as possible
 zstyle ':completion:*' squeeze-slashes true # turn // -> /, rather than /*/
+
+# SSH Config File Completion
+h=()
+if [[ -r ~/.ssh/config ]]; then
+  h=($h ${${${(@M)${(f)"$(cat ~/.ssh/config)"}:#Host *}#Host }:#*[*?]*})
+fi
+if [[ $#h -gt 0 ]]; then
+  # hide users
+  # zstyle ':completion:*:ssh:*:users' hidden true
+  # zstyle ':completion::complete:ssh:argument-1:' !users
+  zstyle ':completion::complete:ssh:argument-1:' tag-order !users
+
+  # complete using hosts
+  zstyle ':completion:*:ssh:*' hosts $h
+  zstyle ':completion:*:slogin:*' hosts $h
+fi
 
 # TODO: check out if this is the same as comdump
 # zstyle ':completion:*' use-cache on

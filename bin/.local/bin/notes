@@ -1,15 +1,25 @@
-#!/bin/sh
+#!/bin/zsh
+
+# note app
+#
+# a while loop to edit notes using fzf to pick
+# quit with <esc>, ^C, ^D. Typing an unknown note
+# will make a new note, and any leading ' will be
+# erased (to prevent matching), and it will be editable
+# USAGE:
+#       notes [-c[o]]
+# ARGS:
+#       -c      contents of the files and file names
+#       -co     contents of files only
 
 if [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
-    printf "USAGE:\n"
-    printf "\tnotes [-c[o]]\n"
-    printf "ARGS:\n"
-    printf "\t-c\tcontents of the files and file names\n"
-    printf "\t-co\tcontents of files only\n"
     exit
 fi
 
-cd $HOME/.root/notes 
+alias edit="$EDITOR"
+
+# -q quiet (zsh)
+pushd -q $HOME/.root/notes
 while : ; do
     if [ "$1" = "-c" ]; then
         # contents of files and file names
@@ -24,9 +34,21 @@ while : ; do
         break
     fi
     if [ -f "$file" ]; then
-        $EDITOR $file
+        # eval is needed incase EDITOR isn't a single word
+        eval "$EDITOR" "$file"
     else
-        touch "$file"
-        $EDITOR "$file"
+        # remove the leading ' character from the name (which you can use to make it skip all names)
+        if [ ${file:0:1} = "'" ]; then
+            filename="${file:1}"
+        else
+            filename="${file}"
+        fi
+        if vared -e -p "new note (^D to abort): " filename; then
+            touch "$filename"
+            eval "$EDITOR" "$filename"
+        fi
     fi
 done
+
+# -q quiet (zsh)
+popd -q

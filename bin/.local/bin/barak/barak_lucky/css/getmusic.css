@@ -1,0 +1,130 @@
+html{
+  	//background-color: #F8F8F8;
+	background-color:#091923;
+	  font-family: "Times New Roman", Times, serif;
+
+}
+
+.textareaFont::-webkit-input-placeholder {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.textareaFont:-ms-input-placeholder {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.textareaFont::-moz-placeholder {
+    font-family: "Times New Roman", Times, serif;
+}
+
+
+.main {
+  	padding-top: 16px;
+  	margin-top: 45px;
+  	//background-color: #F8F8F8;
+	background-color:#091923;	
+}
+
+.textarea {
+	  text-align: center;
+          position: center;
+}
+
+.album { 
+	grid-area: album; 
+	width: 75px;
+	height: 75px;
+	line-height: 75px; 
+	padding:2px;
+}
+
+.title { 
+	grid-area: title; 
+	margin:auto;
+	align-content: stretch;      
+}
+
+.prompt { 
+	grid-area: prompt;
+	padding-left:5px;
+	padding-bottom:4px;        
+}
+
+.percent { 
+	grid-area: percent;      
+}
+
+.search-container {
+	grid-area: search-container;
+	display: grid;
+	grid-gap: 0px;
+	grid-template-areas:
+	'album title title title title title'
+	'prompt prompt prompt prompt prompt percent';
+	justify-content: stretch;
+	background-color: #f1f1f1;
+}
+
+.searches {
+	margin-top:45px;
+	display: grid;
+	grid-template-areas: 'search-container';
+ 	grid-gap: 10px;
+
+}
+
+.search-container > div {
+}
+
+.card {
+	width: 350px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	transition: 0.3s;
+	border-radius: 5px;
+	overflow: hidden;
+	margin-left:auto;
+	margin-right:auto;
+
+}
+
+.card:hover {
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+@media only screen and (max-width: 600px) {	
+	.main { margin-top:0%;}
+}
+/*usage
+
+<div class="searches">
+
+<div class="card">
+<div class="search-container">
+  <a style="background-image:url('https://www.michigandaily.com/sites/default/files/styles/large/public/180411/Yeezus%20-%20Def%20Jam%20Recordings.jpg?itok=9lpE97_2');background-size:cover;" class="album"></a>
+  <div class="title">Hey ho lets go</div>  
+  <div class="prompt">prompt </div>
+  <div class="percent">percent</div>
+</div>
+</div>
+
+<div class="card">
+<div class="search-container">
+  <a style="background-image:url('https://www.michigandaily.com/sites/default/files/styles/large/public/180411/Yeezus%20-%20Def%20Jam%20Recordings.jpg?itok=9lpE97_2');background-size:cover;" class="album"></a>
+  <div class="title">Hey ho lets go</div>  
+  <div class="prompt">prompt </div>
+  <div class="percent">percent</div>
+</div>
+</div>
+
+<div class="card">
+<div class="search-container">
+  <a style="background-image:url('https://www.michigandaily.com/sites/default/files/styles/large/public/180411/Yeezus%20-%20Def%20Jam%20Recordings.jpg?itok=9lpE97_2');background-size:cover;" class="album"></a>
+  <div class="title">Hey ho lets go</div>  
+  <div class="prompt">prompt </div>
+  <div class="percent">percent</div>
+</div>
+</div>
+
+</div>
+
+*/

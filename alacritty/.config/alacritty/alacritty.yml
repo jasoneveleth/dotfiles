@@ -10,7 +10,7 @@ window:
 scrolling:
   history: 10000
   multiplier: 1
-background_opacity: 1
+# background_opacity: 1
 
 font:
   normal:
@@ -22,7 +22,7 @@ font:
   italic:
     family: Hack
     style: Italic
-  size: 12.0
+  size: 14.0
   offset:
     x: 0
     y: 0

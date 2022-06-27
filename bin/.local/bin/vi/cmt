@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+
+# comment lines from input
+#
+# especially when used as a filter for vi or
+# neovim. example usage in neovim (normal mode):
+#       
+#       !}cmt
+#
+# this will comment to the bottom of the paragraph
+
+import sys
+
+argv = sys.argv
+prefix = "#" if len(argv)==1 else argv[1]
+
+for line in sys.stdin:
+    print(f'{prefix} {line}', end='')
+

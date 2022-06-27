@@ -1,5 +1,0 @@
-#!/bin/sh
-
-export EDITOR="nvr --remote-wait"
-export VISUAL="$EDITOR"
-nnn

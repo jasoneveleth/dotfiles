@@ -1,0 +1,76 @@
+#!/usr/bin/env bash
+
+# sd: [s]cript [d]irectory
+#
+# fancy boi
+# source: https://github.com/ianthehenry/sd
+
+run() {
+    local lcmd="$1"
+    local largs="$2"
+    local lfirst="${largs%% *}"
+    local lrest="${largs#* }"
+    if test "$lfirst" = "--help"; then
+        # print help file
+        if test -f "$lcmd.help"; then
+            cat "$lcmd.help"
+        fi
+        # file is not binary
+        if file "$lcmd" | grep -qE 'ASCII|UTF-8'; then
+            # print first block comment
+            tail -n +3 "$lcmd" | awk '/^#/ { print $0 } ! /^#/ { exit }' | sed -E 's/^..?//'
+        elif file "$lcmd" | grep -q 'executable'; then
+            exec "$lcmd" "$largs"
+        fi
+    elif test "$lfirst" = "--cat"; then
+        $PAGER "$lcmd"
+    elif test "$lfirst" = "--which"; then
+        exec echo "$lcmd"
+    elif test "$lfirst" = "--new"; then
+        touch "$lcmd"
+        chmod 755 "$lcmd"
+        echo '#!/bin/sh' >> "$lcmd"
+        echo '' >> "$lcmd"
+        echo '' >> "$lcmd"
+        exit
+    elif test "$lfirst" = "--edit"; then
+        exec $EDITOR "$lcmd"
+    else
+        exec "$lcmd" "$largs"
+    fi
+}
+
+if test -n "$SD_ROOT" && test -d "$SD_ROOT"; then
+    bin="$SD_ROOT"
+else
+    bin="$HOME/.local/bin"
+fi
+
+args="$@"
+
+# shortest glob match for stuff before ' *'
+first="${args%% *}"
+# longest glob match for stuff after '* '
+rest="${args#* }"
+
+second="${rest%% *}"
+sndrest="${rest#* }"
+
+
+# file is executable and a regular file
+if test -x "$bin/$first" && test -f "$bin/$first"; then
+    run "$bin/$first" "$rest"
+# file is executable and a regular file
+elif test -x "$bin/$first/$second" && test -f "$bin/$first/$second"; then
+    run "$bin/$first/$second" "$sndrest"
+# is a directory
+elif test -d "$bin/$first/$second"; then
+    run "$bin/$first/$second" "--help $sndrest"
+# is file and non executable
+elif test -f "$bin/$first/$second"; then
+    run "$bin/$first/$second" "--cat $sndrest"
+# we are doing --new
+elif test "${sndrest%% *}" = "--new"; then
+    mkdir -p "$bin/$first"
+    run "$bin/$first/$second" "$sndrest"
+fi
