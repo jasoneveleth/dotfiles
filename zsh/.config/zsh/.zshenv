@@ -54,6 +54,7 @@ if [ "$(uname)" = 'Darwin' ]; then
 fi
 
 export BIBINPUTS="$XDG_CONFIG_HOME/latex"  
+export NEOVIDE_MULTIGRID=1
 export BAT_THEME='TwoDark'
 export KEYTIMEOUT=1
 export JULIA_NUM_THREADS=8
@@ -87,7 +88,6 @@ fi
 front_path=()
 front_path+=("$CARGO_HOME/bin")
 front_path+=("$LOCAL_BIN")
-front_path+=("$SD_ROOT")
 if [[ "$HAVE_M1" = true ]]; then
     front_path+=("/opt/homebrew/bin:/opt/homebrew/sbin")
 fi

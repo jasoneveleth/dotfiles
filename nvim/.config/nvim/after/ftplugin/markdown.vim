@@ -37,7 +37,7 @@ function! ToggleChar() abort
     endif
 endfunction
 
-let b:delimitMate_quotes = "\" ' $"
+" let b:delimitMate_quotes = "\" ' $"
 let b:delimitMate_smart_matchpairs='^\%(\w\|\!\|[£]\|[^[:space:][:punct:]]\)'
 
 

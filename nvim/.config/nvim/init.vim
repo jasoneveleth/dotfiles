@@ -175,23 +175,6 @@ tnoremap <a-l> <c-\><c-n><c-w>l
 tnoremap <a-j> <c-\><c-n><c-w>j
 tnoremap <a-k> <c-\><c-n><c-w>k
 tnoremap <C-Space> <C-\><C-n>
-map ˙ <a-h>
-map ∆ <a-j>
-map ˚ <a-k>
-map ¬ <a-l>
-map! ˙ <a-h>
-map! ∆ <a-j>
-map! ˚ <a-k>
-map! ¬ <a-l>
-tmap ˙ <a-h>
-tmap ∆ <a-j>
-tmap ˚ <a-k>
-tmap ¬ <a-l>
-tmap ≥ <a-.>
-tmap ∫ <a-b>
-tmap ∂ <a-d>
-tmap ƒ <a-f>
-tmap å <a-a>
 
 " nmap <leader>P :call myfun#Paste(v:register, "l", "P")<CR>
 " nmap <leader>p :call myfun#Paste(v:register, "l", "p")<CR>
@@ -352,11 +335,7 @@ augroup END
 " settings for neovide
 " let g:neovide_remember_window_size = v:true
 let g:neovide_input_use_logo = v:true
-
-if $TERM ==# 'xterm-kitty'
-  autocmd UIEnter * if v:event.chan ==# 0 | call chansend(v:stderr, "\x1b[>1u") | endif
-  autocmd UILeave * if v:event.chan ==# 0 | call chansend(v:stderr, "\x1b[<1u") | endif
-endif
+let g:neovide_input_macos_alt_is_meta=v:true
 
 " disable some vim plugins
 let g:loaded_netrwPlugin=1

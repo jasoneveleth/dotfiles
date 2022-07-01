@@ -7,7 +7,7 @@ cd ~
 git clone https://github.com/neovim/neovim
 cd neovim
 # brew install automake
-if [ -z "${VAR-unset}" ]
+if [ "${HAVE_M1+set}" != set ]; then
     make CMAKE_BUILD_TYPE=Release
 else
     make CMAKE_BUILD_TYPE=Release CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOMEBREW_PREFIX"
