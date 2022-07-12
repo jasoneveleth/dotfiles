@@ -23,6 +23,10 @@ let g:surround_123 = "{\r}"
 let g:surround_91 = "[\r]"
 let g:surround_no_insert_mappings = 1
 
+let g:lion_map_left = "H"
+let g:lion_map_right = "gH"
+let b:lion_squeeze_spaces = 1
+
 " let g:vimtex_quickfix_mode=0
 
 let g:nnn#set_default_mappings = 0

@@ -44,7 +44,7 @@ alias idot="dot -Tsvg \
     -Efontname=Hack \
     -Ecolor=#abb2bf | isvg"
 alias dvisvgm-pipe='dvisvgm --verbosity=0 --stdin --stdout --no-fonts --libgs=\"/opt/homebrew/lib/libgs.dylib\" 2> /dev/null'
-alias itex="(cat $HOME/.local/share/misc/header.tex; cat; echo '\\\\end{document}') | sd tex latex-pipe | idvi"
+alias itex="(cat $HOME/.local/share/misc/header.tex; cat -; echo '\\\\end{document}') | sd tex latex-pipe | idvi"
 alias idvi="dvisvgm-pipe | \
             sed \"s/<path /& fill='#abb2bf' /g\" | \
             rsvg-convert -d 300 -p 300 | \

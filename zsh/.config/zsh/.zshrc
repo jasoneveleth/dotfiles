@@ -1,9 +1,9 @@
 #!/bin/zsh
 
-PS1="[%m:%1~]%# "
+PROMPT="[%m:%1~]%# "
 # prints if exit code is nonzero, %(cond.consq.alt) is the replacement
 RPROMPT="%(?..%F{1}%?%F{0})"
-[ -n "$NNNLVL" ] && PS1="N$NNNLVL $PS1"
+[ -n "$NNNLVL" ] && PROMPT="N$NNNLVL $PROMPT"
 [ -n "$NVIM" ] && export EDITOR="nvim --server $NVIM --remote" && export VISUAL="$EDITOR"
 
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh

@@ -78,6 +78,10 @@ export NIST_JOURNAL="$HOME/.root/misc/sem05/nist_prep/journal.md"
 export EXA_COLORS="*.pdf=35:*.wav=36:*.png=35:*.c=01:*.py=01"
 
 export CPATH="$HOME/dev/c/include/"
+if [[ "$HAVE_M1" = true ]]; then
+    export CPATH="$CPATH:/opt/homebrew/include"
+    export LIBRARY_PATH="/opt/homebrew/lib"
+fi
 
 if [[ "$HAVE_M1" = true ]]; then
     export JULIA_LOAD_PATH="~/.config/julia/environments/nvim-lspconfig:$JULIA_LOAD_PATH"

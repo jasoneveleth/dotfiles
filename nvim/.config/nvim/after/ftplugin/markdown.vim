@@ -42,25 +42,25 @@ let b:delimitMate_smart_matchpairs='^\%(\w\|\!\|[£]\|[^[:space:][:punct:]]\)'
 
 
 
-packadd ultisnips
+" packadd ultisnips
 
-imap <tab> <c-r>=Tab(1)<cr>
-imap <s-tab> <c-r>=Tab(0)<cr>
+" imap <tab> <c-r>=Tab(1)<cr>
+" imap <s-tab> <c-r>=Tab(0)<cr>
 
-function! Tab(tab) abort
-    if a:tab
-        if UltiSnips#CanJumpForwards() || UltiSnips#CanExpandSnippet()
-            return "\<c-r>=Ultisnips#ExpandSnippetOrJump()\<cr>"
-        elseif pumvisible()
-            return "\<c-n>"
-        endif
-        return "\<tab>"
-    else
-        if UltiSnips#CanJumpBackwards() || UltiSnips#CanExpandSnippet()
-            return "\<c-r>=Ultisnips#ExpandSnippetOrJump()\<cr>"
-        elseif pumvisible()
-            return "\<c-p>"
-        endif
-        return "\<s-tab>"
-    endif
-endfunction
+" function! Tab(tab) abort
+"     if a:tab
+"         if UltiSnips#CanJumpForwards() || UltiSnips#CanExpandSnippet()
+"             return "\<c-r>=Ultisnips#ExpandSnippetOrJump()\<cr>"
+"         elseif pumvisible()
+"             return "\<c-n>"
+"         endif
+"         return "\<tab>"
+"     else
+"         if UltiSnips#CanJumpBackwards() || UltiSnips#CanExpandSnippet()
+"             return "\<c-r>=Ultisnips#ExpandSnippetOrJump()\<cr>"
+"         elseif pumvisible()
+"             return "\<c-p>"
+"         endif
+"         return "\<s-tab>"
+"     endif
+" endfunction

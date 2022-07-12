@@ -105,6 +105,8 @@ nnoremap c* *Ncgn
 nnoremap g. /\V<c-r>"<cr>cgn<c-a><esc>
 noremap gh ^
 noremap gl $
+nnoremap <a-o> o<esc>k
+nnoremap <a-O> O<esc>j
 xnoremap * y/\V<C-R>"<CR>
 noremap <ScrollWheelUp> <C-Y>
 noremap <ScrollWheelDown> <C-E>
@@ -116,6 +118,11 @@ inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <c-;> <end>;
 inoremap <c-c> <esc>
+inoremap <a-;> <esc>m`A;<esc>``a
+inoremap <c-s> <c-a>
+noremap! <c-a> <home>
+noremap! <c-e> <end>
+
 " cnoremap <expr> %% expand('%:h').'/'
 nnoremap <leader>s *``cgn
 nnoremap <leader>S #``cgN
@@ -150,17 +157,19 @@ nnoremap <silent> g] :lua vim.lsp.buf.implementation()<cr>
 inoremap <silent><expr> <c-l> compe#complete()
 
 nnoremap <silent> <leader>u :UndotreeToggle<cr>
+map p <Plug>(miniyank-autoput)
+map P <Plug>(miniyank-autoPut)
+map <leader>yc <Plug>(miniyank-tochar)
+map <leader>yl <Plug>(miniyank-toline)
+map <leader>yb <Plug>(miniyank-toblock)
+map <c-n> <Plug>(miniyank-cycle)
+map <c-N> <Plug>(miniyank-cycleback)
 " nnoremap <c-p> <cmd>lua require('telescope.builtin').find_files({follow = "true"})<cr>
 nnoremap <c-p> <cmd>Files<cr>
 nnoremap <c-g> <cmd>RgRegex<cr>
 nnoremap <c-b> <cmd>Buffers<cr>
 nnoremap <silent> <leader>e :exec 'e ~/.config/nvim/after/ftplugin/' . &ft . '.vim'<cr>
 nnoremap <silent><expr> <leader>o filter(range(1, winnr('$')), 'getwinvar(v:val, "&ft") == "qf"')==[] ? ":cope<cr>" : ":ccl<cr>"
-
-inoremap <a-;> <esc>m`A;<esc>``a
-inoremap <c-s> <c-a>
-noremap! <c-a> <home>
-noremap! <c-e> <end>
 
 noremap <a-h> <c-w>h
 noremap <a-l> <c-w>l
