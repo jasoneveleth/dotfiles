@@ -75,6 +75,7 @@ export JOURNAL="$HOME/.root/personal/journal.md"
 export NIST_JOURNAL="$HOME/.root/misc/sem05/nist_prep/journal.md"
 export EXA_COLORS="*.pdf=35:*.wav=36:*.png=35:*.c=01:*.py=01"
 
+export CPATH="$CPATH:$XDG_CONFIG_HOME/c"
 if [[ "$HAVE_M1" = true ]]; then
     export CPATH="$CPATH:/opt/homebrew/include"
     export LIBRARY_PATH="/opt/homebrew/lib"
