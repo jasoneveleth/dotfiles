@@ -31,6 +31,8 @@ function! myfun#PackInit() abort
     call minpac#add('michaeljsmith/vim-indent-object')
     call minpac#add('AndrewRadev/splitjoin.vim')
     call minpac#add('bfredl/nvim-miniyank')
+    call minpac#add('weakish/rcshell.vim')
+    call minpac#add('dhruvasagar/vim-table-mode')
     " call minpac#add('nvim-telescope/telescope.nvim')
     " call minpac#add('nvim-telescope/telescope-fzf-native.nvim')
     call minpac#add('SirVer/ultisnips', {'type': 'opt'})

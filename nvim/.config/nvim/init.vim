@@ -42,6 +42,8 @@ if !has('nvim')
     nnoremap Q @q
 endif
 
+set laststatus=0
+set noruler
 set shortmess=xtToOFc
 set nojoinspaces
 set nowrap
@@ -63,8 +65,8 @@ set path=.,**
 set list
 set listchars=tab:│\ ,extends:>
 set breakindent
-set breakindentopt=sbr
-set showbreak=++
+" indent lists using length of thier pattern
+set breakindentopt=list:-1
 set omnifunc=v:lua.vim.lsp.omnifunc
 set completeopt=menuone,noselect
 set cursorline
@@ -85,7 +87,8 @@ if !exists("loaded_colorscheme")
 endif
 let g:loaded_colorscheme = 1
 
-" yank a tex formula (with $'s), execute this macro (depends on gdefault for :s)
+" fixes clipbloard so you can paste right into terminal
+" usage: yank a tex formula (with $'s), execute this macro (depends on gdefault for :s)
 let @t = " jep:%joinIecho lv$S'A | itex:s/\\\\/\\\\\\\\/yy wj"
 
 " add vi folder to path
@@ -162,8 +165,8 @@ map P <Plug>(miniyank-autoPut)
 map <leader>yc <Plug>(miniyank-tochar)
 map <leader>yl <Plug>(miniyank-toline)
 map <leader>yb <Plug>(miniyank-toblock)
+map <c-s-n> <Plug>(miniyank-cycleback)
 map <c-n> <Plug>(miniyank-cycle)
-map <c-N> <Plug>(miniyank-cycleback)
 " nnoremap <c-p> <cmd>lua require('telescope.builtin').find_files({follow = "true"})<cr>
 nnoremap <c-p> <cmd>Files<cr>
 nnoremap <c-g> <cmd>RgRegex<cr>
@@ -293,6 +296,11 @@ command! Commands echo "
     \ NoUltiSnip -- delete ultisnip tab binding
     \ "
 
+augroup Statusline
+    autocmd!
+    autocmd ColorScheme * Statusline
+augroup END
+
 augroup ryan
   autocmd!
   autocmd WinEnter,TabEnter,BufWinEnter * set cursorline
@@ -303,6 +311,8 @@ augroup Startify
     autocmd!
     autocmd User Startified unmap <buffer> e
     autocmd User Startified nmap <buffer> e <plug>(startify-open-buffers)
+    autocmd User StartifyReady set laststatus=0
+    autocmd BufEnter * set laststatus=2
 augroup END
 
 augroup Term
@@ -336,7 +346,7 @@ augroup END
 augroup restore_cursor
     autocmd!
     autocmd BufReadPost *
-                \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+                \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'gitcommit' && &ft !~# 'commit'
                 \ |   exe "normal! g`\""
                 \ | endif
 augroup END

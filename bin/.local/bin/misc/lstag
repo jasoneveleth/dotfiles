@@ -1,5 +1,0 @@
-#!/bin/sh
-
-# search for Finder tags
-
-mdfind "kMDItemUserTags=$1"

@@ -29,7 +29,6 @@ export ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
 
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
 export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
-export NPM_CONFIG_TMP="/tmp/npm"
 export npm_config_devdir="$XDG_DATA_HOME"/node-gyp
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
 export PYTHONHISTFILE="$HOME/.local/share/python/history"
@@ -66,8 +65,7 @@ export PYTHONDONTWRITEBYTECODE=1
 export HOMEBREW_NO_AUTO_UPDATE=1
 # export VIMINIT= 'let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export NNN_BMS='o:~/notes;c:~/.config;v:~/.config/nvim;1:~/cs1951X/code/src;2:~/math1260;3:~/cs1730;4:~/cs1410;'
-# export NNN_PLUG='e:-_ewrap $nnn*;n:-_fzfnotes*;v:-_nvim*'
-export NNN_PLUG='n:-!fzfnotes*;v:-!nvim*;'
+export NNN_PLUG='a:-tagadd;t:-tag-edit;v:-!nvim*'
 export NNN_COLORS="4512"
 export PAGER="bat"
 [ "$EDITOR" = "" ] && export EDITOR="nvim --listen /tmp/nvim.sock"
@@ -77,7 +75,6 @@ export JOURNAL="$HOME/.root/personal/journal.md"
 export NIST_JOURNAL="$HOME/.root/misc/sem05/nist_prep/journal.md"
 export EXA_COLORS="*.pdf=35:*.wav=36:*.png=35:*.c=01:*.py=01"
 
-export CPATH="$HOME/dev/c/include/"
 if [[ "$HAVE_M1" = true ]]; then
     export CPATH="$CPATH:/opt/homebrew/include"
     export LIBRARY_PATH="/opt/homebrew/lib"

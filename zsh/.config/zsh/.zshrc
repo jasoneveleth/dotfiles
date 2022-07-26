@@ -1,8 +1,7 @@
 #!/bin/zsh
 
-PROMPT="[%m:%1~]%# "
+PROMPT="%(?.;.%F{1};%F{0}) "
 # prints if exit code is nonzero, %(cond.consq.alt) is the replacement
-RPROMPT="%(?..%F{1}%?%F{0})"
 [ -n "$NNNLVL" ] && PROMPT="N$NNNLVL $PROMPT"
 [ -n "$NVIM" ] && export EDITOR="nvim --server $NVIM --remote" && export VISUAL="$EDITOR"
 
@@ -14,11 +13,13 @@ setopt hist_ignore_space
 setopt hist_expire_dups_first
 setopt hist_find_no_dups # don't find duplicates when searching in the line editor
 setopt promptsubst
+setopt pipe_fail # set exit status of a pipe to error if one of them errors
 
 source "$ZDOTDIR/"keybinds.zsh
 source "$ZDOTDIR/"completion.zsh
 source "$ZDOTDIR/"aliases.zsh
 source "$ZDOTDIR/"conda.zsh
+source "$ZDOTDIR/"git-repo-check.zsh
 
 source "$XDG_CONFIG_HOME/"zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # ^ strange quoting allows for `gf` to work in vim

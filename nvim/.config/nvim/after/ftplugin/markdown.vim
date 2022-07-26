@@ -4,6 +4,7 @@ setlocal suffixesadd=.md
 setlocal linebreak
 setlocal tw=65
 setlocal sw=2
+setlocal wrap
 
 " end an undo thing every sentence
 inoremap <buffer> . .<c-g>u
@@ -37,10 +38,11 @@ function! ToggleChar() abort
     endif
 endfunction
 
-" let b:delimitMate_quotes = "\" ' $"
-let b:delimitMate_smart_matchpairs='^\%(\w\|\!\|[£]\|[^[:space:][:punct:]]\)'
-
-
+" let b:delimitMate_quotes = "\" '"
+let b:delimitMate_expand_cr = 2
+let b:delimitMate_expand_inside_quotes = 1
+let b:delimitMate_expand_space = 0
+let b:delimitMate_nesting_quotes = ['`']
 
 " packadd ultisnips
 

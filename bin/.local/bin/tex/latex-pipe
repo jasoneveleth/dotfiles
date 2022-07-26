@@ -1,15 +1,51 @@
-#!/bin/sh
+#!/bin/bash
 
 # compiles latex in a pipe
 #
 # compiles latex from stdin and emits
 # dvi to stdout
 
-TDIR=`mktemp -d`
-tee "$TDIR/file.tex" > /dev/null
+# https://unix.stackexchange.com/questions/464930/can-i-read-a-single-character-from-stdin-in-posix-shell
+readc() { # arg: <variable-name>
+  if [ -t 0 ]; then
+    saved_tty_settings=$(stty -g)
+    stty -icanon min 1 time 0
+  fi
+  eval "$1="
+  while
+    c=$(dd bs=1 count=1 2> /dev/null; echo .)
+    c=${c%.}
+    [ -n "$c" ] &&
+      eval "$1=\${$1}"'$c
+        [ "$(($(printf %s "${'"$1"'}" | wc -m)))" -eq 0 ]'; do
+    continue
+  done
+  if [ -t 0 ]; then
+    # restore settings saved earlier if stdin is a tty device.
+    stty "$saved_tty_settings"
+  fi
+}
+
+TDIR=`mktemp -d /tmp/latex.XXXX`
+cat > "$TDIR/file.tex"
 cd "${TDIR}"
-latex -interaction batchmode -halt-on-error file.tex 1> /dev/null 2>&1 
+latex -interaction batchmode -halt-on-error file.tex 1> /dev/null 2>&1
 cp file.log /tmp/latexpipe-log.log
-cat file.dvi
-cd ..
-rm -r ${TDIR}
+if [ -e file.dvi ]; then
+    cat file.dvi
+    cd ..
+    rm -r ${TDIR}
+else
+    echo "ERROR when compiling:" 1>&2
+    echo '=================' 1>&2
+    cat "$TDIR/file.tex" 1>&2
+    echo '=================' 1>&2
+    printf 'would you like to read log? [y/N] ' 1>&2
+    readc ans 0>&2
+    printf "\n" 1>&2
+    if [ "$ans" = y ]; then
+        cat "/tmp/latexpipe-log.log" 1>&2
+    fi
+    exit 1
+fi
+

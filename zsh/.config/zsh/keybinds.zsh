@@ -31,4 +31,4 @@ bindkey '^[[Z' reverse-menu-complete
 bindkey '^l' scroll-and-clear-screen
 
 # -s to translate ^M
-bindkey -s '^n' 'nnn^M'
+bindkey -s '^n' 'n^M'

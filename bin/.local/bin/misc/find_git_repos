@@ -4,12 +4,12 @@
 #
 # it will use `fd` to search for git repos, and fall back on `find`
 
-if which fd; then
-    cd /
+if which fd >/dev/null; then
+    cd
     # -I means don't ignore git
     # -H means don't ignore hidden
     # -t d means only directories
     fd -I -H -t d '\.git$'
 else
-    find / -type d -name '.git'
+    find ~ -type d -name '.git'
 fi
