@@ -1,0 +1,19 @@
+#!/bin/sh
+while true; do
+    clear
+    dirname="$1"
+    echo "dirname: $dirname"
+    echo
+    exa -G "$dirname" | head -n 20
+    echo "- - - - - - -"
+    touch "$dirname"/.tags
+    cat "$dirname"/.tags
+    echo "- - - - - - -"
+    printf "add tag (^C to quit)> "
+    read -r tag
+    if [ "$tag" = q ]; then
+        break
+    fi
+    echo "$tag" >> "$dirname"/.tags
+done
+

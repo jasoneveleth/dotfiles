@@ -1,0 +1,23 @@
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{titling}
+\usepackage{fancyhdr}
+
+\author{Jason Eveleth}
+\renewcommand{\maketitle}{}
+
+\pagestyle{fancyplain}
+\headheight 30pt
+\lhead{\theauthor}
+\chead{\textbf{\thetitle\quad---\quad\course}}
+\rhead{\today}
+\headsep 10pt
+
+\newenvironment{answer}[1]{
+\subsubsection*{Problem \hwnum.#1}
+}{\newpage}
+
+\setlength{\parindent}{0cm}
+

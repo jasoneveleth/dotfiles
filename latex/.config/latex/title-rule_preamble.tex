@@ -1,0 +1,29 @@
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{titlesec}
+\usepackage{titling}
+
+% title formatting
+\renewcommand{\maketitle}{
+\begin{center}
+{\huge\bfseries
+\thetitle}
+\vspace{0.25em}\\
+{\theauthor}
+---
+{\thedate}
+\end{center}
+}
+
+% heading formatting
+\titleformat{\section}{\bfseries\large}{}{0em}{}[\titlerule]
+\titleformat{\subsection}{\bfseries\large}{\hspace{1em}}{0em}{}
+
+%title content
+\setlength{\parindent}{0cm}
+\begin{document}
+\maketitle
+
+\end{document}
