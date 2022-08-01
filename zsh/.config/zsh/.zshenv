@@ -93,6 +93,7 @@ front_path+=("$LOCAL_BIN")
 if [[ "$HAVE_M1" = true ]]; then
     front_path+=("/opt/homebrew/bin:/opt/homebrew/sbin")
 fi
+
 front_path+=("/usr/local/bin")
 
 if [ "$ON_A_MAC" = true ]; then # on apple
@@ -108,5 +109,9 @@ path+=(".")
 # remove duplicates
 typeset -U path
 # ======= PATH
+
+if [[ "$HAVE_M1" = true ]]; then
+    fpath=("/opt/homebrew/share/zsh/site-functions" $fpath)
+fi
 
 setopt no_global_rcs

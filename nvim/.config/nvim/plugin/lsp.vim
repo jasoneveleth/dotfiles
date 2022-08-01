@@ -24,6 +24,7 @@ lua require'lspconfig'.tsserver.setup{}
 lua require'lspconfig'.racket_langserver.setup{}
 lua require'lspconfig'.pyright.setup{}
 lua require'lspconfig'.rust_analyzer.setup{}
+lua require'lspconfig'.texlab.setup{}
 
 " lua <<EOF
 " require('lean').setup{

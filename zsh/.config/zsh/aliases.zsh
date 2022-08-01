@@ -50,15 +50,34 @@ alias e="$EDITOR"
 alias vs="nvr --remote-wait -O"
 alias sp="nvr --remote-wait -o"
 
-has_tag() {                                     
-    if [ ! -e "$1"/.tags ]; then
+find_tag() {
+    tag="$1"
+    cmd="$2"
+    shift
+    shift
+    for n in "$@"; do
+        eval has_tag "$n" "$tag" "$cmd"
+    done
+    return 0
+}
+
+has_tag() {
+    # yaml for *.md
+    if [[ "$1" == *.md ]]; then
+        matches=`cat "$1" | extract -v pattern=tags`
+        # split up avoid covering up an error earlier in the pipe
+        echo $matches | rg -q "$2" && return 0
         return 1
     fi
-    cat "$1"/.tags | rg -q "$2" && return 0
+
+    # .tag for a directory
+    if [ -d "$1" ]; then
+        # if files doesn't exist exit
+        [ ! -e "$1"/.tags ] && return 1
+
+        cat "$1"/.tags | rg -q "$2" && return 0
+    fi
     return 1
-}
-add_tag() {
-    echo "$2" >> "$1"/.tags
 }
 
 # alias git='echo nope! use \`jg\`'

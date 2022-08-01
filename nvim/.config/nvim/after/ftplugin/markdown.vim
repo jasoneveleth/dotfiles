@@ -6,6 +6,8 @@ setlocal tw=65
 setlocal sw=2
 setlocal wrap
 
+set fo-=t
+
 " end an undo thing every sentence
 inoremap <buffer> . .<c-g>u
 

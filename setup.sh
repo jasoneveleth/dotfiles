@@ -50,6 +50,9 @@ defaults write com.apple.screencapture name "ss"
 defaults write com.apple.screencapture location ~/Downloads
 killall SystemUIServer
 
+# this is for Neovide to find the `nvim` binary
+sudo launchctl config user path "$(brew --prefix)/bin:${PATH}"
+
 cat <<EOF
 conda
 =====

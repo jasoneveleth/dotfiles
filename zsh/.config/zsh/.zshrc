@@ -20,6 +20,7 @@ source "$ZDOTDIR/"completion.zsh
 source "$ZDOTDIR/"aliases.zsh
 source "$ZDOTDIR/"conda.zsh
 source "$ZDOTDIR/"git-repo-check.zsh
+source "$ZDOTDIR/"wezterm.sh
 
 source "$XDG_CONFIG_HOME/"zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # ^ strange quoting allows for `gf` to work in vim

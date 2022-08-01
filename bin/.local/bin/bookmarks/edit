@@ -2,4 +2,4 @@
 
 # edit bookmarks file at "$HOME/dev/web/bookmarks/input.md"
 
-exec $EDITOR "$HOME/dev/web/bookmarks/input.md"
+exec $EDITOR "$HOME/src/bookmarks/input.md"

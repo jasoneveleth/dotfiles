@@ -187,6 +187,15 @@ function myfun#SmoothScroll(is_up)
     endwhile
 endfunction
 
+function! myfun#CR()
+    let before_and_after_cursor = getline('.')[col('.')-2:col('.')]
+    if before_and_after_cursor == "{}" || before_and_after_cursor == "()" || before_and_after_cursor == "[]"
+        return "\<cr>\<esc>O"
+    else
+        return "\<cr>"
+    endif
+endfunction
+
 function! myfun#NotesFind(split)
     let line=getline('.')
     let backward=join(reverse(split(line, '.\zs')), '')
