@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "import sys\nimport os\n\n# extraction functions\nxlineno = lambda tb: tb.tb_lineno\nxname = lambda tb: tb.tb_frame.f_code.co_name\ndef xfname(tb):\n    abs_path = tb.tb_frame.f_code.co_filename\n    rel_path = os.path.relpath(abs_path, os.getcwd())\n    argmin = lambda x, y: x if len(x) < len(y) else y\n    return argmin(abs_path, rel_path)\n\ndef excepthook(exc_type, exc_value, tb):\n    print('==================================================================')\n    print('Traceback:')\n    while tb:\n        # lineno is left justified, width of 3\n        print(f\"{xfname(tb)}:{xlineno(tb):<3} in {xname(tb)}\")\n        tb = tb.tb_next\n\n    r = \"\\x1b[31m\"; p = \"\\x1b[35m\"; c = \"\\x1b[0m\" # ansi colors\n    print(f\"{r}{exc_type.__name__}{c}: {p}{exc_value}{c}\")\n\nsys.excepthook = excepthook\n",
+    "uid" : "1A4ADE17-F1A1-4C9D-8A7A-27D799048095",
+    "name" : "python exception",
+    "keyword" : ":pyexcept:"
+  }
+}

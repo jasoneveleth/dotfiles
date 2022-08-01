@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>category</key>
+	<string>Productivity</string>
+	<key>connections</key>
+	<dict>
+		<key>03A7763B-00EB-4031-82E3-BE7737E1F6D7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>83CAE856-32EB-4FD6-97DC-410FDE841A3C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Jason</string>
+	<key>description</key>
+	<string>opens notes by converting markdown to html</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Notes</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>n</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Searching...</string>
+				<key>script</key>
+				<string>query=$1
+
+if [ `uname -m` = 'arm64' ]; then
+	RG=/opt/homebrew/bin/rg
+else
+	RG=/usr/local/bin/rg
+fi
+
+cd ~/.root/notes
+notes=`ls *.md | $RG "${query}"`
+
+xmlString="&lt;?xml version=\"1.0\"?&gt;\n&lt;items&gt;\n"
+
+echo "$notes" | ( while read filename; do
+    notename=${filename%.md}
+    firstline=`head -n2 ~/notes/${notename}.md`
+
+    xmlString="${xmlString}\t&lt;item uid=\"${notename}\" arg=\"${notename}\"&gt;\n"
+    xmlString="${xmlString}\t&lt;title&gt;${notename}&lt;/title&gt;\n"
+    xmlString="${xmlString}\t&lt;subtitle&gt;${firstline}&lt;/subtitle&gt;\n"
+    xmlString="${xmlString}&lt;/item&gt;\n"
+    done
+    # Finish off and echo the XML string to Alfred.
+    xmlString="${xmlString}&lt;/items&gt;"
+    echo $xmlString | sed -e 's/\\n/\n/g' | sed -e 's/\\t/\t/g'
+)
+
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Type note name...</string>
+				<key>title</key>
+				<string>Notes</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>03A7763B-00EB-4031-82E3-BE7737E1F6D7</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>query=$1
+
+mkdir -p /tmp/html_notes
+
+if [ `uname -m` = 'arm64' ]; then
+	PANDOC=/opt/homebrew/bin/pandoc
+else
+	PANDOC=/usr/local/bin/pandoc
+fi
+
+# convert to html
+"$PANDOC" -s -o /tmp/html_notes/"${query}".html "$HOME"/.root/notes/"${query}".md
+
+# fix relative links to absolute links to images
+sed -i '' -e "s#images\/#${HOME}\/.root\/notes\/images\/#g" /tmp/html_notes/"${query}".html
+/usr/bin/open /tmp/html_notes/"${query}".html</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>83CAE856-32EB-4FD6-97DC-410FDE841A3C</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>03A7763B-00EB-4031-82E3-BE7737E1F6D7</key>
+		<dict>
+			<key>xpos</key>
+			<integer>150</integer>
+			<key>ypos</key>
+			<integer>180</integer>
+		</dict>
+		<key>83CAE856-32EB-4FD6-97DC-410FDE841A3C</key>
+		<dict>
+			<key>xpos</key>
+			<integer>390</integer>
+			<key>ypos</key>
+			<integer>180</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

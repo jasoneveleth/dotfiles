@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.gingerbeardman.searchkeychainaccess</string>
+	<key>connections</key>
+	<dict>
+		<key>330D2B28-B918-4479-8BCB-FE875FB18B90</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1662F9CB-96BD-4013-AF74-71C08ABAE3E8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E333876E-B269-45BA-B31F-2D8E6BB427B9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7AF29825-70C5-4B31-B8F1-2EFF71E3D670</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F962C386-3897-4498-8573-59F8644678AA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E333876E-B269-45BA-B31F-2D8E6BB427B9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Matt Sephton</string>
+	<key>description</key>
+	<string>Search Keychain Access and copy password for top match</string>
+	<key>disabled</key>
+	<true/>
+	<key>name</key>
+	<string>Search Keychain</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>paths</key>
+				<array>
+					<string>/System/Applications/Utilities/Keychain Access.app</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>E333876E-B269-45BA-B31F-2D8E6BB427B9</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	activate application "Keychain Access"
+	tell application "System Events"		tell process "Keychain Access"			set value of first text field of last group of first toolbar of window "Keychain Access" to q			click first button of first text field of last group of first toolbar of window "Keychain Access"			click menu item "Copy Password to Clipboard" of first menu of menu bar item "Edit" of first menu bar		end tell	end tell	quit application "Keychain Access"
+end alfred_script</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>7AF29825-70C5-4B31-B8F1-2EFF71E3D670</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>ka</string>
+				<key>subtext</key>
+				<string>Enter to search, Cmd+Shift to copy the first result</string>
+				<key>text</key>
+				<string>Get passwords from Keychain Access</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>F962C386-3897-4498-8573-59F8644678AA</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	activate application "Keychain Access"	tell application "System Events"		tell process "Keychain Access"			set value of first text field of last group of first toolbar of window "Keychain Access" to q			click first button of first text field of last group of first toolbar of window "Keychain Access"		end tell	end tellend alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>1662F9CB-96BD-4013-AF74-71C08ABAE3E8</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>paths</key>
+				<array>
+					<string>/System/Applications/Utilities/Keychain Access.app</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>330D2B28-B918-4479-8BCB-FE875FB18B90</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Original here 
+https://www.alfredforum.com/topic/3975-can-alfred-search-the-mac-keychain/?tab=comments#comment-64088
+
+Updated by Gabriel R.</string>
+	<key>uidata</key>
+	<dict>
+		<key>1662F9CB-96BD-4013-AF74-71C08ABAE3E8</key>
+		<dict>
+			<key>note</key>
+			<string>Automate Search</string>
+			<key>xpos</key>
+			<integer>570</integer>
+			<key>ypos</key>
+			<integer>275</integer>
+		</dict>
+		<key>330D2B28-B918-4479-8BCB-FE875FB18B90</key>
+		<dict>
+			<key>xpos</key>
+			<integer>320</integer>
+			<key>ypos</key>
+			<integer>275</integer>
+		</dict>
+		<key>7AF29825-70C5-4B31-B8F1-2EFF71E3D670</key>
+		<dict>
+			<key>note</key>
+			<string>Automate Search &amp; Copy to Clipboard</string>
+			<key>xpos</key>
+			<integer>565</integer>
+			<key>ypos</key>
+			<integer>40</integer>
+		</dict>
+		<key>E333876E-B269-45BA-B31F-2D8E6BB427B9</key>
+		<dict>
+			<key>xpos</key>
+			<integer>315</integer>
+			<key>ypos</key>
+			<integer>40</integer>
+		</dict>
+		<key>F962C386-3897-4498-8573-59F8644678AA</key>
+		<dict>
+			<key>xpos</key>
+			<integer>45</integer>
+			<key>ypos</key>
+			<integer>175</integer>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>1.1</string>
+	<key>webaddress</key>
+	<string>http://www.gingerbeardman.com</string>
+</dict>
+</plist>
