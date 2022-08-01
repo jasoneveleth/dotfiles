@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ $# = 0 ]; then
+    echo "usage: $(basename $0) PROG_NAME"
+    exit 1
+fi
+
+cd "$HOME/dotfiles/bin/.local/bin/"
+chtouch "$1"
+echo '#!/bin/sh' >> "$1"
+$EDITOR "$1"
+cd "$HOME/dotfiles"
+stow -v bin
+

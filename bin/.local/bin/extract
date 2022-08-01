@@ -1,0 +1,16 @@
+#!/usr/bin/awk -f
+
+BEGIN {pattern = "^" pattern ":"}
+
+# exit early if no front matter
+NR==1 && !/^---/ {exit 0}
+
+# exit when front matter is done
+NR!=1 && /---/ {exit 0}
+
+# if the line matches argv
+$0 ~ pattern { matches = 1 }
+# take out leading "- ", then print
+/^- / {if (matches) sub(/^- /,""); print}
+# if we don't match pattern, and we don't see list element, we're not matching anymore
+!($0 ~ pattern) && !/^- / { matches = 0 }

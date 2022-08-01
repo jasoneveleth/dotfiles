@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# output unix time
+#
+# usage: unix-time
+
+date +%s
