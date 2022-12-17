@@ -1,3 +1,4 @@
+vim.cmd([[
 if exists("loaded_personal_statusline")
     finish
 endif
@@ -75,7 +76,7 @@ let g:mode2name={
     \ 't'  : 'Terminal'
     \}
 
-function! statusline#link(mode)
+function! StatuslineLink(mode)
     exec 'hi! link rainbowstatuscolor statusline' . g:mode2color[a:mode]
     return ''
 endfunction
@@ -89,7 +90,7 @@ exec 'hi darkstatuscolor ctermfg=' . g:color2cterm['light'] . ' ctermbg=' . g:co
 set laststatus=2
 set noshowmode
 set statusline=
-set statusline+=%{statusline#link(mode())}                               " reset colors
+set statusline+=%{StatuslineLink(mode())}                               " reset colors
 set statusline+=%#rainbowstatuscolor#\ %{toupper(g:mode2name[mode()])}\  " The current mode 
 set statusline+=%#greystatuscolor#\ %<%f%m%r%h%w\                        " File path, modified, readonly, helpfile, preview
 set statusline+=%#darkstatuscolor#                                       " Separator
@@ -101,3 +102,4 @@ set statusline+=%#darkstatuscolor#\ %y\                                  " FileT
 set statusline+=%#greystatuscolor#\ %2p%%\                               " percentage of document
 set statusline+=%#rainbowstatuscolor#\ %2l/%L:%2c\                       " Line number , column number
 " set statusline+=%0*\ %n\                                               " Buffer number
+]])

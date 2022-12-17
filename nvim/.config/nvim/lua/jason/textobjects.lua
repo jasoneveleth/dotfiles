@@ -1,32 +1,29 @@
-if exists("loaded_textobjects")
-    finish
-endif
-let g:loaded_textobjects = 1
-
-onoremap il :normal vg_o^<cr>
-onoremap al :normal v$o0<cr>
+vim.cmd([[
+onoremap il <cmd>normal vg_o^<cr>
+onoremap al <cmd>normal v$o0<cr>
 
 if !exists("textobjs")
     let g:textobjs = ['$', ',', '.', ':', '+', ';', '=', '-', '_', '*', '#', '&', '~']
 endif
 
 for c in g:textobjs
-    exec 'onoremap i' . c . ' :call <sid>select_in("' . c . '")<cr>'
-    exec 'xnoremap i' . c . ' :call <sid>select_in("' . c . '")<cr>'
-    exec 'onoremap a' . c . ' :call <sid>select_around("' . c . '")<cr>'
-    exec 'xnoremap a' . c . ' :call <sid>select_around("' . c . '")<cr>'
+    exec 'onoremap i' . c . ' <cmd>call TextObjectsSelectIn("' . c . '")<cr>'
+    exec 'xnoremap i' . c . ' <cmd>call TextObjectsSelectIn("' . c . '")<cr>'
+    exec 'onoremap a' . c . ' <cmd>call TextObjectsSelectAround("' . c . '")<cr>'
+    exec 'xnoremap a' . c . ' <cmd>call TextObjectsSelectAround("' . c . '")<cr>'
 endfor
 
-function! s:select_in(char)
+function! TextObjectsSelectIn(char)
     call search('\V' . a:char, 'b', line('.'))
     call search('\V' . a:char . '\.', 'cze', line('.'))
     normal! v
     call search('\V\.' . a:char, 'cz', line('.'))
 endfunction
 
-function! s:select_around(char)
+function! TextObjectsSelectAround(char)
     call search('\V' . a:char, 'b', line('.'))
     call search('\V' . a:char, 'cz', line('.'))
     normal! v
     call search('\V' . a:char, 'z', line('.'))
 endfunction
+]])

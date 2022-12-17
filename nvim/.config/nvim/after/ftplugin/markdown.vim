@@ -8,6 +8,8 @@ setlocal wrap
 
 set fo-=t
 
+lua require('cmp').setup.buffer { enabled = false }
+
 " end an undo thing every sentence
 inoremap <buffer> . .<c-g>u
 

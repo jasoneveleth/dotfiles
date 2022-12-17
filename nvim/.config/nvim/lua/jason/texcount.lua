@@ -1,3 +1,4 @@
+vim.cmd([[
 " fun! Plugin()
 "     let width = nvim_win_get_width(0)
 "     let height = nvim_win_get_height(0)
@@ -12,14 +13,14 @@
 "     echo system(expand("texcount %"))
 " endfun
 
-fun! texcount#Texcount() abort
+fun! Texcount() abort
     let count = system('texcount -opt=' . $HOME . '/.config/latex/texcount_template ' . expand('%'))
     let message = split(count, '\n')[1:]
-    call texcount#FloatingMessage(message)
+    call TexcountFloatingMessage(message)
 endfun
 
 " https://www.statox.fr/posts/2021/03/breaking_habits_floating_window/
-function! texcount#FloatingMessage(message) abort
+function! TexcountFloatingMessage(message) abort
     " Define the size of the floating window
     let width = 50
     let height = 17
@@ -65,3 +66,4 @@ function! texcount#FloatingMessage(message) abort
     " Change highlighting
     call nvim_win_set_option(win, 'winhl', 'Normal:ErrorFloat')
 endfunction
+]])
