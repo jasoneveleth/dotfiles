@@ -33,7 +33,7 @@ function! MapWinCmd(key, command, user_enter)
 
   for key_mapping in g:window_key_mappings
       execute "nnoremap " . g:window_key_prefix . key_mapping[0] . a:key . 
-                  \ " <Cmd>" . key_mapping[1] . "<cr><cmd><c-u>" . a:command .
+                  \ " <Cmd>" . key_mapping[1] . "<cr><cmd>" . a:command .
                   \ suffix
   endfor
 endfunction
