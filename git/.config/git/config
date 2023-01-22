@@ -1,6 +1,6 @@
 [core]
 	excludesfile = /Users/jason/.config/git/gitignore_global
-	pager = "diff-so-fancy | less --tabs=4 -RFX"
+	pager = delta --diff-so-fancy
 [user]
 	name = Jason Eveleth
 	email = jj11@eveleth.com
@@ -9,9 +9,12 @@
 [alias]
 	alias = !git config -l | grep '^alias.' | cut -d'.' -f2
 	amend = commit --amend --no-edit
+	reword = commit --amend
+	rename-branch = branch -m
 	unstage = restore --staged
 	stage = add
 	discard = reset --hard
+	ff = fast-forward
 [pull]
 	rebase = true
 [diff]
@@ -19,7 +22,7 @@
 [init]
 	defaultBranch = main
 [interactive]
-	diffFilter = "diff-so-fancy --patch"
+	diffFilter = delta --color-only --features=interactive
 [rebase]
 	autosquash = true
 [advice]
@@ -35,3 +38,23 @@
 	autodetach = false
 	pruneExpire = never
 	reflogExpire = never
+[commit]
+	verbose = true
+[merge]
+	ff = no
+
+# Diff viewer
+[delta]
+    features = decorations
+
+[delta "interactive"]
+    keep-plus-minus-markers = false
+
+[delta "decorations"]
+    commit-decoration-style = blue ol
+    commit-style = raw
+    file-style = omit
+    hunk-header-decoration-style = blue box
+    hunk-header-file-style = red
+    hunk-header-line-number-style = "#067a00"
+    hunk-header-style = file line-number syntax

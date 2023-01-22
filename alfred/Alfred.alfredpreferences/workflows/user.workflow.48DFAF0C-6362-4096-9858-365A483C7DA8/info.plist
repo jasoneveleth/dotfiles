@@ -38,7 +38,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>186FA643-8A6C-4A2F-9877-1592DBB67F1C</string>
+				<string>CE91C668-762B-4D99-8387-D4FD4FC54FE6</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -224,23 +224,6 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>paths</key>
-				<array>
-					<string>/Applications/Neovide.app</string>
-				</array>
-				<key>toggle</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.launchfiles</string>
-			<key>uid</key>
-			<string>186FA643-8A6C-4A2F-9877-1592DBB67F1C</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -269,6 +252,23 @@ end alfred_script</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>paths</key>
+				<array>
+					<string>/Applications/Obsidian.app</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>CE91C668-762B-4D99-8387-D4FD4FC54FE6</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>Launches Alacritty</string>
@@ -277,82 +277,82 @@ end alfred_script</string>
 		<key>0DC125E3-61F5-4519-A60D-C21E587A1E52</key>
 		<dict>
 			<key>xpos</key>
-			<integer>190</integer>
+			<real>190</real>
 			<key>ypos</key>
-			<integer>370</integer>
+			<real>370</real>
 		</dict>
 		<key>1742F647-8D83-4FFC-8B3E-1A9BFB896129</key>
 		<dict>
 			<key>note</key>
 			<string>alacritty tmux launch -- better</string>
 			<key>xpos</key>
-			<integer>615</integer>
+			<real>615</real>
 			<key>ypos</key>
-			<integer>55</integer>
-		</dict>
-		<key>186FA643-8A6C-4A2F-9877-1592DBB67F1C</key>
-		<dict>
-			<key>xpos</key>
-			<integer>460</integer>
-			<key>ypos</key>
-			<integer>515</integer>
+			<real>55</real>
 		</dict>
 		<key>228DC5F1-4DB9-4404-86A2-0F61565495D7</key>
 		<dict>
 			<key>xpos</key>
-			<integer>455</integer>
+			<real>455</real>
 			<key>ypos</key>
-			<integer>370</integer>
+			<real>370</real>
 		</dict>
 		<key>4066445F-D94D-4791-B2C4-32E375422B59</key>
 		<dict>
 			<key>note</key>
 			<string>alacritty tmux launch -- old version</string>
 			<key>xpos</key>
-			<integer>450</integer>
+			<real>450</real>
 			<key>ypos</key>
-			<integer>50</integer>
+			<real>50</real>
 		</dict>
 		<key>4E79E03C-028D-45D6-AD91-544E9DED535E</key>
 		<dict>
 			<key>note</key>
 			<string>kitty</string>
 			<key>xpos</key>
-			<integer>940</integer>
+			<real>940</real>
 			<key>ypos</key>
-			<integer>60</integer>
+			<real>60</real>
 		</dict>
 		<key>7F06D968-A68C-481E-83C0-7B45F509D2D1</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>4</integer>
 			<key>xpos</key>
-			<integer>195</integer>
+			<real>195</real>
 			<key>ypos</key>
-			<integer>225</integer>
+			<real>225</real>
 		</dict>
 		<key>8A74A1C9-1E44-46E9-9FCC-B114756C0A96</key>
 		<dict>
 			<key>note</key>
 			<string>kitty + tmux</string>
 			<key>xpos</key>
-			<integer>765</integer>
+			<real>765</real>
 			<key>ypos</key>
-			<integer>65</integer>
+			<real>65</real>
 		</dict>
 		<key>8C70B7EB-B1E9-493E-A4E7-40A483166B11</key>
 		<dict>
 			<key>xpos</key>
-			<integer>455</integer>
+			<real>455</real>
 			<key>ypos</key>
-			<integer>225</integer>
+			<real>225</real>
 		</dict>
 		<key>C09E9FC2-68DA-43A4-838F-28318D33EFBB</key>
 		<dict>
 			<key>xpos</key>
-			<integer>190</integer>
+			<real>190</real>
 			<key>ypos</key>
-			<integer>515</integer>
+			<real>515</real>
+		</dict>
+		<key>CE91C668-762B-4D99-8387-D4FD4FC54FE6</key>
+		<dict>
+			<key>xpos</key>
+			<real>465</real>
+			<key>ypos</key>
+			<real>520</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>

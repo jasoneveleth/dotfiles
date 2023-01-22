@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# mkdir then cd into in it
+# 
+# USAGE:
+#       mkcd tmp-dir
+#
+# tags: os sys
+
+mkdir "$@" && cd "$@"

@@ -1,7 +1,0 @@
-#!/bin/sh
-
-# curl cheat.sh url
-#
-# translates args ' ' to '+'
-
-/usr/bin/curl 'cheat.sh/'"`echo $@ | tr ' ' '+'`"

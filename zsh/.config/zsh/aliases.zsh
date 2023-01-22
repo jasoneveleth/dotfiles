@@ -2,12 +2,15 @@ alias ls="exa -s type"
 alias ll="exa -l -s type"
 alias la="exa -l -a -s type"
 alias grep="grep --color=auto"
-alias rm='printf "this is not the command you are looking for. use: \`trash\`\n"; false'
+alias rm='echo "this is not the command you are looking for. use: \`trash\`\n"; false'
+alias trash='trash -F'
 alias cp='cp -i'
 
 alias cleanDS="find . -name '*.DS_Store' -type f -delete"
 alias path='echo $PATH | tr -s ":" "\n"'
 alias findhardlinks='find -E . -links +1 \! -type d \! -regex "\./Library/.*" -exec ls -l {} \; 2> /dev/null | sort -nk2'
+# zsh only
+alias brokensymlinks='trash -- *(-@D)'
 alias battery="pmset -g batt | egrep -o '\d+%'"
 alias noswap="trash $HOME/.local/share/nvim/swap/*"
 alias src='source $HOME/.config/zsh/.zshrc && source $HOME/.config/zsh/.zshenv'
@@ -43,54 +46,36 @@ alias idot="dot -Tsvg \
     -Efontname=Hack \
     -Ecolor=#abb2bf | isvg"
 alias dvisvgm-pipe='dvisvgm --verbosity=0 --stdin --stdout --no-fonts --libgs=\"/opt/homebrew/lib/libgs.dylib\" 2>/dev/null'
-alias itex="(cat \"$HOME/.local/share/misc/header.tex\" -; echo '\\\\end{document}') | sd tex latex-pipe | idvi"
+alias itex="(cat \"$HOME/.local/share/misc/header.tex\" -; echo '\\\\end{document}') | latex-pipe | idvi"
 alias idvi="dvisvgm-pipe | sed \"s/<path /& fill='#abb2bf' /g\" | rsvg-convert -d 300 -p 300 2> /dev/null | icat 2>/dev/null"
 
 alias e="$EDITOR"
 alias vs="nvr --remote-wait -O"
 alias sp="nvr --remote-wait -o"
 
-find_tag() {
-    tag="$1"
-    cmd="$2"
-    shift
-    shift
-    for n in "$@"; do
-        eval has_tag "$n" "$tag" "$cmd"
+# https://github.com/garybernhardt/dotfiles/blob/004164079c6aeb226338b5a1b5d4f91f366ff50e/.zshrc#L69
+function up()
+{
+    local DIR=$PWD
+    local TARGET=$1
+    while [ ! -e $DIR/$TARGET -a $DIR != "/" ]; do
+        DIR=$(dirname $DIR)
     done
-    return 0
-}
-
-has_tag() {
-    # yaml for *.md
-    if [[ "$1" == *.md ]]; then
-        matches=`cat "$1" | extract -v pattern=tags`
-        # split up avoid covering up an error earlier in the pipe
-        echo $matches | rg -q "$2" && return 0
-        return 1
-    fi
-
-    # .tag for a directory
-    if [ -d "$1" ]; then
-        # if files doesn't exist exit
-        [ ! -e "$1"/.tags ] && return 1
-
-        cat "$1"/.tags | rg -q "$2" && return 0
-    fi
-    return 1
+    test $DIR != "/" && echo $DIR/$TARGET
 }
 
 # alias git='echo nope! use \`jg\`'
 alias gs='git status'
-alias gd='echo jdf'
-
-alias jci='jg commit'
-alias jca='jg stage --tracked && jg commit'
-alias jdf='jg diff'
-alias jco='jg checkout'
-alias jvh='jg view-history'
-alias jps='jg push'
-alias jpl='jg pull'
+alias ga='git add'
+alias gaa='git add -A'
+alias gdh='git diff HEAD'
+alias gd='git diff'
+alias gci='git commit'
+alias gca='git add --update && git commit'
+alias gco='git checkout'
+alias gl='git log --oneline --graph --all'
+alias gps='git push'
+alias gpl='git pull'
 
 # ========= CONDA ===========
 alias cde='conda deactivate'

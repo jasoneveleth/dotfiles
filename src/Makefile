@@ -5,7 +5,7 @@ CFLAGS += -pthread
 CFLAGS += -O3
 # CFLAGS += -g -O0
 
-BIN = ../bin/.local/bin/c
+BIN = ../bin/.local/bin
 SOURCE = .
 
 EXECS = donut pager rand eps prompt

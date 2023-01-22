@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# find tags in current directory or stdin
+#
+# USAGE:
+#       find_tag rust
+#       find_tag rust
+#       find_tag python | find_tag mine
+#
+# tags: tags
+
+tag="$1"
+shift
+
+if [ -t 0 ]; then
+    # we're in a terminal
+    for n in *; do
+        eval has_tag "$n" "$tag" && echo $n
+    done
+else
+    # we're reading stdin
+    while read -r n; do
+        eval has_tag "$n" "$tag" && echo $n
+    done
+fi
+exit 0

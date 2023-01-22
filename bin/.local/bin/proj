@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# create a dir for a new project
+#
+# usage: proj [NAME]
+# uses `mktemp` to create a file /tmp/NAME.XXXX
+# 
+# tags: misc
+
+export TMPDIR="/tmp/"
+
+if [ "$@" = "" ]; then
+    prefix='tmp'
+else
+    prefix="$@"
+fi
+
+mktemp -d /tmp/${prefix}.XXXX
+

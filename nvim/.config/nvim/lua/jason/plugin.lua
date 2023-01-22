@@ -21,7 +21,7 @@ vim.g.lion_squeeze_spaces = 1
 
 -- let g:vimtex_quickfix_mode=0
 
-vim.g.CoolTotalMatches = 1
+vim.g.cool_total_matches = 0
 
 vim.g.peekaboo_delay = 500
 

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+recent=`/bin/ls -t ~/.Trash | head -n1`
+echo recent: $recent
+
+# no args
+if [ $# = 0 ]; then
+    mv -i "$recent" .
+else
+    mv -i "$recent" "$@"
+fi
+

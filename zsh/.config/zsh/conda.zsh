@@ -116,7 +116,8 @@ fi
 # conda activate base
 # -> PS1="${PS1:-}" __conda_exe shell.posix activate base; __conda_hashr
 #    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ evaluated for M1:
-export PATH='/opt/homebrew/Caskroom/miniforge/base/bin:/opt/homebrew/Caskroom/miniforge/base/condabin:/Users/jason/.local/share/cargo/bin:/Users/jason/.local/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/Applications/kitty.app/Contents/MacOS:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/usr/local/opt/llvm/bin:/Applications/Racket v8.2/bin:/usr/local/opt/openjdk/bin:/Users/jason/.elan/bin:.'
+PS1='(base) %(?.;.%F{1};%F{0}) '
+export PATH='/opt/homebrew/Caskroom/miniforge/base/bin:/opt/homebrew/Caskroom/miniforge/base/condabin:/Users/jason/.local/share/cargo/bin:/Users/jason/.local/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/opt/homebrew/opt/binutils/bin:/usr/local/bin:/Applications/kitty.app/Contents/MacOS:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/usr/local/opt/llvm/bin:/Applications/Racket v8.2/bin:/usr/local/opt/openjdk/bin:/Users/jason/.elan/bin:.'
 export CONDA_PREFIX='/opt/homebrew/Caskroom/miniforge/base'
 export CONDA_SHLVL='1'
 export CONDA_DEFAULT_ENV='base'

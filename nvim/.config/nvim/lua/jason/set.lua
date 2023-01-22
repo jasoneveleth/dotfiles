@@ -1,6 +1,6 @@
 vim.opt.laststatus = 0
 vim.opt.ruler = false
-vim.opt.shortmess = "xtToOFc"
+vim.opt.shortmess = "xtToOFcS"
 vim.opt.joinspaces = false
 vim.opt.wrap = false
 vim.opt.ignorecase = true

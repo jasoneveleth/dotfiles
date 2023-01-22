@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# dotfiles stow
+#
+# usage: dstow -n bin
+# will run stow in the dotfiles directory
+# 
+# tags: misc
+
+cd ~/dotfiles
+stow -v "$@"

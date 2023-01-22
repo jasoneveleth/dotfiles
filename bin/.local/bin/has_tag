@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# check if file/dir has tag
+#
+# USAGE:
+#       has_tag c-extension c && echo 'hi'
+#
+# tags: tags
+
+# yaml for *.md
+if [[ "$1" == *.md ]]; then
+    matches=`cat "$1" | extract -v pattern=tags`
+    # split up avoid covering up an error earlier in the pipe
+    echo $matches | rg -q "$2" && exit 0
+    exit 1
+fi
+
+# .tag for a directory
+if [ -d "$1" ]; then
+    # if files doesn't exist exit
+    [ ! -e "$1"/.tags ] && exit 1
+
+    cat "$1"/.tags | rg -q "$2" && exit 0
+fi
+
+# grep for tags: for bin
+if [ -x "$1" ]; then
+    if file "$1" | rg -q "text"; then
+        rg -q "tags:.*$2" "$1" && exit 0
+    elif [ -e "$1.help" ]; then
+        rg -q "tags:.*$2" "$1.help" && exit 0
+    fi
+fi
+
+exit 1

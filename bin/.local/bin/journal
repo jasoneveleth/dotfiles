@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# echo data into $JOURNAL, and then edit it
+# 
+# tags: misc
+
+date >> $JOURNAL
+$EDITOR -c "norm! Go" $JOURNAL

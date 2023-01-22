@@ -75,9 +75,16 @@ export JOURNAL="$HOME/.root/personal/journal.md"
 export NIST_JOURNAL="$HOME/.root/misc/sem05/nist_prep/journal.md"
 export EXA_COLORS="*.pdf=35:*.wav=36:*.png=35:*.c=01:*.py=01"
 
+# export LDFLAGS+=" -L/opt/homebrew/opt/binutils/lib"
+# export CPPFLAGS+=" -I/opt/homebrew/opt/binutils/include"
+# export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+
 export CPATH="$CPATH:$XDG_CONFIG_HOME/c"
 if [[ "$HAVE_M1" = true ]]; then
     export CPATH="$CPATH:/opt/homebrew/include"
+    export CPATH="$CPATH:/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/Headers"
+    # >>> np.get_include()
+    export CPATH="$CPATH:/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/numpy/core/include"
     export LIBRARY_PATH="/opt/homebrew/lib"
 fi
 
@@ -91,7 +98,9 @@ front_path=()
 front_path+=("$CARGO_HOME/bin")
 front_path+=("$LOCAL_BIN")
 if [[ "$HAVE_M1" = true ]]; then
-    front_path+=("/opt/homebrew/bin:/opt/homebrew/sbin")
+    front_path+=("/opt/homebrew/bin" "/opt/homebrew/sbin")
+    front_path+=("/opt/homebrew/opt/binutils/bin")
+    front_path+=("/opt/homebrew/opt/openjdk/bin")
 fi
 
 front_path+=("/usr/local/bin")

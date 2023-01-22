@@ -38,7 +38,7 @@ function! RipgrepFzf(query, fullscreen)
     let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
     call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
 endfunction
-command! -nargs=* -bang RgRegex call myfun#RipgrepFzf(<q-args>, <bang>0)
+command! -nargs=* -bang RgRegex call RipgrepFzf(<q-args>, <bang>0)
 command! -bang -nargs=* RgContents
             \ call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1,
             \   fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)

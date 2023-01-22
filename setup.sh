@@ -22,7 +22,7 @@ git clone https://github.com/k-takata/minpac.git ~/.config/nvim/pack/minpac/opt/
 
 brew tap homebrew/cask-fonts 
 brew tap corgibytes/cask-fonts
-brew install bat cask cloc coreutils diff-so-fancy exa fd ffmpeg fzf graphviz htop imagemagick ipython libsvg moreutils mosh neofetch neovim nnn pandoc pv ripgrep shellcheck speedtest-cli stow tmux trash tree bluetoothconnector dvipng gron
+brew install bat cask cloc coreutils diff-so-fancy exa fd ffmpeg fzf graphviz htop imagemagick ipython libsvg moreutils mosh neofetch neovim nnn pandoc pv ripgrep shellcheck speedtest-cli stow tmux trash tree bluetoothconnector dvipng gron git-delta
 brew install poppler # this gets pdftotext
 brew install --cask alacritty alfred appcleaner mactex-no-gui discord fantastical flux font-hack gimp julia keycastr kitty minecraft osxfuse qlmarkdown qlstephen skim spotify tunnelblick zoom tinkertools imageoptim stats
 
@@ -48,6 +48,8 @@ defaults write -g KeyRepeat -int 1
 defaults write com.apple.screencapture "include-date" 0
 defaults write com.apple.screencapture name "ss"
 defaults write com.apple.screencapture location ~/Downloads
+defaults write com.apple.dock workspaces-auto-swoosh -bool NO
+killall Dock
 killall SystemUIServer
 
 # this is for Neovide to find the `nvim` binary

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# edit tags for a dir
+#
+# USAGE:
+#       tag-edit c-extension
+#
+# tags: tags
+
+dirname="$1"
+$EDITOR "$dirname"/.tags

@@ -3,6 +3,8 @@
 # touch a file and make it executable
 #
 # uses mktouch (which will make subdirectories)
+#
+# tags: os sys
 
 mktouch() {
     sd mktouch "$@"

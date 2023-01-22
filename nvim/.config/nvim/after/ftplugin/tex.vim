@@ -1,7 +1,7 @@
 setlocal sw=2
 " setlocal conceallevel=1
 setlocal linebreak
-setlocal makeprg=latexmk\ %
+setlocal makeprg=latex-compile\ %
 
 inoremap <buffer> . .<c-g>u
 inoremap <c-b> <c-g>u\textbf{}<left>

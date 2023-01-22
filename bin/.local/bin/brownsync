@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# rsync "$HOME"/.config/nvim/ and "$HOME"/.local/share/nvim/site/ to brown
+# 
+# tags: vi
+
+# the trailing slash on the source directories means the directory itself isn't
+# copied over, only its' contents
+rsync -aP "$HOME"/.local/share/nvim/site/ b:~/.local/share/nvim/site
+rsync -aP "$HOME"/.config/nvim/ b:~/.config/nvim

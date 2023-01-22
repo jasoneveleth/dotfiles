@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# list all system include directories
+# 
+# tags: misc
+
+gcc -x c -v -E /dev/null

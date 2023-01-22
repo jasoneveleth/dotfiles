@@ -1,4 +1,10 @@
 #!/bin/sh
 
+# create file and any missing subdirectories
+#
+# usage: mktouch path/to/file.ext
+#
+# tags: os sys
+
 mkdir -p "$(dirname "$1")"
 touch "$1"

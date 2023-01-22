@@ -1,0 +1,10 @@
+#!/bin/sh
+
+#
+
+sqlite3 ~/Library/Safari/History.db <<EOF
+.dump
+.exit
+EOF
+
+

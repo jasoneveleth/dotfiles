@@ -7,7 +7,7 @@ return require('packer').startup(function(use)
   use 'tpope/vim-surround'
   use 'tpope/vim-repeat'
   use 'tpope/vim-fugitive'
-  use 'tpope/vim-eunuch'
+  -- use 'tpope/vim-eunuch'
   use 'romainl/vim-cool'
   use 'junegunn/fzf.vim'
   use 'junegunn/fzf'
@@ -52,4 +52,7 @@ return require('packer').startup(function(use)
   use "folke/noice.nvim"
   use "MunifTanjim/nui.nvim"
   use "rcarriga/nvim-notify"
+  use "ibhagwan/fzf-lua"
+  use 'bogado/file-line'
+  use 'rhysd/conflict-marker.vim'
 end)

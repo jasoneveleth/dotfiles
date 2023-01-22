@@ -1,6 +1,0 @@
-#!/bin/sh
-
-# echo data into $JOURNAL, and then edit it
-
-date >> $JOURNAL
-$EDITOR -c "norm! Go" $JOURNAL

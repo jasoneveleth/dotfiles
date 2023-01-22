@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# output `rg` to /tmp/quickfix
+# 
+# tags: misc
+
+rg --vimgrep "$@" > /tmp/quickfix

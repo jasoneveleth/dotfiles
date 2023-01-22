@@ -1,0 +1,53 @@
+#!/usr/bin/env lua
+
+while true
+do
+    ch = io.read(1)
+
+    -- eof
+    if ch == nil then
+        break
+    end
+
+    if ch == '\\' then
+        snd = io.read(1)
+        if snd == 'n' then
+            io.write('\n')
+        elseif snd == 't' then
+            io.write('\t')
+        elseif snd == 'r' then
+            io.write('\r')
+        elseif snd == 'x' then
+            hex = io.read(2)
+            io.write(string.char(tonumber(hex, 16)))
+        else
+            io.write(ch)
+            io.write(snd)
+        end
+    else
+        io.write(ch)
+    end
+end
+
+
+-- #!/usr/bin/env python3
+-- import sys
+-- 
+-- while ch := sys.stdin.read(1):
+--     if ch == '\\':
+--         snd = sys.stdin.read(1)
+--         if snd == 'n':
+--             print()
+--         elif snd == 't':
+--             print('\t', end='')
+--         elif snd == 'r':
+--             print('\r', end='')
+--         elif snd == 'x':
+--             hex = sys.stdin.read(2)
+--             i = int(hex, 16)
+--             print(i.to_bytes(1, byteorder='big').decode('ascii'), end='')
+--         else:
+--             print('\\')
+--     else:
+--         print(ch, end='')
+-- 

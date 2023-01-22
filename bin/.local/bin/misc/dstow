@@ -1,9 +1,0 @@
-#!/bin/sh
-
-# dotfiles stow
-#
-# usage: dstow -n bin
-# will run stow in the dotfiles directory
-
-cd ~/dotfiles
-stow -v "$@"

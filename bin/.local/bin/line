@@ -1,0 +1,18 @@
+#!/bin/sh
+
+if [ $# = 1 ]; then
+    head -n $1 | tail -n 1
+    exit
+fi
+
+while [ $# -gt 0 ]; do
+    case $1 in 
+    ''|*[!0-9]*) files="$files $1" ;;
+    *) linenr=$1 ;;
+    esac
+
+    shift
+done
+
+head -n $linenr $files | tail -n 1
+

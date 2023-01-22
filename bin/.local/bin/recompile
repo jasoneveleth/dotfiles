@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# recompile executables (`sd c <executable>`)
+#
+# runs `make` in 'src' directory
+# of the dotfiles repo
+# 
+# tags: c
+
+cd ~/dotfiles/src
+make

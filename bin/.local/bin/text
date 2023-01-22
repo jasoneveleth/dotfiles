@@ -1,0 +1,95 @@
+#!/bin/sh
+
+# try to text from commandline
+# 
+# tags: misc
+
+if [ "$1" = "-r" ]; then
+    read -p "Recompile? (y,N) " yn
+    if [ $yn = "y" ]; then
+        (exec osascript -e '
+        tell application "Contacts"
+        set the_list to {}
+        repeat with myperson in (every person)
+        set phoneNumbers to (value of phone of myperson) as string
+        set end of the_list to phoneNumbers & "|" & (name of myperson)
+    end repeat
+    return the_list
+end tell
+') > /tmp/contactlist
+    exit
+    fi
+fi
+
+if [ "$1" = "-d" ]; then
+    exec osascript -e '
+        on run {targetMessage}
+        tell application "Messages"
+            set targetService to 1st service whose service type = iMessage
+            set targetBuddy to buddy "+1 (913) 304-8280" of targetService
+            send targetMessage to targetBuddy
+        end tell
+        end run
+        ' "$(read -e -p 'type message: ' message; echo $message)"
+    exit
+fi
+
+if [ "$1" = "-n" ]; then
+    nameandphone="$2"
+else
+    nameandphone="$(cat /tmp/contactlist | sed 's/, /\n/g' | fzf)"
+fi
+
+[ -z "$nameandphone" ] && exit
+
+echo "to: $(echo "$nameandphone" | sed 's/.*\|//g')"
+
+exec osascript -e '
+on run {targetBuddyPhone, targetMessage}
+tell application "Messages"
+set targetService to 1st service whose service type = iMessage
+set targetBuddy to buddy targetBuddyPhone of targetService
+send targetMessage to targetBuddy
+end tell
+end run
+' "$(echo "$nameandphone" | sed 's/\|.*//g')" "$(read -e -p 'type message: ' message; echo $message)"
+
+
+
+
+
+
+
+
+##!/usr/bin/osascript
+#-- https://medium.com/ux-developer/send-multiple-messages-through-the-terminal-with-the-imessage-app-3656e913ce9e
+#-- on run {targetBuddyPhone, targetMessage}
+#tell application "Messages"
+#	set targetService to 1st account whose service type = iMessage
+#	set targetBuddy to participant "1235551234" of targetService
+#	send "Hello" to targetBuddy
+#end tell
+#-- end run
+
+#-- https://apple.stackexchange.com/questions/162598/programmatically-send-text-message-through-messages-app-on-os-x-10-10
+#tell application "Messages"
+#	get name of every account
+#end tell
+#-- I noticed that I have "SMS" as a 4th option (yours may be different). So then I used:
+
+#launch application "Messages"
+#tell application "Messages"
+#	activate --steal focus
+	
+#	set targetBuddy to "12345550123"
+#	set targetService to id of account "SMS"
+#	set textMessage to "Just a test"
+	
+#	set theBuddy to participant targetBuddy of account id targetService
+#	send textMessage to theBuddy
+#end tell
+
+
+#-- command="tell application \"Messages\" to send \"${1:-hey sexy}\" to buddy \"${2:-Anna ❤️ Lee}\""
+#-- osascript -e "$command"
+

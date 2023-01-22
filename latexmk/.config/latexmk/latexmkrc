@@ -1,5 +1,8 @@
-$pdflatex = "pdflatex -halt-on-error -file-line-error %O %S";
+# https://mg.readthedocs.io/latexmk.html
+
 $pdf_mode = 1;
 $clean_ext = "%R.bbl %R.run.xml";
 # $pdf_previewer = "/Applications/Skim.app/Contents/MacOS/Skim"
 # @BIBINPUTS = ( ".", "/Users/jason/.config/latex" ); 
+$pdflatex = "pdflatex -halt-on-error -interaction";
+# $pdflatex = "pdflatex -halt-on-error -file-line-error %O %S";

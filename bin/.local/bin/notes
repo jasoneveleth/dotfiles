@@ -28,14 +28,14 @@ while : ; do
         # contents of files only
         file=`rg --color=always --smart-case '^' | fzf --print-query --ansi --delimiter : --nth 2 | tail -n1`
     else
-        file=`fzf --print-query | tail -n1`
+        file=`fd '[^.].*' | fzf --print-query | tail -n1`
     fi
     if [ "$file" = "" ]; then
         break
     fi
     if [ -f "$file" ]; then
-        # eval is needed incase EDITOR isn't a single word
-        eval "$EDITOR" "$file"
+        # eval is needed incase EDITOR isn't a single word, double double quotes bc eval
+        eval "$EDITOR" "\"$file\""
     else
         # remove the leading ' character from the name (which you can use to make it skip all names)
         if [ ${file:0:1} = "'" ]; then

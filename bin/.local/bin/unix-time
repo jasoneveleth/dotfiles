@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# output unix time
+#
+# usage: unix-time
+# 
+# tags: misc
+
+date +%s

@@ -1,5 +1,0 @@
-#!/bin/sh
-
-# output `rg` to /tmp/quickfix
-
-rg --vimgrep "$@" > /tmp/quickfix

@@ -6,8 +6,12 @@ if [ $# = 0 ]; then
 fi
 
 cd "$HOME/dotfiles/bin/.local/bin/"
-chtouch "$1"
-echo '#!/bin/sh' >> "$1"
+
+if ! [ -e "$1" ]; then
+    chtouch "$1"
+    echo '#!/bin/sh' >> "$1"
+fi
+
 $EDITOR "$1"
 cd "$HOME/dotfiles"
 stow -v bin

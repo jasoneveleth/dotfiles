@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# ping google.com until response, then display a notification
+# 
+# tags: misc
+
+while true; do
+    ping -c 1 google.com 2>/dev/null \
+        && osascript -e 'display notification "got internet"' \
+        && break
+done
+

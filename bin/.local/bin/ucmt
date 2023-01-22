@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# uncomment text
+#
+# used especially for vi, counter part for `cmt`
+# 
+# tags: vi
+
+while read -r line; do 
+  echo "${line#* }"
+done
+

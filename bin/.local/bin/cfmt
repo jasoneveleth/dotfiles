@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# cfmt
+#
+# tags: vi
+
+clang-format --style=WebKit
