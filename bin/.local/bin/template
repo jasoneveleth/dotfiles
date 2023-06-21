@@ -1,0 +1,83 @@
+#!/bin/sh
+
+# template generator
+#
+# USAGE:
+#    template python
+# ARGS:
+#     python             python exception snippet
+
+
+# notice: \ -> \\\\ since the heredoc doesn't use 'EOF'
+python=$(
+cat <<EOF
+import sys
+import os
+def xfname(tb):
+    abs_path = tb.tb_frame.f_code.co_filename
+    rel_path = os.path.relpath(abs_path, os.getcwd())
+    argmin = lambda x, y: x if len(x) < len(y) else y
+    return argmin(abs_path, rel_path)
+def excepthook(exc_type, exc_value, tb):
+    xlineno = lambda tb: tb.tb_lineno
+    xname = lambda tb: tb.tb_frame.f_code.co_name
+    print('==================================================================')
+    print('Traceback:')
+    while tb:
+        # lineno is left justified, width of 3
+        print(f"{xfname(tb)}:{xlineno(tb):<3} in {xname(tb)}")
+        tb = tb.tb_next
+
+    r = "\\\\x1b[31m"; p = "\\\\x1b[35m"; c = "\\\\x1b[0m" # ansi colors, should be 1 backslash not 4
+    print(f"{r}{exc_type.__name__}{c}: {p}{exc_value}{c}")
+sys.excepthook = excepthook
+
+np.set_printoptions(linewidth=200, threshold=sys.maxsize, precision=8)
+EOF
+)
+
+# notice: \ -> \\ since the heredoc uses 'EOF'
+tex=$(
+cat <<'EOF'
+\\documentclass[12pt, letterpaper]{article}
+
+% \\usepackage[margin=1in]{geometry} % margin
+\\usepackage{biblatex} % bib
+\\addbibresource{references.bib} % bib file
+% misc math stuff, extended symbol collection, nice theorems/lemmas/remarks
+\\usepackage{amsmath, amssymb, amsthm}
+\\usepackage{enumitem}
+\\usepackage{hyperref}
+\\usepackage{graphicx}
+
+\\title{Yeehaw}
+\\author{Jason Eveleth}
+
+\\begin{document}
+\\maketitle
+
+\\section{this is sec 1}
+
+\\section{Introduction}
+
+\\section{Related Work}
+
+\\section{Method}
+
+\\section{Results}
+
+\\section{Conclusion}
+
+\\printbibliography
+
+\\end{document}
+EOF
+)
+
+case "$1" in
+    python) text="$python";;
+    tex) text="$tex";;
+    *) echo "template '$1' not found" && exit 1;;
+esac
+
+echo "$text"

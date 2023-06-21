@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# $1 is the branch you want to make a pull request from
+
+git create-branch "$1"
+git checkout master
+git reset --hard origin/master
+git checkout "$1"
+gh pr create --fill
+

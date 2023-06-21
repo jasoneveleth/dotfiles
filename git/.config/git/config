@@ -12,16 +12,25 @@
 	reword = commit --amend
 	rename-branch = branch -m
 	create-branch = checkout -b
+	push-branch = push -u
 	unadd = restore --staged
+	discard = restore
 	dirty = !test -n "$(git status --porcelain)"
 	wip = !git add --all && git commit -m 'wip'
 	ff = merge --ff-only
-	pullff = pull --ff-only
 	root = rev-parse --show-toplevel
+	# usage: git diff -p $(git empty-tree-sha) some-interesting-subdir/
+	empty-tree-sha = hash-object -t tree /dev/null
 	wip = commit -am wip
 	head-ref = !git symbolic-ref HEAD | cut -d/ -f3-
-	save = !sh -c 'export PREV="$(git head-ref)" && git create-branch "$1" && git commit -am "$1" && git checkout "$PREV"'
-	update-cwd = !git checkout $1 .
+	save = !sh -c 'export PREV="$(git head-ref)" && git create-branch tmp-"$1" && git commit -am tmp-"$1" && git checkout "$PREV"'
+	update-cwd = !sh -c 'git restore --source=$1 --worktree .' --
+	update-stage = !sh -c 'git restore --source=$1 --staged .' --
+	# update-ref    <- this will point a ref to something
+	edit-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; vim `f`"
+        add-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; git add `f`"
+	# useful for old commits to have the right submods
+	co-recurse = !sh -c 'git checkout $1 && git submodule update --recursive' --
 [pull]
 	rebase = true
 [diff]

@@ -1,0 +1,99 @@
+#!/bin/bash
+
+# git a new version of hdcms package in hdcms-dev conda env (from remote dev branches)
+
+# exit if there's an error
+set -e
+
+# setup conda
+__conda_setup="$('/opt/homebrew/Caskroom/miniforge/base/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/homebrew/Caskroom/miniforge/base/etc/profile.d/conda.sh" ]; then
+        . "/opt/homebrew/Caskroom/miniforge/base/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/homebrew/Caskroom/miniforge/base/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+conda activate hdcms-dev
+set -x
+
+# push dev branch for c to origin
+cd ~/src/hdcms-c
+if git dirty; then
+    echo stopping: "$(pwd)" is dirty
+    git diff --stat
+    set +x
+    while true; do
+        read -n 1 -p "Do you want us to git commit? " yn
+        case $yn in
+            [Yy]* ) git add --all; git commit -m 'automated script: saving work'; break;;
+            [Nn]* ) exit 1;;
+            * ) echo "Please answer yes or no.";;
+        esac
+    done
+    set -x
+fi
+git checkout dev
+git push-branch dev
+
+# sync c code
+cd ~/src/hdcms-python-bindings/
+if git dirty; then
+    echo stopping: "$(pwd)" is dirty
+    git diff --stat
+    set +x
+    while true; do
+        read -n 1 -p "Do you want us to git commit? " yn
+        printf "\n"
+        case $yn in
+            [Yy]* ) git add --all; git commit -m 'automated script: saving work'; break;;
+            [Nn]* ) exit 1;;
+            * ) echo "Please answer yes or no.";;
+        esac
+    done
+    set -x
+fi
+git checkout dev
+cd hdcms-c
+git checkout dev
+git pull
+cd ..
+rm -rf dist ./*.egg-info
+# compile
+python -m build
+# we wait to commit until after we've tried to build
+if git dirty; then
+    git add --all
+    git commit -m 'automated script: updating version'
+fi
+pip uninstall -y hdcms
+pip uninstall -y hdcms-bindings
+cd dist
+pip install hdcms_bindings*.whl
+cd ..
+
+cd ~/src/hdcms-python
+git checkout dev
+rm -rf dist
+python -m build
+cd dist
+pip install hdcms*.whl
+cd ..
+if git dirty; then
+    echo stopping: "$(pwd)" is dirty
+    git diff --stat
+    set +x
+    while true; do
+        read -n 1 -p "Do you want us to git commit? " yn
+        printf "\n"
+        case $yn in
+            [Yy]* ) git add --all; git commit -m 'automated script: saving work'; break;;
+            [Nn]* ) exit 1;;
+            * ) echo "Please answer yes or no.";;
+        esac
+    done
+    set -x
+fi

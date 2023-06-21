@@ -1,0 +1,94 @@
+#!/bin/sh
+
+set -e
+
+alias e="$EDITOR"
+__conda_setup="$('/opt/homebrew/Caskroom/miniforge/base/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/homebrew/Caskroom/miniforge/base/etc/profile.d/conda.sh" ]; then
+        . "/opt/homebrew/Caskroom/miniforge/base/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/homebrew/Caskroom/miniforge/base/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+conda activate hdcms
+set -x
+
+cd ~/src/hdcms-python-bindings
+if git dirty; then
+    echo stopping: "$(pwd)" is dirty
+    git diff --stat
+    set +x
+    while true; do
+        read -n 1 -p "Do you want us to git commit? " yn
+        printf "\n"
+        case $yn in
+            [Yy]* ) git add --all; git commit -m 'automated script: saving work'; break;;
+            [Nn]* ) exit 1;;
+            * ) echo "Please answer yes or no.";;
+        esac
+    done
+    set -x
+fi
+git checkout main
+git diff main dev
+while true; do
+    read -n 1 -p "Stop? " yn
+    printf "\n"
+    case $yn in
+        [Yy]* ) exit 0; break;;
+        [Nn]* ) break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+git merge dev
+e pyproject.toml
+e README.md
+rm -rf dist ./*.egg-info
+python -m build
+python -m twine upload dist/*
+git checkout dev
+git merge main
+
+cd ~/src/hdcms-python
+if git dirty; then
+    echo stopping: "$(pwd)" is dirty
+    git diff --stat
+    set +x
+    while true; do
+        read -n 1 -p "Do you want us to git commit? " yn
+        printf "\n"
+        case $yn in
+            [Yy]* ) git add --all; git commit -m 'automated script: saving work'; break;;
+            [Nn]* ) exit 1;;
+            * ) echo "Please answer yes or no.";;
+        esac
+    done
+    set -x
+fi
+git checkout main
+git diff main dev
+while true; do
+    read -n 1 -p "Stop? " yn
+    printf "\n"
+    case $yn in
+        [Yy]* ) exit 0; break;;
+        [Nn]* ) break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+git merge dev
+e pyproject.toml
+e README.md
+rm -rf dist
+python -m build
+python -m twine upload dist/*
+git checkout dev
+git merge main
+
+pip uninstall -y hdcms
+pip uninstall -y hdcms-bindings
+pip install hdcms

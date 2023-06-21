@@ -1,0 +1,4 @@
+#!/bin/sh
+
+rm -f *.bbl *.aux *.bcf *.fls *.log *.blg *.synctex.gz *.run.xml *.out 
+rm -f *.spl # in elsarticle class contains options for natbib, to be input at the next run

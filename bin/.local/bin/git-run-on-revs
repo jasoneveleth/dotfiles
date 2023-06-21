@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# usage: git run-on-revs START END 'command'
+#
+# This will essentially duplicate the git log command.
+# Bugs: start is exclusive
+#
+# example: git run-on-revs 3ab923 HEAD 'git log -1'
+
+start="$1"
+last="$2"
+cmd="$3"
+
+git rev-list --reverse "$last" ^"$start" | while read rev; do
+    git checkout "$rev" &> /dev/null
+    $cmd
+done
+

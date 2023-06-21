@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cd ~/weenix
+git commit -am "wip ween"
+git push
+# ssh brown pull
