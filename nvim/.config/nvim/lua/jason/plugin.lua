@@ -49,3 +49,10 @@ vim.g.python3_host_prog = prefix .. '/bin/python'
 
 vim.g.netrw_dirhistmax = 0
 vim.g.tex_flavor = 'latex'
+
+vim.cmd([[let g:sneak#label = 1]])
+vim.cmd([[let g:sneak#prompt = '']])
+
+vim.cmd("hi IlluminatedWordRead guibg=#424242 gui=NONE")
+vim.cmd("hi IlluminatedWordWrite guibg=#424242 gui=underline")
+vim.cmd("hi IlluminatedWordText guibg=#424242 gui=NONE")

@@ -11,7 +11,6 @@ return require('packer').startup(function(use)
   use 'romainl/vim-cool'
   use 'junegunn/fzf.vim'
   use 'junegunn/fzf'
-  use 'junegunn/vim-peekaboo'
   use 'jasoneveleth/vim-dim'
   use 'mhinz/vim-startify'
   use 'mhinz/vim-sayonara'
@@ -55,4 +54,7 @@ return require('packer').startup(function(use)
   use "ibhagwan/fzf-lua"
   use 'bogado/file-line'
   use 'rhysd/conflict-marker.vim'
+  use 'skywind3000/asyncrun.vim'
+  use 'folke/which-key.nvim'
+  use 'RRethy/vim-illuminate'
 end)

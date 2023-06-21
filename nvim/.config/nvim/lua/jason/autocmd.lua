@@ -41,6 +41,11 @@ augroup Autocomment
     autocmd BufEnter * set formatoptions-=o
 augroup END
 
+augroup sage
+    autocmd!
+    autocmd BufRead,BufNewFile *.sage set filetype=python
+augroup END
+
 augroup cfiles
     autocmd!
     autocmd BufRead,BufNewFile *.h,*.c set filetype=c

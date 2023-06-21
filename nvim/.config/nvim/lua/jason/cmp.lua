@@ -77,6 +77,7 @@ require('lspconfig').racket_langserver.setup({capabilities = capabilities})
 require('lspconfig').pyright.setup({capabilities = capabilities})
 require('lspconfig').rust_analyzer.setup({capabilities = capabilities})
 require('lspconfig').texlab.setup({capabilities = capabilities})
+vim.lsp.set_log_level('debug')
 
 -- this is how you change pyright path
 -- pyright = {}

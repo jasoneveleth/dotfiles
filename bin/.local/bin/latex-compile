@@ -118,15 +118,15 @@ def run_pdflatex():
     
     raise RunCommandError # notify caller of compile error
 
-def bibtex_needed(old_aux):
-    """Guess whether we need to run bibtex"""
+def biber_needed(old_aux):
+    """Guess whether we need to run biber"""
     log=readfile(jobname+".log")  #52
     
     if "No file "+jobname+".bbl" in log:
-        # print("bibtex is needed because no file "+jobname+".bbl")
+        # print("biber is needed because no file "+jobname+".bbl")
         return True # test-cases #03, #15...
 
-    # design note: we rerun bibtex even if there were only warnings,
+    # design note: we rerun biber even if there were only warnings,
     # so as to annoy the user, hoping for them to correct their .bib
     # files :-)
     if os.path.isfile(jobname+".blg"):
@@ -135,7 +135,7 @@ def bibtex_needed(old_aux):
         if "Warning--" in blg: return True # test-case #32
 
     # detect hard-coded bibliographies (and maybe other corner cases)
-    # which don't use bibtex at all. (cf e.g. #15)
+    # which don't use biber at all. (cf e.g. #15)
     if not os.path.isfile(jobname+".bbl") and not os.path.isfile(jobname+".blg"):
         return False
 
@@ -148,16 +148,16 @@ def bibtex_needed(old_aux):
 
     # compare both sets to detect new or removed citations (cf #22 #40)
     if set(old_citations) != set(new_citations):
-        # print("bibtex is needed because some citations have added or removed")
+        # print("biber is needed because some citations have added or removed")
         return True
 
     if os.path.isfile(jobname+".blg"): # cf test-case #49
-        last_bibtex_time = os.path.getmtime(jobname+".blg")
+        last_biber_time = os.path.getmtime(jobname+".blg")
         bibnames=[ line[18:].strip() for line in readfile(jobname+".blg",True) if 'Database file' in line ]
-        for bibname in bibnames: # iterate over all bibtex files, cf test-case #50
+        for bibname in bibnames: # iterate over all biber files, cf test-case #50
             if '-blx.bib' in bibname: continue # irrelevant because this one is biblatex-generated
-            if os.path.getmtime(bibname) >= last_bibtex_time:
-                # print("bibtex is needed because "+bibname+" is more recent that "+jobname+".blg")
+            if os.path.getmtime(bibname) >= last_biber_time:
+                # print("biber is needed because "+bibname+" is more recent that "+jobname+".blg")
                 return True
 
     return False
@@ -290,6 +290,9 @@ class WarningParser():
         elif line.startswith('pdfTeX warning:'): # cf #36, #48
             self.printer.print(line) # pdfTeX warnings are always single-line
 
+        elif re.search(r'^\w* warning', line): # cf #36, #48
+            self.printer.print(line) # pdfTeX warnings are always single-line
+
         elif line.startswith(r'Overfull ') or line.startswith(r'Underfull '): # cf #30, #34
             if options.nobadboxes is False:
                 self.printer.print(line) # bad boxes are always single-line
@@ -385,26 +388,30 @@ def run_commmand(commandline):
         print(e.output.decode('utf-8', errors='ignore').strip())
         raise RunCommandError
 
+def output(str):
+    if sys.stdin.isatty():
+        print(str)
+
 #####################################################################
 # Latex full build. Rerun until we reach fixpoint
             
 def latex_full_build():
 
     ####################
-    # Perform first run: pdflatex, then (maybe) bibtex
+    # Perform first run: pdflatex, then (maybe) biber
     before=snapshot()
-    print("compiling %s..." % (jobname+'.tex'))
+    output("compiling %s..." % (jobname+'.tex'))
     run_pdflatex() # if errors, will print them before raising exception
     after=snapshot()
     # print("before:",dict_hexdigest(before))
     # print("after: ",dict_hexdigest(after))
         
-    if bibtex_needed(before[jobname+'.aux']):
-        print("running BibTeX on %s..." % jobname)
-        bibtex_output=run_commmand("bibtex "+jobname)
-        if 'Warning--' in bibtex_output:
-            print(bibtex_output.strip())
-        after=snapshot() # trigger a rerun if bibtex changed the .bbl, cf #45
+    if biber_needed(before[jobname+'.aux']):
+        output("running biber on %s..." % jobname)
+        biber_output=run_commmand("biber "+jobname)
+        if 'Warning--' in biber_output:
+            print(biber_output.strip())
+        after=snapshot() # trigger a rerun if biber changed the .bbl, cf #45
 
     ####################
     # Rerun until fixpoint
@@ -417,7 +424,7 @@ def latex_full_build():
                 subprocess.check_output(onchange[name],shell=True)
     
         before=snapshot()
-        print("recompiling %s..." % (jobname+'.tex'))
+        output("recompiling %s..." % (jobname+'.tex'))
         run_pdflatex() 
         after=snapshot()
 
@@ -467,7 +474,7 @@ if __name__ == '__main__':
                            version='%(prog)s 2021-06-07')
     argparser.add_argument('-l','--loop', help='interactive mode: loop forever, recompile when needed',action="store_true")
     argparser.add_argument('-b','--nobadboxes', help='ignore warnings about overfull and underfull boxes', action="store_true")
-    argparser.add_argument('--engine',help='compile with this program instead of pdflatex',default="pdflatex")
+    argparser.add_argument('--engine',help='compile with this program instead of pdflatex',default="lualatex")
     argparser.add_argument('--selfupdate',help='download most recent version from github',action="store_true")
     argparser.add_argument('filename',metavar='FILENAME', help='your latex file')
 

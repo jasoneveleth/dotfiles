@@ -103,6 +103,7 @@ ls.add_snippets("tex", {
     mai({trig = "!>", descr = "mapsto"}, t("\\mapsto ")),
     mai({trig = "=<", descr = "implied by"}, t("\\impliedby ")),
     mai({trig = "iff", descr = "iff"}, t("\\iff ")),
+    mai({trig = "inn", descr = "in"}, t("\\in ")),
     mai({trig = "td", descr = "to the ... power"}, fmta("^{<>}", {i(1)})),
     mai({trig = "sr", descr = "squared"}, t("^2")),
     mai({trig = "invs", descr = "inverse"}, t("^{-1}")),
@@ -114,6 +115,9 @@ ls.add_snippets("tex", {
     mai({trig = "xx", descr = "cross"}, t("\\times ")),
     mai({trig = "EE", descr = "exists"}, t("\\exists ")),
     mai({trig = "AA", descr = "forall"}, t("\\forall ")),
+    mai({trig = "RR", descr = "Real Numbers"}, t("\\mathbb{R}")),
+    mai({trig = "QQ", descr = "Rational Numbers"}, t("\\mathbb{Q}")),
+    mai({trig = "ZZ", descr = "Integers"}, t("\\mathbb{Z}")),
     mai({trig = ">>", descr = ">>"}, t("\\gg ")),
     mai({trig = "<<", descr = "<<"}, t("\\ll ")),
     mai({trig = "~~", descr = "~"}, t("\\sim ")),
@@ -130,12 +134,17 @@ ls.add_snippets("tex", {
     a({trig = "mk", descr = "math"}, fmta("$<>$", {i(1)})),
     -- should take visual input
     a({trig = "dm", descr = "math"}, fmta("\\[\n<>\n.\\] <>", {i(1), i(0)})),
+    a({trig = ";verb", descr = "verb"}, fmta("\\verb|<>| <>", {i(1), i(0)})),
+    b({trig = "fig", descr = "include figure"}, fmta("\\begin{figure}[ht]\n\\centering\n\\includegraphics[width=0.5\\linewidth]{<>}\n\\caption{<>}\\label{fig:<>}\n\\end{figure}\n<>", {i(3), i(2), i(1), i(0)})),
 
     mai({trig = "//", descr = "fraction"}, fmta("\\frac{<>}{<>}", {i{1}, i{2}})),
 
     -- should only expand if end of trigger matches word boundary
     a({trig = "vb", descr = "verb"}, fmta("\\verb|<>| ", {i(1)})),
     mai({trig = "set", descr = "set"}, fmta("\\{<>\\}", {i(1)})),
+
+    -- greek
+    mai({trig = ";a", descr = "alpha"}, t("α")),
 })
 
 -- snippet template "Basic template" b

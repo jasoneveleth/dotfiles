@@ -16,6 +16,8 @@ require("jason.texcount")
 require("jason.textobjects")
 require("jason.toggle")
 require("jason.window")
+require("jason.autocmd")
+require("jason.whichkey")
 
 require'nvim-treesitter.configs'.setup{
   indent = {

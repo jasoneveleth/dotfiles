@@ -17,7 +17,9 @@ alias src='source $HOME/.config/zsh/.zshrc && source $HOME/.config/zsh/.zshenv'
 alias ..='builtin cd ..'
 alias ...='builtin cd ../..'
 
+alias adobe='kill -9 $(pgrep -f Adobe) $(pgrep -f CoreSync)'
 alias nist='date >> $NIST_JOURNAL; $EDITOR -c "norm! Go" $NIST_JOURNAL'
+alias os='diskutil unmount force /tmp/brown ; sshfs brown:/gpfs/main/home/jeveleth/course/cs1690 /tmp/brown && echo Mount successful && cd $PWD'
 # (r)un (n)ext
 alias rn=' eval "$(zsh_history_next)"'
 proj() {cd "$(sd misc proj $@)" && pwd}
@@ -67,17 +69,15 @@ function up()
 # alias git='echo nope! use \`jg\`'
 alias gs='git status'
 alias ga='git add'
-alias gaa='git add -A'
+alias gaa='git add --all'
 alias gdh='git diff HEAD'
 alias gd='git diff'
+alias gdc='git diff --cached'
 alias gci='git commit'
+alias gcm='git commit -m'
 alias gca='git add --update && git commit'
 alias gco='git checkout'
 alias gl='git log --oneline --graph --all'
 alias gps='git push'
 alias gpl='git pull'
-
-# ========= CONDA ===========
-alias cde='conda deactivate'
-alias cac='conda activate'
 

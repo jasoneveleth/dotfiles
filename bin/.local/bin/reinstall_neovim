@@ -7,9 +7,8 @@
 cd ~/src
 test -d neovim || git clone https://github.com/neovim/neovim
 cd neovim
-git checkout master
+git checkout nightly
 git pull
-# git checkout stable
 
 # `git-clean` remove untracked files from the working tree
 # `-d` remove directories

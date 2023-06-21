@@ -29,7 +29,8 @@ vim.opt.showcmd = false
 vim.opt.guifont = "Hack:h14"
 vim.opt.mouse = "a"
 vim.opt.termguicolors = true
-vim.opt.timeout = false
+vim.opt.timeout = true
+vim.opt.timeoutlen = 300
 
 vim.g.mapleader = " "
 

@@ -4,11 +4,15 @@ setlocal linebreak
 setlocal makeprg=latex-compile\ %
 
 inoremap <buffer> . .<c-g>u
-inoremap <c-b> <c-g>u\textbf{}<left>
+inoremap <buffer> <c-b> <c-g>u\textbf{}<left>
 inoremap <buffer> <c-s> <c-g>u<Esc>[s1z=`]a
 nnoremap <buffer> <leader>s :e ~/.config/nvim/LuaSnip/tex.lua<cr>
 
 nnoremap <buffer> <leader>g :call texcount#Texcount()<cr>
+nnoremap <buffer> gs ]s1z=
+
+nnoremap <buffer> <leader>m <cmd>AsyncRun latex-compile %<cr>
+
 " imap <tab> <c-r>=Tab(1)<cr>
 " imap <s-tab> <c-r>=Tab(0)<cr>
 

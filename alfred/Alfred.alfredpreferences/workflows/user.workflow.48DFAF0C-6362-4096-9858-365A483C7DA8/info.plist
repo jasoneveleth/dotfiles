@@ -21,6 +21,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>4FDF739D-9B40-4681-AAC9-D63F413577BD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>72882932-A805-4A1C-B878-BA24A844C722</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>7F06D968-A68C-481E-83C0-7B45F509D2D1</key>
 		<array>
 			<dict>
@@ -176,6 +189,23 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>paths</key>
+				<array>
+					<string>/Applications/Google Chrome.app</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>228DC5F1-4DB9-4404-86A2-0F61565495D7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -209,7 +239,7 @@ end alfred_script</string>
 			<dict>
 				<key>paths</key>
 				<array>
-					<string>/Applications/Safari.app</string>
+					<string>/Applications/Obsidian.app</string>
 				</array>
 				<key>toggle</key>
 				<false/>
@@ -217,7 +247,7 @@ end alfred_script</string>
 			<key>type</key>
 			<string>alfred.workflow.action.launchfiles</string>
 			<key>uid</key>
-			<string>228DC5F1-4DB9-4404-86A2-0F61565495D7</string>
+			<string>CE91C668-762B-4D99-8387-D4FD4FC54FE6</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -255,19 +285,54 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>paths</key>
-				<array>
-					<string>/Applications/Obsidian.app</string>
-				</array>
-				<key>toggle</key>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>passwords</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Passwords</string>
+				<key>withspace</key>
 				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.launchfiles</string>
+			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>CE91C668-762B-4D99-8387-D4FD4FC54FE6</string>
+			<string>4FDF739D-9B40-4681-AAC9-D63F413577BD</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>tell application "System Settings" to activate
+
+tell application "System Events" to tell application process "System Settings"
+    set frontmost to true
+
+    set VIEW to menu bar item "View" of menu bar 1
+    click VIEW
+    click menu item "Passwords" of menu 1 of VIEW
+end tell</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>72882932-A805-4A1C-B878-BA24A844C722</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -315,6 +380,20 @@ end alfred_script</string>
 			<key>ypos</key>
 			<real>60</real>
 		</dict>
+		<key>4FDF739D-9B40-4681-AAC9-D63F413577BD</key>
+		<dict>
+			<key>xpos</key>
+			<real>190</real>
+			<key>ypos</key>
+			<real>655</real>
+		</dict>
+		<key>72882932-A805-4A1C-B878-BA24A844C722</key>
+		<dict>
+			<key>xpos</key>
+			<real>465</real>
+			<key>ypos</key>
+			<real>655</real>
+		</dict>
 		<key>7F06D968-A68C-481E-83C0-7B45F509D2D1</key>
 		<dict>
 			<key>colorindex</key>
@@ -352,7 +431,7 @@ end alfred_script</string>
 			<key>xpos</key>
 			<real>465</real>
 			<key>ypos</key>
-			<real>520</real>
+			<real>515</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>

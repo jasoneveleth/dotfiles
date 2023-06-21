@@ -24,9 +24,13 @@ while : ; do
     if [ "$1" = "-c" ]; then
         # contents of files and file names
         file=`rg --color=always --smart-case '^' | fzf --print-query --ansi | tail -n1`
+        # remove line, keep filename
+        file="$(echo $file | tr ":" "\n" | head -n1)"
     elif [ "$1" = "-co" ]; then
         # contents of files only
         file=`rg --color=always --smart-case '^' | fzf --print-query --ansi --delimiter : --nth 2 | tail -n1`
+        # remove line, keep filename
+        file="$(echo $file | tr ":" "\n" | head -n1)"
     else
         file=`fd '[^.].*' | fzf --print-query | tail -n1`
     fi

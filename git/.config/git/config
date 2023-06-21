@@ -11,10 +11,17 @@
 	amend = commit --amend --no-edit
 	reword = commit --amend
 	rename-branch = branch -m
-	unstage = restore --staged
-	stage = add
-	discard = reset --hard
-	ff = fast-forward
+	create-branch = checkout -b
+	unadd = restore --staged
+	dirty = !test -n "$(git status --porcelain)"
+	wip = !git add --all && git commit -m 'wip'
+	ff = merge --ff-only
+	pullff = pull --ff-only
+	root = rev-parse --show-toplevel
+	wip = commit -am wip
+	head-ref = !git symbolic-ref HEAD | cut -d/ -f3-
+	save = !sh -c 'export PREV="$(git head-ref)" && git create-branch "$1" && git commit -am "$1" && git checkout "$PREV"'
+	update-cwd = !git checkout $1 .
 [pull]
 	rebase = true
 [diff]
@@ -22,7 +29,7 @@
 [init]
 	defaultBranch = main
 [interactive]
-	diffFilter = delta --color-only --features=interactive
+	diffFilter = delta --diff-so-fancy
 [rebase]
 	autosquash = true
 [advice]
