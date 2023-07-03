@@ -91,6 +91,10 @@ end
 -- TODO: remove me
 ls.cleanup()
 
+ls.add_snippets("zig", {
+    b({trig = "print", descr = "std.debug.print"}, fmta("std.debug.print(\"<>\\n\", .{<>});", {i(1), i(2)})),
+})
+
 ls.add_snippets("tex", {
     b({trig = "pic", descr = "include graphics"}, fmta("\\includegraphics[<>]{<>}", {i(1, "width=3in"), i(2)})),
     ba({trig = "beg", descr = "begin environment"}, fmta("\\begin{<>}\n\t<>\n\\end{<>}", {i(1), i(2), rep(1)})),

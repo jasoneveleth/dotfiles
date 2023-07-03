@@ -116,3 +116,20 @@ require('lspconfig').julials.setup({
     single_file_support = true,
 })
 
+-- turn off in line diagnostics
+vim.diagnostic.config({virtual_text = false})
+
+vim.api.nvim_create_autocmd('DiagnosticChanged', {
+  callback = function(args)
+  vim.diagnostic.setloclist({ open = false }) -- don't open and focus
+  local window = vim.api.nvim_get_current_win()
+  if #args.data.diagnostics >= 1 then
+    vim.cmd('lwindow ' .. tostring(#args.data.diagnostics)) 
+  else
+    vim.cmd.lwindow() -- open+focus loclist if has entries, else close
+  end
+
+  vim.api.nvim_set_current_win(window) -- restore focus to window you were editing (delete this if you want to stay in loclist)
+  end,
+})
+

@@ -12,25 +12,27 @@
 	reword = commit --amend
 	rename-branch = branch -m
 	create-branch = checkout -b
-	push-branch = push -u
+	push-branch = push -u origin
 	unadd = restore --staged
 	discard = restore
-	dirty = !test -n "$(git status --porcelain)"
+	dirty = "!test -n \"$(git status --porcelain)\""
 	wip = !git add --all && git commit -m 'wip'
 	ff = merge --ff-only
 	root = rev-parse --show-toplevel
-	# usage: git diff -p $(git empty-tree-sha) some-interesting-subdir/
-	empty-tree-sha = hash-object -t tree /dev/null
 	wip = commit -am wip
 	head-ref = !git symbolic-ref HEAD | cut -d/ -f3-
 	save = !sh -c 'export PREV="$(git head-ref)" && git create-branch tmp-"$1" && git commit -am tmp-"$1" && git checkout "$PREV"'
 	update-cwd = !sh -c 'git restore --source=$1 --worktree .' --
 	update-stage = !sh -c 'git restore --source=$1 --staged .' --
-	# update-ref    <- this will point a ref to something
-	edit-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; vim `f`"
-        add-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; git add `f`"
+	update-branch = !sh -c 'git update-ref "refs/heads/$1" "$(git rev-parse $2)"' --
+	get-unmerged = "!git diff --name-status --diff-filter=U | cut -f2"
+	edit-unmerged = "!e $(git get-unmerged)"
+	add-unmerged = "!git add $(git get-unmerged)"
 	# useful for old commits to have the right submods
 	co-recurse = !sh -c 'git checkout $1 && git submodule update --recursive' --
+	# usage: git diff -p $(git empty-tree-sha) some-interesting-subdir/
+	empty-tree-sha = hash-object -t tree /dev/null
+	publish-main-from-dev = "!if git dirty; then exit 1; fi; git checkout main; git merge --no-edit dev; git push; git checkout dev;"
 [pull]
 	rebase = true
 [diff]

@@ -1,0 +1,338 @@
+@article{wikipedia,
+title       = "Young's Modulus",
+url         = "https://en.wikipedia.org/wiki/Young%27s_modulus#Calculation"
+}
+@article{gras12,
+title       = "Tensile Tests on a Muscle: Influence of Experimental Conditions and of Velocity on its Passive Response",
+url         = "http://www.ircobi.org/wordpress/downloads/irc12/pdf_files/61.pdf",
+author      = "L. L. Gras and S. Laporte and D. Mitton and N. Crevier‐Denoix and P. Viot"
+}
+@article{kuthe16,
+author      = "Chetan D. Kuthe, Rashmi V. Uddanwadiker",
+title       = "Investigation of effect of fiber orientation on mechanical behavior of skeletal muscle",
+url         = "https://journals.sagepub.com/doi/pdf/10.5301/jabfm.5000275"
+}
+@article{thomas,
+title         = "Tendon Biomechanics",
+url           = "https://www.physio-pedia.com/Tendon_Biomechanics",
+author        = "Evan Thomas"
+}
+@article{matson,
+title         = "Tendon material properties vary and are interdependent among turkey hindlimb muscles",
+url           = "https://jeb.biologists.org/content/215/20/3552",
+author        = "Matson, Andrew and Konow, Nicolai and Miller, Samuel and Konow, Pernille P. and Roberts, Thomas J."
+}
+@article{bouaicha16,
+title        = "Cross-Sectional Area of the Rotator Cuff Muscles in MRI – Is there Evidence for a Biomechanical Balanced Shoulder?",
+author       = "Samy Bouaicha and Ksenija Slankamenac and Beat K. Moor and Sina Tok and Gustav Andreisek and Tim Finkenstaedt",
+url          = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4918939/"
+}
+
+@book{haslanger00,
+    author      = "Sally Haslanger",
+    title       = "Gender and Race: (What) Are They? (What) Do We Want Them To Be?",
+    year        = "2000",
+    publisher   = "Blackwell Publishers Inc.",
+    address     = "Malden, MA"
+}
+@book{dotson11,
+    author      = "Kirstie Dotson",
+    title       = "Tracking Epistemic Violence, Tracking Practeces of Silencing",
+    publisher   = "Wiley on behalf of Hypatia, Inc.",
+    year        = "2011"
+}
+@book{hornsby95,
+    author      = "Jennifer Hornsby",
+    year        = "1995",
+    title       = "Illocution and its significance",
+    publisher   = "Routledge",
+    address     = "New York"
+}
+@book{harvin96,
+    author      = "Cassandra Byers Harvin",
+    title       = "Conversations I can't have",
+    publisher   = "The Progressive Woman's Quarterly",
+    year        = "1996"
+}
+@book{abramson14,
+    author      = "Kate Abramson",
+    year        = "2014",
+    title       = "Turning Up The Lights On Gaslighting",
+}
+@article{chiaramonte06,
+    author      = "Gabrielle Chiaramonte and Ronald Friend",
+    year        = "2006",
+    title       = "Medical students' and residents' gender bias in the diagnosis, treatment, and interpretation of coronary heart disease symptoms"
+}
+@article{barnes16,
+    author      = "Elizabeth Barnes",
+    title       = "The Hysteria Accusation",
+    year        = "2016"
+}
+@article{schouten17,
+    author      = "Gina Schouten",
+    title       = "Orphans, and a Famous Violinist: On the Ethics and Politics of Abortion",
+    year        = "2017",
+    publisher   = "JSTOR"
+}
+@article{young90,
+    author      = "Iris Marion Young",
+    chapter     = "Five Faces of Oppression",
+    title       = "Justice and the Politics of Difference",
+    year        = "1990",
+    publisher   = "Princeton University Press",
+    address     = "Princeton, New Jersey",
+}
+@article{frye83,
+    author      = "Marilyn Frye",
+    title       = "Oppression and the use of definition",
+    year        = "1983",
+}
+@article{bailey98,
+    author      = "Alison Bailey",
+    title       = "Expanding on Marilyn Frye's Oppression",
+    year        = "1998",
+}
+@online{acho20,
+    url         = "https://www.youtube.com/watch?v=oZqVUgMR3Xo",
+    date        = "2020",
+    organization= "Youtube",
+    author      = "Emmanuel Acho and Chelsea Handler",
+    title       = "Karens and Cancel Culture w/Chelsea Handler - Uncomfortable Conversations with a Black Man Ep.10"
+}
+@article{victor17,
+    url         = "https://www.nytimes.com/2017/02/03/nyregion/white-privilege-essay-contest-westport-connecticut.html",
+    title       = "‘White Privilege’ Essay Contest Stirs Up a Connecticut Town",
+    author      = "Daniel Victor",
+    publisher   = "New York Times",
+    date        = "2017"
+}
+@article{ravizza17,
+	title = {Logged {In} and {Zoned} {Out}: {How} {Laptop} {Internet} {Use} {Relates} to {Classroom} {Learning}},
+	volume = {28},
+	issn = {0956-7976, 1467-9280},
+	shorttitle = {Logged {In} and {Zoned} {Out}},
+	url = {http://journals.sagepub.com/doi/10.1177/0956797616677314},
+	doi = {10.1177/0956797616677314},
+	abstract = {Laptop computers are widely prevalent in university classrooms. Although laptops are a valuable tool, they offer access to a distracting temptation: the Internet. In the study reported here, we assessed the relationship between classroom performance and actual Internet usage for academic and nonacademic purposes. Students who were enrolled in an introductory psychology course logged into a proxy server that monitored their online activity during class. Past research relied on self-report, but the current methodology objectively measured time, frequency, and browsing history of participants’ Internet usage. In addition, we assessed whether intelligence, motivation, and interest in course material could account for the relationship between Internet use and performance. Our results showed that nonacademic Internet use was common among students who brought laptops to class and was inversely related to class performance. This relationship was upheld after we accounted for motivation, interest, and intelligence. Class-related Internet use was not associated with a benefit to classroom performance.},
+	language = {en},
+	number = {2},
+	urldate = {2022-10-08},
+	journal = {Psychological Science},
+	author = {Ravizza, Susan M. and Uitvlugt, Mitchell G. and Fenn, Kimberly M.},
+	month = feb,
+	year = {2017},
+	pages = {171--180},
+}
+@article{bui13,
+	title = {Note-taking with computers: {Exploring} alternative strategies for improved recall.},
+	volume = {105},
+	issn = {1939-2176, 0022-0663},
+	shorttitle = {Note-taking with computers},
+	url = {http://doi.apa.org/getdoi.cfm?doi=10.1037/a0030367},
+	doi = {10.1037/a0030367},
+	language = {en},
+	number = {2},
+	urldate = {2022-10-08},
+	journal = {Journal of Educational Psychology},
+	author = {Bui, Dung C. and Myerson, Joel and Hale, Sandra},
+	year = {2013},
+	pages = {299--309},
+}
+@article{mueller14,
+	title = {The {Pen} {Is} {Mightier} {Than} the {Keyboard}: {Advantages} of {Longhand} {Over} {Laptop} {Note} {Taking}},
+	volume = {25},
+	issn = {0956-7976, 1467-9280},
+	shorttitle = {The {Pen} {Is} {Mightier} {Than} the {Keyboard}},
+	url = {http://journals.sagepub.com/doi/10.1177/0956797614524581},
+	doi = {10.1177/0956797614524581},
+	abstract = {Taking notes on laptops rather than in longhand is increasingly common. Many researchers have suggested that laptop note taking is less effective than longhand note taking for learning. Prior studies have primarily focused on students’ capacity for multitasking and distraction when using laptops. The present research suggests that even when laptops are used solely to take notes, they may still be impairing learning because their use results in shallower processing. In three studies, we found that students who took notes on laptops performed worse on conceptual questions than students who took notes longhand. We show that whereas taking more notes can be beneficial, laptop note takers’ tendency to transcribe lectures verbatim rather than processing information and reframing it in their own words is detrimental to learning.},
+	language = {en},
+	number = {6},
+	urldate = {2022-10-08},
+	journal = {Psychological Science},
+	author = {Mueller, Pam A. and Oppenheimer, Daniel M.},
+	month = jun,
+	year = {2014},
+	pages = {1159--1168},
+}
+@article{metcalf05,
+title = {A Region of Proximal Learning model of study time allocation},
+journal = {Journal of Memory and Language},
+volume = {52},
+number = {4},
+pages = {463-477},
+year = {2005},
+note = {Special Issue on Metamemory},
+issn = {0749-596X},
+doi = {https://doi.org/10.1016/j.jml.2004.12.001},
+url = {https://www.sciencedirect.com/science/article/pii/S0749596X04001330},
+author = {Janet Metcalfe and Nate Kornell},
+}
+@article{atkinson72,
+  title={Optimizing the Learning of a Second-Language Vocabulary.},
+  author={Richard C. Atkinson},
+  journal={Journal of Experimental Psychology},
+  year={1972},
+  volume={96},
+  pages={124-129}
+}
+@article{thiede99,
+author={Thiede, Keith W.
+and Dunlosky, John},
+title={Toward a general model of self-regulated study: An analysis of selection of items for study and self-paced study time.},
+journal={Journal of Experimental Psychology: Learning, Memory, and Cognition},
+year={1999},
+publisher={American Psychological Association},
+address={US},
+volume={25},
+pages={1024-1037},
+keywords={*Learning Strategies; *Perception; *Study Habits; *Time Management; *Task Complexity; Choice Behavior; College Students; Learning},
+abstract={People of all ages are more likely to choose to restudy items (or allocate more study time to items) that are perceived as more difficult to learn than as less difficult to learn. Existing models of self-regulated study adequately account for this inverse relation between perceived difficulty of learning and these 2 measures of self-regulated study (item selection and self-paced study). However, these models cannot account for positive relations between perceived difficulty of learning and item selection, which are demonstrated in the present investigation. Namely, in Experiments 1 and 2, the authors described conditions in which people more often selected to study items judged as less difficult than as more difficult to learn. This positive relation was not demonstrated for self-paced study, which was always negatively correlated with judged difficulty to learn. In Experiments 3 through 6, the authors explored explanations for this dissociation between item selection and self-paced study. Discussion focuses on a general model of self-regulated study that includes planning, discrepancy reduction, and working-memory constraints. (PsycINFO Database Record (c) 2016 APA, all rights reserved)},
+doi={10.1037/0278-7393.25.4.1024},
+url={https://doi.org/10.1037/0278-7393.25.4.1024}
+}
+
+@article{roberts22,
+  title    = "Incorporating measurement variability when comparing sets of
+              high-resolution mass spectra",
+  author   = "Roberts, Matthew J and Moorthy, Arun S and Sisco, Edward and
+              Kearsley, Anthony J",
+  abstract = "Mass spectra are an important signature by which compounds can be
+              identified. We recently formulated a mathematical approach for
+              incorporating measurement variability when comparing sets of
+              high-resolution mass spectra. Leveraging replicate mass spectra,
+              we construct high-dimensional consensus mass spectra-representing
+              each of the compared analytes-and compute the similarity between
+              these data structures. In this paper, we present this approach
+              and discuss its applications and limitations when trying to
+              discriminate methamphetamine and phentermine using in-source
+              collision induced dissociation mass spectra collected with direct
+              analysis in real time mass spectrometry.",
+  journal  = "Anal Chim Acta",
+  volume   =  1230,
+  pages    = "340247",
+  month    =  aug,
+  year     =  2022,
+  address  = "Netherlands",
+  keywords = "High-dimensional consensus (HDC) mass spectra; High-resolution
+              mass spectrometry; Mass spectral similarity; Mass spectrometry;
+              Probability distributions; Sample discrimination",
+  language = "en"
+}
+@article{needed,
+    title = "we ned a reference",
+    author = "none"
+}
+@book{sparkman07, 
+place={Pittsburgh, PA}, 
+title={Mass spectrometry desk reference},
+publisher={Global View Publ.},
+author={Sparkman, O. David},
+year={2007}
+} 
+@article{moorthy21,
+author = {Moorthy, Arun S. and Sisco, Edward},
+title = {The Min-Max Test: An Objective Method for Discriminating Mass Spectra},
+journal = {Analytical Chemistry},
+volume = {93},
+number = {39},
+pages = {13319-13325},
+year = {2021},
+doi = {10.1021/acs.analchem.1c03053},
+note ={PMID: 34555282},
+URL = {https://doi.org/10.1021/acs.analchem.1c03053},
+eprint = {https://doi.org/10.1021/acs.analchem.1c03053}
+}
+@article{bonetti18, 
+title={Mass spectral differentiation of positional isomers using multivariate statistics}, 
+volume={9}, 
+DOI={10.1016/j.forc.2018.06.001}, 
+journal={Forensic Chemistry}, 
+author={Bonetti, Jennifer},
+year={2018}, 
+pages={50–61}
+}
+@conference{mcglynn23,
+    title={Improved identification of isomers using the High Dimensional Consensus Mass Spectral similarity algorithm},
+    year={2023},
+    publisher={ASMS},
+    author={Mcglynn, Deborah F and Eveleth, Jason and Andriamaharavo, Nirina Rabe and Kearsley, Anthony J},
+}
+@inbook{fitch99,
+title = "A wavelet-based pitch detector for musical signals",
+author = "John Fitch and Wafaa Rezk Shabana",
+year = "1999",
+language = "English",
+pages = "101--104",
+editor = "J Tro and M Larsson",
+booktitle = "Proceedings of 2nd COST-G6 Workshop on Digital Audio Effects (DAFx99)",
+publisher = "Norwegian University of Science and Technology",
+url = {https://researchportal.bath.ac.uk/en/publications/a-wavelet-based-pitch-detector-for-musical-signals}
+}
+@inproceedings{saito05,
+author = {Saito, Shoichiro and Kameoka, Hirokazu and Nishimoto, Takuya and Sagayama, Shigeki},
+year = {2005},
+month = {01},
+pages = {84-91},
+title = {Specmurt Analysis of Multi-Pitch Music Signals with Adaptive Estimation of Common Harmonic Structure .},
+doi = {https://www.researchgate.net/publication/220722921_Specmurt_Analysis_of_Multi-Pitch_Music_Signals_with_Adaptive_Estimation_of_Common_Harmonic_Structure},
+journal = {ISMIR 2005 - 6th International Conference on Music Information Retrieval}
+}
+@misc{protalinski20,
+    author = {Emil Protalinski},
+    title = {How Microsoft Teams will use AI to filter out typing, barking, and other noise from video calls},
+    year = {2020},
+    month = {04},
+    url = {https://venturebeat.com/ai/microsoft-teams-ai-machine-learning-real-time-noise-suppression-typing/},
+    publisher = {VentureBeat}
+}
+@misc{ucl03,
+    title = {Lecture 2-2: Fundamental Frequency Analysis},
+    year = {2003},
+    publisher = {Psychology \& Language Sciences UCL}
+}
+@misc{funfreqwikipedia,
+    title={Fundamental frequency},
+    url={https://en.wikipedia.org/wiki/Fundamental_frequency},
+    journal={Wikipedia},
+    publisher={Wikimedia Foundation},
+    year={2023},
+    month={04}
+}
+@misc{wasilewski,
+    title={Wavelet transforms in python¶},
+    url={https://pywavelets.readthedocs.io/en/latest/index.html},
+    journal={PyWavelets},
+    author={Wasilewski, Filip},
+}
+@misc{user4795,
+    title={How do you remove noise to detect just the human voice?},
+    url={https://mathematica.stackexchange.com/questions/15264/how-do-you-remove-noise-to-detect-just-the-human-voice},
+    journal={Mathematica Stack Exchange},
+    author={user4795 and Kaurov, Vitaliy and rm -rf and partida},
+    year={2012},
+    month={08}
+}
+@article{germain09,
+    year = {2009},
+    month = {12},
+    author= {F. Germain},
+    title = {The wavelet transform Applications in Music Information Retrieval},
+    doi={http://www.music.mcgill.ca/~ich/classes/mumt621_11/final%20projects/Final%20project%202009/francois/Final_Project_Report.pdf}
+}
+@article{kumar20,
+    author= {Neeraj Kumar and Raubin Kumar},
+    title = {Wavelet transform-based multipitch estimation in polyphonic music},
+    year = {2020},
+    doi={https://doi.org/10.1016/j.heliyon.2020.e03243}
+}
+@inproceedings{paradzinets07,
+  author={Paradzinets, Aliaksandr and Kotov, Oleg and Harb, Hadi and Chen, Liming},
+  booktitle={2007 International Workshop on Content-Based Multimedia Indexing}, 
+  title={Continuous Wavelet-Like Transform Based Music Similarity Features for Intelligent Music Navigation}, 
+  year={2007},
+  volume={},
+  number={},
+  pages={165-172},
+  doi={10.1109/CBMI.2007.385407}}

@@ -1,0 +1,65 @@
+#!/bin/bash
+
+set -e
+
+cd ~/src/hdcms-python
+rm -rf dist
+if git dirty; then
+    echo stopping: "$(pwd)" is dirty
+    git diff --stat
+    while true; do
+        read -n 1 -p "Do you want us to git commit? " yn
+        printf "\n"
+        case $yn in
+            [Yy]* ) git add --all; git commit -m 'automated script: saving work'; break;;
+            [Nn]* ) exit 1;;
+            * ) echo "Please answer yes or no.";;
+        esac
+    done
+fi
+git checkout dev
+line 7 pyproject.toml
+read -p "version: " ver
+read -p "message: " message
+
+cat <<"EOF" > pyproject.toml
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "hdcms"
+EOF
+
+echo "version = \"$ver\"" >> pyproject.toml
+cat <<"EOF" >> pyproject.toml
+description = "This package creates useful helper functions for python API"
+authors = [
+    {name="Jason Eveleth", email="hdcms-helper@jasoneveleth.com"},
+    {name="Arun Moorthy"},
+]
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = ["hdcms-bindings", "opencv-python", "numpy", "matplotlib", "scipy"]
+license = { file="LICENSE.txt" }
+
+[project.urls]
+"Homepage" = "https://github.com/jasoneveleth/hdcms-python"
+"Bug Tracker" = "https://github.com/jasoneveleth/hdcms-python/issues"
+EOF
+
+echo "$ver" "$message" > /tmp/change.txt
+
+vim -c "30" -c "read /tmp/change.txt" -c "wq" README.md
+
+git add --all
+git commit -m "$message"
+git tag "v$ver"
+git push -u origin "v$ver"
+
+git checkout main
+git merge dev --no-edit
+git push
+git checkout dev
+git push
+python -m build
+python -m twine upload dist/*

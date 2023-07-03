@@ -4,11 +4,17 @@
 # 
 # tags: misc vi
 
+if (( # == 1 )); then
+    ref="$1"
+else
+    ref="nightly"
+fi
+
 cd ~/src
 test -d neovim || git clone https://github.com/neovim/neovim
 cd neovim
-git checkout nightly
-git pull
+git fetch
+git checkout "$ref"
 
 # `git-clean` remove untracked files from the working tree
 # `-d` remove directories

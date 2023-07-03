@@ -9,7 +9,7 @@ cd "$HOME/dotfiles/bin/.local/bin/"
 
 if ! [ -e "$1" ]; then
     chtouch "$1"
-    echo '#!/bin/sh' >> "$1"
+    echo '#!/bin/sh\n\n# '$1'\n#\n# usage:\n\nset -e\n' >> "$1"
 fi
 
 $EDITOR "$1"
