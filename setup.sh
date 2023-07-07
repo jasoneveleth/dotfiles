@@ -2,6 +2,7 @@
 
 cd ~ || exit
 
+# folders which we will put stuff in that should come back into dotfiles directory
 mkdir -p ~/.config/nvim/pack/minpac
 mkdir -p ~/.local/bin
 mkdir -p ~/.local/share/{zsh,misc}
@@ -56,12 +57,6 @@ killall SystemUIServer
 sudo launchctl config user path "$(brew --prefix)/bin:${PATH}"
 
 cat <<EOF
-conda
-=====
-
-https://stackoverflow.com/questions/55171696/how-to-remove-base-from-terminal-prompt-after-updating-conda
-
-
 path
 ====
 

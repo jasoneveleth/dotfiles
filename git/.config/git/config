@@ -12,6 +12,7 @@
 	reword = commit --amend
 	rename-branch = branch -m
 	create-branch = checkout -b
+	delete-branch = branch -D
 	push-branch = push -u origin
 	unadd = restore --staged
 	discard = restore
@@ -39,8 +40,6 @@
 	algorithm = minimal
 [init]
 	defaultBranch = main
-[interactive]
-	diffFilter = delta --diff-so-fancy
 [rebase]
 	autosquash = true
 [advice]

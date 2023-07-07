@@ -30,10 +30,11 @@ export ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
 export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
 export npm_config_devdir="$XDG_DATA_HOME"/node-gyp
-export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
+# only sourced during repl, aka useless
+# export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/rc.py"
+# export PYLINTHOME="$XDG_CONFIG_HOME/python/pylint.d"
 export PYTHONHISTFILE="$HOME/.local/share/python/history"
 export MPLCONFIGDIR="$XDG_CONFIG_HOME/matplotlib"
-export PYLINTHOME="$XDG_CONFIG_HOME/python/pylint.d"
 export CABAL_CONFIG="$XDG_CONFIG_HOME/cabal"
 export IDLESTARTUP="$XDG_CONFIG_HOME/python/idlerc"
 export LESSHISTFILE="$HOME/.cache/less/histfile"

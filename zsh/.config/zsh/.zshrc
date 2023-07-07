@@ -27,3 +27,4 @@ source "$XDG_CONFIG_HOME/"zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 # remove duplicates
 typeset -U path
+
