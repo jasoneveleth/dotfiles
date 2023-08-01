@@ -38,8 +38,8 @@ while : ; do
         break
     fi
     if [ -f "$file" ]; then
-        # eval is needed incase EDITOR isn't a single word, double double quotes bc eval
-        eval "$EDITOR" "\"$file\""
+        # eval is needed if EDITOR isn't a single word, since we're in zsh
+        eval $EDITOR "\"$file\""
     else
         # remove the leading ' character from the name (which you can use to make it skip all names)
         if [ ${file:0:1} = "'" ]; then
@@ -49,7 +49,7 @@ while : ; do
         fi
         if vared -e -p "new note (^D to abort): " filename; then
             touch "$filename"
-            eval "$EDITOR" "$filename"
+            eval $EDITOR "\"$filename\""
         fi
     fi
 done

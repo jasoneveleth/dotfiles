@@ -16,6 +16,7 @@
 	push-branch = push -u origin
 	unadd = restore --staged
 	discard = restore
+	# also for dirty??: git diff-index --quiet --cached HEAD --
 	dirty = "!test -n \"$(git status --porcelain)\""
 	wip = !git add --all && git commit -m 'wip'
 	ff = merge --ff-only

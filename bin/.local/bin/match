@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# match
+#
+# usage: match 'if' 'thif' 'ifan' 'nope'
+
+set -e
+
+regex="$1"
+shift
+
+# Iterate over the remaining arguments
+for arg in "$@"; do
+  if [[ $arg =~ $regex ]]; then
+      exit 0
+  fi
+done
+exit 1

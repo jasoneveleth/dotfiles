@@ -1,0 +1,8 @@
+#!/usr/bin/env awk -f
+
+# sum
+#
+# usage: seq 1 10 | sum
+
+{ sum += $1 } 
+END { print sum }

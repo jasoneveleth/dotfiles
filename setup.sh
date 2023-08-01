@@ -6,6 +6,7 @@ cd ~ || exit
 mkdir -p ~/.config/nvim/pack/minpac
 mkdir -p ~/.local/bin
 mkdir -p ~/.local/share/{zsh,misc}
+mkdir -p ~/.config/julia
 
 (cd ~/dotfiles/src && make)
 

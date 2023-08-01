@@ -72,7 +72,7 @@ export PAGER="bat"
 [ "$EDITOR" = "" ] && export EDITOR="nvim --listen /tmp/nvim.sock"
 export SONG="$HOME/.root/media/audio/Staff Credits 2 - Mario Kart Wii.mp3"
 export VISUAL="$EDITOR"
-export JOURNAL="$HOME/.root/personal/journal.md"
+export JOURNAL="$HOME/notes/journal.md"
 export NIST_JOURNAL="$HOME/.root/misc/sem05/nist_prep/journal.md"
 export EXA_COLORS="*.pdf=35:*.wav=36:*.png=35:*.c=01:*.py=01"
 

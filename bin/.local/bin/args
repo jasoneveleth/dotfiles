@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# args
+#
+# usage: args $hi $'this expands?' "kjlasdjf kjdsafkla s"
+
+set -e
+
+for i; do printf "|%s|\n" "$i"; done
+
