@@ -8,24 +8,11 @@
 	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
-		<key>0DC125E3-61F5-4519-A60D-C21E587A1E52</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>228DC5F1-4DB9-4404-86A2-0F61565495D7</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>4FDF739D-9B40-4681-AAC9-D63F413577BD</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>72882932-A805-4A1C-B878-BA24A844C722</string>
+				<string>C7D71B8D-0F17-4581-B167-7547F84F496A</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -34,24 +21,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>7F06D968-A68C-481E-83C0-7B45F509D2D1</key>
+		<key>C7D71B8D-0F17-4581-B167-7547F84F496A</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>8C70B7EB-B1E9-493E-A4E7-40A483166B11</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>C09E9FC2-68DA-43A4-838F-28318D33EFBB</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>CE91C668-762B-4D99-8387-D4FD4FC54FE6</string>
+				<string>3DBF0403-F38D-483C-91FF-3E002E36F217</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -141,171 +115,6 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>paths</key>
-				<array>
-					<string>/Applications/kitty.app</string>
-				</array>
-				<key>toggle</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.launchfiles</string>
-			<key>uid</key>
-			<string>8C70B7EB-B1E9-493E-A4E7-40A483166B11</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>18</integer>
-				<key>hotmod</key>
-				<integer>524288</integer>
-				<key>hotstring</key>
-				<string>1</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>7F06D968-A68C-481E-83C0-7B45F509D2D1</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>paths</key>
-				<array>
-					<string>/Applications/Arc.app</string>
-				</array>
-				<key>toggle</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.launchfiles</string>
-			<key>uid</key>
-			<string>228DC5F1-4DB9-4404-86A2-0F61565495D7</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>19</integer>
-				<key>hotmod</key>
-				<integer>524288</integer>
-				<key>hotstring</key>
-				<string>2</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>0DC125E3-61F5-4519-A60D-C21E587A1E52</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>paths</key>
-				<array>
-					<string>/Applications/Obsidian.app</string>
-				</array>
-				<key>toggle</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.launchfiles</string>
-			<key>uid</key>
-			<string>CE91C668-762B-4D99-8387-D4FD4FC54FE6</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>20</integer>
-				<key>hotmod</key>
-				<integer>524288</integer>
-				<key>hotstring</key>
-				<string>3</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>C09E9FC2-68DA-43A4-838F-28318D33EFBB</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>passwords</string>
-				<key>subtext</key>
-				<string></string>
-				<key>text</key>
-				<string>Passwords</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>4FDF739D-9B40-4681-AAC9-D63F413577BD</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -334,18 +143,70 @@ end tell</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>count</key>
+				<integer>1</integer>
+				<key>keychar</key>
+				<string>F1</string>
+				<key>keycode</key>
+				<integer>122</integer>
+				<key>keymod</key>
+				<integer>8519680</integer>
+				<key>overridewithargument</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.dispatchkeycombo</string>
+			<key>uid</key>
+			<string>3DBF0403-F38D-483C-91FF-3E002E36F217</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>paths</key>
+				<array>
+					<string>/System/Applications/System Settings.app</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>C7D71B8D-0F17-4581-B167-7547F84F496A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>passwords</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Passwords</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>4FDF739D-9B40-4681-AAC9-D63F413577BD</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>Launches Alacritty</string>
 	<key>uidata</key>
 	<dict>
-		<key>0DC125E3-61F5-4519-A60D-C21E587A1E52</key>
-		<dict>
-			<key>xpos</key>
-			<real>190</real>
-			<key>ypos</key>
-			<real>370</real>
-		</dict>
 		<key>1742F647-8D83-4FFC-8B3E-1A9BFB896129</key>
 		<dict>
 			<key>note</key>
@@ -355,12 +216,14 @@ end tell</string>
 			<key>ypos</key>
 			<real>55</real>
 		</dict>
-		<key>228DC5F1-4DB9-4404-86A2-0F61565495D7</key>
+		<key>3DBF0403-F38D-483C-91FF-3E002E36F217</key>
 		<dict>
+			<key>note</key>
+			<string>Make sure you make a System Shortcut, for System Settings, which goes to "Passwords" to trigger on shift-F1</string>
 			<key>xpos</key>
-			<real>455</real>
+			<real>540</real>
 			<key>ypos</key>
-			<real>370</real>
+			<real>445</real>
 		</dict>
 		<key>4066445F-D94D-4791-B2C4-32E375422B59</key>
 		<dict>
@@ -383,23 +246,16 @@ end tell</string>
 		<key>4FDF739D-9B40-4681-AAC9-D63F413577BD</key>
 		<dict>
 			<key>xpos</key>
-			<real>190</real>
+			<real>135</real>
 			<key>ypos</key>
-			<real>655</real>
+			<real>445</real>
 		</dict>
 		<key>72882932-A805-4A1C-B878-BA24A844C722</key>
 		<dict>
+			<key>note</key>
+			<string>launch passwords in settings</string>
 			<key>xpos</key>
-			<real>465</real>
-			<key>ypos</key>
-			<real>655</real>
-		</dict>
-		<key>7F06D968-A68C-481E-83C0-7B45F509D2D1</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>4</integer>
-			<key>xpos</key>
-			<real>195</real>
+			<real>455</real>
 			<key>ypos</key>
 			<real>225</real>
 		</dict>
@@ -412,26 +268,12 @@ end tell</string>
 			<key>ypos</key>
 			<real>65</real>
 		</dict>
-		<key>8C70B7EB-B1E9-493E-A4E7-40A483166B11</key>
+		<key>C7D71B8D-0F17-4581-B167-7547F84F496A</key>
 		<dict>
 			<key>xpos</key>
-			<real>455</real>
+			<real>345</real>
 			<key>ypos</key>
-			<real>225</real>
-		</dict>
-		<key>C09E9FC2-68DA-43A4-838F-28318D33EFBB</key>
-		<dict>
-			<key>xpos</key>
-			<real>190</real>
-			<key>ypos</key>
-			<real>515</real>
-		</dict>
-		<key>CE91C668-762B-4D99-8387-D4FD4FC54FE6</key>
-		<dict>
-			<key>xpos</key>
-			<real>465</real>
-			<key>ypos</key>
-			<real>515</real>
+			<real>445</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
