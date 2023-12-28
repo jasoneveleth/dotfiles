@@ -19,7 +19,7 @@ if git dirty; then
 fi
 git checkout dev
 line 7 pyproject.toml
-read -p "version: " ver
+read -p "version (ex 0.1.16): " ver
 read -p "message: " message
 
 cat <<"EOF" > pyproject.toml

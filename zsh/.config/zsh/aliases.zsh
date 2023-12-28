@@ -47,8 +47,8 @@ alias idot="dot -Tsvg \
     -Efontcolor=#abb2bf \
     -Efontname=Hack \
     -Ecolor=#abb2bf | isvg"
-alias dvisvgm-pipe='dvisvgm --verbosity=0 --stdin --stdout --no-fonts --libgs=\"/opt/homebrew/lib/libgs.dylib\" 2>/dev/null'
-alias itex="(cat \"$HOME/.local/share/misc/header.tex\" -; echo '\\\\end{document}') | latex-pipe | idvi"
+alias itex="(cat \"$HOME/.local/share/misc/header.tex\" -; echo '\\\\end{document}') | latex-pipe2 | convert -density 300 pdf:- png:- | icat"
+alias itikz="latex-pipe2 | convert -density 300 pdf:- png:- | icat"
 alias idvi="dvisvgm-pipe | sed \"s/<path /& fill='#abb2bf' /g\" | rsvg-convert -d 300 -p 300 2> /dev/null | icat 2>/dev/null"
 
 alias e="$EDITOR"
@@ -70,14 +70,17 @@ function up()
 alias gs='git status'
 alias ga='git add'
 alias gaa='git add --all'
+alias gl='git log --oneline --graph --all'
+alias gps='git push'
+alias gpl='git pull'
+
 alias gdh='git diff HEAD'
 alias gd='git diff'
 alias gdc='git diff --cached'
+alias gdp='git diff HEAD^ HEAD'
+
 alias gci='git commit'
 alias gcm='git commit -m'
 alias gca='git add --update && git commit'
 alias gco='git checkout'
-alias gl='git log --oneline --graph --all'
-alias gps='git push'
-alias gpl='git pull'
 

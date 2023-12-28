@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# svg2png
+#
+# usage:
+
+rsvg-convert -d 300 -p 300 2> /dev/null
+
+set -e
+

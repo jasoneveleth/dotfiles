@@ -13,6 +13,9 @@
 	rename-branch = branch -m
 	create-branch = checkout -b
 	delete-branch = branch -D
+	delete-remote-branch = push origin --delete
+	# remove git's copy, keep cwd untouched
+	stage-fake-delete = rm -r --cached
 	push-branch = push -u origin
 	unadd = restore --staged
 	discard = restore

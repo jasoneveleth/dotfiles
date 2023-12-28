@@ -19,7 +19,7 @@ fi
 alias edit="$EDITOR"
 
 # -q quiet (zsh)
-pushd -q $HOME/.root/notes
+pushd -q $HOME/notes
 while : ; do
     if [ "$1" = "-c" ]; then
         # contents of files and file names

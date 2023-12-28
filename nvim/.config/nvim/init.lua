@@ -66,6 +66,10 @@ vim.api.nvim_create_user_command("Commands", [[echo "
     \ Statusline -- resource the statusline to add colors again\n
     \ "
 ]], {})
+-- this should be one call, but it isn't letting me use a lua function in command
+vim.api.nvim_create_user_command("CloseFixlists", misc.close_fixlists, {})
+vim.api.nvim_create_autocmd({"WinEnter"}, {pattern = "*", command = "CloseFixlists"})
+
 
 -- fixes clipbloard so you can paste right into terminal
 -- usage: yank a tex formula (with $'s), execute this macro (depends on gdefault for :s)

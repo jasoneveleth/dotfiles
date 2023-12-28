@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# dvi2png
+#
+# usage: ... | dvi2png | ...
+
+set -e
+# alias mydvisvgm-pipe='dvisvgm --verbosity=0 --stdin --stdout --no-fonts --libgs=\"/opt/homebrew/lib/libgs.dylib\" 2>/dev/null'
+alias mydvisvgm-pipe='dvisvgm --verbosity=0 --stdin --stdout --no-fonts --libgs="/opt/homebrew/lib/libgs.dylib" 2>/dev/null'
+mydvisvgm-pipe | rsvg-convert -d 300 -p 300 2> /dev/null
+

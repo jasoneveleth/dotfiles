@@ -7,11 +7,11 @@ cmp.setup({
         end,
     },
     mapping = cmp.mapping.preset.insert({
-        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-f>'] = cmp.mapping.scroll_docs(4),
-        ['<C-l>'] = cmp.mapping.confirm({ select = true }),
-        ['<C-e>'] = cmp.mapping.abort(),
-        ["<Tab>"] = cmp.mapping(function(fallback)
+        ['<c-b>'] = cmp.mapping.scroll_docs(-4),
+        ['<c-f>'] = cmp.mapping.scroll_docs(4),
+        ['<cr>'] = cmp.mapping.confirm({ select = true }),
+        ['<c-e>'] = cmp.mapping.abort(),
+        ["<tab>"] = cmp.mapping(function(fallback)
             if vim.fn.pumvisible() == 1 then
                 feedkey("<C-n>", "n")
             elseif cmp.visible() then
@@ -22,7 +22,7 @@ cmp.setup({
         end, {
                 "i",
             }),
-        ["<S-Tab>"] = cmp.mapping(function(fallback)
+        ["<s-tab>"] = cmp.mapping(function(fallback)
             if vim.fn.pumvisible() == 1 then
                 feedkey("<C-p>", "n")
             elseif cmp.visible() then
@@ -77,7 +77,7 @@ require('lspconfig').racket_langserver.setup({capabilities = capabilities})
 require('lspconfig').pyright.setup({capabilities = capabilities})
 require('lspconfig').rust_analyzer.setup({capabilities = capabilities})
 require('lspconfig').texlab.setup({capabilities = capabilities})
-vim.lsp.set_log_level('debug')
+vim.lsp.set_log_level('INFO')
 
 -- this is how you change pyright path
 -- pyright = {}

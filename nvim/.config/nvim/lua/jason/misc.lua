@@ -10,6 +10,19 @@ endif
 ]])
 end
 
+function misc.close_fixlists()
+vim.cmd([[
+  " Check if the current window is a quickfix window
+  if &filetype == 'qf'
+    " Check if it's the last window
+    if winnr() == winnr('$')
+      " Close the quickfix or location list window
+      quit
+    endif
+  endif
+]])
+end
+
 function misc.removefancycharacters()
 vim.cmd([[
 " https://github.com/garybernhardt/dotfiles/blob/9e128843775d37983ca8f2ffc5d2cb46d7d4fc88/.vimrc#L567

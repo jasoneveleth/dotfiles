@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# add tags to a dir in a loop
+# add tags to a single dir in a loop
 #
 # USAGE:
 #       tagadd
@@ -17,7 +17,7 @@ while true; do
     touch "$dirname"/.tags
     cat "$dirname"/.tags
     echo "- - - - - - -"
-    printf "add tag (^C to quit)> "
+    printf "add tag (^C or q to quit)> "
     read -r tag
     if [ "$tag" = q ]; then
         break

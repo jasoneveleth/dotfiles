@@ -73,6 +73,30 @@ from: https://hidutil-generator.netlify.app
 ~/Library/LaunchAgents/com.local.KeyRemapping.plist
 EOF
 
+cat <<EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>local.git-update</string>
+    <key>Program</key>
+    <string>/Users/jason/.local/bin/notes-git-update.sh</string>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>StandardErrorPath</key>
+    <string>/tmp/local.mycommand.stderr.txt</string>
+    <key>StandardOutPath</key>
+    <string>/tmp/local.mycommand.stdout.txt</string>
+    <key>StartInterval</key>
+    <integer>180</integer>
+</dict>
+</plist>
+
+[1mput this is ~/Library/LaunchAgents/local.notes-git-update.plist[0m
+and optionally run `launchctl load ~/Library/LaunchAgents/local.notes-git-update.plist`
+EOF
+
 # sudo tlmgr install stackengine titlesec titling siunitx latexmk biber xypic enumitem footmisc courier lastpage standalone doublestroke preview relsize calligra nopageno
 
 # chane nnn to be like this: (this removes the highlight for the '+')

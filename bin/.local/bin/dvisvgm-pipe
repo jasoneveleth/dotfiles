@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# dvisvgm-pipe
+#
+# usage: dvisvgm-pipe
+
+set -e
+
+dvisvgm --verbosity=0 --stdin --stdout --no-fonts --libgs="/opt/homebrew/lib/libgs.dylib" 2>/dev/null
+
+

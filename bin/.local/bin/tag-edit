@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# edit tags for a dir
+# opens the tag file for a directory
 #
 # USAGE:
 #       tag-edit c-extension

@@ -1,9 +1,8 @@
 #!/bin/sh
 
-# find tags in current directory or stdin
+# prints directories in ./ (or from stdin) with tag
 #
 # USAGE:
-#       find_tag rust
 #       find_tag rust
 #       find_tag python | find_tag mine
 #

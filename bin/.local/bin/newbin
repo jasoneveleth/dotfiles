@@ -14,5 +14,6 @@ fi
 
 $EDITOR "$1"
 cd "$HOME/dotfiles"
+trash -F ~/dotfiles/bin/.local/bin/.DS_Store ~/.local/bin/.DS_Store
 stow -v bin
 
