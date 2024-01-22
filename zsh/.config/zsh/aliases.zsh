@@ -47,7 +47,7 @@ alias idot="dot -Tsvg \
     -Efontcolor=#abb2bf \
     -Efontname=Hack \
     -Ecolor=#abb2bf | isvg"
-alias itex="(cat \"$HOME/.local/share/misc/header.tex\" -; echo '\\\\end{document}') | latex-pipe2 | convert -density 300 pdf:- png:- | icat"
+alias itex="(cat \"$HOME/.local/share/misc/header.tex\" -; echo '\\\\end{document}') | pwrap pdflatex -interaction batchmode -halt-on-error file.tex tex pdf | convert -density 300 pdf:- png:- | icat"
 alias itikz="latex-pipe2 | convert -density 300 pdf:- png:- | icat"
 alias idvi="dvisvgm-pipe | sed \"s/<path /& fill='#abb2bf' /g\" | rsvg-convert -d 300 -p 300 2> /dev/null | icat 2>/dev/null"
 
@@ -55,15 +55,73 @@ alias e="$EDITOR"
 alias vs="nvr --remote-wait -O"
 alias sp="nvr --remote-wait -o"
 
-# https://github.com/garybernhardt/dotfiles/blob/004164079c6aeb226338b5a1b5d4f91f366ff50e/.zshrc#L69
-function up()
-{
-    local DIR=$PWD
-    local TARGET=$1
-    while [ ! -e $DIR/$TARGET -a $DIR != "/" ]; do
-        DIR=$(dirname $DIR)
-    done
-    test $DIR != "/" && echo $DIR/$TARGET
+chpwd_functions+=(check_dir_for_conda_activate)
+
+check_dir_for_conda_activate() {
+    dir="$PWD"
+    if [ "${dir%/src/baysian-methods}" != "$dir" ] || \
+        [ "${dir%/src/water-drop}" != "$dir" ] || \
+        [ "${dir%/src/qr-code}" != "$dir" ] || \
+        [ "${dir%/src/python_exceptions}" != "$dir" ] || \
+        [ "${dir%/src/python-misc}" != "$dir" ] || \
+        [ "${dir%/src/python-c-extension}" != "$dir" ] || \
+        [ "${dir%/src/wordle}" != "$dir" ] || \
+        [ "${dir%/src/autograd}" != "$dir" ] || \
+        [ "${dir%/src/wordsquare}" != "$dir" ] || \
+        [ "${dir%/src/wyag}" != "$dir" ] || \
+        [ "${dir%/src/jupyter-notebooks}" != "$dir" ] || \
+        [ "${dir%/src/sage}" != "$dir" ]; then
+        echo '`jason-conda` if you want'
+    elif [ "${dir%/src/hdcms-c}" != "$dir" ] || \
+        [ "${dir%/src/hdcms-python-bindings}" != "$dir" ] || \
+        [ "${dir%/src/hdcms-python}" != "$dir" ]; then
+        jason-conda-no-default
+        conda activate hdcms-dev
+    elif [ "${dir%/src/lab_to_rgb}" != "$dir" ]; then
+        echo 'activating tensorflow...'
+        jason-conda-no-default
+        conda activate tensorflow
+    elif [ "${dir%/src/jax}" != "$dir" ]; then
+        jason-conda-no-default
+        conda activate jax-metal
+    fi
+        # pytorch
+        # manim
+}
+
+# note: it's not strictly necessary to unset this, since once conda is initialized,
+# like in `jason-conda`, conda will unset it itself
+conda() {
+    unset -f conda
+    jason-conda
+    conda "$@"
+}
+
+jason-conda() {
+    jason-conda-no-default
+    conda activate default
+    echo 'deactivate if you want `base`'
+    jason-conda() {echo 'jason>> conda is set up'}
+}
+
+# will make itself do nothing
+jason-conda-no-default() {
+    # >>> conda initialize >>>
+    # !! Contents within this block are managed by 'conda init' !!
+    __conda_setup="$('/Users/jason/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "/Users/jason/anaconda3/etc/profile.d/conda.sh" ]; then
+            . "/Users/jason/anaconda3/etc/profile.d/conda.sh"
+        else
+            export PATH="/Users/jason/anaconda3/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
+    # <<< conda initialize <<<
+    echo 'jason>> conda set up'
+    jason-conda-no-default() {echo 'jason>> conda is set up'}
 }
 
 # alias git='echo nope! use \`jg\`'

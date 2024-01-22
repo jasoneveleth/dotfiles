@@ -1,11 +1,12 @@
 [core]
 	excludesfile = /Users/jason/.config/git/gitignore_global
-	pager = delta --diff-so-fancy
+	attributesfile = /Users/jason/.config/git/gitattributes_global
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only --features=interactive
 [user]
 	name = Jason Eveleth
 	email = jj11@eveleth.com
-[color]
-	ui = auto
 [alias]
 	alias = !git config -l | grep '^alias.' | cut -d'.' -f2
 	amend = commit --amend --no-edit
@@ -21,7 +22,7 @@
 	discard = restore
 	# also for dirty??: git diff-index --quiet --cached HEAD --
 	dirty = "!test -n \"$(git status --porcelain)\""
-	wip = !git add --all && git commit -m 'wip'
+	wip = !git add --all && git commit -m .
 	ff = merge --ff-only
 	root = rev-parse --show-toplevel
 	wip = commit -am wip
@@ -29,7 +30,7 @@
 	save = !sh -c 'export PREV="$(git head-ref)" && git create-branch tmp-"$1" && git commit -am tmp-"$1" && git checkout "$PREV"'
 	update-cwd = !sh -c 'git restore --source=$1 --worktree .' --
 	update-stage = !sh -c 'git restore --source=$1 --staged .' --
-	update-branch = !sh -c 'git update-ref "refs/heads/$1" "$(git rev-parse $2)"' --
+	update-branch = !sh -c 'echo \"refs/heads/$1 -> $(git rev-parse $2)\" && git update-ref \"refs/heads/$1\" \"$(git rev-parse $2)\"' --
 	get-unmerged = "!git diff --name-status --diff-filter=U | cut -f2"
 	edit-unmerged = "!e $(git get-unmerged)"
 	add-unmerged = "!git add $(git get-unmerged)"
@@ -42,12 +43,14 @@
 	rebase = true
 [diff]
 	algorithm = minimal
+	colormoved = "default"
+	colormovedws = "allow-indentation-change"
 [init]
 	defaultBranch = main
 [rebase]
 	autosquash = true
 [advice]
-	detached = head
+	detachedHead = false
 # Enforce SSH
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
@@ -55,10 +58,6 @@
 	insteadOf = https://gitlab.com/
 [url "ssh://git@bitbucket.org/"]
 	insteadOf = https://bitbucket.org/
-[gc]
-	autodetach = false
-	pruneExpire = never
-	reflogExpire = never
 [commit]
 	verbose = true
 [merge]
@@ -67,15 +66,20 @@
 # Diff viewer
 [delta]
     features = decorations
+    side-by-side = true
+    commit-decoration-style = blue ol
+
+    commit-style = raw
+    hunk-header-decoration-style = blue box
+    hunk-header-file-style = red
+    hunk-header-style = file line-number
+
+    line-numbers-left-format = "{nm:>4}┊"
+    line-numbers-right-format = "{np:>4}│"
+    line-numbers-left-style = blue
+    line-numbers-right-style = blue
 
 [delta "interactive"]
     keep-plus-minus-markers = false
-
-[delta "decorations"]
-    commit-decoration-style = blue ol
-    commit-style = raw
-    file-style = omit
-    hunk-header-decoration-style = blue box
-    hunk-header-file-style = red
-    hunk-header-line-number-style = "#067a00"
-    hunk-header-style = file line-number syntax
+[diff "markdownfilter"]
+	textconv = fmt

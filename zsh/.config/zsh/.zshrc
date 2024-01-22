@@ -18,7 +18,6 @@ setopt pipe_fail # set exit status of a pipe to error if one of them errors
 source "$ZDOTDIR/"keybinds.zsh
 source "$ZDOTDIR/"completion.zsh
 source "$ZDOTDIR/"aliases.zsh
-source "$ZDOTDIR/"conda.zsh
 source "$ZDOTDIR/"git-repo-check.zsh
 source "$ZDOTDIR/"wezterm.sh
 

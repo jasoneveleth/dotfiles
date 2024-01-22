@@ -5,3 +5,5 @@
 .tag
 .tags
 __pycache__/
+.vscode/
+zig-cache/

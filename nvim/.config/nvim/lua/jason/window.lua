@@ -27,14 +27,15 @@ let g:window_key_mappings = [
 function! MapWinCmd(key, command, user_enter)
   if a:user_enter
     let suffix = ""
+    let prefix = ":"
   else
     let suffix = "<cr>"
+    let prefix = "<cmd>"
   endif
 
   for key_mapping in g:window_key_mappings
       execute "nnoremap " . g:window_key_prefix . key_mapping[0] . a:key . 
-                  \ " <Cmd>" . key_mapping[1] . "<cr><cmd>" . a:command .
-                  \ suffix
+            \ " <Cmd>" . key_mapping[1] . "<cr>" . prefix . a:command . suffix
   endfor
 endfunction
 

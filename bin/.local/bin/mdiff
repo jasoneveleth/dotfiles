@@ -6,4 +6,4 @@
 # USAGE: 
 #       mdiff file1 file2
 
-diff -u "$1" "$2" | delta --diff-so-fancy
+diff -u "$1" "$2" | delta

@@ -43,6 +43,8 @@ export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME/jupyter"
 export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
 export GEM_HOME="$XDG_CONFIG_HOME/gem/ruby/2.7.0"
 export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
+export ANACONDA_HOME="$HOME/anaconda3"
+export SAGE_PKGS="$ANACONDA_HOME/var/lib/sage/installed"
 export JUMP_HOME="$XDG_CONFIG_HOME/jump"
 export KERAS_HOME="$XDG_CONFIG_HOME"/keras
 export CARGO_HOME="$HOME/.local/share/cargo"
@@ -63,7 +65,6 @@ export JULIA_DEPOT_PATH="$XDG_CONFIG_HOME/julia"
 export FZF_DEFAULT_COMMAND='fd --type file --hidden --exclude .git --exclude node_modules --exclude __pycache__ --follow'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export PYTHONDONTWRITEBYTECODE=1
-export HOMEBREW_NO_AUTO_UPDATE=1
 # export VIMINIT= 'let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export NNN_BMS='o:~/notes;c:~/.config;v:~/.config/nvim;1:~/cs1951X/code/src;2:~/math1260;3:~/cs1730;4:~/cs1410;'
 export NNN_PLUG='a:-tagadd;t:-tag-edit;v:-!nvim*'
@@ -91,12 +92,15 @@ fi
 
 if [[ "$HAVE_M1" = true ]]; then
     export JULIA_LOAD_PATH="~/.config/julia/environments/nvim-lspconfig:$JULIA_LOAD_PATH"
-    export USING_CONDA=1
+    export USING_CONDA=true
 fi
 
 # ======= PATH
 front_path=()
 front_path+=("$CARGO_HOME/bin")
+if [[ "$USING_CONDA" = true ]]; then
+    front_path+=("$ANACONDA_HOME/envs/default/bin" "$ANACONDA_HOME/condabin")
+fi
 front_path+=("$LOCAL_BIN")
 if [[ "$HAVE_M1" = true ]]; then
     front_path+=("/opt/homebrew/bin" "/opt/homebrew/sbin")
