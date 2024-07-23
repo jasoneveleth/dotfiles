@@ -14,7 +14,7 @@ vim.keymap.set(nvo, "<c-k>", "<cmd>cprevious<cr>")
 vim.keymap.set(nvo, "<c-h>", "<cmd>lprevious<cr>")
 vim.keymap.set(nvo, "<c-l>", "<cmd>lnext<cr>")
 vim.keymap.set(nvo, "-", "<cmd>Noice dismiss<cr>")
-vim.keymap.set(nvo, "<cr>", "<cmd>update<cr>")
+vim.keymap.set(nvo, "<cr>", "<cmd>echoe 'DO NOT DO NOT DO NOT DO NOT DO NOT DO NOT'<cr>")
 vim.keymap.set(nvo, "ga", "<c-^>", {desc = "alt file"})
 vim.keymap.set(nvo, "<a-o>", "o<esc>k")
 vim.keymap.set(nvo, "<a-O>", "O<esc>j")
@@ -118,3 +118,5 @@ vim.keymap.set("n", "j", function()
         return vim.v.count == 0 and "gj" or 'm`' .. vim.v.count .. 'j'
     end, {noremap = true, expr = true})
 
+-- copilot
+vim.api.nvim_set_keymap("i", "<c-f>", 'copilot#Accept("<cr>")', {silent = true, expr = true})

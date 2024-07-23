@@ -23,5 +23,6 @@ setlocal includeexpr=PyInclude(v:fname)
 setlocal define=^\\s*\\<\\(def\\\|class\\)\\>
 
 nnoremap <buffer> <leader>r :FloatermNew python3 %<cr>
+" set noexpandtab
 
 set errorformat=\%*\\sFile\ \"%f\"\\,\ line\ %l\\,\ %m,\%*\\sFile\ \"%f\"\\,\ line\ %l,

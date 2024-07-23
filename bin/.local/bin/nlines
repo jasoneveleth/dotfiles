@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# nlines
+#
+# usage:
+
+set -e
+
+wc -l | tr -d ' '
+

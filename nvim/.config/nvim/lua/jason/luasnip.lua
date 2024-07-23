@@ -19,19 +19,19 @@ ls.config.set_config({
     },
 })
 
--- CTRL-K to expand or jump
-vim.keymap.set({"i", "s"}, "<c-]>", function()
-    if ls.expand_or_jumpable() then
-        ls.expand_or_jump()
-    end
-end, {silent = true})
-
--- CTRL-J to jump back
-vim.keymap.set({"i", "s"}, "<c-[>", function()
-    if ls.jumpable(-1) then
-        ls.jump(-1)
-    end
-end, {silent = true})
+-- -- CTRL-K to expand or jump
+-- vim.keymap.set({"i", "s"}, "<c-]>", function()
+--     if ls.expand_or_jumpable() then
+--         ls.expand_or_jump()
+--     end
+-- end, {silent = true})
+-- 
+-- -- CTRL-J to jump back
+-- vim.keymap.set({"i", "s"}, "<c-[>", function()
+--     if ls.jumpable(-1) then
+--         ls.jump(-1)
+--     end
+-- end, {silent = true})
 
 -- source snippets
 vim.keymap.set("n", "<leader>,", "<cmd>source ~/.config/nvim/lua/jason/luasnip.lua<cr>")
@@ -95,7 +95,39 @@ ls.add_snippets("zig", {
     b({trig = "print", descr = "std.debug.print"}, fmta("std.debug.print(\"<>\\n\", .{<>});", {i(1), i(2)})),
 })
 
-ls.add_snippets("tex", {
+ls.add_snippets("typst", {
+	    a({trig = "mk", descr = "math"},
+	fmta("$<>$<><>", {
+	    i(1),
+	    f(function(args, parent, user_args)
+		local no_space_table = {[","]=true, ["."]=true, [""]=true, [")"]=true, [":"]=true, ["'"]=true}
+		if args[1][1] == "" then
+		    return ""
+		elseif no_space_table[args[1][1]:sub(1, 1)] then
+		    return ""
+		else
+		    return " "
+		end
+	    end,
+	    {2}),
+	    i(2)
+	})
+    ),
+})
+
+tex_snippets = {
+	ba({trig = "template", descr = "Basic template"}, fmta([[\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage[shortlabels]{enumitem}
+
+\begin{document}
+	<>
+\end{document}
+]], {i(0)})),
     b({trig = "pic", descr = "include graphics"}, fmta("\\includegraphics[<>]{<>}", {i(1, "width=3in"), i(2)})),
     ba({trig = "beg", descr = "begin environment"}, fmta("\\begin{<>}\n\t<>\n\\end{<>}", {i(1), i(2), rep(1)})),
     ba({trig = "enum", descr = "enumerate"}, fmta("\\begin{enumerate}\n\t\\item <>\n\\end{enumerate}", {i(1)})),
@@ -103,6 +135,7 @@ ls.add_snippets("tex", {
     ba({trig = "ali", descr = "align"}, fmta("\\begin{align*}\n\t <>\n.\\end{align*}", {i(1)})),
     b({trig = "pac", descr = "package"}, fmta("\\usepackage{<>}", {i(1)})),
     mai({trig = "=>", descr = "implies"}, t("\\implies ")),
+    mai({trig = "bf", descr = "vector"}, fmta("\\mathbfit{<>}", {i(1)})),
     mai({trig = "->", descr = "to"}, t("\\to ")),
     mai({trig = "!>", descr = "mapsto"}, t("\\mapsto ")),
     mai({trig = "=<", descr = "implied by"}, t("\\impliedby ")),
@@ -121,49 +154,160 @@ ls.add_snippets("tex", {
     mai({trig = "AA", descr = "forall"}, t("\\forall ")),
     mai({trig = "RR", descr = "Real Numbers"}, t("\\mathbb{R}")),
     mai({trig = "QQ", descr = "Rational Numbers"}, t("\\mathbb{Q}")),
+	mai({trig = "HH", descr = "Mathcal"}, t("\\mathcal{H}")),
+	mai({trig = "DD", descr = "Mathcal"}, t("\\mathcal{D}")),
     mai({trig = "ZZ", descr = "Integers"}, t("\\mathbb{Z}")),
+    mai({trig = "lll", descr = "l"}, t("\\ell")),
     mai({trig = ">>", descr = ">>"}, t("\\gg ")),
     mai({trig = "<<", descr = "<<"}, t("\\ll ")),
     mai({trig = "~~", descr = "~"}, t("\\sim ")),
     mai({trig = "!=", descr = "equals"}, t("\\neq ")),
     mai({trig = ">=", descr = "geq"}, t("\\geq ")),
     mai({trig = "<=", descr = "leq"}, t("\\leq ")),
+    mai({trig = "==", descr = "equals"}, fmta("&= <> \\\\", {i(1)})),
+    mai({trig = "cc", descr = "subset"}, t("\\subset ")),
+    mai({trig = "TT", descr = "transpose"}, t("^\\transpose")),
+    mai({trig = "<>", descr = "angle"}, fmta("\\langle <> \\rangle", {i(1)})),
     mai({trig = "||", descr = "mid"}, t(" \\mid ")),
+    mai({trig = "...", descr = "dots"}, t("\\dots ")),
     mai({trig = "\\\\\\", descr = "setminus"}, t("\\setminus ")),
+	mai({trig = "UU", descr = "cup"}, t("\\cup")),
+	mai({trig = "Nn", descr = "cap"}, t("\\cap")),
+	mai({trig = "uuu", descr = "bigcup"}, fmta("\\bigcup_{<>}", {i(1)})),
+	mai({trig = "nnn", descr = "bigcap"}, fmta("\\bigcap_{<>}", {i(1)})),
     -- xnn -> x_n
     -- yii -> y_i
     -- xp1 -> x_{n+1}
 
-    -- should both only expand if end of trigger matches word boundary
-    a({trig = "mk", descr = "math"}, fmta("$<>$", {i(1)})),
+	a({trig ="\"", descr="quotes"}, fmta("“<>”", {i(1)})),
+
+    -- we're using substring:
+    -- ```  local s = "aksldjf"
+    --      s:sub(1, 1)```
+    -- > "a"
+    -- the way this snippet works is we have a function node which takes
+    -- in the 2nd node and returns a space if we get a non-'.' and non-','
+    -- character
+    a({trig = "mk", descr = "math"},
+	fmta("$<>$<><>", {
+	    i(1),
+	    f(function(args, parent, user_args)
+		local no_space_table = {[","]=true, ["."]=true, [""]=true, [")"]=true, [":"]=true, ["'"]=true}
+		if args[1][1] == "" then
+		    return ""
+		elseif no_space_table[args[1][1]:sub(1, 1)] then
+		    return ""
+		else
+		    return " "
+		end
+	    end,
+	    {2}),
+	    i(2)
+	})
+    ),
     -- should take visual input
     a({trig = "dm", descr = "math"}, fmta("\\[\n<>\n.\\] <>", {i(1), i(0)})),
     a({trig = ";verb", descr = "verb"}, fmta("\\verb|<>| <>", {i(1), i(0)})),
     b({trig = "fig", descr = "include figure"}, fmta("\\begin{figure}[ht]\n\\centering\n\\includegraphics[width=0.5\\linewidth]{<>}\n\\caption{<>}\\label{fig:<>}\n\\end{figure}\n<>", {i(3), i(2), i(1), i(0)})),
 
-    mai({trig = "//", descr = "fraction"}, fmta("\\frac{<>}{<>}", {i{1}, i{2}})),
+
+	-- snippet "([a-zA-Z])hat" "hat" riA
+	-- \hat{`!p snip.rv=match.group(1)`}
+	-- endsnippet
+    mai({trig = "(%a)hat", regTrig = true, descr = "hat", priority = 900},
+      fmta("\\hat{<>}", {
+		f(function(_, snip) return snip.captures[1] end),
+	})),
+
+	-- snippet "([a-zA-Z])bar" "bar" riA
+	-- \overline{`!p snip.rv=match.group(1)`}
+	-- endsnippet
+    mai({trig = "(%a)bar", regTrig = true, descr = "bar", priority = 900},
+      fmta("\\overline{<>}", {
+		f(function(_, snip) return snip.captures[1] end),
+	})),
+
+
+	-- snippet '([A-Za-z])(\d)' "auto subscript" wrA
+	-- `!p snip.rv = match.group(1)`_`!p snip.rv = match.group(2)`
+	-- endsnippet
+    mai({trig = "(%a)(%d)", regTrig = true, descr = "auto subscript"},
+      fmta("<>_<>", {
+		f(function(_, snip) return snip.captures[1] end),
+		f(function(_, snip) return snip.captures[2] end),
+	})),
+	-- snippet '([A-Za-z])_(\d\d)' "auto subscript2" wrA
+	-- `!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2)`}
+	-- endsnippet
+    mai({trig = "(%a)_(%d%d)", regTrig = true, descr = "auto subscript2"},
+      fmta("<>_{<>}", {
+		f(function(_, snip) return snip.captures[1] end),
+		f(function(_, snip) return snip.captures[2] end),
+	})),
+	-- snippet from overleaf
+    mai({trig = "__", descr = "subscript"}, fmta("_{<>}", {i(1)})),
+
+	-- snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "symbol frac" wrA
+	-- \\frac{`!p snip.rv = match.group(1)`}{$1}$0
+	-- endsnippet
+	-- TODO: THESE DON'T WORK
+    -- mai({trig = "(%d*%a+(_(%d))?)/", regTrig = true, descr = "symbol frac"},
+    --   fmta("\\frac{<>}{<>}", {
+		-- f(function(_, snip) return snip.captures[1] end),
+		-- i(1),
+	-- })),
+    -- mai({trig = "((%d)*(%a)+(%^%d)?)/", regTrig = true, descr = "symbol frac"},
+    --   fmta("\\frac{<>}{<>}", {
+		-- f(function(_, snip) return snip.captures[1] end),
+		-- i(1),
+	-- })),
+    mai({trig = "(%d+)/", regTrig = true, descr = "symbol frac", priority = 900},
+      fmta("\\frac{<>}{<>}", {
+		f(function(_, snip) return snip.captures[1] end),
+		i(1),
+	})),
+
+	-- priority 1000
+	-- context "math()"
+	-- snippet '^.*\)/' "() frac" wrA
+	-- `!p
+	-- stripped = match.string[:-1]
+	-- depth = 0
+	-- i = len(stripped) - 1
+	-- while True:
+	-- 	if stripped[i] == ')': depth += 1
+	-- 	if stripped[i] == '(': depth -= 1
+	-- 	if depth == 0: break;
+	-- 	i-=1
+	-- snip.rv = stripped[0:i] + "\\frac{" + stripped[i+1:-1] + "}"
+	-- `{$1}$0
+	-- endsnippet
+    mai({trig = "(%b())/", regTrig = true, descr = "fraction"},
+	  fmta("\\frac{<>}{<>}", {
+		f(function(_, snip) return snip.captures[1]:sub(2, #snip.captures[1] - 1) end),
+		i(1)
+	})),
 
     -- should only expand if end of trigger matches word boundary
     a({trig = "vb", descr = "verb"}, fmta("\\verb|<>| ", {i(1)})),
     mai({trig = "set", descr = "set"}, fmta("\\{<>\\}", {i(1)})),
 
     -- greek
-    mai({trig = ";a", descr = "alpha"}, t("α")),
-})
+    ai({trig = ";a", descr = "alpha"}, t("α")),
+    ai({trig = ";e", descr = "epsilon"}, t("ε")),
+    ai({trig = ";d", descr = "delta"}, t("δ")),
+    ai({trig = ";D", descr = "delta"}, t("∆")),
+    ai({trig = ";s", descr = "sigma"}, t("σ")),
+    ai({trig = ";l", descr = "lambda"}, t("λ")),
+	ai({trig = ";g", descr = "gamma"}, t("γ")),
+	ai({trig = ";t", descr = "theta"}, t("θ")),
+	ai({trig = ";T", descr = "theta"}, t("Θ")),
+	
 
--- snippet template "Basic template" b
--- \documentclass{article}
 
--- \usepackage[utf8]{inputenc}
--- \usepackage{amsmath, amssymb}
--- \usepackage[margin=1in]{geometry}
--- \usepackage{graphicx}
--- \usepackage[shortlabels]{enumitem}
-
--- \begin{document}
--- 	$0
--- \end{document}
--- endsnippet
+}
+ls.add_snippets("tex", tex_snippets)
+ls.add_snippets("markdown", tex_snippets)
 
 -- snippet table "Table environment" b
 -- \begin{table}[${1:htpb}]
@@ -217,20 +361,6 @@ ls.add_snippets("tex", {
 -- 	i-=1
 -- snip.rv = stripped[0:i] + "\\frac{" + stripped[i+1:-1] + "}"
 -- `{$1}$0
--- endsnippet
-
--- context "math()"
--- snippet '([A-Za-z])(\d)' "auto subscript" wrA
--- `!p snip.rv = match.group(1)`_`!p snip.rv = match.group(2)`
--- endsnippet
-
--- context "math()"
--- snippet '([A-Za-z])_(\d\d)' "auto subscript2" wrA
--- `!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2)`}
--- endsnippet
-
--- snippet == "equals" iA
--- &= $1 \\\\
 -- endsnippet
 
 -- context "math()"
@@ -358,10 +488,6 @@ ls.add_snippets("tex", {
 -- \mathcal{$1}$0
 -- endsnippet
 
--- snippet lll "l" iA
--- \ell
--- endsnippet
-
 -- context "math()"
 -- snippet nabl "nabla" iA
 -- \nabla 
@@ -404,11 +530,6 @@ ls.add_snippets("tex", {
 -- \leftrightarrow
 -- endsnippet
 
--- context "math()"
--- snippet cc "subset" Ai
---  \subset 
--- endsnippet
-
 -- snippet notin "not in " iA
 -- \not\in 
 -- endsnippet
@@ -421,22 +542,6 @@ ls.add_snippets("tex", {
 -- context "math()"
 -- snippet NN "n" iA
 -- \mathbb{N}
--- endsnippet
-
--- snippet Nn "cap" iA
--- \cap 
--- endsnippet
-
--- snippet UU "cup" iA
--- \cup 
--- endsnippet
-
--- snippet uuu "bigcup" iA
--- \bigcup_{${1:i \in ${2: I}}} $0
--- endsnippet
-
--- snippet nnn "bigcap" iA
--- \bigcap_{${1:i \in ${2: I}}} $0
 -- endsnippet
 
 -- snippet OO "emptyset" iA
@@ -500,30 +605,6 @@ ls.add_snippets("tex", {
 -- \begin{pmatrix} ${1:x}_${2:1}\\\\ \vdots\\\\ $1_${2:n} \end{pmatrix}
 -- endsnippet
 
--- priority 10
--- context "math()"
--- snippet "bar" "bar" riA
--- \overline{$1}$0
--- endsnippet
-
--- priority 100
--- context "math()"
--- snippet "([a-zA-Z])bar" "bar" riA
--- \overline{`!p snip.rv=match.group(1)`}
--- endsnippet
-
--- priority 10
--- context "math()"
--- snippet "hat" "hat" riA
--- \hat{$1}$0
--- endsnippet
-
--- priority 100
--- context "math()"
--- snippet "([a-zA-Z])hat" "hat" riA
--- \hat{`!p snip.rv=match.group(1)`}
--- endsnippet
-
 -- snippet letw "let omega" iA
 -- Let $\Omega \subset \C$ be open.
 -- endsnippet
@@ -536,5 +617,3 @@ ls.add_snippets("tex", {
 -- snippet DD "D" iA
 -- \mathbb{D}
 -- endsnippet
-
--- # vim:ft=snippets

@@ -1,0 +1,67 @@
+#!/bin/sh
+
+# letter-paper
+#
+# Convert a PDF to letter paper size. It can take an
+# arbitrary number of pages.
+#
+# usage: letter-paper <input.pdf> [output.pdf]
+
+set -e
+
+# deal with input
+if [ -z "$1" ]; then
+  echo "Usage: letter-paper <input.pdf> [output.pdf]"
+  exit 1
+fi
+
+in="$1"
+
+if [ -n "$2" ]; then
+	out="$2"
+else
+	out="output.pdf"
+fi
+
+trash() {
+    for original in "$@"
+    do
+        var="$original"
+        i="0"
+        while test -e "$HOME/.trash/$var"
+        do
+            var="$original"$((i += 1))
+        done
+        mv "$original" "$HOME/.trash/$var"
+    done
+}
+
+if [ -e "$out" ]; then
+	trash "$out"
+	echo "Moved: $out to trash"
+	exit 1
+fi
+
+if ! [ -e "$in" ]; then
+	echo "Input file doesn't exist: $in"
+	exit 1
+fi
+
+# all the options provided to ghostscript
+ghost_script() {
+	gs \
+	-sDEVICE=pdfwrite \
+	-sPAPERSIZE=letter \
+	-dFIXEDMEDIA \
+	-dPDFFitPage \
+	-dCompatibilityLevel=1.4 "$@"
+}
+
+# try calling
+ghost_script -o "$out" "$in" > /dev/null 2>&1
+
+# if it fails, try again with loud output
+if ! [ $? -eq 0 ]; then
+  ghost_script -o "$out" "$in"
+fi
+

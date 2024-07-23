@@ -1,4 +1,5 @@
 local cmp = require'cmp'
+local ls = require("luasnip")
 
 cmp.setup({
     snippet = {
@@ -16,6 +17,8 @@ cmp.setup({
                 feedkey("<C-n>", "n")
             elseif cmp.visible() then
                 cmp.select_next_item()
+	    elseif ls.expand_or_jumpable() then
+		ls.expand_or_jump()
             else
                 fallback()
             end
@@ -27,6 +30,8 @@ cmp.setup({
                 feedkey("<C-p>", "n")
             elseif cmp.visible() then
                 cmp.select_prev_item()
+	    elseif ls.jumpable(-1) then
+		ls.jump(-1)
             else
                 fallback()
             end
@@ -87,7 +92,7 @@ vim.lsp.set_log_level('INFO')
 -- require'lspconfig'.pyright.setup{}
 
 require('lspconfig').julials.setup({
-    cmd = { "julia", "--startup-file=no", "--history-file=no", "-e", [[
+    cmd = { "julia-w-lsp", "--startup-file=no", "--history-file=no", "-e", [[
     # tries to find packages (on DEPOT_PATH), and uses fallback ~/.config
     ls_install_path = joinpath(get(DEPOT_PATH, 1, joinpath(homedir(), ".config")), "julia", "environments", "nvim-lspconfig")
     pushfirst!(LOAD_PATH, ls_install_path)
@@ -119,17 +124,17 @@ require('lspconfig').julials.setup({
 -- turn off in line diagnostics
 vim.diagnostic.config({virtual_text = false})
 
-vim.api.nvim_create_autocmd('DiagnosticChanged', {
-  callback = function(args)
-  vim.diagnostic.setloclist({ open = false }) -- don't open and focus
-  local window = vim.api.nvim_get_current_win()
-  if #args.data.diagnostics >= 1 then
-    vim.cmd('lwindow ' .. tostring(#args.data.diagnostics)) 
-  else
-    vim.cmd.lwindow() -- open+focus loclist if has entries, else close
-  end
+-- vim.api.nvim_create_autocmd('DiagnosticChanged', {
+--   callback = function(args)
+--   vim.diagnostic.setloclist({ open = false }) -- don't open and focus
+--   local window = vim.api.nvim_get_current_win()
+--   if #args.data.diagnostics >= 1 then
+--     vim.cmd('lwindow ' .. tostring(#args.data.diagnostics)) 
+--   else
+--     vim.cmd.lwindow() -- open+focus loclist if has entries, else close
+--   end
 
-  vim.api.nvim_set_current_win(window) -- restore focus to window you were editing (delete this if you want to stay in loclist)
-  end,
-})
+--   vim.api.nvim_set_current_win(window) -- restore focus to window you were editing (delete this if you want to stay in loclist)
+--   end,
+-- })
 

@@ -98,10 +98,11 @@ conda() {
 }
 
 jason-conda() {
+	printf 'running `jason-conda`...'
     jason-conda-no-default
     conda activate default
-    echo 'deactivate if you want `base`'
-    jason-conda() {echo 'jason>> conda is set up'}
+    echo "\rdeactivate if you want 'base'"
+    jason-conda() {echo 'shouldnt see this, `jason-conda` has already been run'}
 }
 
 # will make itself do nothing
@@ -120,14 +121,14 @@ jason-conda-no-default() {
     fi
     unset __conda_setup
     # <<< conda initialize <<<
-    echo 'jason>> conda set up'
-    jason-conda-no-default() {echo 'jason>> conda is set up'}
+    jason-conda-no-default() {echo 'shouldnt see this, `jason-conda` has already been run'}
 }
 
 # alias git='echo nope! use \`jg\`'
 alias gs='git status'
 alias ga='git add'
 alias gaa='git add --all'
+alias gau='git add --update'
 alias gl='git log --oneline --graph --all'
 alias gps='git push'
 alias gpl='git pull'
@@ -141,4 +142,5 @@ alias gci='git commit'
 alias gcm='git commit -m'
 alias gca='git add --update && git commit'
 alias gco='git checkout'
+alias galias="cat ~/.config/zsh/aliases.zsh | grep '^alias g'"
 

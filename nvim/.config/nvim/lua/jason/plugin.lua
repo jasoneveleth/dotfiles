@@ -1,3 +1,5 @@
+vim.g.slime_target = "neovim"
+
 -- Bullets.vim
 vim.g.bullets_enabled_file_types = {
     'markdown',
@@ -56,3 +58,8 @@ vim.cmd([[let g:sneak#prompt = '']])
 vim.cmd("hi IlluminatedWordRead guibg=#424242 gui=NONE")
 vim.cmd("hi IlluminatedWordWrite guibg=#424242 gui=underline")
 vim.cmd("hi IlluminatedWordText guibg=#424242 gui=NONE")
+
+-- copilot
+vim.g.copilot_no_tab_map = true
+
+

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# nchars
+#
+# usage:
+
+set -e
+
+wc -c | tr -d ' '
+

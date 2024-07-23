@@ -7,6 +7,10 @@ require("noice").setup({
     {
       filter = { event = "msg_show", kind = "", find = "written", },
       opts = {skip = true}
+    },
+    {
+      filter = { event = "msg_show", kind = "echomsg", find = "AutoSave", },
+      opts = {skip = true}
     }
   },
   cmdline = {

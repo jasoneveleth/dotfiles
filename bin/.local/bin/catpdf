@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# catpdf
+#
+# usage: catpdf a.pdf b.pdf > out.pdf
+
+set -e
+
+gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=- "$@"
+
+# (source chatGPT)
+# -dBATCH: This option tells Ghostscript to exit after processing all files.
+# -dNOPAUSE: This option tells Ghostscript not to pause after each page.
+# -q: This option tells Ghostscript to run quietly without displaying any messages.
+# -sDEVICE=pdfwrite: This option specifies the output device as pdfwrite, which is used for creating PDF files.
+# -sOutputFile=output.pdf: This option specifies the name of the output PDF file.
+# input1.pdf input2.pdf input3.pdf ...: These are the input PDF files that you want to concatenate. You can specify as many input files as you need, separated by spaces.

@@ -2,8 +2,12 @@
 	excludesfile = /Users/jason/.config/git/gitignore_global
 	attributesfile = /Users/jason/.config/git/gitattributes_global
 	pager = delta
-[interactive]
-	diffFilter = delta --color-only --features=interactive
+# [interactive]
+# 	diffFilter = delta --color-only --features=interactive
+[diff]
+    tool = vscode
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
 [user]
 	name = Jason Eveleth
 	email = jj11@eveleth.com
@@ -20,9 +24,9 @@
 	push-branch = push -u origin
 	unadd = restore --staged
 	discard = restore
-	# also for dirty??: git diff-index --quiet --cached HEAD --
 	dirty = "!test -n \"$(git status --porcelain)\""
 	wip = !git add --all && git commit -m .
+	is-repo = !git rev-parse --git-dir > /dev/null 2>&1
 	ff = merge --ff-only
 	root = rev-parse --show-toplevel
 	wip = commit -am wip
@@ -34,7 +38,6 @@
 	get-unmerged = "!git diff --name-status --diff-filter=U | cut -f2"
 	edit-unmerged = "!e $(git get-unmerged)"
 	add-unmerged = "!git add $(git get-unmerged)"
-	# useful for old commits to have the right submods
 	co-recurse = !sh -c 'git checkout $1 && git submodule update --recursive' --
 	# usage: git diff -p $(git empty-tree-sha) some-interesting-subdir/
 	empty-tree-sha = hash-object -t tree /dev/null
@@ -83,3 +86,5 @@
     keep-plus-minus-markers = false
 [diff "markdownfilter"]
 	textconv = fmt
+[rerere]
+	enabled = true

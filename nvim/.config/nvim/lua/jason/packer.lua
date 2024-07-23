@@ -22,7 +22,6 @@ return require('packer').startup(function(use)
   use 'easymotion/vim-easymotion'
   use 'tjdevries/train.nvim'
   use 'nvim-lua/plenary.nvim'
-  use 'Julian/lean.nvim'
   use 'lervag/vimtex'
   use 'airblade/vim-gitgutter'
   use 'nvim-treesitter/playground'
@@ -35,7 +34,7 @@ return require('packer').startup(function(use)
   use 'TimUntersberger/neogit'
 
   use 'vim-pandoc/vim-pandoc-syntax'
-  use 'nvim-treesitter/nvim-treesitter'
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'neovim/nvim-lspconfig'
 
   use 'hrsh7th/cmp-nvim-lsp'
@@ -46,7 +45,6 @@ return require('packer').startup(function(use)
 
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
-
   use "folke/noice.nvim"
   use "MunifTanjim/nui.nvim"
   use "rcarriga/nvim-notify"
@@ -56,4 +54,7 @@ return require('packer').startup(function(use)
   use 'skywind3000/asyncrun.vim'
   use 'folke/which-key.nvim'
   use 'RRethy/vim-illuminate'
+  use 'pocco81/auto-save.nvim'
+  use 'jpalardy/vim-slime'
+  use 'github/copilot.vim'
 end)

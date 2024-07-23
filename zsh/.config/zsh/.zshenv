@@ -91,7 +91,6 @@ if [[ "$HAVE_M1" = true ]]; then
 fi
 
 if [[ "$HAVE_M1" = true ]]; then
-    export JULIA_LOAD_PATH="~/.config/julia/environments/nvim-lspconfig:$JULIA_LOAD_PATH"
     export USING_CONDA=true
 fi
 
@@ -113,7 +112,7 @@ front_path+=("/usr/local/bin")
 if [ "$ON_A_MAC" = true ]; then # on apple
     path+=("/Library/TeX/texbin")
     path+=("/usr/local/opt/llvm/bin/")
-    path+=("/Applications/Racket v8.2/bin")
+    path+=("/Applications/Racket v8.11.1/bin")
     path+=("/nix/var/nix/profiles/default/bin")
     path+=("/usr/local/opt/openjdk/bin")
     path+=("$HOME/.elan/bin")

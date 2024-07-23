@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# julia-w-lsp
+#
+# usage:
+
+set -e
+
+JULIA_LOAD_PATH=/users/jason/.config/julia/environments/nvim-lspconfig julia "$@"
