@@ -115,7 +115,7 @@ ls.add_snippets("typst", {
     ),
 })
 
-tex_snippets = {
+tex_and_md_snippets = {
 	ba({trig = "template", descr = "Basic template"}, fmta([[\documentclass{article}
 
 \usepackage[utf8]{inputenc}
@@ -178,8 +178,6 @@ tex_snippets = {
     -- xnn -> x_n
     -- yii -> y_i
     -- xp1 -> x_{n+1}
-
-	a({trig ="\"", descr="quotes"}, fmta("“<>”", {i(1)})),
 
     -- we're using substring:
     -- ```  local s = "aksldjf"
@@ -306,8 +304,14 @@ tex_snippets = {
 
 
 }
-ls.add_snippets("tex", tex_snippets)
-ls.add_snippets("markdown", tex_snippets)
+
+tex_snippets = {
+	a({trig ="\"", descr="quotes"}, fmta("“<>”", {i(1)})),
+	unpack(tex_and_md_snippets)
+}
+
+ls.add_snippets("markdown", tex_and_md_snippets)
+ls.add_snippets("tex", tex_only_snippets)
 
 -- snippet table "Table environment" b
 -- \begin{table}[${1:htpb}]
