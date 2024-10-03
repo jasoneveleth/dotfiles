@@ -1,8 +1,0 @@
-{
-  "alfredsnippet" : {
-    "snippet" : "document.getElementsByTagName('Body')[0].style.maxWidth = '500px'\rdocument.getElementsByTagName('Body')[0].style.margin = 'auto'",
-    "uid" : "83855E4C-5F59-460B-8790-EBC51C04AB04",
-    "name" : "MakeMargin",
-    "keyword" : ":margin:"
-  }
-}
