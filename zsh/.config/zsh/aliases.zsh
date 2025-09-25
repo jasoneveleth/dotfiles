@@ -1,6 +1,6 @@
-alias ls="exa -s type"
-alias ll="exa -l -s type"
-alias la="exa -l -a -s type"
+alias ls="eza -s type"
+alias ll="eza -l -s type"
+alias la="eza -l -a -s type"
 alias grep="grep --color=auto"
 alias rm='echo "this is not the command you are looking for. use: \`trash\`\n"; false'
 alias trash='trash -F'

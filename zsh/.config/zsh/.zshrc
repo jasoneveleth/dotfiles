@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-PROMPT="%(?.;.%F{1};%F{0}) "
+PROMPT="%(?.;.%F{1};%f) "
 # prints if exit code is nonzero, %(cond.consq.alt) is the replacement
 [ -n "$NNNLVL" ] && PROMPT="N$NNNLVL $PROMPT"
 [ -n "$NVIM" ] && export EDITOR="nvim --server $NVIM --remote" && export VISUAL="$EDITOR"
